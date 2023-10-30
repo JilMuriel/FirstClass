@@ -4,12 +4,12 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      header: ['Be Vietnam Pro Medium', 'sans-serif'],
-      tagline: ['Be Vietnam Pro Medium', 'sans-serif'],
-      subtitle: ['Be Vietnam Pro Normal', 'sans-serif'],
-      menu: ['Work Sans Medium', 'sans-serif'],
-      button: ['Work Sans Medium', 'sans-serif'],
-      body: ['Be Vietnam Pro Light', 'sans-serif'],
+      header: ['Oswald Bold'],
+      tagline: ['Montserrat Regular', 'sans-serif'],
+      subtitle: ['Montserrat Regular', 'sans-serif'],
+      menu: ['Montserrat Regular', 'sans-serif'],
+      button: ['Oswald Bold', 'sans-serif'],
+      body: ['Montserrat Regular', 'sans-serif'],
     },
     screens: {
       'xs': '343px',
@@ -35,8 +35,8 @@ module.exports = {
     },
     extend: {
       colors: {
-        'primary': '#34dca1',
-        'secondary': '#00153e',
+        'primary': '#ECAE17',
+        'secondary': '#005281',
         'accent': '#34dca1',
         'header': '#00153e',
         'base': '#25292d',

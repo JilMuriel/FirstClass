@@ -25,11 +25,12 @@
 				<!-- End Navigation -->
 			</div>
 			{% if global.header.button %}
-			<a href="{{global.header.button.url}}" class="btn mx-auto xs:mr-0 {{global.header.button_version}}"><img
+			<a href="{{global.header.button.url}}" class="btn mx-auto xs:mr-0 {{global.header.button_version}}"><span
+					class="hidden ml-2 md:inline-block">{{global.header.button.title }}</span>
+					<img
 					class="injectable inline-block w-10 h-6 object-contain fill-inherit"
 					src="{{ global.header.mobile_icon.url}}" title="{{ global.header.mobile_icon.title }}"
-					alt="{{ globalheader.mobile_icon.alt }}"><span
-					class="hidden ml-2 md:inline-block">{{global.header.button.title }}</span></a>
+					alt="{{ globalheader.mobile_icon.alt }}"></a>
 			{% endif %}
 		</div>
 		<!-- End Nav -->
