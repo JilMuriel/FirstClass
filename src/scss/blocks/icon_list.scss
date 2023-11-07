@@ -1,0 +1,13 @@
+.calsmoving-iconlist{
+    .full-list-btn{
+        svg path {
+            @apply fill-secondary
+        }
+
+        &:hover {
+            svg path {
+                @apply fill-primary
+            }
+        }
+    }
+}

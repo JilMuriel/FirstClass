@@ -18,20 +18,24 @@ a {
 
 .btn-primary {
     @extend .btn; 
-    @apply bg-primary text-white rounded-3xl fill-white;    
+    @apply bg-primary text-base  fill-white;    
     transition: all .3s;
     border: none;
     &:hover {
         @apply bg-secondary text-white;
+
+        svg path{
+            fill: #fff !important;
+        }
     }
 }
 .btn-secondary {
     @extend .btn;
-    @apply bg-secondary text-white fill-white rounded-3xl;
+    @apply bg-secondary text-white fill-white;
     border: 1px solid transparent;
 
     &:hover {
-        @apply bg-base border-gray text-white;
+        @apply bg-primary  text-white;
         cursor: pointer;
         border: 1px solid;
     }
@@ -40,12 +44,12 @@ a {
 
 .btn-ghost {
     @extend .btn;
-    @apply border-primary fill-primary rounded-3xl text-primary;
+    @apply border-secondary text-secondary;
     border: 1px solid;
     position: relative;
 
     &:hover {
-        @apply text-white fill-white border-white;
+        @apply text-primary border-primary;
         cursor: pointer;
     }
     &_light{

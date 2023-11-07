@@ -2,7 +2,7 @@ html {
     overflow-x: hidden;
 }
 body {
-    @apply bg-white font-body;
+    @apply bg-white font-body text-default text-base;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     opacity: 1;

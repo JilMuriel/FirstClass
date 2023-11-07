@@ -5,11 +5,11 @@ module.exports = {
   theme: {
     fontFamily: {
       header: ['Oswald Bold'],
-      tagline: ['Montserrat Regular', 'sans-serif'],
-      subtitle: ['Montserrat Regular', 'sans-serif'],
-      menu: ['Montserrat Regular', 'sans-serif'],
-      button: ['Oswald Bold', 'sans-serif'],
-      body: ['Montserrat Regular', 'sans-serif'],
+      tagline: ['Montserrat Regular'],
+      subtitle: ['Montserrat Regular'],
+      menu: ['Montserrat Regular'],
+      button: ['Oswald Bold'],
+      body: ['Montserrat Regular'],
     },
     screens: {
       'xs': '343px',
@@ -34,15 +34,25 @@ module.exports = {
       '4xl': '0 45px 65px rgba(0, 0, 0, 0.15)',
     },
     extend: {
+      fontSize: {
+        sm: '0.875rem', //14px
+        'default': '1rem', //16px
+        xl: '1.25rem', //20px
+        '2xl': '1.50rem', //24px
+        '3xl': '1.81rem', //29px
+        '4xl': '1.87rem', //30px
+        '5xl': ['3.25rem', '4rem'], //52px
+        '6xl': ['4.25rem', '5.37rem'], //68px
+      },
       colors: {
         'primary': '#ECAE17',
         'secondary': '#005281',
         'accent': '#34dca1',
         'header': '#00153e',
-        'base': '#25292d',
-        'gray': '#969696',
+        'base': '#333',
+        'gray': '#F4F4F4',
         'light': '#f7f7f7',
-        'dark': '#00153e',
+        'dark': '#333',
         'white': '#ffffff'
       },
       padding: {

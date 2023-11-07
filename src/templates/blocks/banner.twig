@@ -14,7 +14,7 @@
 
 {% if fields.banner_version == 'ver1' %}
 <section
-	class="calsmoving-main-banner section-spacing {% if fn('is_front_page') %}md:h-700 lg:h-900{% else %}md:h-650 lg:h-750{% endif %} w-full flex flex-col px-10 {{ block.className }}"
+	class="calsmoving-main-banner lg:h-[821px] w-full flex flex-col {{ block.className }} overflow-hidden"
 	{# Background settings #} {% if fields.banner.background %}
 	style="background-image: url('{{fields.banner.background}}'); background-size: cover; background-position: {{fields.banner.background_position}}; background-repeat: no-repeat;"
 	{% else %} style="background-color:{{fields.banner.color}};" {% endif %}>
@@ -30,20 +30,25 @@
 	</div>
 	{% endif %}
 	{% endif %}
+	<div class="absolute z-10 w-full h-full">
+		<video playsinline="" autoplay="" loop="" muted="" style="height: 100%; width: 100%;  object-fit: cover;" >
+			<source src="/wp-content/uploads/2023/11/CalsMovie3-1.mp4" type="video/mp4">
+		</video>
+    </div>
 	<article
-		class="calsmoving-banner-content md:section-spacing container mx-auto w-full md:w-10/12 lg:w-10/12 xl:w-10/12 h-full flex flex-col justify-center items-center px-1 relative z-5 {% if fields.banner.text_color %}text-light{% else %}text-dark{% endif %} md:mt-auto text-center">
+		class="calsmoving-banner-content md:section-spacing  container mx-auto flex justify-center items-start px-1 relative z-20 text-white mt-24 {% if fields.banner.text_color %}text-light{% else %}text-dark{% endif %} text-center">
 		<div class="w-full text-center">
 			{% if fields.banner.tagline %}
 			<h5 class="text-2xl font-light uppercase mb-2">{{fields.banner.tagline}}</h5>
 			{% endif %}
 			{# Main title #}
 			{% if fields.banner.title %}
-			<h1 class="xl:w-10/12 text-6xl font-header font-normal mb-6 mx-auto">
+			<h1 class="xl:w-10/12 text-3xl lg:text-6xl font-header mx-auto">
 				{{fields.banner.title }}</h1>
 			{% endif %}
 			{# Subtitle #}
 			{% if fields.banner.description %}
-			<p class="text-xl leading-none font-normal mb-8">{{fields.banner.description}}</p>
+			<p class="text-3xl lg:text-6xl font-header mb-8 text-primary mx-auto">{{fields.banner.description}}</p>
 			{% endif %}
 		</div>
 		{# Button wrap #}
@@ -71,6 +76,17 @@
 		</form>
 		{% endif %}
 	</article>
+	<div class="w-full opacity-90 bg-secondary h-full lg:h-[396px] relative z-20 mt-[50px] lg:p-16">
+		<div class="container flex flex-col lg:flex-row mx-auto">
+			<div class="lg:w-4/12">
+				<h2 class="text-6xl text-primary font-header">Get A Free Quote</h2>
+				<p class="text-white">Lorem ipsum dolor sit eiusmod, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+			</div>
+			<div class="lg:w-8/12 lg:pl-12">
+				{{fn('do_shortcode', '[fluentform id="10"]' )}}
+			</div>
+		<div>
+	</div>
 </section>
 {% endif %}
 {# –––––––––––––––– BANNER VERSION 1 END –––––––––––––––– #}

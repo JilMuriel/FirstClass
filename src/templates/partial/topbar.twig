@@ -1,9 +1,9 @@
 <section class="topbar` bg-secondary py-4" style="position:relative; display:block; z-index: 100;">
 	<div class="container mx-auto flex flex-row flex-wrap justify-between items-center py-4 md:py-0">
-		<div class="icons-wrap flex flex-col lg:flex-row items-center mb-4 xs:mb-0 mx-auto" role="region">
+		<div class="icons-wrap flex flex-col lg:flex-row items-center mb-4 xs:mb-0 mx-auto lg:space-x-16" role="region">
 			{% for icons in global.topbar.social_icons %}
 			<a href="{{ icons.link.url}}"
-				class="topbar-social-icons hover:fill-primary mr-2 fill-white flex items-center text-white">
+				class="topbar-social-icons hover:fill-primary fill-white flex items-center text-white">
 				<img class="injectable w-7 h-5 object-contain fill-inherit" alt="{{ icons.icon.alt }}"
 					title="{{ icons.icon.title }}" src="{{icons.icon.url}}">
 				{{ icons.link.title}}
