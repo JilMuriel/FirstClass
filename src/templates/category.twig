@@ -9,25 +9,30 @@ just a small part. See `search.twig` for an example of another approach #}
 	{% if posts|length > 0 %}
 
 		{% if post_cat[0].cat_name == title %}
-			<section class="calsmoving-category-content-left w-full mx-auto {% if fields.pagepicker.light_verstion %}light-version{% endif %}">
-				<div class="container mx-auto py-[80px] flex flex-row flex-wrap">
+			<section class="mammothmoving-category-content-left w-full mx-auto {% if fields.pagepicker.light_verstion %}light-version{% endif %}">
+				<div class="container mx-auto py-[80px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 					{% for post in posts %}
-						{% set link = fn('get_permalink', post.ID) %}
-						{% set meta = fn('get_term_meta', cat.term_id, 'picture' ) %}
-						<article class="w-full lg:w-4/12 flex text-center lg:text-left p-4" data-aos="fade-up" data-aos-offset="-250" data-aos-delay="{{loop.index}}50" data-aos-duration="2*{{loop.index}}50" data-aos-once="true">
-							<div class="bg-[#F3F9FF] p-6">
-
-								<a href="{{ link }}">
-									<h3 class='text-2xl font-tagline text-primary mb-4 px-8 hover:text-secondary'>{{ post.post_title }}
-									</h3>
-								</a>
-								<p class="font-body text-grayt px-8">{{ post.post_excerpt }}</p>
-								<div class="button-wrapper text-primary fill-primary hover:text-sky-800 hover:fill-sky-800 px-8">
-									<a class='btn-link__primary font-tagline flex justify-center lg:justify-start items-center pb-8 ' href="{{ link }}">READ MORE
-										<img src="{{ site.theme.link }}/images/icons/arrow-right.svg" class="injectable w-4 h-4 fill-inherit ml-2 inline-block" title="Arrow Right" alt="Arrow Right"></a>
-								</div>
+					{% set category_id = fields.blog.term_id %}
+					{% set link = fn('get_permalink', post.ID) %}
+					{% set thumbnail_url = fn('get_the_post_thumbnail_url', post.ID ) %}
+						<article class="rounded-xl full flex flex-col text-center lg:text-left  bg-[#F3F9FF]">
+	
+						
+						<div class="p-6">
+							<img src="{{ thumbnail_url }}" class="w-full h-[250px] rounded-xl object-cover">
+							<div class="flex flex-row space-x-2 justify-center lg:justify-start items-center mt-4 mb-4">
+								<img src="{{ site.theme.link }}/images/icons/calendar.svg">
+								<span class="text-[12px] text-dark">{{ post.published_at|date("j F Y") }}</span>
 							</div>
-						</article>
+							<h3 class='font-tagline text-md lg:text-lg mb-4 mt-4 text-dark'>{{ post.post_title }}</h3>
+							{% if post.post_excerpt %}	
+							<p class="font-body text-base">{{ post.post_excerpt }}</p>
+							{% endif %}
+							<div class="flex justify-center lg:justify-start">
+								<a class='btn btn-primary font-tagline  !w-fit ' href="{{ link }}">READ MORE</a>
+							</div>		
+						</div>	
+					</article>
 					{% endfor %}
 				</div>
 			</section>

@@ -26,7 +26,7 @@ const logSymbols = require('log-symbols'); //For Symbolic Console logs :)
 //Load Previews on Browser on dev
 function livePreview(done){
   browserSync.init({
-    proxy: "calsmovinghelp.local",
+    proxy: "first-class.local",
     port: 80,
     notify: false,
     ui: false,

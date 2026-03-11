@@ -16,12 +16,12 @@
 		<div class="w-full lg:w-6/12">
 			{% if fields.upper_title and fields.title %}
 			<div class="w-full flex flex-col text-center lg:text-left pb-1 mb-4 lg:mb-12">
-				<h3 class="font-header tracking-wider text-gray uppercase mb-4">{{ fields.upper_title }}</h3>
+				<h3 class="font-header tracking-wider text-base uppercase mb-4">{{ fields.upper_title }}</h3>
 				<h2 class="font-header text-4xl lg:text-5xl">{{ fields.title}}</h2>
 			</div>
 			{% else %}
 			{% if fields.upper_title %}
-			<h3 class="font-header tracking-wider text-gray uppercase mb-2">{{ fields.upper_title }}</h3>
+			<h3 class="font-header tracking-wider text-base uppercase mb-2">{{ fields.upper_title }}</h3>
 			{% endif %}
 			{% if fields.title %}
 			<h2 class="font-header text-4xl mb-8">{{ fields.title}}</h2>

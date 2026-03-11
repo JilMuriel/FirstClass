@@ -11,21 +11,37 @@
   SupportsMode: true
   SupportsMultiple: true
 #}
-
-<section class="calsmoving-simplecontent section-spacing {{ block.className }}">
+{% if fields.simple_version == 'ver1' %}
+<section class="mammothmoving-simplecontent v1 section-spacing {{ block.className }}">
 	<div class="container mx-auto text-left">
-		{% if fields.icon %}
-			<img class='injectable font-4xl fill-primary w-12 h-12 mx-auto mb-8' alt="{{ fields.icon.alt }}" title="{{ fields.icon.title }}" src="{{ fields.icon.url }}" title="{{ fields.icon.title }}">
-			<span class="sr-only">{{fields.icon.title}}</span>
-		{% endif %}
+
 		{% if fields.title %}
-			<h2 class="font-header text-4xl lg:text-5xl mb-8">
+			<h2 class="font-tagline text-[32px] leading-[35px] lg:text-xl mb-6">
 				{{fields.title}}</h2>
 		{% endif %}
-		<div class="content-wrap mb-8 {% if fields.two_columns_layout %}w-full md:grid md:grid-cols-2 gap-6 text-left md:text-left{% else %}flex flex-col mx-auto w-full lg:w-10/12{% endif %}">
-			{{fields.description}}</div>
-		{% if fields.button %}
-			<a href="{{fields.button.url}}" class="btn inline-block btn-primary" data-aos="fade-in" data-aos-offset="150" data-aos-delay="350" data-aos-duration="750" data-aos-once="true">{{fields.button.title}}</a>
-		{% endif %}
+
+		<div class="content-wrap lg:mb-4 flex flex-col mx-auto w-full text-md">
+			{{fields.description}}
+    </div>
+
+      <div class="flex flex-col lg:flex-row space-y-2 lg:space-y-0 lg:space-x-4 mb-4">
+      {% if fields.button %}
+        <a href="{{ fields.button.url }}"  target="{{ fields.button.target }}"
+          class="btn btn-primary !w-fit">
+          <span class=''>{{fields.button.title }}</span>
+        </a>
+      {% endif %}
+  
+      </div>
 	</div>
 </section>
+{% endif %}
+
+{% if fields.simple_version == 'ver2' %}
+<section class="mammothmoving-simplecontent v2 section-spacing {{ block.className }}">
+	<div class="container mx-auto ">
+		<div class="content-wrap flex flex-col text-center lg:px-8 border-[4px] border-t-primary border-l-0 border-r-0 border-b-primary py-4 lg:py-8">
+			{{fields.description}}</div>
+	</div>
+</section>
+{% endif %}

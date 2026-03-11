@@ -2,273 +2,292 @@
  // Register a new block.
       $banner = array(
         'name'            => 'banner',
-        'title'           => __( 'Banner', 'calsmoving' ),
+        'title'           => __( 'Banner', 'mammothmoving' ),
         'description'     => __( 'A custom banner.', 'rotatedigital.com' ),
         'render_callback' => 'my_acf_block_render_callback',
-        'category'        => 'calsmoving-blocks',
+        'category'        => 'mammothmoving-blocks',
         'icon'            => 'money',
         'keywords'        => array( 'banner' ),
       );
       $blog = array(
         'name'            => 'blog',
-        'title'           => __( 'Blog', 'calsmoving' ),
+        'title'           => __( 'Blog', 'mammothmoving' ),
         'description'     => __( 'Blog section.', 'rotatedigital.com' ),
         'render_callback' => 'my_acf_block_render_callback',
-        'category'        => 'calsmoving-blocks',
+        'category'        => 'mammothmoving-blocks',
         'icon'            => 'welcome-write-blog',
         'keywords'        => array( 'map' ),
       );
       $counter = array(
         'name'            => 'counter',
-        'title'           => __( 'Counter', 'calsmoving' ),
+        'title'           => __( 'Counter', 'mammothmoving' ),
         'description'     => __( 'Basic Counter Section.', 'rotatedigital.com' ),
         'render_callback' => 'my_acf_block_render_callback',
-        'category'        => 'calsmoving-blocks',
+        'category'        => 'mammothmoving-blocks',
         'icon'            => 'backup',
         'keywords'        => array( 'counter' ),
       );
       $cta = array(
         'name'            => 'cta',
-        'title'           => __( 'Cta', 'calsmoving' ),
+        'title'           => __( 'Cta', 'mammothmoving' ),
         'description'     => __( 'A custom call to action section.', 'rotatedigital.com' ),
         'render_callback' => 'my_acf_block_render_callback',
-        'category'        => 'calsmoving-blocks',
+        'category'        => 'mammothmoving-blocks',
         'icon'            => 'table-row-before',
         'keywords'        => array( 'Cta' ),
       );
       $faq = array(
         'name'            => 'faq',
-        'title'           => __( 'Faq', 'calsmoving' ),
+        'title'           => __( 'Faq', 'mammothmoving' ),
         'description'     => __( 'A custom faq section.', 'rotatedigital.com' ),
         'render_callback' => 'my_acf_block_render_callback',
-        'category'        => 'calsmoving-blocks',
+        'category'        => 'mammothmoving-blocks',
         'icon'            => 'editor-ul',
         'keywords'        => array( 'faq' ),
       );
       $html = array(
         'name'            => 'html',
-        'title'           => __( 'Html', 'calsmoving' ),
+        'title'           => __( 'Html', 'mammothmoving' ),
         'description'     => __( 'Custom HTML section.', 'rotatedigital.com' ),
         'render_callback' => 'my_acf_block_render_callback',
-        'category'        => 'calsmoving-blocks',
+        'category'        => 'mammothmoving-blocks',
         'icon'            => 'html',
         'keywords'        => array( 'html code' ),
       );
       $iconboxaside = array(
         'name'            => 'iconboxaside',
-        'title'           => __( 'Icon Box Aside', 'calsmoving' ),
+        'title'           => __( 'Icon Box Aside', 'mammothmoving' ),
         'description'     => __( 'A grid section with icon boxes.', 'rotatedigital.com' ),
         'render_callback' => 'my_acf_block_render_callback',
-        'category'        => 'calsmoving-blocks',
+        'category'        => 'mammothmoving-blocks',
         'icon'            => 'align-left',
         'keywords'        => array( 'icon box aside' ),
       );
       $iconbox = array(
         'name'            => 'iconbox',
-        'title'           => __( 'Icon Box Grid', 'calsmoving' ),
+        'title'           => __( 'Icon Box Grid', 'mammothmoving' ),
         'description'     => __( 'A grid section with icon boxes.', 'rotatedigital.com' ),
         'render_callback' => 'my_acf_block_render_callback',
-        'category'        => 'calsmoving-blocks',
+        'category'        => 'mammothmoving-blocks',
         'icon'            => 'grid-view',
         'keywords'        => array( 'icon box' ),
       );
       $iconlist = array(
         'name'            => 'iconlist',
-        'title'           => __( 'Icon List', 'calsmoving' ),
+        'title'           => __( 'Icon List', 'mammothmoving' ),
         'description'     => __( 'Icon List section.', 'rotatedigital.com' ),
         'render_callback' => 'my_acf_block_render_callback',
-        'category'        => 'calsmoving-blocks',
+        'category'        => 'mammothmoving-blocks',
         'icon'            => 'editor-ul',
         'keywords'        => array( 'icon list' ),
       );
       $imagebox = array(
         'name'            => 'imagebox',
-        'title'           => __( 'Image Box Grid', 'calsmoving' ),
+        'title'           => __( 'Image Box Grid', 'mammothmoving' ),
         'description'     => __( 'A grid section with icon boxes.', 'rotatedigital.com' ),
         'render_callback' => 'my_acf_block_render_callback',
-        'category'        => 'calsmoving-blocks',
+        'category'        => 'mammothmoving-blocks',
         'icon'            => 'format-image',
         'keywords'        => array( 'image box' ),
       );
       $imagegridtext = array(
         'name'            => 'imagegridtext',
-        'title'           => __( 'Image Grid Text', 'calsmoving' ),
+        'title'           => __( 'Image Grid Text', 'mammothmoving' ),
         'description'     => __( 'An icon grid section with text.', 'rotatedigital.com' ),
         'render_callback' => 'my_acf_block_render_callback',
-        'category'        => 'calsmoving-blocks',
+        'category'        => 'mammothmoving-blocks',
         'icon'            => 'editor-table',
         'keywords'        => array( 'image grid text' ),
       );
       $imageiconlist = array(
         'name'            => 'imageiconlist',
-        'title'           => __( 'Image Icon List', 'calsmoving' ),
+        'title'           => __( 'Image Icon List', 'mammothmoving' ),
         'description'     => __( 'Icon List with Image section.', 'rotatedigital.com' ),
         'render_callback' => 'my_acf_block_render_callback',
-        'category'        => 'calsmoving-blocks',
+        'category'        => 'mammothmoving-blocks',
         'icon'            => 'table-col-before',
         'keywords'        => array( 'icon list' ),
       );
       $imageprogress = array(
         'name'            => 'imageprogress',
-        'title'           => __( 'Image Progress Steps', 'calsmoving' ),
+        'title'           => __( 'Image Progress Steps', 'mammothmoving' ),
         'description'     => __( 'Image Progress Steps Section.', 'rotatedigital.com' ),
         'render_callback' => 'my_acf_block_render_callback',
-        'category'        => 'calsmoving-blocks',
+        'category'        => 'mammothmoving-blocks',
         'icon'            => 'backup',
         'keywords'        => array( 'progress' ),
       );
       $logos = array(
         'name'            => 'Logos',
-        'title'           => __( 'Logos', 'calsmoving' ),
+        'title'           => __( 'Logos', 'mammothmoving' ),
         'description'     => __( 'A custom logos section.', 'rotatedigital.com' ),
         'render_callback' => 'my_acf_block_render_callback',
-        'category'        => 'calsmoving-blocks',
+        'category'        => 'mammothmoving-blocks',
         'icon'            => 'podio',
         'keywords'        => array( 'logos' ),
       );
       $mainform = array(
         'name'            => 'mainform',
-        'title'           => __( 'Mainform', 'calsmoving' ),
+        'title'           => __( 'Mainform', 'mammothmoving' ),
         'description'     => __( 'Main form custom section.', 'rotatedigital.com' ),
         'render_callback' => 'my_acf_block_render_callback',
-        'category'        => 'calsmoving-blocks',
+        'category'        => 'mammothmoving-blocks',
         'icon'            => 'email',
         'keywords'        => array( 'form' ),
       );
       $mapaside = array(
         'name'            => 'mapaside',
-        'title'           => __( 'Map Aside', 'calsmoving' ),
+        'title'           => __( 'Map Aside', 'mammothmoving' ),
         'description'     => __( 'Map with Content section.', 'rotatedigital.com' ),
         'render_callback' => 'my_acf_block_render_callback',
-        'category'        => 'calsmoving-blocks',
+        'category'        => 'mammothmoving-blocks',
         'icon'            => 'location-alt',
         'keywords'        => array( 'map' ),
     );
     $map = array(
       'name'            => 'map',
-      'title'           => __( 'Map', 'calsmoving' ),
+      'title'           => __( 'Map', 'mammothmoving' ),
       'description'     => __( 'Map section.', 'rotatedigital.com' ),
       'render_callback' => 'my_acf_block_render_callback',
-      'category'        => 'calsmoving-blocks',
+      'category'        => 'mammothmoving-blocks',
       'icon'            => 'location',
       'keywords'        => array( 'map' ),
     );
     $progress = array(
       'name'            => 'progress',
-      'title'           => __( 'Progress Steps', 'calsmoving' ),
+      'title'           => __( 'Progress Steps', 'mammothmoving' ),
       'description'     => __( 'Progress Steps Section.', 'rotatedigital.com' ),
       'render_callback' => 'my_acf_block_render_callback',
-      'category'        => 'calsmoving-blocks',
+      'category'        => 'mammothmoving-blocks',
       'icon'            => 'clock',
       'keywords'        => array( 'progress' ),
     );
     $sidebaraside = array(
       'name'            => 'sidebaraside',
-      'title'           => __( 'Sidebaraside', 'calsmoving' ),
+      'title'           => __( 'Sidebaraside', 'mammothmoving' ),
       'description'     => __( 'A custom section with sidebar.', 'rotatedigital.com' ),
       'render_callback' => 'my_acf_block_render_callback',
-      'category'        => 'calsmoving-blocks',
+      'category'        => 'mammothmoving-blocks',
       'icon'            => 'align-left',
       'keywords'        => array( 'sidebar aside' ),
     );
     $simplecontent = array(
       'name'            => 'simplecontent',
-      'title'           => __( 'Simplecontent', 'calsmoving' ),
+      'title'           => __( 'Simplecontent', 'mammothmoving' ),
       'description'     => __( 'A custom simple content section.', 'rotatedigital.com' ),
       'render_callback' => 'my_acf_block_render_callback',
-      'category'        => 'calsmoving-blocks',
+      'category'        => 'mammothmoving-blocks',
       'icon'            => 'editor-alignleft', 
       'keywords'        => array( 'Simple Content' ),
     );
     $slider = array(
       'name'            => 'slider',
-      'title'           => __( 'Slider', 'calsmoving' ),
+      'title'           => __( 'Slider', 'mammothmoving' ),
       'description'     => __( 'A custom slider section.', 'rotatedigital.com' ),
       'render_callback' => 'my_acf_block_render_callback',
-      'category'        => 'calsmoving-blocks',
+      'category'        => 'mammothmoving-blocks',
       'icon'            => 'leftright',
       'keywords'        => array( 'slider' ),
     );
     $testimonials = array(
       'name'            => 'testomonials',
-      'title'           => __( 'Testimonials Slider', 'calsmoving' ),
+      'title'           => __( 'Testimonials Slider', 'mammothmoving' ),
       'description'     => __( 'A custom testimonial section.', 'rotatedigital.com' ),
       'render_callback' => 'my_acf_block_render_callback',
-      'category'        => 'calsmoving-blocks',
+      'category'        => 'mammothmoving-blocks',
       'icon'            => 'list-view',
       'keywords'        => array( 'testimonials' ),
     );
     $textimage = array(
       'name'            => 'textimage',
-      'title'           => __( 'Text with image', 'calsmoving' ),
+      'title'           => __( 'Text with image', 'mammothmoving' ),
       'description'     => __( 'A custom text with image.', 'rotatedigital.com' ),
     'render_callback' => 'my_acf_block_render_callback',
-      'category'        => 'calsmoving-blocks',
+      'category'        => 'mammothmoving-blocks',
       'icon'            => 'table-col-before',
       'keywords'        => array( 'text image' ),
     );
     $columntext = array(
       'name'            => 'columntext',
-      'title'           => __( 'Two Column Text', 'calsmoving' ),
+      'title'           => __( 'Two Column Text', 'mammothmoving' ),
       'description'     => __( 'A text on two columns layouts.', 'rotatedigital.com' ),
     'render_callback' => 'my_acf_block_render_callback',
-      'category'        => 'calsmoving-blocks',
+      'category'        => 'mammothmoving-blocks',
       'icon'            => 'columns',
       'keywords'        => array( 'Column text' ),
     );
     $privacypolicy = array(
       'name'            => 'privacypolicy',
-      'title'           => __( 'Privacy Policy', 'calsmoving' ),
+      'title'           => __( 'Privacy Policy', 'mammothmoving' ),
       'description'     => __( 'A preformated Privacy policy block', 'rotatedigital.com' ),
     'render_callback' => 'my_acf_block_render_callback',
-      'category'        => 'calsmoving-blocks',
+      'category'        => 'mammothmoving-blocks',
       'icon'            => 'list-view',
       'keywords'        => array( 'Column text' ),
     );
     $terms = array(
       'name'            => 'terms',
-      'title'           => __( 'Terms', 'calsmoving' ),
+      'title'           => __( 'Terms', 'mammothmoving' ),
       'description'     => __( 'A preformated Terms block', 'rotatedigital.com' ),
     'render_callback' => 'my_acf_block_render_callback',
-      'category'        => 'calsmoving-blocks',
+      'category'        => 'mammothmoving-blocks',
       'icon'            => 'list-view',
       'keywords'        => array( 'Column text' ),
     );
     $customsitemap = array(
       'name'            => 'sitemap_custom',
-      'title'           => __( 'Custom Sitemap', 'calsmoving' ),
+      'title'           => __( 'Custom Sitemap', 'mammothmoving' ),
       'description'     => __( 'A preformated Sitemap', 'rotatedigital.com' ),
     'render_callback' => 'my_acf_block_render_callback',
-      'category'        => 'calsmoving-blocks',
+      'category'        => 'mammothmoving-blocks',
       'icon'            => 'list-view',
       'keywords'        => array( 'Column text' ),
     );
     $accessibility = array(
       'name'            => 'accessibility',
-      'title'           => __( 'Accessibility', 'calsmoving' ),
+      'title'           => __( 'Accessibility', 'mammothmoving' ),
       'description'     => __( 'A preformated Accessibility Block', 'rotatedigital.com' ),
     'render_callback' => 'my_acf_block_render_callback',
-      'category'        => 'calsmoving-blocks',
+      'category'        => 'mammothmoving-blocks',
       'icon'            => 'list-view',
       'keywords'        => array( 'Column text' ),
     );
     $disclaimer = array(
       'name'            => 'disclaimer',
-      'title'           => __( 'Disclaimer', 'calsmoving' ),
+      'title'           => __( 'Disclaimer', 'mammothmoving' ),
       'description'     => __( 'A preformated Disclaimer Block', 'rotatedigital.com' ),
     'render_callback' => 'my_acf_block_render_callback',
-      'category'        => 'calsmoving-blocks',
+      'category'        => 'mammothmoving-blocks',
       'icon'            => 'list-view',
       'keywords'        => array( 'Column text' ),
     );
     $video = array(
       'name'            => 'Video',
-      'title'           => __( 'Video', 'calsmoving' ),
+      'title'           => __( 'Video', 'mammothmoving' ),
       'description'     => __( 'A custom video section.', 'rotatedigital.com' ),
       'render_callback' => 'my_acf_block_render_callback',
-      'category'        => 'calsmoving-blocks',
+      'category'        => 'mammothmoving-blocks',
       'icon'            => 'video-alt',
       'keywords'        => array( 'video' ),
+    );
+    $gallery = array(
+      'name'            => 'Gallery',
+      'title'           => __( 'Gallery', 'mammothmoving' ),
+      'description'     => __( 'A custom gallery section.', 'rotatedigital.com' ),
+      'render_callback' => 'my_acf_block_render_callback',
+      'category'        => 'mammothmoving-blocks',
+      'icon'            => 'list-alt',
+      'keywords'        => array( 'gallery' ),
+    );
+
+    $tab = array(
+      'name'            => 'tab',
+      'title'           => __( 'Tab', 'mammothmoving' ),
+      'description'     => __( 'Tab Section.', 'rotatedigital.com' ),
+      'render_callback' => 'my_acf_block_render_callback',
+      'category'        => 'mammothmoving-blocks',
+      'icon'            => 'clock',
+      'keywords'        => array( 'tab' ),
     );
 
   
@@ -303,5 +322,8 @@
     $textimage,
     $columntext,
     $video,
+    $gallery,
+    $tab,
   ];
+  
   return $blocks;

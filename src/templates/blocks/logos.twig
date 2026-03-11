@@ -12,54 +12,57 @@
   SupportsMultiple: true
 #}
 
-<section class="calsmoving-logos section-spacing {{ block.className }}">
-	<article class="container mx-auto flex flex-wrap text-center">
+<section class="mammothmoving-logos section-spacing {{ block.className }} py-[20px] px-[50px] ">
+	<div class="swiper-container pt-[85px] w-[85vw] z-10 flex items-center mx-auto justify-between absolute left-1/2 -translate-x-1/2">
+		<div class="swiper-button-prev"></div>
+		<div class="swiper-button-next"></div>
+	</div>
+
+	<article class="mx-auto container flex flex-wrap text-center">
 		{% if fields.upper_title and fields.title %}
-		<div class="w-full flex flex-col text-center pb-1 mb-4 lg:mb-12">
-			<h3 class="font-header tracking-wider text-gray uppercase mb-4">{{ fields.upper_title }}</h3>
-			<h2 class="font-header text-4xl lg:text-5xl">{{ fields.title}}</h2>
-		</div>
+			<div class="w-full flex flex-col text-center pb-1 mb-4 lg:mb-12">
+				<h3 class="font-header tracking-wider text-base uppercase mb-4">{{ fields.upper_title }}</h3>
+				<h2 class="font-header text-4xl lg:text-5xl">{{ fields.title}}</h2>
+			</div>
 		{% else %}
-		{% if fields.upper_title %}
-		<h3 class="font-header tracking-wider text-gray uppercase mb-2">{{ fields.upper_title }}</h3>
+			{% if fields.upper_title %}
+				<h3 class="font-header tracking-wider text-base uppercase mb-2">{{ fields.upper_title }}</h3>
+			{% endif %}
+			{% if fields.title %}
+				<h2 class="font-header text-dark text-[22px]  mb-[40px]  font-bold mx-auto text-center">{{ fields.title}}</h2>
+			{% endif %}
 		{% endif %}
-		{% if fields.title %}
-		<h2 class="font-header text-4xl mb-8">{{ fields.title}}</h2>
-		{% endif %}
-		{% endif %}
+
 		{% if fields.slider_layout %}
-		<div class="logos w-full overflow-hidden">
-			<div class="swiper-wrapper">
-				{% for logos in fields.logos %}
-				<div class="swiper-slide w-full mb-8 md:mb-4 lg:mb-0">
-					{% if logos.link %}
-					<a href="{{ logos.link.url }}" target="_blank">
-						<img class="h-20 w-full object-contain grayscale-[20%]" title="{{ logos.image.title }}"
-							alt="{{ logos.image.alt }}" src="{{ logos.image.url}}">
-					</a>
-					{% else %}
-					<img class="h-20 w-full object-contain grayscale-[20%]" title="{{ logos.image.title }}"
-						alt="{{ logos.image.alt }}" src="{{ logos.image.url}}">
-					{% endif %}
+			<div class="logos mx-auto overflow-hidden">
+
+				<div class="swiper-wrapper">
+					{% for logos in fields.logos %}
+						<div class="swiper-slide w-full mb-8 md:mb-4 lg:mb-0 px-4 flex flex-col items-center justify-center">
+							{% if logos.link %}
+								<a href="{{ logos.link.url }}" target="_blank">
+									<img class="w-full object-contain h-[68px] lg:w-[253px]" alt="{{ logos.image.alt }}" src="{{ logos.image.url}}">
+								</a>
+							{% else %}
+								<img class="w-full object-contain h-[68px] lg:w-[253px]" alt="{{ logos.image.alt }}" src="{{ logos.image.url}}">
+							{% endif %}
+						</div>
+					{% endfor %}
 				</div>
+			</div>
+		{% else %}
+			<div class="w-full flex flex-row flex-wrap justify-around mt-4" data-aos="fade-up" data-aos-offset="150" data-aos-delay="250" data-aos-duration="450" data-aos-once="true">
+				{% for logos in fields.logos %}
+					{% if logos.link %}
+						<a href="{{ logos.link.url }}" target="_blank">
+							<img class="flex w-auto  p-2" title="{{ logos.image.title }}" alt="{{ logos.image.alt }}" src="{{ logos.image.url}}">
+						</a>
+					{% else %}
+						<img class="flex  w-auto p-2" title="{{ logos.image.title }}" alt="{{ logos.image.alt }}" src="{{ logos.image.url}}">
+					{% endif %}
 				{% endfor %}
 			</div>
-		</div>
-		{% else %}
-		<div class="w-full flex flex-row flex-wrap justify-around mt-4" data-aos="fade-up" data-aos-offset="150"
-			data-aos-delay="250" data-aos-duration="450" data-aos-once="true">
-			{% for logos in fields.logos %}
-			{% if logos.link %}
-			<a href="{{ logos.link.url }}" target="_blank">
-				<img class="flex h-28 w-auto object-contain p-2" title="{{ logos.image.title }}"
-					alt="{{ logos.image.alt }}" src="{{ logos.image.url}}">
-			</a>
-			{% else %}
-			<img class="flex h-28 w-auto object-contain p-2" title="{{ logos.image.title }}" alt="{{ logos.image.alt }}"
-				src="{{ logos.image.url}}">
-			{% endif %}
-			{% endfor %}
-		</div>
 		{% endif %}
+
 	</article>
 </section>

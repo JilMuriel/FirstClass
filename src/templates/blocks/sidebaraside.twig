@@ -11,18 +11,17 @@
   SupportsMode: true
   SupportsMultiple: true
 #}
-<section class="calsmoving-sidebar-aside section-spacing">
-	{% if fields.page_title %}
-		<div class="container mx-auto mb-10">
-			<h1 class="font-header text-4xl font-semibold">{{fields.page_title}}</h1>
-		</div>
-	{% endif %}
+<section class="mammothmoving-sidebar-aside section-spacing">
 	<div class="container mx-auto flex flex-row flex-wrap">
-		<div class="main-content w-full lg:w-8/12 pr-4">
+		<div class="main-content w-full lg:w-7/12 pr-4">
+			{{ dump(posts.ID) }}
+			{% if fields.page_title %}
+				<h2 class="font-header text-3xl lg:text-5xl font-semibold text-secondary mb-8">{{fields.page_title}}</h1>
+			{% endif %}
 			{% for row in fields.content_row %}
 				<div class="mb-4">
 					{% if row.title %}
-						<h2 class='font-header text-3xl mb-4'>{{row.title}}</h2>
+						<h2 class='font-header text-2xl lg:text-5xl mb-4 text-secondary uppercase'>{{row.title}}</h2>
 					{% endif %}
 					{% if row.content %}
 						{{row.content}}
@@ -30,27 +29,54 @@
 				</div>
 			{% endfor %}
 		</div>
-		<aside class="sidebar flex-col w-full h-fit lg:w-[20rem] lg:mx-auto">
-			<div class="menu-wrapper px-8 py-10 bg-primary text-light rounded-2xl mb-12" data-aos="fade-left" data-aos-offset="-150" data-aos-delay="250" data-aos-duration="550" data-aos-once="true">
-				{% for row in fields.sidebar_row %}
-					{% if row.menu_title %}
-						<h3 class="font-header text-2xl mb-4">{{row.menu_title}}</h3>
-					{% endif %}
-					{% if row.menu %}
-						{{row.menu}}
-					{% endif %}
-				{% endfor %}
-			</div>
-			<div class="form-wrapper px-8 py-10 mb-8 bg-light text-primary rounded-2xl border-primary border-2" data-aos="fade-left" data-aos-offset="-150" data-aos-delay="450" data-aos-duration="650" data-aos-once="true">
-				{% for row in fields.sidebar_row %}
-					{% if row.form_code %}
-						{% if row.form_title %}
-							<h3 class="font-header text-2xl mb-4">{{row.form_title}}</h3>
+		<aside class="sidebar flex-col w-full h-fit lg:w-[27rem] lg:mx-auto">
+
+		{% for row in fields.sidebar_row %}
+				{% if row.acf_fc_layout == "menu_picker" %}
+				{% if row.menu %}
+				<div class="menu-wrapper  border-2 border-lighblue text-base mb-12" data-aos="fade-left" data-aos-offset="-150" data-aos-delay="250" data-aos-duration="550" data-aos-once="true">
+						{% if row.menu_title %}
+							<h3 class="font-header text-2xl lg:text-5xll">{{row.menu_title}}</h3>
 						{% endif %}
-						{{ fn('do_shortcode', row.form_code|striptags) }}
+						{% if row.menu %}
+							{{row.menu}}
+						{% endif %}
+				</div>
+				{% endif %}			
+				{% endif %}
+
+					{% if row.acf_fc_layout == "form_picker" %}
+					{% if row.form_code %}
+					<div class="form-wrapper mb-8 bg-primary p-8" data-aos="fade-left" data-aos-offset="-150" data-aos-delay="450" data-aos-duration="650" data-aos-once="true">
+						
+							{% if row.form_title %}
+								<h3 class="font-header text-2xl">{{row.form_title}}</h3>
+							{% endif %}
+							{{ fn('do_shortcode', row.form_code|striptags) }}
+						
+					</div>
 					{% endif %}
-				{% endfor %}
-			</div>
+
+				{% endif %}
+
+				{% if row.acf_fc_layout == "code" %}
+					{% if row.review_code %}
+					<div class="form-wrapper mb-8 bg-secondary relative pb-4" data-aos="fade-left" data-aos-offset="-150" data-aos-delay="450" data-aos-duration="650" data-aos-once="true">
+								{{ fn('do_shortcode', row.review_code|striptags) }}
+					<div class="text-center relative -mt-[31px] z-[99]">			
+						<img src="/wp-content/uploads/2024/10/bxs_quote-alt-right.svg" class="mx-auto">
+						</div>
+					</div>
+					{% endif %}
+
+				{% endif %}
+
+
+		{% endfor %}
+
+
+
+
 		</aside>
 	</div>
 </section>

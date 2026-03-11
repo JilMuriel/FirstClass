@@ -1,0 +1,27 @@
+.mammothmoving-mapaside{
+
+    p{
+        color: #4E4D4D !important
+    }
+
+   ul.contact-details{
+        @apply flex flex-col;
+
+        li{
+            @apply flex flex-row mb-4  items-start lg:items-center text-left;
+        }
+   }
+
+    ul li a{
+        
+        &:hover {
+            @apply text-secondary;
+        }
+
+    }
+
+    hr{
+        @apply mt-2 mb-8;
+        border-top: 2px solid #F4F4F4;
+    }
+}

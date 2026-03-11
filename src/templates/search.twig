@@ -7,7 +7,7 @@
 
 	{# Showing posts archive #}
 	{% if posts|length > 0 %}
-		<section class="calsmoving-category-content-left w-full mx-auto {% if fields.pagepicker.light_verstion %}light-version{% endif %}">
+		<section class="mammothmoving-category-content-left w-full mx-auto {% if fields.pagepicker.light_verstion %}light-version{% endif %}">
 			<div class="container mx-auto py-[80px] grid grid-cols-3 flex-wrap">
 				{% for post in posts %}
 					{% set link = fn('get_permalink', post.ID) %}
@@ -20,7 +20,7 @@
 									<h3 class='text-2xl font-tagline text-primary mb-4 px-8 hover:text-secondary'>{{ post.post_title }}
 									</h3>
 								</a>
-								<p class="font-body text-grayt px-8">{{ post.post_excerpt }}</p>
+								<p class="font-body text-baset px-8">{{ post.post_excerpt }}</p>
 								<div class="button-wrapper text-primary fill-primary hover:text-sky-800 hover:fill-sky-800 px-8">
 									<a class='btn-link__primary font-tagline flex justify-center lg:justify-start items-center pb-8 ' href="{{ link }}">READ MORE
 										<img src="{{ site.theme.link }}/images/icons/arrow-right.svg" class="injectable w-4 h-4 fill-inherit ml-2 inline-block" title="Arrow Right" alt="Arrow Right"></a>

@@ -1,12 +1,42 @@
-.premiermovers-faq {
-    .v2{
-        .openSlide  {
-            @apply bg-light;
-        }
-        .icons {
-            &.rotate {
-                @apply rotate-180;
-            }
+.mammothmoving-faq {
+
+    .heading{
+        h4 {
+            @apply text-dark;
         }
     }
+
+
+    .questions{
+        @apply bg-white border rounded-md border-[#E6E6E6]
+    }
+
+    .article-active {
+    
+        @apply bg-white border border-white rounded-md ;
+
+       .questions{
+            @apply bg-white;
+
+            h3{
+                @apply text-primary;
+            }
+
+            svg path{
+                @apply fill-primary;
+            }
+        }
+
+
+        p, span{
+            @apply text-dark;
+        }
+
+    }   
+
+    .questions-active {
+        @apply border-0 border-b-0;
+    }
+
+
 }

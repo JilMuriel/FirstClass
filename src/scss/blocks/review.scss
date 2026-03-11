@@ -1,4 +1,4 @@
-.calsmoving-review {
+.mammothmoving-review {
     .review-item {
         min-height: 250px;
         transition: all .3s;
@@ -66,10 +66,10 @@
     }
 }
 
-.calsmoving-review_v3 {
+.mammothmoving-review_v3 {
 
-    .calsmoving-review__wrap {
-        .calsmoving-review__img {
+    .mammothmoving-review__wrap {
+        .mammothmoving-review__img {
             -webkit-filter: grayscale(1);
             filter: grayscale(1);
             -webkit-transition: all 350ms ease;
@@ -79,11 +79,11 @@
             transition: all 350ms ease;
         }
 
-        .calsmoving-review__social {
+        .mammothmoving-review__social {
             visibility: hidden;
 
             a{
-                @apply text-gray;
+                @apply text-base;
                 text-decoration: none;
                 display: inline-block;
                 margin-top: 13px;
@@ -110,7 +110,7 @@
             }
         }
 
-        .calsmoving-review__name {
+        .mammothmoving-review__name {
             position: relative;
 
             &::before {
@@ -136,12 +136,12 @@
 
         &:hover {
 
-            .calsmoving-review__img {
+            .mammothmoving-review__img {
                 -webkit-filter: grayscale(0);
                 filter: grayscale(0);
             }
 
-            .calsmoving-review__social {
+            .mammothmoving-review__social {
                 a {
                     position: relative;
                     visibility: visible;
@@ -161,7 +161,7 @@
                 }
             }
 
-            .calsmoving-review__name {
+            .mammothmoving-review__name {
                 &::before {
                     width: 100%;
                 }
@@ -172,8 +172,8 @@
     }
 }
 
-.calsmoving-review_v4, .calsmoving-review_v5{
-    .calsmoving-review__img {
+.mammothmoving-review_v4, .mammothmoving-review_v5{
+    .mammothmoving-review__img {
         transition: all .35s ease;
         &:hover {
             transform: scale(1.04);

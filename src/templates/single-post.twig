@@ -1,0 +1,17 @@
+{% extends "base.twig" %}
+
+{% block content %}
+{% set category = fn('get_the_category', post.ID) %}
+{% set cat_link = fn('get_category_link',category[0].term_id) %}
+{% set tags = fn('get_the_tags', post.ID) %}
+<section class="flex flex-row items-center mightymovers-subbanner v1 section-spacing relative lg:min-h-[350px]" style=" background-image:url('/wp-content/uploads/2025/12/blog-bg.jpg');  background-color: #205fab;background-repeat:no-repeat;background-size:cover;background-position:bottom center">
+	<div class="overlay" style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;z-index: 1;background:rgba(0, 44, 56, 0.7)"></div>
+	<div class="container mx-auto text-center relative z-[1]">
+		<h1 class="text-xl font-header text-white text-center">
+			{{post.title}}</h1>
+	</div>
+</section>
+<div class="">
+	{{ post.content }}
+</div>
+{% endblock %}

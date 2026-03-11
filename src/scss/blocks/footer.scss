@@ -1,7 +1,40 @@
-.calsmoving-footer, .calsmoving-footer-copyright {
-    ul {
-        list-style: none;
-        padding-left: 0;
-        line-height: 1.2;
+
+    .mammothmoving-footer, .mammothmoving-footer-copyright {
+        @apply bg-gray;
+        ul {
+            list-style: none;
+            padding-left: 0;
+            line-height: 1.2;
+        }
+
+        ul.link li{
+            text-wrap: nowrap;
+            display: inline;
+            
+        }
+
+        @screen lg {
+            ul.link li{
+                text-wrap: nowrap;
+                display: block;
+            }
+        }
+    
+        .full-list-area::after {
+                content: url(/wp-content/uploads/2023/11/arrow-right.svg);
+                position: relative;
+                left: 10px;
+                width:9px;
+            }
+    
+    
+            nav ul li{
+                word-break: break-all !important;
+            }
+
+        .address p{
+            color: #fff !important
+        }    
     }
-}
+
+    

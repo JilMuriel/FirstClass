@@ -109,7 +109,24 @@ class StarterSite extends Timber\Site {
 		$context['stuff'] = 'I am a value set in your functions.php file';
 		$context['notes'] = 'These values are available everytime you call Timber::context();';
 		$context['menu']  = new Timber\Menu('Main menu');
+		$context['posts']    = Timber::get_post();
 		$context['site']  = $this;
+		$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+		$bargs = array(
+			'post_type' => 'post',
+			'posts_per_page' => 9,
+			'paged' => $paged
+		);
+		$fposts = array(
+			'post_type' => 'post',
+			'posts_per_page' => 2,
+			'post__in' => array(4555,1168),
+			'paged' => $paged
+		);
+		$context['blogposts'] = new Timber\PostQuery($bargs);
+		$context['fposts'] = new Timber\PostQuery($fposts);
+		$context['site']  = $this;
+		$context['blog_right'] = Timber::get_widgets('blog_right_1');
 		return $context;
 	}
 
@@ -277,19 +294,19 @@ add_action( 'enqueue_block_assets', 'enqueuing_editor_styling' );
  * @param   bool   $is_preview True during AJAX preview.
  */
 // blocks render
-function calsmoving_blocks( $categories, $post ) {
+function mammothmoving_blocks( $categories, $post ) {
 	return array_merge(
 		$categories,
 		array(
 			array(
-				'slug' => 'calsmoving-blocks',
-				'title' => __( 'calsmoving Blocks' ),
+				'slug' => 'mammothmoving-blocks',
+				'title' => __( 'mammothmoving Blocks' ),
 			),
 		)
 	);
 }
 
-add_filter( 'block_categories_all', 'calsmoving_blocks', 10, 2);
+add_filter( 'block_categories_all', 'mammothmoving_blocks', 10, 2);
 function block_acf_init()
 {
     $blocks = require(__DIR__.'/blocks.php');
@@ -357,10 +374,25 @@ $menu[$position] = array(
 }
 
 // Defer js scripts
-function defer_parsing_of_js( $url ) {
-    if ( is_user_logged_in() ) return $url; //don't break WP Admin
-    if ( FALSE === strpos( $url, '.js' ) ) return $url;
-    if ( strpos( $url, 'jquery.js' ) ) return $url;
-    return str_replace( ' src', ' defer src', $url );
-}
-add_filter( 'script_loader_tag', 'defer_parsing_of_js', 10 );
+// function defer_parsing_of_js( $url ) {
+//     if ( is_user_logged_in() ) return $url; //don't break WP Admin
+//     if ( FALSE === strpos( $url, '.js' ) ) return $url;
+//     if ( strpos( $url, 'jquery.js' ) ) return $url;
+//     return str_replace( ' src', ' defer src', $url );
+// }
+// add_filter( 'script_loader_tag', 'defer_parsing_of_js', 10 );
+
+add_action('admin_head', 'widget_sidebar_fix');
+function widget_sidebar_fix() {
+	echo '<style>
+	.edit-post-layout .interface-interface-skeleton__sidebar {
+	min-width: 520px !important;
+	}
+	.edit-post-layout .interface-interface-skeleton__sidebar .interface-complementary-area__fill {
+			min-width: 520px !important;
+	}
+	.edit-post-layout .interface-interface-skeleton__sidebar .interface-complementary-area__fill .editor-sidebar {
+		width:100% !important;
+	}
+	</style>';
+	}

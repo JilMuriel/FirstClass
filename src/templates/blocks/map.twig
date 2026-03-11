@@ -12,13 +12,93 @@
   SupportsMultiple: true
 #}
 
-<section class="calsmoving-map calsmoving-h__800 flex flex-row justify-center items-center">
-  <div class="w-full relative text-center">
-    {% if fields.description %}
-    <div class="location-wrapper w-fit mx-auto bg-primary p-8 rounded-b-xl">
-      <h3 class='text-2xl text-white p-4 mb-4'>{{ fields.description }}</h3>
-    </div>
-    {% endif %}
-    {{ fields.map_embed }}
-  </div>
+<section class="mammothmoving-imagetext right section-spacing  bg-[#F8F8F8] ">
+	<article class="container flex flex-col items-center justify-between mx-auto lg:flex-row gap-[30px]">
+		<div class="relative w-full h-[516px] mt-8 rounded-[8px] shadow lg:mt-0 lg:w-5/12 image-wrap shadow-lg overflow-hidden">
+			{{ fields.map_embed }}
+		</div>
+		<div class="w-full lg:w-6/12">
+			<h2 class="leading-[55px] text-[#333333] font-bold uppercase md:mb-[40px] text-[30px] md:text-[40px] text-center md:text-left">Areas we serve</h2>
+			<!-- Features -->
+			<div class="flex gap-[32px] mt-4 mb-[40px] text-[#1A1A1A]">
+				<div class="max-w-[420px] flex flex-col md:flex-row flex-wrap gap-[16px]">
+					<span class="flex text-[18px] front-bold items-center gap-2 px-[16px] py-[14px] rounded-[10px] border border-[#E4E4E4]">
+						<img src="/wp-content/uploads/2026/03/house-building-1-4.png" alt="">
+						Altamonte Springs
+					</span>
+					<span class="flex text-[18px] front-bold items-center gap-2 px-[16px] py-[14px] rounded-[10px] border border-[#E4E4E4]">
+						<img src="/wp-content/uploads/2026/03/house-building-1-4.png" alt="">
+						Boynton Beach
+					</span>
+					<span class="flex text-[18px] front-bold items-center gap-2 px-[16px] py-[14px] rounded-[10px] border border-[#E4E4E4]">
+						<img src="/wp-content/uploads/2026/03/house-building-1-4.png" alt="">
+						North Sarasota
+					</span>
+					<span class="flex text-[18px] front-bold items-center gap-2 px-[16px] py-[14px] rounded-[10px] border border-[#E4E4E4]">
+						<img src="/wp-content/uploads/2026/03/house-building-1-4.png" alt="">
+						New Port Richey
+					</span>
+					<span class="flex text-[18px] front-bold items-center gap-2 px-[16px] py-[14px] rounded-[10px] border border-[#E4E4E4]">
+						<img src="/wp-content/uploads/2026/03/house-building-1-4.png" alt="">
+						Altamonte Springs
+					</span>
+					<span class="flex text-[18px] front-bold items-center gap-2 px-[16px] py-[14px] rounded-[10px] border border-[#E4E4E4]">
+						<img src="/wp-content/uploads/2026/03/house-building-1-4.png" alt="">
+						Boynton Beach
+					</span>
+					<span class="flex text-[18px] front-bold items-center gap-2 px-[16px] py-[14px] rounded-[10px] border border-[#E4E4E4]">
+						<img src="/wp-content/uploads/2026/03/house-building-1-4.png" alt="">
+						North Sarasota
+					</span>
+					<span class="flex text-[18px] front-bold items-center gap-2 px-[16px] py-[14px] rounded-[10px] border border-[#E4E4E4]">
+						<img src="/wp-content/uploads/2026/03/house-building-1-4.png" alt="">
+						New Port Richey
+					</span>
+				</div>
+
+			</div>
+
+			<button class="mt-6 min-w-[190px] mt-0 text-[16px] py-[19.5px] px-[27.5px] font-bold text-white bg-red rounded-[5px]">
+				View All Areas
+			</button>
+		</div>
+	</article>
 </section>
+
+
+{# <section class="px-[20px] py-[60px] md:py-[90px] lg:py-[120px] bg-[#F8F8F8]">
+	<div class="container flex flex-col mx-auto md:flex-row md:space-x-6">
+		<div class="w-full overflow-hidden rounded-md map lg:w-4/12 h-[515px]">
+			{{ fields.map_embed }}
+		</div>
+		<div class="flex flex-col w-full mt-6 lg:w-4/12 lg:mt-0">
+			{% if fields.weather_embed %}
+				<div class="flex flex-col items-center w-full mb-2 space-y-4 border-2 rounded-lg border-lightgray lg:py-8 lg:px-16">
+					{{ fields.weather_embed }}
+				</div>
+			{% endif %}
+
+			{% if fields.area_stats.title  %}
+				<div class="flex flex-col w-full mb-2 border-2 rounded-lg border-lightgray">
+					<p class="px-4 py-2 mb-2 text-base border-b-2 text-dark border-b-lightgray">{{ fields.area_stats.title }}</p>
+					{% if fields.area_stats.stats %}
+						{% for item in fields.area_stats.stats %}
+							<div class="grid justify-between grid-cols-2 px-4 pb-2 ">
+								<p class="mb-0 text-base text-dark">{{ item.title }}</p>
+								<p class="mb-0 text-base text-right text-dark">{{ item.description }}</p>
+							</div>
+						{% endfor %}
+					{% endif %}
+
+					<a href="{{ fields.area_stats.link.url }}" target="{{ fields.area_stats.link.target }}" class="px-4 py-2 mb-0 text-sm text-right border-t-2 hover:text-primary text-dark border-t-lightgray">
+						{{ fields.area_stats.link.title }}
+					</a>
+				</div>
+			{% endif %}
+
+		</div>
+	</div>
+</section>
+
+
+<section class="px-[20px] py-[60px] md:py-[90px] lg:py-[120px] bg-[#F8F8F8]"></section> #}

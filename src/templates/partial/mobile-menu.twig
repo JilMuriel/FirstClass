@@ -1,47 +1,59 @@
-<div
-    class="mobile-icon-wrapper relative flex items-center h-14 w-16 justify-center {% if global.header_version == 'ver2' %}ml-auto{% endif %}">
-    <div class="mobile-icon"></div>
+<div class="bg-primary px-[18px] py-[6px] rounded-md ml-auto">
+	<div class="mobile-icon-wrapper relative flex items-center h-14 w-16 justify-center {% if global.header_version == 'ver2' %}ml-auto{% endif %}">
+		<div class="mobile-icon"></div>
+	</div>
 </div>
-<div class="mobile-menu-wrap w-auto flex flex-col md:justify-around items-center ml-auto absolute z-20">
-    {# mobile icon #}
+<div class="mobile-menu-wrap w-auto ml-auto absolute z-20 overflow-hidden">
+		{% if menu %}
+			<nav class="nav relative p-0 mt-10 mb-8 mg:mb-0 lg:mb-0"> 
+				<ul class="flex flex-col items-start">
+				{% for item in menu.items %}
+					<li class="{{ item.classes | join(' ') }} flex flex-row items-center nav-item whitespace-no-wrap text-xl md:text-lg mb-4">
+						{% if item.children %}
+							{# Menu with subcategories Level 1 #}
+							<a class="nav-link top-menu letter-spacing-1 relative text-lg"  target="{{ item.target }}" href="{{ item.link }}">
+								{{ item.title }}
+							</a><img src="/wp-content/uploads/2025/03/angle-right-mobile-menu-1.svg" class="injectable icon-dropdown w-4 h-4 fill-white ml-6 inline-block">
+							<ul class='drop-menu absolute top-0 -mt-1'>
+								<div class="submenu-wrapper hover:cursor-pointer flex flex-row items-center relative mb-6">
+									<img src="/wp-content/uploads/2025/03/mobile-menu-angle-left.svg" class="injectable w-4 h-4 menuback fill-white mr-2 inline-block"><span class="text-white font-body font-medium text-lg">{{ item.title }}</span>
+								</div>
+								{% for child in item.children %}
+									<li class="flex flex-row items-center nav-item whitespace-no-wrap text-xl md:text-lg mb-4">
+										{% if child.children %}
+                                        	{# Menu with subcategories Level 2 #}
+                                            
+											<a class="nav-link-has-children top-menu letter-spacing-1 relative" target="{{ child.target }}" href="{{ child.link }}">
+												<span class="text-white font-body font-medium text-lg">{{ child.title }}</span>
+											</a><img src="/wp-content/uploads/2025/03/angle-right-mobile-menu-1.svg" class="icontwo w-4 h-4 fill-white ml-6 inline-block mt-3">
+                                            
 
-    {# menu container #}
-    {% if menu %}
-    <nav class="nav relative mt-[4rem] md:mt-4 mb-8 mg:mb-0 pr-10 lg:mb-0">
-        <ul class="flex flex-col items-start">
-            {% for item in menu.items %}
-            <li
-                class="{{ item.classes | join(' ') }} flex flex-row items-center nav-item  whitespace-no-wrap text-xl md:text-lg mb-4">
-                {% if item.children %}
-                <a class="nav-link top-menu uppercase letter-spacing-1 relative" href="{{ item.link }}"
-                    target="{{ item.target }}"><span>{{ item.title }}</span></a><img
-                    src="{{ site.theme.link }}/images/icons/angle-right.svg" title="Arrow Right" alt="Arrow Right"
-                    class="injectable icon-dropdown w-4 h-4 fill-secondary ml-2 inline-block">
-                <ul class='drop-menu absolute top-0 -mt-1'>
-                    <li class="submenu-wrapper hover:cursor-pointer flex flex-row items-center relative mb-6">
-                        <img src="{{ site.theme.link }}/images/icons/angle-left.svg" title="Arrow Left" alt="Arrow Left"
-                            class="injectable w-4 h-4 menuback fill-secondary mr-2 inline-block"><span
-                            class="uppercase">{{ item.title }}</span></li>
-                    {% for child in item.children %}
-                    <li class="nav-drop-item text-xl md:text-xl mb-4">
-                        <a href="{{ child.link }}" target="{{ child.target }}">{{ child.title }}</a>
-                    </li>
-                    {% endfor %}
+											<ul class='drop-menu2 absolute top-0 -mt-1'>
+                                            <div class="submenu-wrapper2 hover:cursor-pointer flex flex-row items-center relative mb-6">
+									     <img src="/wp-content/uploads/2025/03/mobile-menu-angle-left.svg" class="injectable w-4 h-4 menuback fill-white mr-2 inline-block"><span class="text-white font-body font-medium text-lg">{{ child.title }}</span>
+								    </div>
+												{% for child2 in child.children %}
+													<li class="dropdown-link pb-1">
+														<a class="nav-link letter-spacing-1 text-white font-medium text-lg" href="{{ child2.link }}">{{ child2.title }}</a>
+													</li>
+												{% endfor %}
+											</ul>
 
-                </ul>
-                {% else %}
-                <a class="nav-link uppercase letter-spacing-1" href="{{ item.link }}"
-                    target="{{ item.target }}">{{ item.title }}</a>
-                {% endif %}
-            </li>
-            {% endfor %}
-        </ul>
-    </nav>
-    {% endif %}
-    <div class="menu-social flex flex-row mt-12 md:mt-6" role="region">
-        {% for social in global.global.social %}
-        <a href="{{ social.link.url}}"><img class="injectable h-8 mr-6" src="{{ social.icon.url }}"
-                alt="{{ social.icon.alt }}" title="social.icon.title"></a>
-        {% endfor %}
-    </div>
+										{% else %}
+                                        {# Menu without subcategories Level 2 #}
+											<a class="letter-spacing-1 text-white font-body font-medium text-lg" href="{{ child.link }}">{{ child.title }}</a>
+										{% endif %}
+									</li>
+								{% endfor %}
+							</ul>
+						{% else %}
+							{# Menu without subcategories Level 2 #}
+							<a class="nav-link letter-spacing-1 text-white font-body font-medium text-lg" target="{{ item.target }}" href="{{ item.link }}">{{ item.title }}</a>
+						{% endif %}
+					</li>
+				{% endfor %}
+		
+			</ul>
+		</nav>
+		{% endif %}
 </div>

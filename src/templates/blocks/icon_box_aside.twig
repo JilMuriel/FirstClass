@@ -11,55 +11,59 @@
   SupportsMode: true
   SupportsMultiple: true
 #}
+{% if fields.icon_version == 'ver2' %}
+<section class="mammothmoving-iconboxaside v2 section-spacing bg-white {{ block.className }}">
+	<div class="w-full px-8 lg:px-0 md:w-[90%] mx-auto flex flex-col lg:flex-row lg:space-x-24 items-center justify-between">
 
-<section class="calsmoving-iconboxaside section-spacing bg-white {{ block.className }}">
-	<div class="container mx-auto flex flex-row flex-wrap">
-		<div class="content-box w-full lg:w-4/12">
-			{% if fields.upper_title and fields.title %}
-			<div class="flex flex-col text-center lg:text-left pb-1 mb-4 lg:mb-12">
-				<h3 class="font-header tracking-wider text-gray uppercase mb-4">{{ fields.upper_title }}</h3>
-				<h2 class="font-header text-4xl lg:text-5xl">{{ fields.title}}</h2>
-			</div>
-			{% else %}
-			{% if fields.upper_title %}
-			<h3 class="font-header tracking-wider text-gray uppercase mb-2">{{ fields.upper_title }}</h3>
-			{% endif %}
-			{% if fields.title %}
-			<h2 class="font-header text-4xl mb-8">{{ fields.title}}</h2>
-			{% endif %}
-			{% endif %}
-			<div
-				class="md:w-11/12 content-wrap leading-relaxed flex text-center mx-auto lg:ml-0 lg:text-left flex-col w-full">
-				{{fields.content}}
-				{% if fields.button %}
-				<a href="{{fields.button.url}}" class="hidden lg:block btn btn-primary mt-4">{{fields.button.title}}</a>
-				{% endif %}
-			</div>
+		<div class="w-full lg:w-5/12 order-2 lg:order-1 mt-8 lg:mt-0">
+			<figure>
+				<img src="{{ fields.map.url }}" class="img-responsive">
+			</figure>
 		</div>
+		<div class="w-full lg:w-7/12 order-1 lg:order-2">
+		<div class="flex flex-row mb-4 mt-4 justify-center lg:justify-start"><span class="mm-icon-wh"></span></div>
+		{% if fields.title %}
+			<h2 class="font-tagline mb-4 text-white text-[32px] leading-[35px] lg:text-xl text-center lg:text-left">{{ fields.title}}</h2>
+		{% endif %}
+		<div class="desc text-base text-white mb-8 text-center lg:text-left">
+			{{ fields.content }}
+		</div>
+
 		{% if fields.box %}
-		<div class="w-full lg:w-7/12 lg:ml-auto flex mt-8">
-			<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+			<div class="w-fit grid grid-cols-2  gap-y-2  mb-8">
 				{% for item in fields.box %}
-				<article class="text-center lg:text-left bg-white mx-auto" data-aos="fade-in" data-aos-offset="150"
-					data-aos-delay="{{loop.index}}50" data-aos-duration="2*{{loop.index}}50" data-aos-once="true">
-					{% if item.icon.url %}
-					<img src="{{ item.icon.url }}" class="injectable w-12 h-12 fill-primary mx-auto lg:ml-0 mb-4"
-						title="{{ item.icon.title}}" alt="{{ item.icon.alt}}">
-					{% endif %}
-					{% if item.title %}
-					<h3 class="text-2xl font-header mb-2">{{item.title}}
-					</h3>
-					{% endif %}
-					{% if item.description %}
-					<div class="text-normal leading-relaxed">{{item.description}}</div>
-					{% endif %}
-				</article>
+			    {% if item.service_area_link.url == '#' or  item.service_area_link.url is empty %}
+					<div class="flex flex-row items-center gap-2">
+						<img src="{{ site.theme.link }}/images/icons/marker.svg">
+						<h3 class="font-tagline text-white text-base lg:text-md hover:text-primary">{{item.service_area_link.title}}</h3>
+					</div>
+
+				{% else %}
+				<a href="{{item.service_area_link.url}}">
+					<div class="flex flex-row items-center gap-2">
+						<img src="{{ site.theme.link }}/images/icons/marker.svg">
+						{% if item.service_area_link.url is not empty %}
+						<h3 class="font-tagline text-white text-base lg:text-md hover:text-primary">{{item.service_area_link.title}}</h3>
+						{% endif %}
+					</div>
+				</a>
+				{% endif %}
 				{% endfor %}
-			</div>
+			</div>	
+		{% endif %}
+
+		<div class="desc text-base text-white mb-8 text-center lg:text-left">
+			{{ fields.bottom_content }}
 		</div>
-		{% endif %}
+
 		{% if fields.button %}
-		<a href="{{fields.button.url}}" class="block lg:hidden mx-auto btn btn-primary mt-4">{{fields.button.title}}</a>
+		<div class="flex justify-center lg:justify-start">
+				<a href="{{fields.button.url}}" class="btn btn-primary mt-4 !w-fit hover:!border-white">{{fields.button.title}}</a>
+		</div>			
 		{% endif %}
+		</div>
 	</div>
+
+
 </section>
+{% endif %}

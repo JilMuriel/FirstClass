@@ -1,0 +1,198 @@
+{#
+  Title: Tab
+  Description: Tab Section.
+  Category: formatting
+  Icon: clock
+  Keywords: about
+  Mode: edit
+  Align: left
+  PostTypes: page post
+  SupportsAlign: left right
+  SupportsMode: true
+  SupportsMultiple: true
+#}
+{% if fields.tab_version == 'ver1' %}
+
+<section class="mammothmoving-tab section-spacing bg-white {{ block.className }}">
+	<div class="container mx-auto">
+		<div class="grid  grid-col lg:grid-flow-col">
+		{% if fields.Tab_1_Header %}
+			<div id="tab1_header_wrap" style="margin: -1px 0 0 -1px;" class="border border-[#E6E6E6]">
+				<a class="tab_header" id="tab_1" data="1" href="{{ fields.Tab_1_Header_Link.url }}"><h2 class="p-4 font-header  text-secondary text-lg lg:text-xl    {% if fields.default_tab == 1 %} bg-secondary !text-white {% endif %}">{{ fields.Tab_1_Header }}</h2>
+				</a>
+			</div>
+		{% endif %}	
+		{% if fields.Tab_2_Header %}
+			<div  id="tab2_header_wrap" style=" margin: -1px 0 0 -1px;" class="border border-[#E6E6E6]">
+				<a href="{{ fields.Tab_2_Header_Link.url }}" class="tab_header" id="tab_2" data="2"><h2 class="p-4  font-header text-secondary text-lg lg:text-xl     {% if fields.default_tab == 2 %} bg-secondary !text-white {% endif %}">{{ fields.Tab_2_Header }}</h2></a>
+			</div>	
+		{% endif %}		
+		{% if fields.Tab_3_Header %}
+			<div  id="tab3_header_wrap" style=" margin: -1px 0 0 -1px;" class="border border-[#E6E6E6]">
+				<a href="{{ fields.Tab_3_Header_Link.url }}" class="tab_header" id="tab_3" data="3"><h2 class=" p-4  font-header text-secondary text-lg lg:text-xl     {% if fields.default_tab == 3 %} bg-secondary !text-white {% endif %}">{{ fields.Tab_3_Header }}</h2></a>
+			</div>	
+		{% endif %}					
+		</div>
+		
+	
+		<div class="p-4 content border-[#E6E6E6]  border-r border-l border-b " style=" margin: -1px 0 0 -1px;">
+			{% if fields.Tab_1_Header %}
+			<div id="content_1" class="content_table grid grid-cols-1 lg:grid-cols-3 gap-4 {% if fields.default_tab != 1 %} hidden {% endif %} ">
+				{% for table in fields.Tab_1_Content %}
+					<div class="border border-secondary">
+						<div class="header bg-secondary w-full text-center p-5">
+						{% if table.title %}
+							<h3 class="text-primary font-header mb-4 text-xl g:text-3xl">{{ table.title}} </h3>
+						{% endif %}	
+						{% if table.subtitle %}	
+							<h2 class="text-primary font-header  mb-4  lg:text-xl ">{{ table.subtitle}} </h2>
+						{% endif %}		
+						{% if table.bottom_subtitle %}	
+							<p class="text-md text-white font-menu">{{ table.bottom_subtitle}}</p>
+						{% endif %}		
+						{% if table.description %}
+							<p class="text-white text-[15px]">{{ table.description}}</p>
+						{% endif %}		
+						</div>
+						<div class="w-full p-4 mx-auto">
+							{{ table.tab_content}}
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+			{% endif %}	
+			{% if fields.Tab_2_Header %}
+			<div id="content_2" class="content_table grid grid-cols-1 lg:grid-cols-3 gap-4 {% if fields.default_tab != 2 %} hidden {% endif %}">
+				{% for table in fields.Tab_2_Content %}
+					<div class="border border-secondary">
+						<div class="header bg-secondary w-full text-center p-5">
+							<h3 class="text-primary font-header mb-4 text-xl g:text-3xl">{{ table.title}} </h3>
+							<h2 class="text-primary font-header  mb-4  lg:text-xl ">{{ table.subtitle}} </h2>
+							<p class="text-md text-white font-menu">{{ table.bottom_subtitle}}</p>
+							<p class="text-white text-[15px]">{{ table.description}}</p>
+						</div>
+						<div class="w-full p-4 mx-auto">
+							{{ table.tab_content}}
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+			{% endif %}	
+			{% if fields.Tab_3_Header %}
+			<div id="content_3" class="content_table grid grid-cols-1 gap-4 {% if fields.default_tab != 3 %} hidden {% endif %}">
+					{% for table in fields.Tab_3_Content %}
+					<div class="border border-secondary">
+						<div class="header bg-secondary w-full text-center p-5">
+							<h3 class="text-primary font-header mb-4 text-xl g:text-3xl">{{ table.title}} </h3>
+							<h2 class="text-primary font-header  mb-4  lg:text-xl ">{{ table.subtitle}} </h2>
+							<p class="text-md text-white font-menu">{{ table.bottom_subtitle}}</p>
+							<p class="text-white text-[15px]">{{ table.description}}</p>
+						</div>
+						<div class="w-full p-4 mx-auto">
+							{{ table.tab_content}}
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+			{% endif %}	
+		</div>
+	</div>
+</section>
+{% endif %}	
+
+{% if fields.tab_version == 'ver2' %}
+<section class="mammothmoving-tab section-spacing bg-white {{ block.className }}">
+	<div class="container mx-auto">
+			{% if fields.description  %}
+			<div class="mb-4">
+				{{ fields.description }}
+			</div>		
+			{% endif %}	
+			<div class="grid grid-cols-1 {% if fields.card_content|length == 3 %} lg:grid-cols-3  {% endif %} {% if fields.card_content|length == 2  %} lg:grid-cols-2  {% endif %}	 gap-4">
+				{% for table in fields.card_content %}
+					<div class="border border-secondary">
+						<div class="header bg-secondary w-full text-center p-5">
+						{% if table.title %}
+							<h3 class="text-primary font-header mb-4 text-xl g:text-3xl">{{ table.title}} </h3>
+						{% endif %}	
+						{% if table.subtitle %}	
+							<h2 class="text-primary font-header  mb-4  lg:text-xl ">{{ table.subtitle}} </h2>
+						{% endif %}		
+						{% if table.bottom_subtitle %}	
+							<p class="text-md text-white font-menu">{{ table.bottom_subtitle}}</p>
+						{% endif %}		
+						{% if table.description %}
+							<p class="text-white text-[15px]">{{ table.description}}</p>
+						{% endif %}		
+						</div>
+						<div class="w-full p-4 mx-auto">
+							{{ table.tab_content}}
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+</section>
+{% endif %}	
+
+
+{% if fields.tab_version == 'ver3' %}
+
+<section class="mammothmoving-tab section-spacing bg-white {{ block.className }}">
+	<div class="container mx-auto">
+		<div class="grid  grid-col lg:grid-flow-col">
+		{% if fields.Tab_1_Header %}
+			<div style=" margin: -1px 0 0 -1px;" class="border border-[#E6E6E6]">
+				<a class="tab" id="tab_1" data="1" href="#"><h2 class="p-4 font-header  text-lg lg:text-xl    bg-secondary text-white">{{ fields.Tab_1_Header }}</h2>
+				</a>
+			</div>
+		{% endif %}	
+		{% if fields.Tab_2_Header %}
+			<div style=" margin: -1px 0 0 -1px;" class="border border-[#E6E6E6]">
+				<a href="#" class="tab" id="tab_2" data="2"><h2 class="p-4  font-header text-secondary text-lg lg:text-xl   ">{{ fields.Tab_2_Header }}</h2></a>
+			</div>	
+		{% endif %}		
+		{% if fields.Tab_3_Header %}
+			<div style=" margin: -1px 0 0 -1px;" class="border border-[#E6E6E6]">
+				<a href="#" class="tab" id="tab_3" data="3"><h2 class=" p-4  font-header text-secondary text-lg lg:text-xl   ">{{ fields.Tab_3_Header }}</h2></a>
+			</div>	
+		{% endif %}					
+		</div>
+		
+	
+		<div class="p-4 content border-[#E6E6E6]  border-r border-l border-b " style=" margin: -1px 0 0 -1px;">
+			{% if fields.Tab_1_Header %}
+			<div id="content_1" class="content_table grid grid-cols-1">
+				{% for table in fields.Tab_1_Content %}
+						<div class="w-full p-4 mx-auto">
+							{{ table.tab_content}}
+						</div>
+				{% endfor %}
+			</div>
+			{% endif %}	
+			{% if fields.Tab_2_Header %}
+			<div id="content_2" class="content_table grid grid-cols-1 hidden">
+				{% for table in fields.Tab_2_Content %}
+						<div class="w-full p-4 mx-auto">
+							{{ table.tab_content}}
+						</div>
+				{% endfor %}
+			</div>
+			{% endif %}	
+			{% if fields.Tab_3_Header %}
+			<div id="content_3" class="content_table grid grid-cols-1 hidden">
+					{% for table in fields.Tab_3_Content %}
+						<div class="w-full p-4 mx-auto">
+							{{ table.tab_content}}
+						</div>
+				{% endfor %}
+			</div>
+			{% endif %}	
+		</div>
+	</div>
+</section>
+{% endif %}	
+
+
+
+

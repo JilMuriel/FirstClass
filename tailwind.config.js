@@ -4,12 +4,12 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      header: ['Oswald Bold'],
-      tagline: ['Montserrat Regular'],
-      subtitle: ['Montserrat Regular'],
-      menu: ['Montserrat Regular'],
-      button: ['Oswald Bold'],
-      body: ['Montserrat Regular'],
+      header: ['DMSans Bold', 'sans-serif'],
+      tagline: ['DMSans SemiBold', 'sans-serif'],
+      subtitle: ['DMSans Regular', 'sans-serif'],
+      menu: ['DMSans Bold', 'sans-serif'],
+      button: ['DMSans Bold', 'sans-serif'],
+      body: ['DMSans Regular', 'sans-serif'],
     },
     screens: {
       'xs': '343px',
@@ -35,25 +35,29 @@ module.exports = {
     },
     extend: {
       fontSize: {
-        sm: '0.875rem', //14px
-        'default': '1rem', //16px
-        xl: '1.25rem', //20px
-        '2xl': '1.50rem', //24px
-        '3xl': '1.81rem', //29px
-        '4xl': '1.87rem', //30px
-        '5xl': ['3.25rem', '4rem'], //52px
-        '6xl': ['4.25rem', '5.37rem'], //68px
+        sm:  ['14px','28px'],
+        base: ['16px','26px'],
+        md: ['18px','24px'],
+        lg: ['22px','28px'], 
+        xl: ['50px','60px'], 
+        '2xl': ['60px','65px'], 
+        '3xl': ['78px','80px'], 
       },
       colors: {
-        'primary': '#ECAE17',
-        'secondary': '#005281',
-        'accent': '#34dca1',
-        'header': '#00153e',
-        'base': '#333',
-        'gray': '#F4F4F4',
-        'light': '#f7f7f7',
-        'dark': '#333',
-        'white': '#ffffff'
+        'primary': '#ED1F24', //red
+        'secondary': '#4E4D4D', //blue
+        'yellow': '#FFEF0B',
+        'blue': '#0068A7',
+        'bluesecondary': '#0066A5',
+        'lighblue': '#3C89B9',
+        'lightgray': '#F4F4F4',
+        'gray': '#242830', 
+        'white': '#ffffff',
+        'bluetransparent': '#1D204A82',
+        'skyblue': '#4D94FE',
+        'darkblue' : '#0A1833',
+        'dark' : '#333333',
+        'red': '#EE4035'
       },
       padding: {
         '14': '3.5rem',
@@ -66,6 +70,8 @@ module.exports = {
         '16': '4rem',
         '20': '5rem',
         '24': '6rem',
+        '30': '1.875rem',
+        '38': '2.375rem',
       },
       height: {
         '300': '300px',

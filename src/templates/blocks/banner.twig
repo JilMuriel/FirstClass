@@ -1,7 +1,7 @@
 {#
   Title: Banner
   Description: Banner block
-  Category: calsmoving-blocks
+  Category: mammothmoving-blocks
   Icon: money
   Keywords: banner
   Mode: edit
@@ -13,144 +13,116 @@
 #}
 
 {% if fields.banner_version == 'ver1' %}
-<section
-	class="calsmoving-main-banner lg:h-[821px] w-full flex flex-col {{ block.className }} overflow-hidden"
-	{# Background settings #} {% if fields.banner.background %}
-	style="background-image: url('{{fields.banner.background}}'); background-size: cover; background-position: {{fields.banner.background_position}}; background-repeat: no-repeat;"
-	{% else %} style="background-color:{{fields.banner.color}};" {% endif %}>
-	{% if fields.options.overlay %}
-	{% if fields.options.overlay_color %}
-	<div class="overlay"
-		style="background-color:{{fields.options.overlay_color}}; opacity:{{fields.options.overlay_opacity}}; background-blend-mode: multiply;">
-	</div>
-	{% endif %}
-	{% if fields.options.overlay_gradient %}
-	<div class="overlay"
-		style="background:linear-gradient({{ fields.options.gradient_degree }}deg, {{ fields.options.color_1 }}, {{ fields.options.color_2 }}); opacity:{{fields.options.overlay_opacity}}; background-blend-mode: multiply;">
-	</div>
-	{% endif %}
-	{% endif %}
-	<div class="absolute z-10 w-full h-full">
-		<video playsinline="" autoplay="" loop="" muted="" style="height: 100%; width: 100%;  object-fit: cover;" >
-			<source src="/wp-content/uploads/2023/11/CalsMovie3-1.mp4" type="video/mp4">
-		</video>
-    </div>
-	<article
-		class="calsmoving-banner-content md:section-spacing  container mx-auto flex justify-center items-start px-1 relative z-20 text-white mt-24 {% if fields.banner.text_color %}text-light{% else %}text-dark{% endif %} text-center">
-		<div class="w-full text-center">
-			{% if fields.banner.tagline %}
-			<h5 class="text-2xl font-light uppercase mb-2">{{fields.banner.tagline}}</h5>
-			{% endif %}
-			{# Main title #}
-			{% if fields.banner.title %}
-			<h1 class="xl:w-10/12 text-3xl lg:text-6xl font-header mx-auto">
-				{{fields.banner.title }}</h1>
-			{% endif %}
-			{# Subtitle #}
-			{% if fields.banner.description %}
-			<p class="text-3xl lg:text-6xl font-header mb-8 text-primary mx-auto">{{fields.banner.description}}</p>
-			{% endif %}
-		</div>
-		{# Button wrap #}
-		{% if fields.banner.button %}
-		<div class="flex flex-col lg:flex-row flex-wrap">
-			{% for button in fields.banner.button %}
-			<a href="{{button.btn_link}}"
-				class="btn {{ button.button_style}} text-center md:text-left font-normal mb-6 {% if not loop.last %}lg:mr-4{% endif %} {% if button.ghost_version %}_light{% endif %}"
-				data-aos="fade-up" data-aos-offset="150" data-aos-delay="{{loop.index}}50"
-				data-aos-duration="2*{{loop.index}}50" data-aos-once="true">
-				<span class="flex flex-row items-center">
-					<img class='injectable w-5 h-5 mr-2 fill-inherit' src="{{button.icon.url}}"
-						title="{{ button.icon.title }}" />
-					{{ button.btn_label }}
-				</span>
-			</a>
-			{% endfor %}
-		</div>
-		{% endif %}
-		{# Form #}
-		{% if fields.banner.form  %}
-		<form
-			class="baner-form{% if fields.banner.form_style == 'ghost' %}-ghost{% elseif fields.banner.form_style == 'underline'%}-underline{% endif %} md:w-8/12 lg:w-6/12 mt-2">
-			{{fn('do_shortcode', fields.banner.form|striptags)}}
-		</form>
-		{% endif %}
-	</article>
-	<div class="w-full opacity-90 bg-secondary h-full lg:h-[396px] relative z-20 mt-[50px] lg:p-16">
-		<div class="container flex flex-col lg:flex-row mx-auto">
-			<div class="lg:w-4/12">
-				<h2 class="text-6xl text-primary font-header">Get A Free Quote</h2>
-				<p class="text-white">Lorem ipsum dolor sit eiusmod, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+	<section class="flex flex-col items-center w-full h-full mammothmoving-main-banner v1 lg:px-10" {{ block.className }} {# Background settings#} style="background-image:  linear-gradient(to right, rgba(10, 24, 51, 0.9), rgba(10, 24, 51, 0.4)), url('/wp-content/uploads/2025/11/Banner.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center">
+		<div class="overlay" style="background: linear-gradient(
+															to left,
+															rgba(237, 31, 36, 0.3) 0%,
+															#ED1F24 61%,
+															#ED1F24 100%
+														);"></div>
+		<article class="mammothmoving-banner-content md:section-spacing container mx-auto w-full h-full flex flex-col lg:flex-row items-center relative z-5 md:mt-auto  !pt-[40px] !pb-[40px] md:!pt-[50px] md:!pb-[50px] lg:min-h-[450px]">
+			<div class="w-full lg:w-7/12">
+				{% if fields.banner.title or fields.banner.description %}{% endif %}
+				{# Main title #}
+				<div class="flex flex-row justify-center lg:justify-start">
+					<span class="mm-icon-wh"></span>
+				</div>
+				{% if fields.banner.title %}
+					<h1 class="text-xl text-center text-white font-header lg:text-left">
+						{{fields.banner.title }}</h1>
+				{% endif %}
+
+				{# Subtitle #}
+				{% if fields.banner.sub_title %}
+					<div class="w-full lg:w-[85%] text-base mb-4 mt-4 text-white text-center lg:text-left">{{fields.banner.sub_title}}</div>
+				{% endif %}
+
+				{# Button wrap #}
+
+
+				{% if fields.banner.button_1 %}
+					<div class="flex flex-col mt-6 mb-6 space-y-4 md:flex-row md:space-x-3 md:space-y-0">
+						<a href="{{ fields.banner.button_1.url }}" class="btn btn-gray text-center !w-fit mx-auto !lg:w-full lg:ml-0" target="{{ fields.banner.button_1.target }}">
+							<span>
+								{{ fields.banner.button_1.title }}
+							</span>
+						</a>
+					</div>
+				{% endif %}
+
+
 			</div>
-			<div class="lg:w-8/12 lg:pl-12">
-				{{fn('do_shortcode', '[fluentform id="10"]' )}}
-			</div>
-		<div>
-	</div>
-</section>
+			{% if fields.banner.embed_form %}
+				<div class="relative w-full placeholder lg:w-5/12 lg:pl-12">
+					<div class="px-4 lg:px-10 pt-6 lg:pb-6 rounded-lg bg-[#333333]/70">
+						<p class="font-header  text-[32px] text-center text-white mb-6">Get A Free Estimate</p>
+						{{fn('do_shortcode', '[brb_collection id=7854]')}}
+						<div class="">{{fn('do_shortcode', fields.banner.embed_form)}}</div>
+					</div>
+				</div>
+			{% endif %}
+
+		</article>
+	</section>
 {% endif %}
 {# –––––––––––––––– BANNER VERSION 1 END –––––––––––––––– #}
 
 {% if fields.banner_version == 'ver2' %}
-<section
-	class="calsmoving-main-banner section-spacing h-full {% if fn('is_front_page') %}md:h-700 lg:h-900{% else %}md:h-550 lg:h-550{% endif %} w-full flex flex-col items-center px-10 {{ block.className }}"
-	{# Background settings #} {% if fields.banner.background %}
-	style="background-image: url('{{fields.banner.background}}'); background-size: cover; background-position: {{fields.banner.background_position}}; background-repeat: no-repeat;"
-	{% else %} style="background-color:{{fields.banner.color}};" {% endif %}>
-	{% if fields.options.overlay %}
-	{% if fields.options.overlay_color %}
-	<div class="overlay"
-		style="background-color:{{fields.options.overlay_color}}; opacity:{{fields.options.overlay_opacity}}; background-blend-mode: multiply;">
-	</div>
-	{% endif %}
-	{% if fields.options.overlay_gradient %}
-	<div class="overlay"
-		style="background:linear-gradient({{ fields.options.gradient_degree }}deg, {{ fields.options.color_1 }}, {{ fields.options.color_2 }}); opacity:{{fields.options.overlay_opacity}}; background-blend-mode: multiply;">
-	</div>
-	{% endif %}
-	{% endif %}
-	<article
-		class="calsmoving-banner-content md:section-spacing container mx-auto w-full h-full flex flex-collg:flex-row justify-center items-center px-1 relative z-5 {% if fields.banner.text_color %}text-light{% else %}text-dark{% endif %} md:mt-auto text-left">
-		<div class="w-full lg:w-6/12">
-			{% if fields.banner.title or fields.banner.description %}{% endif %}
-			<div class="text-center md:text-left">
-				{% if fields.banner.tagline %}
-				<h5 class="text-2xl font-light uppercase mb-2">{{fields.banner.tagline}}</h5>
-				{% endif %}
+	<section class="mammothmoving-main-banner firstmate-bg home v2 h-full w-full flex flex-col items-center lg:px-10 pb-[32px] md:pb-[70px]" {{ block.className }} {# Background settings#} style="background-image: url('wp-content/uploads/2026/03/Banner.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center">
+		<article class="mammothmoving-banner-content md:section-spacing container mx-auto w-full h-full flex flex-col lg:flex-row items-center relative z-5 md:mt-auto mb-[10px] md:mb-[90px] !pt-[40px] md:!pt-[80px] lg:!pt-[170px]">
+			<div class="w-full lg:w-7/12">
+				{% if fields.banner.title or fields.banner.description %}{% endif %}
 				{# Main title #}
 				{% if fields.banner.title %}
-				<h1 class="xl:w-10/12 text-6xl font-header font-normal mb-6">
-					{{fields.banner.title }}</h1>
+					<h1 class="leading-none text-center font-bold text-[32px] md:text-left md:text-[65px] text-white">
+						{{fields.banner.title }}</h1>
 				{% endif %}
+
 				{# Subtitle #}
-				{% if fields.banner.description %}
-				<h2 class="text-xl leading-none font-normal mb-8">{{fields.banner.description}}</h2>
+				{% if fields.banner.sub_title %}
+					<p class="font-body text-[16px] mb-4 mt-4 text-white text-center lg:text-left">{{fields.banner.sub_title}}</p>
 				{% endif %}
+
+				{# Button wrap #}
+
 			</div>
-			{# Button wrap #}
-			{% if fields.banner.button %}
-			<div class="flex flex-col">
-				{% for button in fields.banner.button %}
-				<a href="{{button.btn_link}}"
-					class="btn {{ button.button_style}} text-center md:text-left font-normal mb-6 {% if button.ghost_version %}_light{% endif %}">
-					<span class="flex flex-row items-center">
-						<img class='injectable w-5 h-5 mr-2 fill-inherit' title="{{ button.icon.title }}"
-							alt="{{ button.icon.alt }}" src="{{button.icon.url}}">
-						{{ button.btn_label }}
-					</span>
-				</a>
-				{% endfor %}
-			</div>
+			{% if fields.banner.embed_form %}
+				<div class="relative w-full placeholder lg:w-5/12 lg:pl-12">
+					<div class="p-[24px] md:p-[35px] rounded-lg bg-[#D9EAF4D1]/70">
+						<p class="font-header font-bold text-[32px] text-center text-white mb-6">Get A Free Estimate</p>
+						{{fn('do_shortcode', '[brb_collection id=7854]')}}
+						<div class="">{{fn('do_shortcode', fields.banner.embed_form)}}</div>
+					</div>
+				</div>
 			{% endif %}
+		</article>
+		<div class="gap-[24px] md:section-spacing container mx-auto w-full h-full flex flex-col lg:flex-row items-center relative z-5 md:mt-auto flex items-center">
+			<div class="service-card p-[24px] rounded-[10px] text-white">
+				<p class="text-[22px] mb-[24px] font-bold text-white">
+					Residential Moving</p>
+				<p class="text-[16px] mb-[24px] font-normal text-white">Local Moving • Intrastate • International • Long Distance Movers</p>
+				<button class="flex itemx-center">Learn More
+					<img src="wp-content/uploads/2026/03/arrow-icon.png" class="h-[24px] w-[24px] ml-[10px]" /></button>
+					
+					
+			</div>
+			<div class="service-card p-[24px] rounded-[10px] text-white">
+				<p class="text-[22px] mb-[24px] font-bold text-white">
+					Residential Moving</p>
+				<p class="text-[16px] mb-[24px] font-normal text-white">Local Moving • Intrastate • International • Long Distance Movers</p>
+				<button class="flex items-center">Learn More
+					<img src="wp-content/uploads/2026/03/arrow-icon.png" class="h-[24px] w-[24px] ml-[10px]"/></button>
+			</div>
+			<div class="service-card p-[24px] rounded-[10px] text-white">
+				<p class="text-[22px] mb-[24px] font-bold text-white">
+					Residential Moving</p>
+				<p class="text-[16px] mb-[24px] font-normal text-white">Local Moving • Intrastate • International • Long Distance Movers</p>
+				<button class="flex items-center">Learn More
+					<img src="wp-content/uploads/2026/03/arrow-icon.png" class="h-[24px] w-[24px] ml-[10px]"/></button>
+			</div>
+
+
 		</div>
-		{# Form #}
-		{% if fields.banner.form  %}
-		<form
-			class="w-full lg:w-6/12 baner-form{% if fields.banner.form_style == 'ghost' %}-ghost{% elseif fields.banner.form_style == 'underline'%}-underline{% endif %} md:w-8/12 lg:w-6/12 mt-2">
-			<div class="max-w-[400px] lg:ml-auto">{{fn('do_shortcode', fields.banner.form|striptags)}}</div>
-		</form>
-		{% endif %}
-	</article>
-</section>
+	</section>
 {% endif %}
 {# –––––––––––––––– BANNER VERSION 2 END –––––––––––––––– #}

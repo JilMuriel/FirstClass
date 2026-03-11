@@ -1,37 +1,47 @@
 AOS.init();
 (function ($) {
   $(document).ready(function() {
-  
-  const logos = new Swiper('.logos', {
-    speed: 800,
-    duration: 2000,
-    centeredSlides: false,
-    centerInsufficientSlides: true,
-    slidesPerView: 5,
-    mode: 'horizontal',
-    grabCursor: true,
-    loop: true,
-    autoplay: true,
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },
-    breakpoints: {
-      // when window width is >= 320px
-      320: {
-        slidesPerView: 1,
+
+
+    const logos = new Swiper('.logos', {
+      speed: 800,
+      duration: 2000,
+      centeredSlides: false,
+      centerInsufficientSlides: true,
+      slidesPerView: 5,
+      mode: 'horizontal',
+      grabCursor: true,
+      loop: true,
+      autoplay: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
       },
-      // when window width is >= 480px
-      720: {
-        slidesPerView: 3,
+        // Navigation arrows
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
       },
-      // when window width is >= 640px
-      840: {
-        slidesPerView: 5,
-      }
-    },
-  });
+      breakpoints: {
+        // when window width is >= 320px
+        320: {
+          slidesPerView: 2,
+        },
+        // // when window width is >= 480px
+        720: {
+          slidesPerView: 4,
+        },
+        // // when window width is >= 640px
+        // 1024: {
+        //   slidesPerView: 4,
+        // },
   
+        // 1280: {
+        //   slidesPerView: 4,
+        // },
+  
+      },
+    });
 
   const slider = new Swiper('.slider', {
     speed: 800,
@@ -47,89 +57,140 @@ AOS.init();
       el: '.swiper-pagination',
       clickable: true,
     },
+    // Navigation arrows
+    navigation: {
+      nextEl: '.swiper-button-next-about',
+      prevEl: '.swiper-button-prev-about',
+    },
     breakpoints: {
       // when window width is >= 320px
       320: {
         slidesPerView: 1,
-      },
-      // when window width is >= 480px
-      720: {
-        slidesPerView: 2,
-      },
-      // when window width is >= 640px
-      840: {
-        slidesPerView: 3,
-      },
-      1280: {
-        slidesPerView: 4,
-      },
-      1520: {
-        slidesPerView: 5,
       }
     },
   });
+
+
+
+
   
 // Mobile menu enable
   // Multilevel menu functionality
-  $('.mobile-icon-wrapper').click(function(){
+  $('.mobile-icon-wrapper, .close-menu').click(function(){
     $('.menu-wrap').toggleClass('open');
     $('.mobile-icon').toggleClass('active');
     $('.mobile-menu-wrap').toggleClass('show');
     $('body').toggleClass('mobile-menu-opened');
     $('html').toggleClass('mobile-menu-opened');
 
+
+
     $('.icon-dropdown').click(function () {
-      $(this).next('ul').toggleClass('slide');
+      $(this).next('ul').toggleClass('slide cm-overflow-y-scroll cm-overflow-x-hidden');
       $('.nav').toggleClass('slide-back')
+      $('.btn-contact-mobile').removeClass('block')
+      $('.btn-contact-mobile').addClass('hidden')
     })
     $('.submenu-wrapper').click(function () {
       $('.nav').toggleClass('slide-back')
-      $('.drop-menu').removeClass('slide');
+      $('.drop-menu').removeClass('slide cm-overflow-x-hidden');
+      $('.btn-contact-mobile').removeClass('hidden')
+      $('.btn-contact-mobile').addClass('block')
     })
-  });
 
-  $('.counter').each(function () {
-    var $this = $(this),
-        countTo = $this.attr('data-count');
-    $({
-      countNum: $this.text()
-    }).animate({
-      countNum: countTo
-    }, {
-      duration: 4000,
-      easing: 'linear',
-      step: function step() {
-        $this.text(Math.floor(this.countNum));
-      },
-      complete: function complete() {
-        $this.text(this.countNum); //alert('finished');
-      }
-    });
+    $('.icontwo').click(function() {
+      $(this).next('ul').toggleClass('slide');
+      $('.drop-menu').addClass('slide-left');
+      $('.drop-menu').removeClass('cm-overflow-y-scroll cm-overflow-x-hidden');
+     
+    })
+  
+    $('.submenu-wrapper2').click(function() {
+      $('.drop-menu2').removeClass('slide');
+      $('.drop-menu').removeClass('slide-left');
+      $('.drop-menu').addClass('cm-overflow-y-scroll cm-overflow-x-hidden');
+
+    })
   });
 
     // FAQ animated
-    let sliderOpen = $('.openSlide');
-    sliderOpen.hide();
-    sliderOpen.eq(0).show();
-    $('.questions').on('click', function () {
-      let questions = $('.questions');
-      questions.next().hide("1000");
-      $('.active').find('.icon').removeClass("rotate-180");
-      let dataNo = $(this).attr('data-no');
-      let xy = $(this);
-      $('.content').each(function() {
-        let eachdatano = $(this).attr('data-no');
-        if (dataNo == eachdatano) {
-          xy.next().slideToggle();
-          xy.addClass('active');
-          xy.find('.icon').toggleClass("rotate-180");
+    // let sliderOpen = $('.openSlide');
+    // sliderOpen.hide();
+    // $('.questions').on('click', function () {
+
+    //   if($(this).hasClass('active')){
+    //     $(this).removeClass('active');
+    //     $(this).find('.icon').removeClass('rotate-180');
+    //     $(this).parent().removeClass("article-active");
+    //     $(this).removeClass("questions-active");
+    //     $(this).nextAll().hide();
+    //     return false;
+    //   }
+
+    //   let questions = $('.questions');
+    //   questions.nextAll().hide();
+    //   questions.parent().removeClass("article-active");
+    //   $('hr').remove();
+    //   questions.removeClass("questions-active");
+    //   questions.find('.icon').removeClass("rotate-180");
+    //   questions.removeClass('active');
+    //   let dataNo = $(this).attr('data-no');
+    //   console.log($(this));
+    //   let xy = $(this);
+    //   $('.content').each(function() {
+    //     let eachdatano = $(this).attr('data-no');
+    //     console.log(eachdatano);
+    //     if (dataNo == eachdatano) {
+    //       xy.parent().addClass("article-active"); 
+    //       xy.addClass("questions-active"); 
+    //       xy.nextAll().slideToggle();
+    //       xy.addClass('active');
+    //       xy.find('.icon').addClass("rotate-180");
+    //     }
+    //   })
+    // })
+
+
+    $('.mammothmoving-faq .openSlide').hide();
+
+    $(document)
+      .off('click.faq')
+      .on('click.faq', '.mammothmoving-faq .questions', function (e) {
+
+        e.preventDefault();
+        e.stopImmediatePropagation();
+
+        var $question = $(this);
+        var $article  = $question.closest('article');
+        var $content  = $article.children('.openSlide');
+
+        if (!$content.length) return;
+
+        if ($question.hasClass('active')) {
+
+          $question
+            .removeClass('active questions-active')
+            .find('.icon').removeClass('rotate-180');
+
+          $article.removeClass('article-active');
+          $content.stop(true, true).slideUp();
+
+        } else {
+
+          $question
+            .addClass('active questions-active')
+            .find('.icon').addClass('rotate-180');
+
+          $article.addClass('article-active');
+          $content.stop(true, true).slideDown();
         }
-      })
-    })
+
+      });
   });
 
+
    const convertImages = (query, callback) => {
-    const images = document.querySelectorAll(query);
+   const images = document.querySelectorAll(query);
   
     images.forEach(image => {
       fetch(image.src)

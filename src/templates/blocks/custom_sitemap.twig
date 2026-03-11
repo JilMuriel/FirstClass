@@ -12,17 +12,17 @@
   SupportsMultiple: true
 #}
 
-<section class="calsmoving-custom-sitemap section-spacing {{ block.className }}">
+<section class="mammothmoving-custom-sitemap section-spacing {{ block.className }}">
 	<div class="container mx-auto text-left">
 		{% if fields.icon %}
 			<img class='injectable font-4xl fill-primary w-12 h-12 mx-auto mb-8' alt="{{ fields.icon.alt }}" title="{{ fields.icon.title }}" src="{{ fields.icon.url }}" title="{{ fields.icon.title }}">
 			<span class="sr-only">{{fields.icon.title}}</span>
 		{% endif %}
 		{% if fields.title %}
-			<h2 class="font-header text-4xl lg:text-5xl mb-8">
+			<h2 class="font-tagline  text-dark text-[32px] leading-[35px] lg:text-xl text-center lg:text-left mb-4">
 				{{fields.title}}</h2>
 		{% endif %}
-		<div class="content-wrap mb-8 {% if fields.two_columns_layout %}w-full md:grid md:grid-cols-2 gap-6 text-left {% else %}flex flex-col mx-auto w-full lg:w-10/12{% endif %}">
+		<div class="content-wrap mb-8 {% if fields.two_columns_layout %}w-full md:grid md:grid-cols-2 gap-6 text-left {% else %}flex flex-col mx-auto w-full{% endif %}">
 		{% if fields.shortcode %}
 				{{fn('do_shortcode', fields.shortcode|striptags)}}
 				{% else %}

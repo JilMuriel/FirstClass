@@ -1,23 +1,25 @@
-.calsmoving-main-banner {
-    &.v4 {
-        .mobile-overlay{
-            position: absolute;
-            &::after {
-                content: '';
-                position: absolute;
-                background: rgba(255,255,255,.9);
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                z-index: 1;
-            }
-            @screen lg {
-                position: relative;
-                &::after {
-                    content: none;
-                }
-            }
+.mammothmoving-main-banner {
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+
+        &+.container {
+            position: relative;
+            z-index: 2;
         }
     }
+
+}
+
+.service-card {
+    position: relative;
+    background-image: url('/wp-content/uploads/2026/03/card-bg-1.png');
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
 }

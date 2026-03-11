@@ -1,38 +1,49 @@
-{# --------- VERSION 1 ------------- #}
-<section id="logoAndNav" class="v1 relative bg-light">
-	<div class="container mx-auto">
-		<!-- Nav -->
-		<div class="flex flex-row items-center py-4 z-20">
+<div class="2xl:px-0 mx-auto bg-lightblue py-0 lg:py-6">
+	<div class="container mx-auto relative">
+		<nav
+			class="flex flex-wrap lg:flex-nowrap items-center justify-between">
 			<!-- Logo -->
-			<div class="logo-wrapper mr-auto">
-				<a href="{{ site.link }}">
-					{% include 'partial/logo.twig' %}
-				</a>
+			<div class="w-full lg:w-auto flex items-center justify-evenly mx-auto lg:mx-0 lg:block py-2 lg:py-0  md:gap-x-10 lg:gap-x-0 overflow-hidden lg:overflow-visible">
+				<div class="logo-wrapper mr-auto sm:ml-0 sm:mb-0 flex justify-between items-center lg:gap-x-0">
+					<a href="{{ site.link }}">
+						{% include 'partial/logo.twig' %}
+					</a>
+				</div>
+
+				<div class="mobile-menu v1 inline-block lg:hidden z-[100]">
+					{% include 'partial/mobile-menu.twig'%}
+				</div>
+
 			</div>
 			<!-- End Logo -->
-			<div class="flex flex-row lg:flex-col z-10 lg:pr-0">
-
-				<div class="flex flex-row lg:flex-col items-center z-10 mr-auto lg:pr-0">
-					<div class="mobile-menu v1 inline-block lg:hidden">
-						{% include 'partial/mobile-menu.twig'%}
-					</div>
-					<!-- Navigation -->
-					<div class="desktop-menu v1 text-secondary hidden lg:inline-block ">
-						{% include 'partial/menu.twig'%}
-					</div>
-					<!-- End Navigation -->
-				</div>
-				<!-- End Navigation -->
+			<!-- Navigation -->
+			<div class="desktop-menu v1 text-secondary hidden lg:inline-block">
+				{% include 'partial/menu.twig'%}
 			</div>
-			{% if global.header.button %}
-			<a href="{{global.header.button.url}}" class="btn mx-auto xs:mr-0 {{global.header.button_version}}"><span
-					class="hidden ml-2 md:inline-block">{{global.header.button.title }}</span>
-					<img
-					class="injectable inline-block w-10 h-6 object-contain fill-inherit"
-					src="{{ global.header.mobile_icon.url}}" title="{{ global.header.mobile_icon.title }}"
-					alt="{{ globalheader.mobile_icon.alt }}"></a>
-			{% endif %}
-		</div>
-		<!-- End Nav -->
+			<!-- End Navigation -->
+			<div class="hidden lg:block">
+				<div class="flex items-center gap-[20px]">
+					<button>
+						<a class="h-[50px] min-w-[187px] px-[24px] py-[22px] bg-red flex items-center text-white text-[16px] font-bold rounded-[4px]">
+							Get A Free Quote
+						</a>
+					</button>
+					<button>
+						<a class="h-[50px] min-w-[187px] px-[24px] py-[22px] bg-blue text-white text-[16px] flex items-center gap-[10px] font-bold rounded-[4px]">
+							<img src="/wp-content/uploads/2026/03/phone-icon.png" class="h-[18px] w-auto">
+							(228) 641-9900
+						</a>
+					</button>
+					{# {% if global.header.button1 %}
+																																									<button>
+																																										<a target="{{ global.header.button1.target }}" href="{{ global.header.button1.url }}" class="btn btn-gray lg:!text-[13px] xl:!text-base uppercase">
+																																											{{ global.header.button1.title }}
+																																										</a>
+																																									</button>
+																																								{% endif %} #}
+
+				</div>
+			</div>
+		</nav>
 	</div>
-</section>
+</div>

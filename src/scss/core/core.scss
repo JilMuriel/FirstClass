@@ -1,10 +1,13 @@
 html {
     overflow-x: hidden;
+    font-family: 'DMSans', sans-serif;
 }
+
 body {
-    @apply bg-white font-body text-default text-base;
+    @apply bg-white font-body text-md text-dark;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    font-family: 'DMSans', sans-serif;
     opacity: 1;
     transition: .27s cubic-bezier(0.345, 0.545, 0.255, 1);
     animation: fade cubic-bezier(0.645, 0.45, 0.355, 1) .65s;
@@ -17,6 +20,7 @@ body {
             max-height: auto;
         }
     }
+
     @keyframes fade {
         from {
             opacity: 0;
@@ -25,6 +29,12 @@ body {
         to {
             opacity: 1;
         }
+    }
+}
+
+@screen lg {
+    body {
+        @apply text-base;
     }
 }
 

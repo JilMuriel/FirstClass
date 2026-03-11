@@ -1,4 +1,7 @@
-// EXTRAS
+.cm-overflow-x-hidden{
+    overflow-x: hidden;
+}
+
 .underline-primary {
     position: relative;
 
@@ -34,4 +37,259 @@
             @apply bg-primary/40;
         }
     }
+}
+
+.padding-bot-none{
+    padding-bottom: 0px !important;
+}
+.padding-top-none{
+    padding-top: 0px !important;
+}
+
+.sp-cpt-name{
+    @apply text-dark;
+    
+}
+
+.sp-list-posts {
+    @apply text-md;
+
+    a:hover{
+        @apply text-primary;
+    }
+
+    .children{
+       @apply ml-8 list-disc;
+    }
+}
+
+.mammothmoving-mapaside{
+    a{
+
+    
+        &:hover {
+            @apply text-primary;
+        }
+    }
+}
+
+.single-post {
+ .mammothmoving-simplecontent {
+    .content-wrap h2{
+        @apply text-[30px] leading-[30px] lg:text-[40px] lg:leading-[40px] mb-2;
+    }
+
+         a{
+        @apply text-primary underline underline-offset-4;
+
+            &:hover{
+                @apply text-dark underline underline-offset-4;
+            }
+        }
+ }
+}
+
+ #main nav ol.breadcrumb{
+    @apply ml-0 font-normal;
+
+
+    a{
+        
+        @apply text-[13px] text-dark font-body;
+
+        &:hover {
+            @apply text-primary no-underline;
+        }
+    }
+
+    @screen lg{
+        a{
+            @apply text-xl ;
+        }
+      
+    }
+
+    li::after{
+        @apply text-lighblue;
+    }
+
+   .active{
+     @apply text-[13px] text-lighblue font-bold;
+   }
+
+   @screen lg{
+     .active{
+            @apply text-xl ;
+        }
+  
+    }
+
+}
+
+.mammothmoving-imagetext.bgred{
+        @apply text-white;
+        background-image: linear-gradient(to top,#680002, #680002dc), url("/wp-content/uploads/2025/04/about-us-bg.jpg"); 
+        @screen md{
+            background-image: linear-gradient(to right,#680002, #680002dc, #68000292), url("/wp-content/uploads/2025/04/about-us-bg.jpg"); 
+        }
+
+        h2{
+            @apply text-white; 
+        }
+
+        a.btn{
+            @apply text-white
+        }
+
+}
+
+
+.mammothmoving-iconbox{
+
+    .icon-link{
+        &:hover{
+            div{
+                @apply bg-primary/60;
+
+                svg path{
+                    fill: #fff;
+                }
+            }
+        }
+    }
+}
+
+
+.mammothmoving-iconboxaside.v2 {
+    background:  linear-gradient(
+       to right,
+      rgba(78, 77, 77,0.94) 0%,
+      rgba(78, 77, 77,0.98) 49%,
+      rgba(78, 77, 77,0.98) 100%,
+    ),
+    url('/wp-content/uploads/2025/12/service-areas-bg.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+}
+
+.mammothmoving-faq.v2 {
+
+}
+
+.mammothmoving-testimonials.v1{
+    background: url('../images/reviews-bg.png'),#ED1F24; 
+    background-repeat: repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+
+
+
+.faq-down{
+    background: url('/wp-content/uploads/2025/12/arrow-down.svg');
+    width: 25px;
+    height: 25px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.rotate-180{
+    transform: rotate(180deg);
+}
+
+
+ .mm-icon-red{
+    background:url('../images/icons/mm-icon-red.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 24px;
+    height: 21px;
+    display: inline-block;
+    @apply mb-4;
+ }
+
+.mm-icon-wh{
+    background:url('../images/icons/mm-icon-white.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+     @apply mb-4;
+ }
+
+ .swiper-wrapper .swiper-slide-next{
+    border-right: 0px !important;
+ }
+
+// @screen md{
+// //  .swiper-wrapper .swiper-slide-next{
+// //     border-right: 1px solid #E4E4E4 !important;
+// //  }
+// // }
+
+// //    .swiper-wrapper .swiper-slide-active{
+// //            border-right: 1px solid #E4E4E4 !important;
+// //   }
+// //   .swiper-wrapper .swiper-slide-duplicate-prev{
+// //         border-left: 1px solid #E4E4E4 !important;
+// //   }
+
+.fading-border-box {
+
+  border-radius: 10px; /* */
+  border: 1px solid transparent; /* */
+  background-image: linear-gradient(to right, #E4E4E4, #E4E4E4, transparent); /* */
+  background-clip: border-box; /* */
+  background: 
+    linear-gradient(#ffffff, #ffffff) padding-box, 
+    linear-gradient(to right, #E4E4E4, #E4E4E4, transparent) border-box; 
+}
+
+.fading-border-box-left {
+
+  border-radius: 10px; /* */
+  border: 1px solid transparent; /* */
+  background-image: linear-gradient(to left, #E4E4E4, #E4E4E4, transparent); /* */
+  background-clip: border-box; /* */
+  background: 
+    linear-gradient(#ffffff, #ffffff) padding-box, 
+    linear-gradient(to left, #E4E4E4, #E4E4E4, transparent) border-box; 
+}
+
+.mammothmoving-progress{
+    .f-arrow{
+        transform: rotate(90deg);
+        height: 15px;
+    }
+}
+
+@screen lg{
+.mammothmoving-progress{
+        .f-arrow{
+            transform: rotate(0deg);
+            height: auto;
+        }
+    }
+}
+
+.mammothmoving-progress{
+    .second-arrow{
+         transform: rotate(90deg);
+         height: 15px;
+    }
+
+}
+
+@screen lg{
+.mammothmoving-progress{
+    .second-arrow{
+         transform: scaleY(-1) rotate(5deg);
+         height: auto;
+    }
+
+}
 }

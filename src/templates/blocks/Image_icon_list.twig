@@ -11,27 +11,27 @@
   SupportsMode: true
   SupportsMultiple: true
 #}
-
-<section class="calsmoving-imageiconlist section-spacing bg-white {{ block.className }}">
+{% if fields.banner_version == 'ver1' %}
+<section class="mammothmoving-imageiconlist section-spacing bg-white {{ block.className }}">
 	<div class="container mx-auto flex flex-row flex-wrap">
 		<div class="w-full lg:w-7/12 lg:ml-auto mt-8 lg:pr-12">
 			{% if fields.title %}
-			<h2 class="font-header text-5xl mb-8 text-secondary">{{ fields.title}}</h2>
+			<h2 class="font-header text-3xl lg:text-5xl mb-8 text-secondary text-center lg:text-left">{{ fields.title}}</h2>
 			{% endif %}
-			<p >Every employee gets a background check as well as being trained by our local leads before his/her first job. Our commitment is to be an efficient and customer-focused local moving service near you! We are prepared and ready to take on any task during your move.</p>
+			{% if fields.description %}
+			<p class="text-center lg:text-left">{{ fields.description }}</p>
+			{% endif %}
 				{% for item in fields.list %}
-				<article class="flex flex-col lg:flex-row lg:text-left lg:items-center bg-white mx-auto space-x-8"
+				<article class="flex flex-row lg:text-left items-center bg-white mx-auto space-x-8"
 					data-aos="fade-left" data-aos-offset="-350" data-aos-delay="{{loop.index}}50"
 					data-aos-duration="2*{{loop.index}}50" data-aos-once="true">
 					{% if item.icon.url %}
-					<figure class="lg:mb-0 lg:ml-0">
 						<img src="{{ item.icon.url }}" title="{{ item.icon.title }}" alt="{{ item.icon.alt }}"
 							class="injectable w-max h-auto fill-primary lg:ml-0">
-					</figure>
 					{% endif %}
 					<div class="content">
 						{% if item.title %}
-						<h3 class="text-4xl font-header text-secondary">{{item.title}}
+						<h3 class="text-xl g:text-4xl font-header text-secondary">{{item.title}}
 						</h3>
 						{% endif %}
 					</div>
@@ -39,12 +39,53 @@
 				{% endfor %}
 		</div>
 				
-		<div class="content-box w-full lg:w-5/12">
+		<div class="content-box w-full lg:w-5/12 mt-8 lg:mt-0">
 			{% if fields.image %}
-				<img class="w-[550px]" src="{{fields.image.url}}"
+				<img class="w-[219] lg:w-[400px] mx-auto" src="{{fields.image.url}}"
 					alt="{{fields.image.alt}}" title="{{fields.image.title}}">
 			{% endif %}
 		</div>
 	</div>
 </section>
-
+{% endif %}
+{% if fields.banner_version == 'ver2' %}
+<section class="mammothmoving-imageiconlist section-spacing bg-white {{ block.className }}">
+	<div class="w-full lg:w-1/2 absolute z-1 h-[450px] md:h-[400px] lg:h-[500px] left-0 bg-gray z-1">
+	</div>
+	<div class="hidden lg:block  w-full lg:w-1/2 absolute z-1 h-[500px] right-0 z-1" style="background:url('{{fields.image.url}}'); background-size:cover;background-repeat:no-repeat">
+	</div>
+	<div class="container  mx-auto flex flex-row flex-wrap relative z-20">
+		<div class="w-full lg:w-7/12 lg:ml-auto mt-8 lg:pr-60">
+			{% if fields.title %}
+			<h2 class="font-header text-center lg:text-left text-3xl lg:text-5xl mb-8 text-secondary">{{ fields.title }}</h2>
+			{% endif %}
+			{% if fields.description %}
+			<p >{{ fields.description}}</p>
+			{% endif %}
+				{% for item in fields.list %}
+				<article class="flex flex-row lg:text-left items-center mx-auto space-x-8"
+					data-aos="fade-left" data-aos-offset="-350" data-aos-delay="{{loop.index}}50"
+					data-aos-duration="2*{{loop.index}}50" data-aos-once="true">
+					{% if item.icon.url %}
+						<img src="{{ item.icon.url }}" title="{{ item.icon.title }}" alt="{{ item.icon.alt }}"
+							class="injectable fill-primary lg:ml-0 w-[36px] lg:w-max">
+					{% endif %}
+					<div class="content">
+						{% if item.title %}
+						<h3 class="text-xl g:text-4xl font-header text-secondary">{{item.title}}
+						</h3>
+						{% endif %}
+						{% if item.description %}
+						<p class="mt-2 mb-0">{{item.description}}</p>
+						{% endif %}
+					</div>
+				</article>
+				{% endfor %}
+		</div>
+		<div class="hidden lg:block content-box w-full lg:w-5/12">
+		</div>
+	</div>
+	<div class="block lg:hidden w-full h-[500px]" style="background:url('{{fields.image.url}}'); background-size:cover;background-repeat:no-repeat">
+	</div>
+</section>
+{% endif %}

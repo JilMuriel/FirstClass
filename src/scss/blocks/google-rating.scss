@@ -1,5 +1,132 @@
-.google-rating{
-    &_v1 {
-        
+
+
+
+.mammothmoving-testimonials{
+    .rpi-body.rpi-logo::before {
+        width: 28px;
+        height: 28px;
+        top: 6px;
+
+    }
+
+    .rpi-content .rpi-card-inner{
+        height: 258px;
+    }
+
+
+    .rpi .rpi-slider-prev::before,  .rpi .rpi-slider-next::after{
+         display: none !important;
+         opacity: 0 !important;
+    }
+    .rpi .rpi-slider-prev{
+        content: "";
+        background-image: url('/wp-content/uploads/2025/06/arrow-left-slider.svg');
+        background-repeat: no-repeat;
+        width: 60px;
+        height: 60px;
+        background-position: center;
+        position: absolute;
+        left: 48%;
+        transform: translate(-110%, 0);
+        bottom: -85px;
+        cursor: pointer;
+
+        &:hover{
+            background-image: url('/wp-content/uploads/2025/03/prev-btn.svg');
+            
+        }
+    }
+    .rpi .rpi-slider-next{
+        content: "";
+        background-image: url('/wp-content/uploads/2025/06/arrow-right-slider.svg');
+        background-repeat: no-repeat;
+        width: 60px;
+        height: 60px;
+        background-position: center;
+        position: absolute;
+        right: 49%;
+        transform: translate(104%, 0);
+        bottom: -85px;
+        cursor: pointer;
+
+        &:hover{
+            background-image: url('/wp-content/uploads/2025/03/next-btn.svg');
+            
+        }
+    }
+
+    .rpi-card-inner.rpi-logo::before{               
+        position: absolute;
+        top: 19px;
+        right: 22px;
+        width: 34px;
+        border-radius: 50%;
+        height: 34px;
+    }
+
+    .rpi .rpi-readmore{
+        @apply text-primary font-semibold capitalize;
+    }
+
+    .rpi .rpi-text{
+        @apply text-base text-dark;
+        margin-top: 40px;
+        height: 150px;
+        max-height: 150px;
+    }
+
+
+    .rpi-stars{
+        top: 12px;
+        position: relative;
+    }
+
+}
+
+
+.mammothmoving-testimonials.main-reviews {
+    .rpi .rpi-text{
+        margin-top: 0px !important;
+        max-height: 130px !important;
+    }
+
+    .rpi-stars{
+        top: 0px;
     }
 }
+
+.mammothmoving-html{
+        .rpi .rpi-text{
+            @apply text-md;
+        }
+        .rpi .rpi-url{
+            @apply text-primary font-header text-md;
+        }
+}
+
+.mammothmoving-main-banner{
+    .rplg{
+        @apply mb-6 mt-6;
+        .rplg-reviews{
+            .rplg-rating-count, .rating{
+                font-weight: 800 !important;
+            }
+
+            p {
+                @apply text-white text-base text-center;
+            }
+            .rating-template{
+                @apply justify-center
+            }
+        }
+
+    }
+}
+
+@media (max-width: 768px) {
+
+    .rplg .rplg-badge_left-fixed {
+        display: none;
+    }
+}
+

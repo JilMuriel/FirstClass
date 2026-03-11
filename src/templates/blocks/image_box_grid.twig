@@ -12,20 +12,17 @@
   SupportsMultiple: true
 #}
 
-<section class="calsmoving-imagebox section-spacing bg-secondary {{ block.className }}">
+<section class="mammothmoving-imagebox pt-[30px] pb-[30px] bg-secondary {{ block.className }}">
 	{% if fields.box %}
-	<div class="container mx-auto flex mt-8">
-		<div class="grid w-full grid-cols-2 lg:grid-cols-4 gap-8">
+	<div class="container mx-auto flex">
+		<div class="grid w-full grid-cols-2 lg:grid-cols-4 gap-8 items-center">
 			{% for item in fields.box %}
 			<article class="text-center mx-auto" data-aos="fade-up" data-aos-offset="150"
 				data-aos-delay="{{loop.index}}50" data-aos-duration="2*{{loop.index}}50" data-aos-once="true">
 				{% if item.image.url %}
-				<img src="{{ item.image.url }}" class="w-auto image-cover mx-auto"
-					title="{{ item.image.title }}" alt="{{ item.image.alt }}">
-				{% endif %}
-				{% if item.button.url %}
-				<a href="{{ item.button.url}}"
-					class="btn-primary flex items-center mx-auto font-medium uppercase text-primary fill-primary w-content tracking-wider text-center mb-4">{{item.button.title}}
+				<a href="{{ item.link.url}}" target="{{ item.link.target}}">
+						<img src="{{ item.image.url }}" class="w-auto image-cover mx-auto"
+							title="{{ item.image.title }}" alt="{{ item.image.alt }}">
 				</a>
 				{% endif %}
 			</article>

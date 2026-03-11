@@ -1,7 +1,7 @@
 {#
   Title: Text With Image
   Description: Text With Image on The Side
-  Category: calsmoving-blocks
+  Category: mammothmoving-blocks
   Icon: table-col-before
   Keywords: photo aside
   Mode: edit
@@ -14,71 +14,78 @@
 
 {% for imagetext in fields.text_with_image %}
 {% if imagetext.photo_align == 'right'  %}
-<section class="calsmoving-imagetext right section-spacing bg-white {{ block.className }}">
+{# <section class="mammothmoving-imagetext right section-spacing  bg-white {{ block.className }}"
+>
 	<article
-		class="container mx-auto flex flex-row-rverse flex-wrap justify-between overflow-hidden text-center md:text-left">
+		class="container mx-auto flex flex-col lg:flex-row justify-between  {% if imagetext.align_content %} items-center {% endif %}">
 		{% if imagetext.title or imagetext.subtitle or imagetext.content %}
 		<div
-			class="w-full {% if imagetext.column_layout %}md:w-7/12{% else %}md:w-5/12{% endif %} {% if imagetext.align_content %}my-auto {% else %}md:mb-0 mb-8{% endif %}  ">
-			<h2 class="font-header text-4xl lg:text-5xl mb-4">{{ imagetext.title}}</h2>
+			class="w-full {% if imagetext.column_layout %}lg:w-6/12{% else %}lg:w-5/12{% endif %} {% if imagetext.align_content %}my-auto {% else %}md:mb-0 mb-8{% endif %}   ">
+			<div class="flex flex-row justify-center lg:justify-start"><span class="mm-icon-red"></span></div>
+			{% if imagetext.title %}
+			<h2 class="font-tagline text-[32px] lg:text-xl mb-4 text-dark text-center lg:text-left">{{ imagetext.title}}</h2>
+			{% endif %}
 			{% if imagetext.subtitle %}
-			<h3 class="font-xl font-semibold mb-6">{{ imagetext.subtitle }}</h3>
+			<h3 class="mb-6 text-base font-semibold text-dark">{{ imagetext.subtitle }}</h3>
 			{% endif %}
 			{% if imagetext.content %}
-			<div class="font-normal leading-relaxed">{{ imagetext.content }}</div>
+			<div class="mb-8 text-center content lg:text-left">{{ imagetext.content }}</div>
 			{% endif %}
 			{% if imagetext.button %}
-			<a href="{{ imagetext.button.url}}"
-				class="btn btn-primary w-content inline-block tracking-wider font-medium text-center mb-4"><img
-					src="{{imagetext.icon.url}}" class="injectable inline-block fill-white h-6 w-6 mb-1 mr-2"
-					title="{{imagetext.icon.title}}" alt="{{ imagetext.icon.alt }}"><span
-					class='text-xl'>{{imagetext.button.title}}</span>
-			</a>
+			<div class="flex justify-center lg:justify-start">
+				<a href="{{ imagetext.button.url}}"
+					class="btn btn-primary !w-fit"><span>{{imagetext.button.title}}</span>
+				</a>
+			</div>	
 			{% endif %}
 		</div>
 		{% endif %}
+		<div class="w-full mt-8 lg:mt-0 {% if imagetext.column_layout %}lg:w-5/12{% else %}lg:w-6/12{% endif %} image-wrap relative">
 		{% if imagetext.photo %}
-		<figure
-			class="w-full {% if imagetext.column_layout %}md:w-4/12{% else %}md:w-6/12{% endif %} image-wrap relative">
-			<img class='md:min-h-[450px] responsive-image rounded-2xl object-cover' src="{{imagetext.photo.url}}"
-				title="{{imagetext.photo.title }}" alt="{{imagetext.photo.alt}}" data-aos="fade-left"
-				data-aos-offset="150" data-aos-delay="250" data-aos-duration="250" data-aos-once="true">
-		</figure>
-		{% endif %}
-	</article>
-</section>
-{% endif %}
-{% if imagetext.photo_align == 'left' %}
-<section class="calsmoving-imagetext left section-spacing bg-white {{ block.className }}">
-	<article
-		class="container mx-auto flex flex-row-reverse flex-wrap justify-between overflow-hidden text-center md:text-left">
-		{% if imagetext.title or imagetext.content %}
-		<div
-			class="w-full {% if imagetext.column_layout %}md:w-7/12{% else %}md:w-5/12{% endif %} {% if imagetext.align_content %}my-auto {% else %}mb-8 md:mb-0{% endif %}">
-			<h2 class="font-header text-4xl lg:text-5xl mb-4">{{ imagetext.title}}</h2>
-			{% if imagetext.subtitle %}
-			<h3 class="font-xl font-semibold  mb-6">
-				{{ imagetext.subtitle }}</h3>
-			{% endif %}
-			<div class="font-normal leading-relaxed">{{ imagetext.content }}</div>
-			{% if imagetext.button %}
-			<a href="{{ imagetext.button.url}}"
-				class="btn btn-primary w-content inline-block tracking-wider font-medium text-center mb-4"><img
-					src="{{imagetext.icon.url}}" title="{{imagetext.icon.title}}" alt="{{ imagetext.icon.alt }}"
-					class="injectable inline-block fill-white h-6 w-6 mb-1 mr-2"><span
-					class='text-xl'>{{imagetext.button.title}}</span>
-			</a>
-			{% endif %}
-		</div>
-		{% endif %}
-		{% if imagetext.photo %}
-		<figure
-			class="w-full {% if imagetext.column_layout %}md:w-4/12{% else %}md:w-6/12{% endif %} image-wrap relative">
-			<img class='md:min-h-[450px] responsive-image rounded-2xl object-cover' src="{{imagetext.photo.url}}"
+		<figure>
+				<img class='w-full min-h-[250px] rounded-lg' src="{{imagetext.photo.url}}"
 				title="{{imagetext.photo.title }}" alt="{{imagetext.photo.alt}}" data-aos="fade-right"
 				data-aos-offset="150" data-aos-delay="250" data-aos-duration="250" data-aos-once="true">
 		</figure>
 		{% endif %}
+		</div>
+	</article>
+</section> #}
+{% endif %}
+{% if imagetext.photo_align == 'left' %}
+<section class="mammothmoving-imagetext left section-spacing bg-white {{ block.className }}">
+	<article
+		class="container mx-auto flex flex-row-reverse flex-wrap justify-between {% if imagetext.align_content %} items-center {% endif %}">
+		{% if imagetext.title or imagetext.content %}
+		<div
+			class="w-full  {% if imagetext.column_layout %}lg:w-6/12{% else %}lg:w-5/12{% endif %} {% if imagetext.align_content %}my-auto {% else %}mb-8 md:mb-0{% endif %}">
+			<div class="flex flex-row justify-center lg:justify-start"><span class="mm-icon-red"></span></div>
+			{% if imagetext.title %}
+			<h2 class="font-tagline  text-[32px] lg:text-xl mb-4 text-dark text-center lg:text-left">{{ imagetext.title}}</h2>
+			{% endif %}
+			{% if imagetext.subtitle %}
+			<h3 class="mb-6 text-base font-semibold text-dark">
+				{{ imagetext.subtitle }}</h3>
+			{% endif %}
+			<div class="mb-8 text-center content lg:text-left">{{ imagetext.content }}</div>
+			{% if imagetext.button %}
+			<div class="flex justify-center lg:justify-start">
+				<a href="{{ imagetext.button.url}}"
+					class="btn btn-primary !w-fit"><span>{{imagetext.button.title}}</span>
+				</a>
+			</div>	
+			{% endif %}
+		</div>
+		{% endif %}
+		<div class="w-full mt-8 lg:mt-0 {% if imagetext.column_layout %}lg:w-5/12{% else %}lg:w-6/12{% endif %}">
+		{% if imagetext.photo %}
+		<figure>
+			<img class='w-full min-h-[250px] rounded-lg' src="{{imagetext.photo.url}}"
+				title="{{imagetext.photo.title }}" alt="{{imagetext.photo.alt}}" data-aos="fade-right"
+				data-aos-offset="150" data-aos-delay="250" data-aos-duration="250" data-aos-once="true">
+		</figure>
+		{% endif %}
+		</div>
 	</article>
 </section>
 {% endif %}

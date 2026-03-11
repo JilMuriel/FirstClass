@@ -1,12 +1,38 @@
-.calsmoving-iconlist{
+.mammothmoving-iconlist{
+
+    &.v1{
+        svg path{
+            @apply fill-white;
+        }
+    }
     .full-list-btn{
         svg path {
-            @apply fill-secondary
+            @apply fill-secondary;
         }
 
         &:hover {
             svg path {
-                @apply fill-primary
+                @apply fill-primary;
+            }
+        }
+    }
+
+    &.v2{
+        ul {
+
+            @apply text-left text-[13px];
+
+            li{
+                list-style: disc;
+                list-style-position: outside;
+                @apply mb-2;
+            }
+        }
+
+        @screen lg{
+            ul {
+
+                @apply text-left text-[19px];
             }
         }
     }

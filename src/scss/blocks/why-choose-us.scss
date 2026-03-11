@@ -1,0 +1,26 @@
+.mammothmoving-whychooseus {
+    article:nth-child(odd){
+        @apply bg-gray;
+
+        h3{
+            @apply text-secondary;
+        }
+
+        .description{
+            @apply text-dark
+        }
+
+    }
+    article:nth-child(even){
+        @apply bg-secondary;
+
+        h3{
+            @apply text-white;
+        }
+
+        .description{
+            @apply text-white
+        }
+    }
+
+}

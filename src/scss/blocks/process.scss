@@ -1,4 +1,4 @@
-.calsmoving-process {
+.mammothmoving-process {
     &.v4 {
         .process-card {
             position: relative;
@@ -18,7 +18,7 @@
             }
 
             .overlay {
-                @apply bg-light;
+                @apply bg-gray;
                 content: '';
                 position: absolute;
                 top: 150%;

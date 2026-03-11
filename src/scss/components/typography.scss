@@ -1,58 +1,164 @@
 p {
+    @apply text-base text-dark;
     margin-top: 0;
-    margin-bottom: 1.5rem;
+    margin-bottom: .5rem;
 }
 
-b {
-    @apply text-primary;
+@screen lg{
+    p {
+        @apply text-base;
+        margin-bottom: 1rem;
+    }
 }
+
+
 .wrap-html-sitemap {
     h2.sp-cpt-name {
-        @apply text-3xl uppercase font-header text-left mb-6;
+        @apply text-xl font-header text-left mb-4 mt-4;
     }
     h3.sp-cpt-name {
-        @apply text-2xl font-body text-left mb-8;
+        @apply text-xl font-body text-left mb-8;
     }
     .sp-cat-name {
         @apply text-xl font-header text-left mb-2;
     }
 }
-.calsmoving-simplecontent {
-    ul {
-        @apply w-full md:w-10/12 lg:w-10/12 xl:w-10/12 mx-auto text-center font-body px-10;
+.mammothmoving-simplecontent {
+    ul{
+        @apply ml-4 lg:ml-12;
         list-style: disc;
-        list-style-position: inside !important;
-        margin-bottom: 2.3rem;
+        list-style-position: outside !important;
+        margin-bottom: 1rem;
         br {
             display: none;
         }
         li {
-            margin-bottom: 1rem;
+            margin-bottom: 0.2rem;
+            @apply text-base;
         }
     }
 
     ol {
+        @apply ml-4 lg:ml-12;
+        list-style: auto;
+        list-style-position: outside !important;
+        margin-bottom: 1rem;
         br {
             display: none;
         }
-
-        list-style: decimal;
-        list-style-position: inside !important;
-        margin-left: 2rem;
-        font-weight: 600;
-        margin-bottom: 1.3rem;
-
         li {
-            margin-bottom: 1rem;
-            ol {
-                margin-top: 1rem;
-                font-weight: 400;
-                list-style: lower-alpha;
+            margin-bottom: 0.2rem;
+        }
+    }
+
+    &.v1 .content-wrap a {    
+
+
+        @apply text-primary underline underline-offset-4;
+
+            &:hover{
+                @apply text-dark underline underline-offset-4;
+            }
+        
+    }
+
+
+    &.v2 .content-wrap a {    
+
+
+        @apply text-primary;
+
+            &:hover{
+                @apply text-dark underline;
+            }
+        
+    }
+
+    .content-wrap h2 {    
+        @apply font-header lg:text-[50px] lg:leading-[70px];
+    }
+
+    .content-wrap h3 {    
+        @apply font-bold text-lg;
+        display: inline-block;
+        margin-bottom: 1rem;
+
+        span{
+            font-weight: 700 !important;
+        }
+    }
+
+    .content-wrap{
+        ul.list-gray{
+            @apply list-none;
+
+            li{
+                @apply font-header py-4 px-2 bg-primary/5;
             }
         }
     }
-    a {    
-        @apply hover:text-primary;
-        display: inline-block;
+
+    &.packing-icon{
+        h3{
+            @apply flex flex-row gap-2 items-center;
+            
+            img{
+                @apply w-[25px];
+            }
+        }
+    }
+
+    &.v2{
+        p{
+            @apply mb-0 font-tagline  text-base lg:text-lg text-dark;
+        }
+    }
+
+}
+
+
+.mammothmoving-imagetext {
+    .content {
+        a{
+        @apply text-primary underline underline-offset-4;
+
+            &:hover{
+                @apply text-dark underline underline-offset-4;
+            }
+        }
+
+
+        p{
+            @apply mb-0;
+        }
+    }
+
+    ul li{
+        @apply ml-4;
+        list-style: disc;
+        list-style-position: inside;
+    }
+
+    ol {
+        @apply mt-4 mb-4 ml-4;;
+        li{
+            list-style: auto;
+            list-style-position: inside;
+        }
+    }
+}
+
+.mammothmoving-privacy-policy, .mammothmoving-terms, .mammothmoving-accessibility{
+    h2{
+       @apply font-header text-lg lg:text-xl mb-8 text-dark;
+    }
+
+    ul {
+        @apply mb-4 ml-4;
+
+        li{
+            list-style: disc;
+            list-style-position: inside;
+        }
     }
 }

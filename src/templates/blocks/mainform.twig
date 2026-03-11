@@ -1,7 +1,7 @@
 {#
   Title: Mainform
   Description: Main Form Section
-  Category: calsmoving-blocks
+  Category: mammothmoving-blocks
   Icon: email
   Keywords: infolist
   Mode: edit
@@ -12,21 +12,38 @@
   SupportsMultiple: true
 #}
 
-
-<section class="calsmoving-mainform section-spacing bg-white {{ block.className }}">
+{% if fields.form_version == 'ver1' %}
+<section class="mammothmoving-mainform section-spacing bg-white {{ block.className }}">
 	<div class="container mx-auto flex flex-col text-center pb-2">
-		{% if fields.upper_title %}
-		<h3 class="font-header tracking-wider text-gray uppercase mb-2">{{ fields.upper_title }}</h3>
-		{% endif %}
 		{% if fields.title %}
-		<h2 class="font-header text-4xl lg:text-5xl mb-4">{{ fields.title }}</h2>
-		{% endif %}
-		{% if fields.subtitle %}
-		<p class="w-11/12 mx-auto text-lg text-gray font-normal pb-10">{{ fields.subtitle }}</p>
+		<h2 class="font-tagline text-[32px] leading-[35px] lg:text-xl  mb-4">{{ fields.title }}</h2>
 		{% endif %}
 	</div>
-	<div class="w-auto md:w-10/12 lg:w-8/12 xl:w-6/12 mx-4 md:mx-auto shadow-2xl rounded-2xl bg-white p-10"
+	<div class="w-auto lg:w-5/12 mx-4 md:mx-auto shadow-2xl rounded-2xl bg-white p-10"
 		data-aos="fade-up" data-aos-offset="-350" data-aos-delay="150" data-aos-duration="350" data-aos-once="true">
 		{{fn('do_shortcode', fields.mainform_shortcode|striptags)}}
 	</div>
 </section>
+{% endif %}
+{# –––––––––––––––– BANNER VERSION 1 END –––––––––––––––– #}
+
+{% if fields.form_version == 'ver2' %}
+<section class="mammothmoving-mainform container lg:mx-auto lg:w-full section-spacing bg-white {{ block.className }}">
+	<div class="container mx-auto flex flex-col lg:flex-row rounded-2xl bg-primary !px-8 !py-4 items-center">
+		<div class="w-full lg:w-4/12">
+			{% if fields.title %}
+			<h2 class="font-tagline text-[32px] leading-[35px] lg:text-xl  mb-4">{{ fields.title }}</h2>
+			{% endif %}
+			{% if fields.review_image %}
+			<img src="{{ fields.review_image.url }}" class="mb-4 lg:mb-0">
+			{% endif %}
+		</div>
+
+		<div class="w-full lg:w-8/12">
+			{{fn('do_shortcode', fields.mainform_shortcode|striptags)}}
+		</div>
+
+	</div>
+
+</section>
+{% endif %}

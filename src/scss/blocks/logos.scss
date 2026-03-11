@@ -1,0 +1,49 @@
+.swiper-button-prev,
+.swiper-button-next {
+    width: 60px !important;
+    height: 60px !important;
+}
+
+.swiper-button-prev, .swiper-button-next {
+    // left: -71px !important;
+    // top: 30px !important;
+    position: relative !important;
+    top: 0!important;
+    right: 0!important;
+    // bottom: 43px !important;
+    // left: -38px !important;
+}
+
+// .swiper-button-next {
+//     // right: -71px !important;
+//     // top: 30px !important;
+//     position: relative !important;
+//     // top: 89px !important;
+//     // left: 38px !important;
+// }
+
+
+
+.swiper-button-prev:after {
+    content: "" !important;
+    background-image: url('/wp-content/uploads/2025/03/prev-logo.svg') !important;
+    background-repeat: no-repeat;
+    width: 60px;
+    height: 60px;
+    background-size: contain;
+    background-position: center;
+    position: absolute !important;
+
+}
+
+.swiper-button-next:after {
+    content: "" !important;
+    background-image: url('/wp-content/uploads/2025/03/next-logo.svg') !important;
+    background-repeat: no-repeat;
+    width: 60px;
+    height: 60px;
+    background-size: contain;
+    background-position: center;
+    // position: absolute !important;
+
+}

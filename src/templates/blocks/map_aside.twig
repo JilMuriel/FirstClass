@@ -12,17 +12,58 @@
   SupportsMultiple: true
 #}
 
-<section class="calsmoving-mapaside calsmoving-h__600 flex flex-row justify-center items-center">
-	<div class="container mx-auto w-full flex flex-wrap items-center relative text-center section-spacing ">
+<section class="mammothmoving-mapaside section-spacing flex flex-row {{ block.className }}">
+	<div class="container mx-auto w-full flex flex-wrap relative items-center">
 		<article class="w-full lg:w-6/12 text-center lg:text-left p-8 ">
 			{% if fields.title %}
-			<h2 class="font-header text-4xl mb-8">
+			<h2 class="font-tagline  text-[32px] leading-[35px] lg:text-xl  text-center lg:text-left mb-4">
 				{{fields.title}}</h2>
 			{% endif %}
 			{% if fields.description %}
 			<div
-				class="content-wrap mb-8 {% if fields.two_columns_layout %}w-full md:grid md:grid-cols-2 gap-6 text-center md:text-left{% else %}flex flex-col mx-auto w-full{% endif %}">
-				{{fields.description}}</div>
+				class="content-wrap text-md mb-8 {% if fields.two_columns_layout %}w-full md:grid md:grid-cols-2 gap-6 text-center md:text-left{% else %}flex flex-col mx-auto w-full{% endif %}">
+							<ul class="flex flex-col">
+					{% if global.footer.contact_us.adress_block.adress %}
+					<li class="flex flex-row space-x-4 items-start border-b border-white pb-2 border-opacity-10">
+						<img src="{{global.footer.contact_us.adress_block.icon.url}}"
+							class="injectable w-[20px] h-[20px]"
+							title="{{ global.footer.contact_us.adress_block.icon.title }}"
+							alt="{{ global.footer.contact_us.adress_block.icon.alt }}">
+						<div class="text-base w-full text-left">
+							{{ global.footer.contact_us.adress_block.adress }}
+						</div>
+					</li>
+					{% endif %}
+					{% if global.footer.contact_us.email_block.email.title %}
+					<li class="flex flex-row items-center  space-x-4 border-b border-white py-2 border-opacity-10" >
+						<img src="{{global.footer.contact_us.email_block.icon.url}}"
+							class="w-[20px] h-[20px] injectable"
+							title="{{ global.footer.contact_us.email_block.icon.title }}"
+							alt="{{ global.footer.contact_us.email_block.icon.alt }}">
+						<a href="{{ global.footer.contact_us.email_block.email.url }}"
+							class='m-0 hover:text-primary  text-base w-full text-left'>{{ global.footer.contact_us.email_block.email.title }}</a>
+					</li>
+					{% endif %}
+					{% if global.footer.contact_us.telephone_block.number.title %}
+					<li class="flex flex-row space-x-4 items-center py-2">
+						<img src="{{global.footer.contact_us.telephone_block.icon.url}}"
+							class="injectable w-[20px] h-[20px]"
+							title="{{ global.footer.contact_us.telephone_block.icon.title }}"
+							alt="{{ global.footer.contact_us.telephone_block.icon.alt }}">
+						<a href="{{ global.footer.contact_us.telephone_block.number.url }}"
+							class='m-0 hover:text-primary text-base w-full text-left' >{{ global.footer.contact_us.telephone_block.number.title }}</a>
+					</li>
+					{% endif %}
+					<li class="flex flex-row space-x-4 items-center py-2">
+						<img src="/wp-content/uploads/2025/06/clock-r.svg"
+							class="w-[20px] h-[20px]"
+							title="{{ global.footer.contact_us.workin_hours.icon.title }}"
+							alt="{{ global.footer.contact_us.workin_hours.icon.alt }}">
+						<p class='m-0 text-white text-left'>Mon-Fri: 7:30AM - 7:00PM<br> Sat: 8:00AM-5:00PM<br>Sun: Closed</p>
+					</li>
+				</ul>
+				
+				</div>
 			{% endif %}
 			{% if fields.button %}
 			<a href="{{fields.button.url}}" class="btn relative inline-block btn-primary" data-aos="fade-in"
@@ -31,7 +72,7 @@
 			{% endif %}
 		</article>
 		{% if fields.map_embed %}
-		<div class="w-full lg:w-6/12 location-wrapper mx-aut p-8" data-aos="fade-left" data-aos-offset="-250"
+		<div class="w-full lg:w-6/12 lg:h-[525px] mx-auto shadow-2xl rounded-2xl bg-white p-10" data-aos="fade-left" data-aos-offset="-250"
 			data-aos-delay="250" data-aos-duration="450" data-aos-once="true">
 			{{ fields.map_embed }}
 		</div>

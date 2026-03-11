@@ -1,31 +1,46 @@
-<div class="menu-wrap w-auto mr-auto relative">
-    {# menu container #}
-    {% if menu %}
-    <nav class="nav mx-auto p-0" aria-label="main-navigation">
-        <ul class="flex flex-row items-center">
-            {% for item in menu.items %}
-            <li class="top-menu-link {{ item.classes | join(' ') }}">
-                {% if item.children %}
-                <a class="nav-link uppercase letter-spacing-1" href="{{ item.link }}"
-                    target="{{ item.target }}"><span>{{ item.title }}</span><img
-                        src="{{ site.theme.link }}/images/icons/angle-down.svg"
-                        class="injectable w-4 h-4 fill-primary ml-2 inline-block" title="Arrow Down"
-                        alt="Arrow Down"></a>
-                <ul class='drop-menu'>
-                    {% for child in item.children %}
-                    <li class="dropdown-link pb-1">
-                        <a class="nav-link uppercase letter-spacing-1" target="{{ child.target }}"
-                            href="{{ child.link }}">{{ child.title }}</a>
-                    </li>
-                    {% endfor %}
-                </ul>
-                {% else %}
-                <a class="nav-link uppercase letter-spacing-1" href="{{ item.link }}"
-                    target="{{ item.target }}">{{ item.title }}</a>
-                {% endif %}
-            </li>
-            {% endfor %}
-        </ul>
-    </nav>
-    {% endif %}
+<div
+	class="menu-wrap w-auto mr-auto relative">
+	{# menu container #}
+	{% if menu %}
+		<nav class="nav mx-auto p-0" aria-label="main-navigation">
+			<ul class="flex flex-row flex-wrap lg:items-start lg:space-x-4 xl:space-x-5 ">
+				{% for item in menu.items %}
+
+					<li class="top-menu-link {{ item.classes | join(' ') }}">
+						{% if item.children %}
+							{# menu with subcategory Level 1  #}
+							<a class="nav-link letter-spacing-1 text-dark hover:text-blue lg:text-[18px] font-semibold font-menu" target="{{ item.target }}" href="{{ item.link }}">
+								<span>{{ item.title }}</span><img src="{{ site.theme.link }}/images/icons/angle-down-gray.svg" class="injectable w-[9px] h-[5px] fill-primary ml-2 inline-block"></a>
+							<ul class='drop-menu '>
+								{% for child in item.children %}
+									<li class="dropdown-link top-menu-link2">
+										{% if child.children %}
+											{# menu with subcategory Level 2 #}
+											<a class="nav-link  letter-spacing-1 text-white  lg:text-base font-menu" href="{{ child.link }}" target="{{ child.target }}">
+												<span>{{ child.title }}</span><img src="{{ site.theme.link }}/images/icons/angle-down-gray.svg" class="injectable w-[9px] h-[5px] fill-white ml-2 inline-block"></a>
+											<ul class='drop-menu2'>
+												{% for child2 in child.children %}
+													<li class="dropdown-link">
+														<a class="nav-link  letter-spacing-1 text-white lg:text-[15px] xl:text-[17px] font-menu" href="{{ child2.link }}" target="{{ child2.target }}">{{ child2.title }}
+
+														</a>
+													</li>
+												{% endfor %}
+											</ul>
+										{% else %}
+											{# menu without subcategory Level 2  #}
+											<a class="nav-link  letter-spacing-1 text-white lg:text-[15px] xl:text-[17px] font-menu" href="{{ child.link }}" target="{{ child.target }}">{{ child.title }}</a>
+										{% endif %}
+									</li>
+								{% endfor %}
+							</ul>
+						{% else %}
+							{# menu without subcategory Level 1 #}
+							<a class="nav-link  letter-spacing-1 text-dark font-semibold hover:text-blue  lg:text-[15px] xl:text-[17px] font-menu" target="{{ item.target }}" href="{{ item.link }}">{{ item.title }}</a>
+						{% endif %}
+					</li>
+				{% endfor %}
+			</ul>
+		</nav>
+	{% endif %}
 </div>

@@ -12,33 +12,454 @@
   SupportsMultiple: true
 #}
 
-<section class="calsmoving-columntext section-spacing {{ block.className }}">
-	<article class="container mx-auto flex flex-wrap text-center lg:text-left">
-		<div class="w-full lg:w-6/12">
-			{% if fields.tagline %}
-			<h4 class="font-header tracking-wider text-gray uppercase mb-2">
-				{{fields.tagline}}</h4>
-			{% endif %}
-			{% if fields.title %}
-			<h2 class="font-header text-4xl lg:text-5xl mb-4">
-				{{fields.title}}</h2>
-			{% endif %}
-			{% if fields.subtitle %}
-			<h3 class="lg:w-11/12 text-xl text-gray mb-4">
-				{{fields.subtitle}}</h3>
-			{% endif %}
-			{% if fields.button %}
-			<a href="{{fields.button.url}}" class="hidden lg:block btn btn-primary mt-4" data-aos="fade-in"
-				data-aos-offset="150" data-aos-delay="350" data-aos-duration="750"
-				data-aos-once="true">{{fields.button.title}}</a>
-			{% endif %}
+{% if fields.colum_version == 'ver1' %}
+	<section class="mammothmoving-imagetext right section-spacing  bg-[#F8F8F8] ">
+		<article class="container flex flex-col items-center justify-between mx-auto lg:flex-row gap-[40px]">
+			<div class="relative w-full mt-8 lg:mt-0 lg:w-5/12 image-wrap lg:order-2">
+				<figure>
+					<img class="w-full h-auto mb-[40px] lg:h-[694px] object-cover rounded-lg aos-init aos-animate" src="/wp-content/uploads/2026/03/grp.png">
+				</figure>
+			</div>
+			<div class="w-full my-auto lg:w-6/12 lg:order-1">
+				<h2 class="leading-[55px] text-[#4E4D4D] text-center md:text-left font-bold uppercase md:mb-[40px] text-[30px] md:text-[40px]">About First Class Moving Systems</h2>
+
+				<p class="text-[#402e2e] text-[16px] font-regular mb-[30px]">
+					At First Class Moving Systems, our name says it all. We treat our clients as we would want to be treated, which means that we always go the extra mile to deliver quality service at a fair, affordable price. As a full-service moving and storage company, we offer moving solutions that cover the full scope of relocation needs, along with benefits that include:
+				</p>
+
+				<p class="text-[#4E4D4D] text-[16px] font-regular mb-[30px]">
+					Whether you are moving across town, across the country, or even to another continent, you can count on our professional drivers, movers, and packers to take pride in their work. That’s the promise of First Class, and we are here as your partner in creating a stress-free relocation experience.
+				</p>
+
+				<!-- Features -->
+				<div class="flex gap-[32px] mt-4 mb-[40px]">
+					<div>
+						<span class="flex items-center gap-2">
+							<img src="/wp-content/uploads/2026/03/icon-check-red.png" alt="">
+							Highest-Quality Customer Service
+						</span>
+						<span class="flex items-center gap-2">
+							<img src="/wp-content/uploads/2026/03/icon-check-red.png" alt="">
+							Comprehensive Packing Solutions
+						</span>
+						<span class="flex items-center gap-2">
+							<img src="/wp-content/uploads/2026/03/icon-check-red.png" alt="">
+							Small Move Specialization
+						</span>
+					</div>
+
+					<div>
+						<span class="flex items-center gap-2">
+							<img src="/wp-content/uploads/2026/03/icon-check-red.png" alt="">
+							Decades of Expertise
+						</span>
+						<span class="flex items-center gap-2">
+							<img src="/wp-content/uploads/2026/03/icon-check-red.png" alt="">
+							Targeted Service
+						</span>
+						<span class="flex items-center gap-2">
+							<img src="/wp-content/uploads/2026/03/icon-check-red.png" alt="">
+							Competitive Prices
+						</span>
+					</div>
+				</div>
+
+				<button class="mt-6 min-w-[190px] mt-0 text-[16px] py-[19.5px] px-[27.5px] font-bold text-white bg-red rounded-[5px]">
+					Get A Free Quote
+				</button>
+			</div>
+		</article>
+	</section>
+{% endif %}
+
+{% if fields.colum_version == 'ver2' %}
+	<section class="firstclass-two-cloumn v2 left section-spacing bg-white {{ block.className }}">
+		<article class="container flex flex-col-reverse mx-auto md:flex-row md:space-y-0 md:space-x-8">
+
+			<div class="flex flex-col items-center w-full mt-12 space-y-6 lg:w-5/12 lg:mt-0">
+				<figure data-aos="fade-in" data-aos-offset="-250" data-aos-delay="200">
+					<img src="{{ fields.image_1.url }}" class="object-cover w-full rounded-md">
+				</figure>
+
+				<figure data-aos="fade-in" data-aos-offset="-250" data-aos-delay="500">
+					<img src="{{ fields.image_2.url }}" class="object-cover w-full rounded-md">
+				</figure>
+			</div>
+
+			<div class="order-1 w-full lg:w-7/12 lg:pl-12">
+				<div class="flex flex-row justify-center md:justify-start">
+					<span class="fc-icon-red"></span>
+				</div>
+
+				<h2 class="font-tagline mb-4 text-[32px] leading-[35px] lg:text-xl text-dark text-center md:text-left">
+					{{ fields.column_1_text.title }}
+				</h2>
+
+				<h3 class="mb-6 font-semibold font-xl">
+					{{ fields.subtitle }}
+				</h3>
+
+				<div class="mb-8 text-base leading-relaxed text-center font-body content text-dark md:text-left">
+					{{ fields.column_1_text.description }}
+				</div>
+
+				{% if fields.column_1_text.button %}
+					<div class="flex justify-center md:justify-start">
+						<a href="{{ fields.column_1_text.button.url }}" target="{{ fields.column_1_text.button.target }}" class="btn btn-primary !w-fit">
+							<span>{{ fields.column_1_text.button.title }}</span>
+						</a>
+					</div>
+				{% endif %}
+			</div>
+
+		</article>
+	</section>
+{% endif %}
+
+{% if fields.colum_version == 'ver3' %}
+	<section class="firstclass-two-cloumn v3 left section-spacing bg-[#F4F4F4] {{ block.className }}">
+		<article class="container mx-auto">
+
+			<div class="w-full">
+				<div class="block text-center lg:hidden lg:text-left">
+					<span class="fc-icon-red"></span>
+				</div>
+
+				<h2 class="font-tagline text-[32px] leading-[35px] lg:text-xl mb-8 text-dark text-center lg:text-left lg:mb-4">
+					{{ fields.column_1_text.title }}
+				</h2>
+
+				<h3 class="mb-6 font-semibold font-xl">
+					{{ fields.subtitle }}
+				</h3>
+
+				<div class="font-normal leading-relaxed content">
+					<img src="{{ fields.image_1.url }}" class="object-cover w-full float-right ml-6 mb-4 max-w-sm lg:max-h-[250px] rounded-md"/>
+					{{ fields.column_1_text.description }}
+				</div>
+
+				{% if fields.column_1_text.button %}
+					<div class="flex justify-center md:justify-start">
+						<a href="{{ fields.column_1_text.button.url }}" target="{{ fields.column_1_text.button.target }}" class="btn btn-primary mb-4 flex !w-fit">
+							<span>{{ fields.column_1_text.button.title }}</span>
+						</a>
+					</div>
+				{% endif %}
+			</div>
+
+		</article>
+	</section>
+{% endif %}
+
+
+<section class="bg-white px-[20px] py-[60px] md:py-[90px] lg:py-[120px]">
+	<div class="    container mx-auto text-center md:w-[796px] mb-[60px]">
+		<h2 class="leading-[55px] text-[#4E4D4D] font-bold uppercase md:mb-[30px] text-[30px] md:text-[40px]">Moving Company Services</h2>
+		<p class="text-[#402e2e] text-[16px] font-regular">
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex commodo consequat aute irure dolor in reprehenderit
+		</p>
+	</div>
+	<div class="container mx-auto mb-[60px]">
+		<div class="mb-[48px] justify-self-center gap-[24px] mx-auto text-center flex items-center">
+			<img class="h-[46px] w-auto" src="/wp-content/uploads/2026/03/fi_10512580.png">
+			<span class="text-[24px] md:text-[35px] font-bold ">Residential Moving</span>
 		</div>
-		<div class="content-wrap flex flex-col mx-auto w-full md:w-11/12 lg:w-6/12">
-			{{fields.description}}
-			{% if fields.button %}
-			<a href="{{fields.button.url}}"
-				class="block lg:hidden mx-auto btn btn-primary mt-4">{{fields.button.title}}</a>
-			{% endif %}
+		<div class="flex flex-col items-start md:gap-[24px]">
+			<div class="row-1 flex flex-col md:flex-row gap-[10px]">
+				<div class="accordion-item bg-[#F8F8F8] px-[24px] pt-[24px] rounded-[8px]">
+					<div class="flex items-center justify-between cursor-pointer accordion-header pb-[24px]">
+						<span class="text-[22px] font-bold accordion-title text-[#333333]">
+							Local Moving
+						</span>
+
+						<span class="text-[35px] transition-transform accordion-icon text-[#333333]">
+							+
+						</span>
+					</div>
+					<div class="overflow-hidden transition-all duration-500 accordion-content max-h-0">
+						<p class="pb-[24px] leading-relaxed text-gray-500">
+							Consumers paying out of pocket or utilizing employee lump sum moving locally
+						</p>
+					</div>
+				</div>
+				<div class="accordion-item bg-[#F8F8F8] px-[24px] pt-[24px] rounded-[8px]">
+					<div class="flex items-center justify-between cursor-pointer accordion-header pb-[24px]">
+						<span class="text-[22px] font-bold accordion-title text-[#333333]">
+							International
+						</span>
+
+						<span class="text-[35px] transition-transform accordion-icon text-[#333333]">
+							+
+						</span>
+					</div>
+					<div class="overflow-hidden transition-all duration-500 accordion-content max-h-0">
+						<p class="pb-[24px] leading-relaxed text-gray-500">
+							Consumers paying out of pocket or utilizing employee lump sum moving locally
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="row-2 flex flex-col md:flex-row gap-[10px]">
+				<div class="accordion-item bg-[#F8F8F8] px-[24px] pt-[24px] rounded-[8px]">
+					<div class="flex items-center justify-between cursor-pointer accordion-header pb-[24px]">
+						<span class="text-[22px] font-bold accordion-title text-[#333333]">
+							Intrastate
+						</span>
+
+						<span class="text-[35px] transition-transform accordion-icon text-[#333333]">
+							+
+						</span>
+					</div>
+					<div class="overflow-hidden transition-all duration-500 accordion-content max-h-0">
+						<p class="pb-[24px] leading-relaxed text-gray-500">
+							Consumers paying out of pocket or utilizing employee lump sum moving locally
+						</p>
+					</div>
+				</div>
+				<div class="accordion-item bg-[#F8F8F8] px-[24px] pt-[24px] rounded-[8px]">
+					<div class="flex items-center justify-between cursor-pointer accordion-header pb-[24px]">
+						<span class="text-[22px] font-bold accordion-title text-[#333333]">
+							International
+						</span>
+
+						<span class="text-[35px] transition-transform accordion-icon text-[#333333]">
+							+
+						</span>
+					</div>
+					<div class="overflow-hidden transition-all duration-500 accordion-content max-h-0">
+						<p class="pb-[24px] leading-relaxed text-gray-500">
+							Consumers paying out of pocket or utilizing employee lump sum moving locally
+						</p>
+					</div>
+				</div>
+			</div>
 		</div>
-	</article>
+	</div>
+
+	<div class="container mx-auto mb-[60px]">
+		<div class="mb-[48px] justify-self-center gap-[24px] mx-auto text-center flex items-center">
+			<img class="h-[42px] w-auto" src="/wp-content/uploads/2026/03/fi_888559.png">
+			<span class="text-[24px] md:text-[35px] font-bold">Commercial Moving</span>
+		</div>
+		<div class="flex flex-col items-start md:gap-[24px]">
+			<div class="row-1 flex flex-col md:flex-row gap-[10px]">
+				<div class="accordion-item bg-[#F8F8F8] px-[24px] pt-[24px] rounded-[8px]">
+					<div class="flex items-center justify-between cursor-pointer accordion-header pb-[24px]">
+						<span class="text-[22px] font-bold accordion-title text-[#333333]">
+							Local Moving
+						</span>
+
+						<span class="text-[35px] transition-transform accordion-icon text-[#333333]">
+							+
+						</span>
+					</div>
+					<div class="overflow-hidden transition-all duration-500 accordion-content max-h-0">
+						<p class="pb-[24px] leading-relaxed text-gray-500">
+							Consumers paying out of pocket or utilizing employee lump sum moving locally
+						</p>
+					</div>
+				</div>
+				<div class="accordion-item bg-[#F8F8F8] px-[24px] pt-[24px] rounded-[8px]">
+					<div class="flex items-center justify-between cursor-pointer accordion-header pb-[24px]">
+						<span class="text-[22px] font-bold accordion-title text-[#333333]">
+							International
+						</span>
+
+						<span class="text-[35px] transition-transform accordion-icon text-[#333333]">
+							+
+						</span>
+					</div>
+					<div class="overflow-hidden transition-all duration-500 accordion-content max-h-0">
+						<p class="pb-[24px] leading-relaxed text-gray-500">
+							Consumers paying out of pocket or utilizing employee lump sum moving locally
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="row-2 flex flex-col md:flex-row gap-[10px]">
+				<div class="accordion-item bg-[#F8F8F8] px-[24px] pt-[24px] rounded-[8px]">
+					<div class="flex items-center justify-between cursor-pointer accordion-header pb-[24px]">
+						<span class="text-[22px] font-bold accordion-title text-[#333333]">
+							Intrastate
+						</span>
+
+						<span class="text-[35px] transition-transform accordion-icon text-[#333333]">
+							+
+						</span>
+					</div>
+					<div class="overflow-hidden transition-all duration-500 accordion-content max-h-0">
+						<p class="pb-[24px] leading-relaxed text-gray-500">
+							Consumers paying out of pocket or utilizing employee lump sum moving locally
+						</p>
+					</div>
+				</div>
+				<div class="accordion-item bg-[#F8F8F8] px-[24px] pt-[24px] rounded-[8px]">
+					<div class="flex items-center justify-between cursor-pointer accordion-header pb-[24px]">
+						<span class="text-[22px] font-bold accordion-title text-[#333333]">
+							International
+						</span>
+
+						<span class="text-[35px] transition-transform accordion-icon text-[#333333]">
+							+
+						</span>
+					</div>
+					<div class="overflow-hidden transition-all duration-500 accordion-content max-h-0">
+						<p class="pb-[24px] leading-relaxed text-gray-500">
+							Consumers paying out of pocket or utilizing employee lump sum moving locally
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container mx-auto mb-[60px]">
+		<div class="mb-[48px] justify-self-center gap-[24px] mx-auto text-center flex items-center">
+			<img class="h-[46px] w-auto" src="/wp-content/uploads/2026/03/fi_16767873.png">
+			<span class="text-[24px] md:text-[35px] font-bold">Logistic Service</span>
+		</div>
+		<div class="flex flex-col items-start md:gap-[24px]">
+			<div class="row-1 flex flex-col md:flex-row gap-[10px]">
+				<div class="accordion-item bg-[#F8F8F8] px-[24px] pt-[24px] rounded-[8px]">
+					<div class="flex items-center justify-between cursor-pointer accordion-header pb-[24px]">
+						<span class="text-[22px] font-bold accordion-title text-[#333333]">
+							Local Moving
+						</span>
+
+						<span class="text-[35px] transition-transform accordion-icon text-[#333333]">
+							+
+						</span>
+					</div>
+					<div class="overflow-hidden transition-all duration-500 accordion-content max-h-0">
+						<p class="pb-[24px] leading-relaxed text-gray-500">
+							Consumers paying out of pocket or utilizing employee lump sum moving locally
+						</p>
+					</div>
+				</div>
+				<div class="accordion-item bg-[#F8F8F8] px-[24px] pt-[24px] rounded-[8px]">
+					<div class="flex items-center justify-between cursor-pointer accordion-header pb-[24px]">
+						<span class="text-[22px] font-bold accordion-title text-[#333333]">
+							International
+						</span>
+
+						<span class="text-[35px] transition-transform accordion-icon text-[#333333]">
+							+
+						</span>
+					</div>
+					<div class="overflow-hidden transition-all duration-500 accordion-content max-h-0">
+						<p class="pb-[24px] leading-relaxed text-gray-500">
+							Consumers paying out of pocket or utilizing employee lump sum moving locally
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="row-2 flex flex-col md:flex-row gap-[10px]">
+				<div class="accordion-item bg-[#F8F8F8] px-[24px] pt-[24px] rounded-[8px]">
+					<div class="flex items-center justify-between cursor-pointer accordion-header pb-[24px]">
+						<span class="text-[22px] font-bold accordion-title text-[#333333]">
+							Intrastate
+						</span>
+
+						<span class="text-[35px] transition-transform accordion-icon text-[#333333]">
+							+
+						</span>
+					</div>
+					<div class="overflow-hidden transition-all duration-500 accordion-content max-h-0">
+						<p class="pb-[24px] leading-relaxed text-gray-500">
+							Consumers paying out of pocket or utilizing employee lump sum moving locally
+						</p>
+					</div>
+				</div>
+				<div class="accordion-item bg-[#F8F8F8] px-[24px] pt-[24px] rounded-[8px]">
+					<div class="flex items-center justify-between cursor-pointer accordion-header pb-[24px]">
+						<span class="text-[22px] font-bold accordion-title text-[#333333]">
+							International
+						</span>
+
+						<span class="text-[35px] transition-transform accordion-icon text-[#333333]">
+							+
+						</span>
+					</div>
+					<div class="overflow-hidden transition-all duration-500 accordion-content max-h-0">
+						<p class="pb-[24px] leading-relaxed text-gray-500">
+							Consumers paying out of pocket or utilizing employee lump sum moving locally
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	{# {% if fields.button %}
+												<button>
+													<a href="{{ fields.button.url}}" class="mb-4 btn btn-primary">{{fields.button.title}}
+													</a>
+												</button>
+											{% endif %} #}
+	<button class="mt-6 flex mx-auto min-w-[190px] mt-0 text-[16px] py-[19.5px] px-[27.5px] font-bold text-white bg-red rounded-[5px]">
+		Get A Free Quote
+	</button>
+</section>
+
+<section class="bg-[#D9EAF4] px-[20px] py-[60px] md:py-[90px] lg:py-[120px]">
+	<div class="container mx-auto text-center md:w-[796px] mb-[60px]">
+		<h2 class="leading-[55px] text-[#4E4D4D] font-bold uppercase md:mb-[30px] text-[30px] md:text-[40px]">Why Choose Us?</h2>
+		<p class="text-[#402e2e] text-[16px] font-regular">
+			We also offer exceptional commercial moving and bespoke services. Every move we handle includes meticulous packing.
+		</p>
+	</div>
+	<div class="container px-4 mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-[60px]">
+
+		<div class="text-center text-[#402e2e]">
+			<div class="mb-8 h-[80px] w-[80px] bg-white rounded-full flex items-center justify-center mx-auto">
+				<img src="/wp-content/uploads/2026/03/fi_4230731.png" class="h-[42px] w-auto"/>
+			</div>
+			<p class="font-bold text-[22px] mb-6">Professional Movers</p>
+			<p class="leading-[28px] text-[16px]">Lorem ipsum dolor amet consectetur adipiscing elit sed do eiusmod tempor.</p>
+		</div>
+
+		<div class="text-center text-[#402e2e]">
+			<div class="mb-8 h-[80px] w-[80px] bg-white rounded-full flex items-center justify-center mx-auto">
+				<img src="/wp-content/uploads/2026/03/fi_13527930.png" class="h-[42px] w-auto"/>
+			</div>
+			<p class="font-bold text-[22px] mb-6">Fully Licensed Movers</p>
+			<p class="leading-[28px] text-[16px]">Lorem ipsum dolor amet consectetur adipiscing elit sed do eiusmod tempor.</p>
+		</div>
+
+		<div class="text-center text-[#402e2e]">
+			<div class="mb-8 h-[80px] w-[80px] bg-white rounded-full flex items-center justify-center mx-auto">
+				<img src="/wp-content/uploads/2026/03/fi_1365358.png" class="h-[42px] w-auto"/>
+			</div>
+			<p class="font-bold text-[22px] mb-6">A+ Rating BBB.</p>
+			<p class="leading-[28px] text-[16px]">Lorem ipsum dolor amet consectetur adipiscing elit sed do eiusmod tempor.</p>
+		</div>
+
+		<div class="text-center text-[#402e2e]">
+			<div class="mb-8 h-[80px] w-[80px] bg-white rounded-full flex items-center justify-center mx-auto">
+				<img src="/wp-content/uploads/2026/03/fi_3790110.png" class="h-[42px] w-auto"/>
+			</div>
+			<p class="font-bold text-[22px] mb-6">Fast quality moves!</p>
+			<p class="leading-[28px] text-[16px]">Lorem ipsum dolor amet consectetur adipiscing elit sed do eiusmod tempor.</p>
+		</div>
+
+	</div>
+	<button class="mt-6 flex mx-auto min-w-[190px] mt-0 text-[16px] py-[19.5px] px-[27.5px] font-bold text-white bg-red rounded-[5px]">
+		Get A Free Quote
+	</button>
+</section>
+
+<section class="px-[20px] py-[60px] md:py-[90px] lg:py-[120px] bg-[#F8F8F8] {{ block.className }}">
+	<div class="container px-4 mx-auto">
+
+		<div class="video-container rounded-[8px] mb-[60px] flex items-center justify-center w-full h-[230px] sm:h-[330px] md:h-[420px] lg:h-[560px] bg-gray overflow-hidden relative">
+
+			<div class="absolute playButton-wrapper">
+				<button class="text-white bg-red h-[60px] w-[60px] md:h-[80px] md:w-[80px] lg:h-[90px] lg:w-[90px] rounded-full flex items-center justify-center">
+					<img src="/wp-content/uploads/2026/03/Polygon-4.png"/>
+				</button>
+			</div>
+
+			<img src="/wp-content/uploads/2026/03/83073a2ba7f55deac9607d9bade19c4876d0c592.jpg" class="object-cover w-full h-full"/>
+		</div>
+		{# SLIDER PLUGIN HERE  #}
+	</div>
+
 </section>

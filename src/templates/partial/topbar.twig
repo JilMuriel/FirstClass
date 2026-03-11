@@ -1,14 +1,45 @@
-<section class="topbar` bg-secondary py-4" style="position:relative; display:block; z-index: 100;">
-	<div class="container mx-auto flex flex-row flex-wrap justify-between items-center py-4 md:py-0">
-		<div class="icons-wrap flex flex-col lg:flex-row items-center mb-4 xs:mb-0 mx-auto lg:space-x-16" role="region">
-			{% for icons in global.topbar.social_icons %}
-			<a href="{{ icons.link.url}}"
-				class="topbar-social-icons hover:fill-primary fill-white flex items-center text-white">
-				<img class="injectable w-7 h-5 object-contain fill-inherit" alt="{{ icons.icon.alt }}"
-					title="{{ icons.icon.title }}" src="{{icons.icon.url}}">
-				{{ icons.link.title}}
-			</a>
-			{% endfor %}
+<section class="topbar py-[14px] md:py-[14px] w-full">
+	<div class="container flex flex-col mx-auto md:flex-row md:justify-start">
+		<div class="flex  md:gap-[80px]">
+			<div class="flex items-start">
+				<img src="/wp-content/uploads/2026/03/location-1.png" class="w-[24px] h-auto mr-[12px]">
+				<div>
+					<p class="text-white font-bold mb-0 text-[16px] leading-none mb-[14px]">Tampa</p>
+					<p class="text-white mb-0 text-[14px] leading-none font-normal">7004 E Broadway Ave</p>
+					<p class="text-white mb-0 text-[14px] font-normal">Tampa, FL 33619</p>
+				</div>
+			</div>
+			<div class="flex items-start">
+				<img src="/wp-content/uploads/2026/03/location-1.png" class="w-[24px] h-auto mr-[12px]">
+				<div>
+					<p class="text-white font-bold mb-0 text-[16px] leading-none mb-[14px]">Miami/Ft. Lauderdale</p>
+					<p class="text-white mb-0 text-[14px] leading-none font-normal">1251 Sawgrass Corporate Parkway</p>
+					<p class="text-white mb-0 text-[14px] font-normal">Sunrise, FL 33323</p>
+				</div>
+			</div>
+			<div class="flex items-start">
+				<img src="/wp-content/uploads/2026/03/location-1.png" class="w-[24px] h-auto mr-[12px]">
+				<div>
+					<p class="text-white font-bold mb-0 text-[16px] leading-none mb-[14px]">Gulfport, MS</p>
+					<p class="text-white mb-0 text-[14px] leading-none font-normal">2400 34th St</p>
+					<p class="text-white mb-0 text-[14px] font-normal">Gulfport, MS 39501</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="flex items-center sm:mx-auto md:ml-auto lg:ml-auto gap-[10px]">
+			<button class="h-[37px] w-[37px] rounded-full border border-lighblue p-[12px] opacity-1 bg-bluesecondary">
+				<img class="h-[14px] w-auto" src='/wp-content/uploads/2026/03/facebook_icon.png'/>
+			</button>
+			<button class="h-[37px] w-[37px] rounded-full border border-lighblue p-[12px] bg-bluesecondary">
+				<img class="h-[12px] w-auto" src='/wp-content/uploads/2026/03/twitter_icon.png'/>
+			</button>
+			<button class="h-[37px] w-[37px] rounded-full border border-lighblue p-[12px] bg-bluesecondary">
+				<img class="h-[12px] w-auto" src='/wp-content/uploads/2026/03/linkedin_icon.png'/>
+			</button>
+			<button class="h-[37px] w-[37px] rounded-full border border-lighblue p-[12px] bg-bluesecondary">
+				<img class="h-[13px] w-auto" src='/wp-content/uploads/2026/03/instagram_icon.png'/>
+			</button>
 		</div>
 	</div>
 </section>

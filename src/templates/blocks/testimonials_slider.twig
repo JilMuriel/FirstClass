@@ -1,7 +1,7 @@
 {#
   Title: Testimonials Slider
   Description: Testimonials block
-  Category: calsmoving-blocks
+  Category: mammothmoving-blocks
   Icon: list-view
   Keywords: testimonials
   Mode: edit
@@ -12,26 +12,69 @@
   SupportsMultiple: true
 #}
 
-
-<section class="calsmoving-testimonials section-spacing bg-white {{ block.className }}">
-	<div class="container mx-auto z-10">
-		<div class="flex flex-col">
-			{% if fields.upper_title and fields.title %}
-			<div class="container mx-auto flex flex-col text-center pb-1 mb-8">
-				<h3 class="font-header tracking-wider text-gray uppercase mb-2">{{ fields.upper_title }}</h3>
-				<h2 class="font-header text-4xl lg:text-5xl mb-8">{{ fields.title}}</h2>
-			</div>
-			{% else %}
-			{% if fields.upper_title %}
-			<h3 class="font-header tracking-wider text-gray uppercase mb-2">{{ fields.upper_title }}</h3>
-			{% endif %}
+{% if fields.review_version == 'ver1' %}
+<section class="mammothmoving-testimonials v1 bg-primary mb-16 lg:mb-24 {{ block.className }}">
+	<div class="flex flex-col lg:flex-row">
+		<div class="w-full lg:w-5/12">
+			<figure class="w-full h-full" data-aos="fade-in" data-aos-offset="-250" data-aos-delay="500">
+				<img src="{{ fields.image.url }}" class="w-full h-full object-cover">
+			</figure>
+		</div>
+		<div class="w-full lg:w-7/12 pt-16 pb-32 md:px-24 flex flex-col justify-center items-center">
+			<div class="flex flex-row justify-center"><span class="mm-icon-wh"></span></div>
 			{% if fields.title %}
-			<h2 class="font-header text-4xl mb-8">{{ fields.title}}</h2>
+			<h2 class="font-tagline text-[32px] leading-[32px] lg:text-xl text-center lg:max-w-xl text-white mb-8 capitalize">{{ fields.title}}</h2>
 			{% endif %}
-			{% endif %}
-			<div class="testimonials">
+			{% if fields.upper_title %}
+				<p class="mb-4 text-center w-full lg:w-7/12 mx-auto text-dark">{{ fields.upper_title }}</p>
+			{% endif %}		
+			<div class="testimonials w-[100%]">
 				{{fn('do_shortcode', fields.testimonials|striptags)}}
 			</div>
 		</div>
 	</div>
+	{% if fields.button_link %}
+	<div class="mt-32 xl:mt-12 text-center">
+		<a href="{{ fields.button_link.url }}" class="btn btn-secondary">
+			<span>
+				{{ fields.button_link.title }}
+			</span>
+		</a>
+	</div>
+	{% endif %}
 </section>
+{% endif %}
+{% if fields.review_version == 'ver2' %}
+<section class="mammothmoving-testimonials v2 section-spacing  {{ block.className }}">
+	{% if fields.reviews %}
+		{% for item in fields.reviews %}
+			<div class="w-full mx-auto z-10 py-16" style="background-color: {{ item.background_color }}" >
+				<div  class="container flex flex-col space-y-4 md:flex-row md:space-x-8 mx-auto items-start">
+					<img src="{{ item.icon.url }}" class="image-responsive w-[125px] h-[125px]">
+					<div>
+						{% if item.title %}
+							<h3 class="font-header text-secondary text-2xl lg:text-5xl mb-4">{{ item.title }}</h3>
+						{% endif %}
+						
+						{% if item.description %}
+						<div class="mb-4">{{ item.description }}</div>
+						{% endif %}
+						
+						{% if item.button_link.url %}
+						<a href="{{ item.button_link.url }}" target="{{ item.button_link.target}}"
+							class="btn btn-primary flex items-center !text-base lg:!px-16 uppercase">{{item.button_link.title}}
+						</a>
+						{% endif %}
+					</div>		
+				</div>
+				{% if item.form_code %}
+				<div  class="container py-8 lg:py-12 mt-8 mx-auto border-t-[#E9E9E9] border-t">	
+							{{fn('do_shortcode',item.form_code|striptags)}}
+				</div>
+				{% endif %}
+
+			</div>
+		{% endfor %}
+	{% endif %}
+</section>
+{% endif %}

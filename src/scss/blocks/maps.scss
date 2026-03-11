@@ -1,4 +1,4 @@
-.calsmoving-map {
+.mammothmoving-map {
     .location-wrapper {
         position: absolute;
         left: .5rem;
@@ -8,4 +8,14 @@
     iframe.place-cards {
         display: none !important;
     }
+
+    h3:before {
+        content: "";
+        width: 85px;
+        border-top: 4px solid #A30007;
+        display: block;
+        position: relative;
+        margin: auto;
+        top:-10px;
+    }  
 }

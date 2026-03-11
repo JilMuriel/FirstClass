@@ -1,4 +1,4 @@
-.calsmoving-sidebar-aside {
+.mammothmoving-sidebar-aside {
     .main-content {
         ul {
             br {
@@ -27,38 +27,121 @@
                 margin-bottom: 1rem;
             }
         }
+
+        a{
+            @apply text-skyblue;
+
+            &:hover {
+                @apply underline text-primary;
+            }
+        }
+
+        h3 {
+            @apply font-menu mb-2 text-xl lg:text-xl  text-primary;
+        }
+
+        h4 {
+            @apply font-menu mb-2 lg:text-xl   ;
+        }
     }
 
     .sidebar {
-        .menu {
-            li {
-                cursor: pointer;
-                padding: .7rem .5rem;
-                font-weight: 600;
-                border-bottom: .5px solid;
-                @extend .tr-smooth !optional;
-                &:hover {
-                    @apply text-secondary;
-                    @extend .tr-smooth !optional
+        #menu-services-menu,  #menu-areas-menu{
+           
+                list-style-position: inside;
+                
+
+                li {
+                    cursor: pointer;
+                    padding: .8rem 2rem;
+                    @extend .tr-smooth !optional;
+                    
+            
+
+                    a {
+                        @apply text-lg font-bold;
+                        color: #000;
+
+
+                        &:before{
+                            display:block;
+                            content: "";
+                            width: 25px;
+                            height: 25px;
+                            background: transparent url('/wp-content/uploads/2024/10/bx_check.svg') no-repeat;
+                            float: left;
+                            margin: -4px 17px 10px 0px
+                        }
+
+                        &:hover {
+                            @apply text-primary;
+                            @extend .tr-smooth !optional
+                        }
+                    }
+
+                    @screen lg{
+                        a{
+                            @apply text-xl ;
+                        }
+                    }
                 }
-            }
+
+
         }
 
-        .fluentform {
-            .fluentform .ff-el-form-control {
-                @apply bg-white text-gray rounded-3xl;
+        .menu-wrapper, .form-wrapper{
+            .acf-nav-menu{
+                padding: 1rem 0;
             }
 
-            .ff_submit_btn_wrapper {
-                margin-bottom: 0 !important;
-                margin-top: 1rem !important;
-
-                .btn {
-                    @extend .btn-ghost_light !optional;
-                    @apply font-medium hover:text-white;
-                    width: 100%;
-                }
-            }
         }
+        
+        .form-wrapper{
+            .fluentform_wrapper_3{
+                padding: 2rem 2rem;
+            }
+
+        }
+
+        .menu-wrapper h3, .form-wrapper h3{
+            @apply bg-lighblue text-white font-header uppercase;
+            padding: 1.5rem 0rem 1.5rem 2rem;
+        }
+
+        #fluentform_3 .ff-el-input--label label {
+            font-size: 16px;
+            color: #070E1A !important;
+        }
+
+        #fluentform_3 .ff-el-input--label.ff-el-is-required.asterisk-right label:after{
+            display: none;
+        }
+
+        #fluentform_3 .ff-btn-submit::after {
+            content: url(/wp-content/uploads/2023/10/arrow-right.svg);
+            position: relative;
+            top: 4px;
+            left: 10px;
+        }
+
+
+    }
+
+
+    .rpi-card .rpi-card-inner{
+        @apply bg-secondary border-r-0;
+
+        &.rpi-logo::before{
+            display: none;
+        }
+
+        .rpi-text{
+            @apply text-white text-md;
+        }
+       
+        .rpi-name{
+            @apply font-header text-xl  text-white
+        }
+        
     }
 }

@@ -1,72 +1,122 @@
 a {
     text-decoration: none;
     color: inherit;
+
     i {
         color: inherit;
     }
 }
 
 .btn {
-    @apply font-button;
+    @apply font-button text-base rounded-md uppercase;
     transition: all .3s;
     text-decoration: none;
-    width: max-content;
-    padding: .75rem 2.3rem;
-    text-transform: uppercase;
-    font-size: 1.1rem;
+    padding: 19.5px 27.5px;
+    width: 100%;
+    justify-content: center;
+
+}
+
+@screen lg {
+    .btn {
+        @apply text-base;
+        width: max-content;
+
+    }
 }
 
 .btn-primary {
-    @extend .btn; 
-    @apply bg-primary text-base  fill-white;    
+    @extend .btn;
+    @apply bg-red border border-red fill-white text-white;
     transition: all .3s;
-    border: none;
-    &:hover {
-        @apply bg-secondary text-white;
 
-        svg path{
+    &:hover {
+        @apply bg-secondary text-white border-secondary;
+
+        svg path {
             fill: #fff !important;
         }
     }
 }
+
 .btn-secondary {
     @extend .btn;
     @apply bg-secondary text-white fill-white;
     border: 1px solid transparent;
 
     &:hover {
-        @apply bg-primary  text-white;
+        @apply bg-primary text-white;
+        cursor: pointer;
+        border: 1px solid;
+    }
+}
+
+.btn-gray {
+    @extend .btn;
+    @apply bg-dark text-white fill-white;
+    border: 1px solid transparent;
+
+    &:hover {
+        @apply bg-primary text-white;
         cursor: pointer;
         border: 1px solid;
     }
 }
 
 
+.btn-yellow {
+    @extend .btn;
+    @apply bg-yellow text-dark fill-black;
+    border: 1px solid transparent;
+
+    &:hover {
+        @apply bg-primary text-white;
+        cursor: pointer;
+        border: 1px solid;
+    }
+}
+
+
+.btn-white {
+    @extend .btn;
+    @apply bg-white text-darkblue fill-darkblue font-header text-md;
+
+    &:hover {
+        @apply bg-secondary text-white;
+        cursor: pointer;
+    }
+}
+
 .btn-ghost {
     @extend .btn;
-    @apply border-secondary text-secondary;
+    @apply border-primary text-white;
     border: 1px solid;
     position: relative;
 
     &:hover {
-        @apply text-primary border-primary;
+        @apply text-white border-secondary bg-secondary;
         cursor: pointer;
     }
-    &_light{
+
+    &_light {
         @extend .btn-ghost;
-        @apply border-white text-white;        
+        @apply border-white text-white;
     }
-    &_light:hover{
+
+    &_light:hover {
         @apply border-secondary text-secondary;
     }
 
 }
+
 .btn-link {
     color: inherit;
     text-decoration: none;
     text-transform: uppercase;
-    &__primary{
+
+    &__primary {
         @apply text-primary;
+
         &:hover {
             @apply text-primary;
         }
@@ -86,9 +136,14 @@ a {
     width: 2.2rem;
     height: 2.2rem;
     border-radius: 50%;
+
     &__big {
         @extend .icon-circle-primary;
-        width: 3rem;   
-        height: 3rem;   
+        width: 3rem;
+        height: 3rem;
     }
+}
+
+.ff-btn {
+    margin-bottom: 0;
 }

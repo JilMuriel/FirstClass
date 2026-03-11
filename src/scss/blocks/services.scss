@@ -1,4 +1,4 @@
-.calsmoving-services {
+.mammothmoving-services {
     &.v2 {
         .service-photo {
             position: relative;
@@ -57,7 +57,7 @@
             }
 
             .overlay {
-                @apply bg-light;
+                @apply bg-gray;
                 content: '';
                 position: absolute;
                 top: 150%;

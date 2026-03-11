@@ -1,124 +1,153 @@
 {# --------- VERSION 1 ------------- #}
-<footer class="section-spacing pb-0 bg-dark">
-	<section class="calsmoving-footer  relative">
-		<div class="container mx-auto flex flex-row flex-wrap text-white">
+<footer class="section-spacing pb-0 padding-top-none">
+	<section class="mammothmoving-footer  relative">
+		<div class="container mx-auto pt-12 flex flex-row  flex-wrap text-base text-sm">
 			{# ––––––––– FIRST COLUMN –––––––––––– #}
 			<article
-				class="w-full md:w-6/12 lg:w-3/12 flex flex-col text-center md:text-left mb-8 md:pr-8 md:mb-8 lg:pr-0">
+				class="w-full md:w-6/12 lg:w-3/12 flex flex-col md:text-left mb-8 md:pr-8 md:mb-8 lg:pr-8">
 				{% if global.footer.about_us.footer_logo %}
-				<img src="{{ global.footer.about_us.footer_logo.url }}" class="logo mb-6"
-					title={{ global.footer.about_us.footer_logo.title }}
-					alt="{{ global.footer.about_us.footer_logo.title }}">
+					<a href="{{ site.link }}">
+							<img src="{{ global.footer.about_us.footer_logo.url }}" class="big-logo mb-6"
+							title={{ global.footer.about_us.footer_logo.title }}
+							alt="{{ global.footer.about_us.footer_logo.title }}">
+						</a>
 				{% endif %}
 				{% if global.footer.about_us.title %}
-				<h3 class="footer-column-title uppercase font-semibold pb-4 mb-4">
+				<p class="footer-column-title uppercase font-semibold pb-4 mb-4">
 					{{global.footer.about_us.title}}
-				</h3>
+				</p>
 				{% endif %}
 				{% if global.footer.about_us.description %}
-				<p class="footer-column-description lg:pr-8">{{global.footer.about_us.description}}</p>
+				{{global.footer.about_us.description}}
 				{% endif %}
-				{% if global.footer.about_us.social_icons %}
-				<div class="icons-wrap flex flex-row justify-center md:justify-start">
-					{% for icons in global.footer.about_us.social_icons %}
-					<a href="{{ icons.link.url}}" class='footer-social-icons text-primary mr-4'>
-						<img class="injectable w-7 h-5 object-contain fill-white" title="{{icons.icon.title}}"
-							alt="{{ icons.icon.alt }}" src="{{icons.icon.url}}">
-					</a>
-					{% endfor %}
-				</div>
-				{% endif %}
+
 			</article>
+
+
 			{# ––––––––– SECOND COLUMN –––––––––––– #}
-			<nav class="w-full md:w-6/12 lg:w-3/12 flex flex-col text-center lg:text-left mb-8 md:mb-8 lg:pl-6"
+			<nav class="w-full md:w-6/12 lg:w-3/12 flex flex-col lg:text-left mb-8 md:mb-8 lg:pl-12"
 				aria-label="services-navigation">
-				<h3 class="footer-column-title uppercase font-semibold pb-4 mb-4">
+				<p class="footer-column-title  font-tagline  text-lg text-white pb-4 mb-4">
 					{{global.footer.services.title}}
-				</h3>
+				</p>
 				<ul>
 					{% for links in global.footer.services.links %}
-					<li class="mb-4">
-						<a href="{{links.link.url}}" class="text-white">{{ links.link.title}}</a>
+					<li class="lg:mb-4">
+						<a href="{{links.link.url}}" class="hover:text-primary text-white text-base">- {{ links.link.title}}</a>
 					</li>
 					{% endfor %}
 
 				</ul>
 			</nav>
 			{# ––––––––– THIRD COLUMN –––––––––––– #}
-			<nav class="w-full md:w-6/12 lg:w-3/12 flex flex-col text-center lg:text-left mb-8 md:pr-8 md:mb-8 lg:pl-6 lg:pr-0"
+			<nav class="w-full md:w-6/12 lg:w-3/12 flex flex-col lg:text-left mb-8 md:pr-8 md:mb-8  lg:pl-12"
 				aria-label="location-navigation">
-				<h3 class="footer-column-title uppercase font-semibold pb-4 mb-4">
+				<p class="footer-column-title  font-tagline  text-lg text-white pb-4 mb-4">
 					{{global.footer.areas.title}}
-				</h3>
+				</p>
 				<ul>
 					{% for links in global.footer.areas.links %}
-					<li class="mb-4">
-						<a href="{{links.link.url}}" class="text-white">{{ links.link.title}}</a>
+					<li class="lg:mb-4">
+						<a href="{{links.link.url}}" class="hover:text-primary text-white text-base">- {{ links.link.title}}</a>
 					</li>
 					{% endfor %}
 
 				</ul>
 			</nav>
-			{# ––––––––– FOURTH COLUMN –––––––––––– #}
-			<nav class="w-full md:w-6/12 lg:w-3/12 flex flex-col text-center lg:text-left mb-8 md:mb-8 lg:pl-6"
+
+				{# –––––––––  GET IN TOUCH –––––––––––– #}
+			<nav class="w-full md:w-6/12 lg:w-3/12 flex flex-col lg:pl-2 lg:text-left mb-8 md:mb-8"
 				aria-label="address-navigation">
-				<h3 class="footer-column-title uppercase font-semibold pb-4 mb-4">
+				<p class="footer-column-title  font-tagline  text-lg text-white pb-4 mb-4 ">
 					{{global.footer.contact_us.title}}
-				</h3>
-				<ul class="flex flex-col items-center lg:items-start">
-					<li class="flex flex-row items-start mb-4">
+				</p>
+				<ul class="flex flex-col">
+					{% if global.footer.contact_us.adress_block.adress %}
+					<li class="flex flex-row space-x-4 items-start border-b border-white pb-2 border-opacity-10">
 						<img src="{{global.footer.contact_us.adress_block.icon.url}}"
-							class="injectable w-5 h-5 fill-white mt-1 mr-2"
+							class="injectable w-[25px] h-[25px]"
 							title="{{ global.footer.contact_us.adress_block.icon.title }}"
 							alt="{{ global.footer.contact_us.adress_block.icon.alt }}">
-						<p class='m-0'>{{ global.footer.contact_us.adress_block.adress|striptags('<br>') }}</p>
+						<div class="text-base w-full address">
+							{{ global.footer.contact_us.adress_block.adress }}
+						</div>
 					</li>
-					<li class="flex flex-row items-start mb-4">
-						<img src="{{global.footer.contact_us.telephone_block.icon.url}}"
-							class="injectable w-4 h-5 fill-white mr-2"
-							title="{{ global.footer.contact_us.telephone_block.icon.title }}"
-							alt="{{ global.footer.contact_us.telephone_block.icon.alt }}">
-						<a href="{{ global.footer.contact_us.telephone_block.number.url }}"
-							class='m-0'>{{ global.footer.contact_us.telephone_block.number.title }}</a>
-					</li>
-					<li class="flex flex-row items-start mb-4">
+					{% endif %}
+					{% if global.footer.contact_us.email_block.email.title %}
+					<li class="flex flex-row items-center  space-x-4 border-b border-white py-2 border-opacity-10" >
 						<img src="{{global.footer.contact_us.email_block.icon.url}}"
-							class="injectable w-4 h-5 fill-white mr-2"
+							class="w-[20px] h-[20px] injectable"
 							title="{{ global.footer.contact_us.email_block.icon.title }}"
 							alt="{{ global.footer.contact_us.email_block.icon.alt }}">
 						<a href="{{ global.footer.contact_us.email_block.email.url }}"
-							class='m-0'>{{ global.footer.contact_us.email_block.email.title }}</a>
+							class='m-0 hover:text-primary text-white text-base w-full'>{{ global.footer.contact_us.email_block.email.title }}</a>
 					</li>
-					<li class="flex flex-row items-start mb-4">
+					{% endif %}
+					{% if global.footer.contact_us.telephone_block.number.title %}
+					<li class="flex flex-row space-x-4 items-center py-2">
+						<img src="{{global.footer.contact_us.telephone_block.icon.url}}"
+							class="injectable w-[25px] h-[25px]"
+							title="{{ global.footer.contact_us.telephone_block.icon.title }}"
+							alt="{{ global.footer.contact_us.telephone_block.icon.alt }}">
+						<a href="{{ global.footer.contact_us.telephone_block.number.url }}"
+							class='m-0 hover:text-primary text-white text-base w-full' >{{ global.footer.contact_us.telephone_block.number.title }}</a>
+					</li>
+					{% endif %}
+					{% if global.footer.contact_us.workin_hours.hours %}
+					{# <li class="flex flex-row mb-4 items-center">
 						<img src="{{global.footer.contact_us.workin_hours.icon.url}}"
-							class="injectable w-4 h-5 fill-white mr-2"
+							class="w-5 h-5 mr-2"
 							title="{{ global.footer.contact_us.workin_hours.icon.title }}"
 							alt="{{ global.footer.contact_us.workin_hours.icon.alt }}">
-						<p class='m-0'>{{ global.footer.contact_us.workin_hours.hours }}</p>
-					</li>
+						<p class='m-0 text-white text-sm'>{{ global.footer.contact_us.workin_hours.hours }}</p>
+					</li> #}
+					{% endif %}
 				</ul>
+				{% if global.footer.about_us.social_icons %}
+				<p class="font-header text-md  text-white mt-4 mb-8">
+					Follow Us:
+				</p>
+				<div class="icons-wrap flex flex-col  md:justify-start">
+				<div class="flex flex-row">
+					{% for icons in global.footer.about_us.social_icons %}
+					<a href="{{ icons.link.url}}" class='footer-social-icons text-primary mr-4' target="{{icons.link.target}}">
+						<img class="object-contain fill-white" title="{{icons.icon.title}}"
+							alt="{{ icons.icon.alt }}" src="{{icons.icon.url}}" >
+					</a>
+					{% endfor %}
+				</div>
+				</div>
+
+				{% endif %}
 			</nav>
+	
+
+
 		</div>
 		{# ––––––––– COPYRIGHT SECTION –––––––––––– #}
 	</section>
-	<section class='calsmoving-footer-copyright bg-dark pt-4 pb-8 border-t border-t-stone-400/60'>
-		<nav class="container mx-auto flex flex-col-reverse xl:flex-row items-center flex-wrap text-white/50  text-center"
+	<section class='mammothmoving-footer-copyright  pb-4'>
+		<nav class="container mx-auto items-center lg:items-start flex flex-col md:flex-row flex-wrap space-y-1 border-t border-t-white border-opacity-10 lg:pt-4"
 			aria-label="legal-navigation">
-			<h3 class="m-0 pb-4 xl:mr-auto">Copyright &copy;
+			<p class="mb-0 mt-4 lg:mt-0 mx-auto xl:ml-0 xl:mr-auto text-white text-sm text-center lg:text-left">Copyright &copy;
 				{{"now"|date('Y')}}
-				{{ global.copyright }}</h3>
-			<ul class='flex flex-col md:flex-row m-0 pb-4 items-center'>
+				{{ global.copyright }}</p>
+			<ul class='link lg:flex lg:flex-row space-x-4 lg:space-x-8 lg:ml-auto xl:mr-0 mx-auto mt-2 lg:mt-0 text-center '>
 				{% for links in global.copyright_links %}
-				<li class="mb-2 md:mb-0">
-					<a href="{{links.link.url}}">{{ links.link.title }}
-						{% if not loop.last %}
-						<span class="hidden md:inline-block px-4">|</span>
-						{% endif %}
+				<li>
+					<a href="{{links.link.url}}" class="hover:text-primary text-white text-sm text-nowrap">{{ links.link.title }}
 					</a>
 				</li>
 				{% endfor %}
 			</ul>
 		</nav>
 	</section>
+
 </footer>
+
+<a href="https://fydv7t9k4m.wpdns.site/free-quote/" class="btn-fixed btn btn-gray text-center !w-fit mx-auto !lg:w-full lg:ml-0" target="">
+					<span>
+						Get A Free Quote
+					</span>
+				</a>
 {# --------- VERSION 1 END ------------- #}
