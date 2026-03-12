@@ -13,18 +13,18 @@
 #}
 
 {% if fields.faq_version == 'ver2' %}
-	<section class="bg-[#F8F8F8] px-[20px] py-[60px] md:py-[90px] lg:py-[120px]">
+	<section class="bg-[#F8F8F8] px-[20px] py-[60px] md:py-[90px] lg:py-[120px]" {# Background settings#} style="background-image: url('/wp-content/uploads/2026/03/Frame-52636.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center">
 		<div class="container mx-auto">
 			<div class="grid grid-cols-1 gap-[40px] md:gap-[100px] md:grid-cols-2">
 				<div class="bg-gray-200">
-					<h2 class="leading-[55px] text-[#4E4D4D] font-bold uppercase md:mb-[20px] text-[30px] md:text-[40px]">{{fields.title}}</h2>
+					<h2 class="leading-[55px] text-[#333333] font-bold uppercase md:mb-[20px] text-[30px] md:text-[40px]">{{fields.title}}</h2>
 					<p class="text-[#4E4D4D] text-[16px] font-regular md:mb-[60px] md:max-w-[430px]">
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad minim veniam.
 					</p>
 
 					{% if fields.button %}
 						<button class="hidden md:block">
-							<a href="{{ fields.button.url}}" class="mb-4 btn btn-primary">{{fields.button.title}}
+							<a href="{{ fields.button.url}}" class="mb-4 font-bold normal-case btn btn-primary">{{fields.button.title}}
 							</a>
 						</button>
 					{% endif %}
@@ -34,7 +34,7 @@
 				<div class="flex flex-col gap-[16px]">
 					<div class="border accordion-item border-[#E4E4E4] bg-[#F8F8F8] shadow-lg p-[8px] pl-[32px] rounded-[8px]">
 						<div class="flex items-center justify-between cursor-pointer accordion-header2">
-							<span class="text-[22px] font-bold accordion-title text-[#333333]">
+							<span class="accordion-title text-[22px] font-bold accordion-title text-[#333333]">
 								One Question
 							</span>
 
@@ -50,7 +50,7 @@
 					</div>
 					<div class="border accordion-item border-[#E4E4E4] bg-[#F8F8F8] shadow-lg p-[8px] pl-[32px] rounded-[8px]">
 						<div class="flex items-center justify-between cursor-pointer accordion-header2">
-							<span class="text-[22px] font-bold accordion-title text-[#333333]">
+							<span class="accordion-title text-[22px] font-bold accordion-title text-[#333333]">
 								One Question
 							</span>
 
@@ -66,7 +66,7 @@
 					</div>
 					<div class="border accordion-item border-[#E4E4E4] bg-[#F8F8F8] shadow-lg p-[8px] pl-[32px] rounded-[8px]">
 						<div class="flex items-center justify-between cursor-pointer accordion-header2">
-							<span class="text-[22px] font-bold accordion-title text-[#333333]">
+							<span class="accordion-title text-[22px] font-bold accordion-title text-[#333333]">
 								One Question
 							</span>
 
@@ -82,7 +82,7 @@
 					</div>
 					<div class="border accordion-item border-[#E4E4E4] bg-[#F8F8F8] shadow-lg p-[8px] pl-[32px] rounded-[8px]">
 						<div class="flex items-center justify-between cursor-pointer accordion-header2">
-							<span class="text-[22px] font-bold accordion-title text-[#333333]">
+							<span class="accordion-title text-[22px] font-bold accordion-title text-[#333333]">
 								One Question
 							</span>
 
@@ -98,7 +98,7 @@
 					</div>
 					<div class="border accordion-item border-[#E4E4E4] bg-[#F8F8F8] shadow-lg p-[8px] pl-[32px] rounded-[8px]">
 						<div class="flex items-center justify-between cursor-pointer accordion-header2">
-							<span class="text-[22px] font-bold accordion-title text-[#333333]">
+							<span class="accordion-title text-[22px] font-bold accordion-title text-[#333333]">
 								One Question
 							</span>
 
@@ -114,7 +114,7 @@
 					</div>
 					<div class="border accordion-item border-[#E4E4E4] bg-[#F8F8F8] shadow-lg p-[8px] pl-[32px] rounded-[8px]">
 						<div class="flex items-center justify-between cursor-pointer accordion-header2">
-							<span class="text-[22px] font-bold accordion-title text-[#333333]">
+							<span class="accordion-title text-[22px] font-bold accordion-title text-[#333333]">
 								One Question
 							</span>
 

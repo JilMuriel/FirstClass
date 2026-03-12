@@ -1,11 +1,11 @@
-<div class="2xl:px-0 mx-auto bg-lightblue py-0 lg:py-6">
-	<div class="container mx-auto relative">
+<div class="py-0 mx-auto 2xl:px-0 bg-lightblue lg:py-6">
+	<div class="container relative mx-auto">
 		<nav
-			class="flex flex-wrap lg:flex-nowrap items-center justify-between">
+			class="flex flex-wrap items-center justify-between lg:flex-nowrap">
 			<!-- Logo -->
-			<div class="w-full lg:w-auto flex items-center justify-evenly mx-auto lg:mx-0 lg:block py-2 lg:py-0  md:gap-x-10 lg:gap-x-0 overflow-hidden lg:overflow-visible">
-				<div class="logo-wrapper mr-auto sm:ml-0 sm:mb-0 flex justify-between items-center lg:gap-x-0">
-					<a href="{{ site.link }}">
+			<div class="flex items-center w-full py-2 mx-auto overflow-hidden lg:w-auto justify-evenly lg:mx-0 lg:block lg:py-0 md:gap-x-10 lg:gap-x-0 lg:overflow-visible">
+				<div class="flex items-center justify-between mr-auto logo-wrapper sm:ml-0 sm:mb-0 lg:gap-x-0">
+					<a href="{{ site.link }}" >
 						{% include 'partial/logo.twig' %}
 					</a>
 				</div>
@@ -17,7 +17,7 @@
 			</div>
 			<!-- End Logo -->
 			<!-- Navigation -->
-			<div class="desktop-menu v1 text-secondary hidden lg:inline-block">
+			<div class="hidden desktop-menu v1 text-secondary lg:inline-block">
 				{% include 'partial/menu.twig'%}
 			</div>
 			<!-- End Navigation -->
