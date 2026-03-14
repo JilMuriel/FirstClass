@@ -8,7 +8,7 @@
 {% if post_tag[0].count > 0 %}
 {% set link = fn('get_permalink', post.ID) %}
 <section
-	class="mammothmoving-category-content-left w-full mx-auto {% if fields.pagepicker.light_verstion %}light-version{% endif %}">
+	class="firstclass-category-content-left w-full mx-auto {% if fields.pagepicker.light_verstion %}light-version{% endif %}">
 	<div class="container mx-auto py-[80px] flex flex-row flex-wrap">
 		{% for post in posts %}
 		{% set meta = fn('get_term_meta', cat.term_id, 'picture' ) %}

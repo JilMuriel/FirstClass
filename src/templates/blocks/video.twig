@@ -11,33 +11,19 @@
   SupportsMode: true
   SupportsMultiple: true
 #}
-<section class="rotatedigital-video section-spacing">
-	<article class="container mx-auto flex flex-col lg:flex-row items-center text-center">
-		<div class="w-full lg:w-6/12">
-			{% if fields.upper_title and fields.title %}
-			<div class="w-full flex flex-col text-center lg:text-left pb-1 mb-4 lg:mb-12">
-				<h3 class="font-header tracking-wider text-base uppercase mb-4">{{ fields.upper_title }}</h3>
-				<h2 class="font-header text-4xl lg:text-5xl">{{ fields.title}}</h2>
+<section class="px-[20px] py-[60px] md:py-[90px] lg:py-[120px] bg-[#F8F8F8] {{ block.className }}">
+	<div class="container px-4 mx-auto">
+
+		<div class="video-container rounded-[8px] mb-[60px] flex items-center justify-center w-full h-[230px] sm:h-[330px] md:h-[420px] lg:h-[560px] bg-gray overflow-hidden relative">
+
+			<div class="absolute playButton-wrapper">
+				<button class="text-white bg-red h-[60px] w-[60px] md:h-[80px] md:w-[80px] lg:h-[90px] lg:w-[90px] rounded-full flex items-center justify-center">
+					<img src="/wp-content/uploads/2026/03/Polygon-4.png"/>
+				</button>
 			</div>
-			{% else %}
-			{% if fields.upper_title %}
-			<h3 class="font-header tracking-wider text-base uppercase mb-2">{{ fields.upper_title }}</h3>
-			{% endif %}
-			{% if fields.title %}
-			<h2 class="font-header text-4xl mb-8">{{ fields.title}}</h2>
-			{% endif %}
-			{% endif %}
-			{% if fields.description %}
-			<div
-				class="md:w-11/12 content-wrap leading-relaxed flex text-center mx-auto lg:ml-0 lg:text-left flex-col w-full">
-				{{fields.description}}
-			</div>
-			{% endif %}
+
+			<img src="/wp-content/uploads/2026/03/83073a2ba7f55deac9607d9bade19c4876d0c592.jpg" class="object-cover w-full h-full"/>
 		</div>
-		<div class="video-wrapper w-full lg:w-6/12 h-[450px] rounded-2xl" data-aos="fade-left" data-aos-offset="-250"
-			data-aos-delay="250" data-aos-duration="550" data-aos-once="true">
-			<iframe src="{{fields.video_url}}" frameborder="0" modestbranding allowfullscreen controls="0"
-				class="h-full w-full aspect-video"></iframe>
-		</div>
-	</article>
-</section>
+		{# SLIDER PLUGIN HERE  #}
+	</div>
+	</section>

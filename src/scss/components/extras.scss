@@ -63,7 +63,7 @@
     }
 }
 
-.mammothmoving-mapaside{
+.firstclass-mapaside{
     a{
 
     
@@ -74,7 +74,7 @@
 }
 
 .single-post {
- .mammothmoving-simplecontent {
+ .firstclass-simplecontent {
     .content-wrap h2{
         @apply text-[30px] leading-[30px] lg:text-[40px] lg:leading-[40px] mb-2;
     }
@@ -126,7 +126,7 @@
 
 }
 
-.mammothmoving-imagetext.bgred{
+.firstclass-imagetext.bgred{
         @apply text-white;
         background-image: linear-gradient(to top,#680002, #680002dc), url("/wp-content/uploads/2025/04/about-us-bg.jpg"); 
         @screen md{
@@ -144,7 +144,7 @@
 }
 
 
-.mammothmoving-iconbox{
+.firstclass-iconbox{
 
     .icon-link{
         &:hover{
@@ -160,7 +160,7 @@
 }
 
 
-.mammothmoving-iconboxaside.v2 {
+.firstclass-iconboxaside.v2 {
     background:  linear-gradient(
        to right,
       rgba(78, 77, 77,0.94) 0%,
@@ -174,16 +174,16 @@
 
 }
 
-.mammothmoving-faq.v2 {
+.firstclass-faq.v2 {
 
 }
 
-.mammothmoving-testimonials.v1{
-    background: url('../images/reviews-bg.png'),#ED1F24; 
-    background-repeat: repeat;
-    background-position: center;
-    background-size: cover;
-}
+// .firstclass-testimonials.v1{
+//     background: url('../images/reviews-bg.png'),#ED1F24; 
+//     background-repeat: repeat;
+//     background-position: center;
+//     background-size: cover;
+// }
 
 
 
@@ -260,7 +260,7 @@
     linear-gradient(to left, #E4E4E4, #E4E4E4, transparent) border-box; 
 }
 
-.mammothmoving-progress{
+.firstclass-progress{
     .f-arrow{
         transform: rotate(90deg);
         height: 15px;
@@ -268,7 +268,7 @@
 }
 
 @screen lg{
-.mammothmoving-progress{
+.firstclass-progress{
         .f-arrow{
             transform: rotate(0deg);
             height: auto;
@@ -276,7 +276,7 @@
     }
 }
 
-.mammothmoving-progress{
+.firstclass-progress{
     .second-arrow{
          transform: rotate(90deg);
          height: 15px;
@@ -285,7 +285,7 @@
 }
 
 @screen lg{
-.mammothmoving-progress{
+.firstclass-progress{
     .second-arrow{
          transform: scaleY(-1) rotate(5deg);
          height: auto;

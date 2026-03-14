@@ -23,7 +23,7 @@ p {
         @apply text-xl font-header text-left mb-2;
     }
 }
-.mammothmoving-simplecontent {
+.firstclass-simplecontent {
     ul{
         @apply ml-4 lg:ml-12;
         list-style: disc;
@@ -117,7 +117,7 @@ p {
 }
 
 
-.mammothmoving-imagetext {
+.firstclass-imagetext {
     .content {
         a{
         @apply text-primary underline underline-offset-4;
@@ -148,7 +148,7 @@ p {
     }
 }
 
-.mammothmoving-privacy-policy, .mammothmoving-terms, .mammothmoving-accessibility{
+.firstclass-privacy-policy, .firstclass-terms, .firstclass-accessibility{
     h2{
        @apply font-header text-lg lg:text-xl mb-8 text-dark;
     }

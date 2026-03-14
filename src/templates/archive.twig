@@ -4,9 +4,9 @@
 {% extends "index.twig" %}
 
 {% block content %}
-	<section class="mammothmoving-main-banner section-spacing mammothmoving-h__750 h-full w-full flex flex-col px-10 {{ block.className }}" {# Background settings #} style="background-image: url('{{ site.theme.link }}/images/moving-city-bg.jpg'); background-size: cover; background-position: cebter; background-repeat: no-repeat;">
+	<section class="firstclass-main-banner section-spacing firstclass-h__750 h-full w-full flex flex-col px-10 {{ block.className }}" {# Background settings #} style="background-image: url('{{ site.theme.link }}/images/moving-city-bg.jpg'); background-size: cover; background-position: cebter; background-repeat: no-repeat;">
 		<div class="overlay" style="background-color: rgba(8,8,10,.4); background-blend-mode: multiply;"></div>
-		<article class="mammothmoving-banner-content section-spacing container mx-auto w-full md:w-10/12 lg:w-8/12 xl:w-7/12 h-full flex flex-col justify-center px-1 relative z-5 text-base">
+		<article class="firstclass-banner-content section-spacing container mx-auto w-full md:w-10/12 lg:w-8/12 xl:w-7/12 h-full flex flex-col justify-center px-1 relative z-5 text-base">
 
 			<div class="text-center md:text-left">
 				{% if category %}
@@ -28,7 +28,7 @@
 	{% if posts|length > 0 %}
 		{% set link = fn('get_permalink', post.ID) %}
 		{% if post_cat[0].cat_name == title %}
-			<section class="mammothmoving-category-content-left w-full mx-auto {% if fields.pagepicker.light_verstion %}light-version{% endif %}">
+			<section class="firstclass-category-content-left w-full mx-auto {% if fields.pagepicker.light_verstion %}light-version{% endif %}">
 				<div class="container mx-auto py-[80px] flex flex-row flex-wrap">
 					{% for post in posts %}
 						{% set meta = fn('get_term_meta', cat.term_id, 'picture' ) %}
@@ -40,7 +40,7 @@
 							<div class="flex flex-col lg:flex-row mb-4">
 								<span class="text-primary">{{post.post_date|date('F d, Y')}}</span>
 								<span class='mx-2 hidden lg:inline'>|</span>
-								<span class='text-dark'>by mammothmoving</span>
+								<span class='text-dark'>by firstclass</span>
 							</div>
 							<p class='text-lg'>{{ post.post_excerpt }}</p>
 							<a class='btn-primary' href="{{ link }}">READ MORE</a>
@@ -59,7 +59,7 @@
 	{# Tags posts #}
 	{% if post_tag[0].count > 0 %}
 		{% set link = fn('get_permalink', post.ID) %}
-		<section class="mammothmoving-category-content-left w-full mx-auto">
+		<section class="firstclass-category-content-left w-full mx-auto">
 			<div class="container mx-auto py-[80px] flex flex-row flex-wrap">
 				{% for post in posts %}
 					{% set meta = fn('get_term_meta', cat.term_id, 'image' ) %}
@@ -71,7 +71,7 @@
 						<div class="flex flex-col lg:flex-row mb-4">
 							<span class="text-primary">{{post.post_date|date('F d, Y')}}</span>
 							<span class='mx-2 hidden lg:inline'>|</span>
-							<span class='text-dark'>by mammothmoving</span>
+							<span class='text-dark'>by firstclass</span>
 						</div>
 						<p class='text-lg'>{{ post.post_excerpt }}</p>
 						<a class='btn-primary' href="{{ link }}">READ MORE</a>

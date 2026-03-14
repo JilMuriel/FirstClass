@@ -9,7 +9,7 @@ just a small part. See `search.twig` for an example of another approach #}
 	{% if posts|length > 0 %}
 
 		{% if post_cat[0].cat_name == title %}
-			<section class="mammothmoving-category-content-left w-full mx-auto {% if fields.pagepicker.light_verstion %}light-version{% endif %}">
+			<section class="firstclass-category-content-left w-full mx-auto {% if fields.pagepicker.light_verstion %}light-version{% endif %}">
 				<div class="container mx-auto py-[80px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 					{% for post in posts %}
 					{% set category_id = fields.blog.term_id %}

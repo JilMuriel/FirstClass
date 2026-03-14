@@ -11,23 +11,92 @@
   SupportsMode: true
   SupportsMultiple: true
 #}
+<section
+	class="bg-[#F8F8F8] relative px-[20px] pt-[60px] md:pt-[90px] lg:pt-[120px] {{ block.className }}">
+	<!-- Background Overlay -->
+	<div class="absolute inset-0 bg-center bg-no-repeat bg-cover h-[470px]" style="background-image: url('/wp-content/uploads/2026/03/Frame-52629.jpg');"></div>
 
-<section class="mammothmoving-imagebox pt-[30px] pb-[30px] bg-secondary {{ block.className }}">
-	{% if fields.box %}
-	<div class="container mx-auto flex">
-		<div class="grid w-full grid-cols-2 lg:grid-cols-4 gap-8 items-center">
-			{% for item in fields.box %}
-			<article class="text-center mx-auto" data-aos="fade-up" data-aos-offset="150"
-				data-aos-delay="{{loop.index}}50" data-aos-duration="2*{{loop.index}}50" data-aos-once="true">
-				{% if item.image.url %}
-				<a href="{{ item.link.url}}" target="{{ item.link.target}}">
-						<img src="{{ item.image.url }}" class="w-auto image-cover mx-auto"
-							title="{{ item.image.title }}" alt="{{ item.image.alt }}">
-				</a>
-				{% endif %}
+
+	<div class="container relative z-10 mx-auto bg-white pt-[80px] rounded-[8px]">
+		<div
+			class="topbar-logos px-[50px] relative block">
+
+			<!-- Arrow container -->
+			<div
+				class="w-[80vw] mx-auto flex items-center justify-between absolute left-1/2 -translate-x-1/2 top-[50%] -translate-y-1/2 z-10 ">
+
+				<!-- Navigation -->
+				<div class="swiper-button-prev w-[60px] h-[60px] bg-[#333] rounded-full after:hidden flex items-center justify-center">
+					<img src="/wp-content/uploads/2026/03/Vector-3.png" alt="">
+				</div>
+
+				<div class="swiper-button-next w-[60px] h-[60px] bg-[#EE4035] rounded-full after:hidden flex items-center justify-center">
+					<img src="/wp-content/uploads/2026/03/Vector-4.png" alt="">
+				</div>
+
+			</div>
+
+			<article class="container mx-auto text-center">
+
+				<div class="overflow-hidden swiper blog-swiper01">
+
+					<div
+						class="items-stretch swiper-wrapper">
+
+						<!-- Slide -->
+						<article class="flex flex-col w-full px-[25px] text-left swiper-slide">
+
+							<div class="h-[200px] md:h-[240px] shadow-lg lg:h-[270px] mb-[30px] rounded-[8px] bg-[#5f5e5e]"></div>
+
+							<div class="flex flex-col flex-1 gap-[25px]">
+
+								<h3 class="text-[22px] font-bold leading-[24px]">
+									First Class Moving Referral Program
+								</h3>
+
+								<p class="text-[16px] text-[#414141]">
+									Refer a friend or family member and get $50 for each qualified sale.
+								</p>
+
+								<a class="font-bold text-blue">
+									Share
+								</a>
+
+								<a href="{{ link }}" class="mt-auto w-full md:w-[220px] bg-blue text-white text-[16px] font-bold text-center rounded-[5px] px-[24px] py-[18.5px]">
+									Refer Someone Today
+								</a>
+
+							</div>
+
+						</article>
+
+						<!-- Slide -->
+						<article class="flex flex-col w-full px-[25px] text-left swiper-slide">
+
+							<div class="h-[200px] md:h-[240px] shadow-lg lg:h-[270px] mb-[30px] rounded-[8px] bg-[#5f5e5e]"></div>
+
+							<div class="flex flex-col flex-1 gap-[25px]">
+
+								<h3 class="text-[22px] font-bold leading-[24px]">
+									First Class Moving Referral Program
+								</h3>
+
+								<p class="text-[16px] text-[#414141]">
+									Refer a friend or family member and get $50 for each qualified sale.
+								</p>
+
+								<a class="font-bold text-blue">
+									Share
+								</a>
+
+								<a href="{{ link }}" class="mt-auto w-full md:w-[220px] bg-blue text-white text-[16px] font-bold text-center rounded-[5px] px-[24px] py-[18.5px]">
+									Refer Someone Today
+								</a>
+							</div>
+						</article>
+					</div>
+				</div>
 			</article>
-			{% endfor %}
 		</div>
 	</div>
-	{% endif %}
-</section>
+</div></section>

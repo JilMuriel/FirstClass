@@ -1,7 +1,7 @@
 {#
   Title: Banner
   Description: Banner block
-  Category: mammothmoving-blocks
+  Category: firstclass-blocks
   Icon: money
   Keywords: banner
   Mode: edit
@@ -13,63 +13,73 @@
 #}
 
 {% if fields.banner_version == 'ver1' %}
-	<section class="flex flex-col items-center w-full h-full mammothmoving-main-banner v1 lg:px-10" {{ block.className }} {# Background settings#} style="background-image:  linear-gradient(to right, rgba(10, 24, 51, 0.9), rgba(10, 24, 51, 0.4)), url('/wp-content/uploads/2025/11/Banner.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center">
-		<div class="overlay" style="background: linear-gradient(
-																																																																																																															to left,
-																																																																																																															rgba(237, 31, 36, 0.3) 0%,
-																																																																																																															#ED1F24 61%,
-																																																																																																															#ED1F24 100%
-																																																																																																														);"></div>
-		<article class="mammothmoving-banner-content md:section-spacing container mx-auto w-full h-full flex flex-col lg:flex-row items-center relative z-5 md:mt-auto  !pt-[40px] !pb-[40px] md:!pt-[50px] md:!pb-[50px] lg:min-h-[450px]">
-			<div class="w-full lg:w-7/12">
-				{% if fields.banner.title or fields.banner.description %}{% endif %}
-				{# Main title #}
-				<div class="flex flex-row justify-center lg:justify-start">
-					<span class="mm-icon-wh"></span>
+<section class="bg-custom firstmate-bg  home v2 h-full w-full flex flex-col items-center lg:px-10 pb-[32px] md:pb-[70px]" {{ block.className }} {# Background settings#}>
+	<article class="md:section-spacing container mx-auto w-full h-full gap-[20px] flex flex-col lg:flex-row items-start justify-between relative z-5 md:mt-auto mb-[10px] md:mb-[90px] !pt-[40px] md:!pt-[80px] lg:!pt-[170px] ">
+		<div class="banner-content-block w-full lg:w-[585px] pt-[35px]">
+			{% if fields.banner.title or fields.banner.description %}{% endif %}
+
+			{# Main title #}
+			{% if fields.banner.title %}
+				<h1 class="leading-none text-center font-bold text-[32px] md:text-left md:text-[65px] text-[#333333]">
+					Service Area Page</h1>
+			{% endif %}
+
+			{# Subtitle #}
+			{% if fields.banner.sub_title %}
+				<p class="font-body text-[16px] mb-4 mt-4 text-[#4E4D4D] text-center lg:text-left">As an award winning moving company, we recognize that learning the art of residential and commercial moving, like any craft, takes professional training, attention to detail, and a passion for excellence</p>
+			{% endif %}
+			<div class="flex flex-col gap-[8px]">
+				<div class="service-mini-card flex items-center justify-between p-[24px] rounded-[10px] text-white transition-all duration-300 ease-out transform hover:-translate-y-1 hover:shadow-lg">
+					<p class="text-[22px] mb-0 font-bold text-white">
+						Residential Moving
+					</p>
+					<button class="flex items-center">
+						Learn More
+						<img decoding="async" src="wp-content/uploads/2026/03/arrow-icon.png" class="h-[24px] w-[24px] ml-[10px]">
+					</button>
 				</div>
-				{% if fields.banner.title %}
-					<h1 class="text-xl text-center text-white font-header lg:text-left">
-						{{fields.banner.title }}</h1>
-				{% endif %}
-
-				{# Subtitle #}
-				{% if fields.banner.sub_title %}
-					<div class="w-full lg:w-[85%] text-base mb-4 mt-4 text-white text-center lg:text-left">{{fields.banner.sub_title}}</div>
-				{% endif %}
-
-				{# Button wrap #}
-
-
-				{% if fields.banner.button_1 %}
-					<div class="flex flex-col mt-6 mb-6 space-y-4 md:flex-row md:space-x-3 md:space-y-0">
-						<a href="{{ fields.banner.button_1.url }}" class="btn btn-gray text-center !w-fit mx-auto !lg:w-full lg:ml-0" target="{{ fields.banner.button_1.target }}">
-							<span>
-								{{ fields.banner.button_1.title }}
-							</span>
-						</a>
-					</div>
-				{% endif %}
-
-
+				<div class="service-mini-card flex items-center justify-between p-[24px] rounded-[10px] text-white transition-all duration-300 ease-out transform hover:-translate-y-1 hover:shadow-lg">
+					<p class="text-[22px] mb-0 font-bold text-white">
+						Commercial Moving
+					</p>
+					<button class="flex items-center">
+						Learn More
+						<img decoding="async" src="wp-content/uploads/2026/03/arrow-icon.png" class="h-[24px] w-[24px] ml-[10px]">
+					</button>
+				</div>
+				<div class="service-mini-card flex items-center justify-between p-[24px] rounded-[10px] text-white transition-all duration-300 ease-out transform hover:-translate-y-1 hover:shadow-lg">
+					<p class="text-[22px] mb-0 font-bold text-white">
+						Logistics
+					</p>
+					<button class="flex items-center">
+						Learn More
+						<img decoding="async" src="wp-content/uploads/2026/03/arrow-icon.png" class="h-[24px] w-[24px] ml-[10px]">
+					</button>
+				</div>
 			</div>
-			{% if fields.banner.embed_form %}
-				<div class="relative w-full placeholder lg:w-5/12 lg:pl-12">
-					<div class="px-4 lg:px-10 pt-6 lg:pb-6 rounded-lg bg-[#333333]/70">
-						<p class="font-header  text-[32px] text-center text-white mb-6">Get A Free Estimate</p>
+
+			{# Button wrap #}
+
+		</div>
+		{% if fields.banner.embed_form %}
+			<div class="relative w-full placeholder lg:w-[435px]">
+				<div class="p-[24px] md:p-[35px] rounded-lg bg-[#B8CEDB] text-[#333333]">
+					<p class="font-header font-bold text-[30px] text-center mb-6">Get A Free Estimate</p>
+					<div class="custom-form">
 						{{fn('do_shortcode', '[brb_collection id=7854]')}}
 						<div class="">{{fn('do_shortcode', fields.banner.embed_form)}}</div>
 					</div>
 				</div>
-			{% endif %}
-
-		</article>
-	</section>
+			</div>
+		{% endif %}
+	</article>
+</section>
 {% endif %}
 {# –––––––––––––––– BANNER VERSION 1 END –––––––––––––––– #}
 
 {% if fields.banner_version == 'ver2' %}
 	<section class="firstclass-main-banner firstmate-bg home v2 h-full w-full flex flex-col items-center lg:px-10 pb-[32px] md:pb-[70px]" {{ block.className }} {# Background settings#} style="background-image: url('wp-content/uploads/2026/03/Banner.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center">
-		<article class="mammothmoving-banner-content md:section-spacing container mx-auto w-full h-full flex flex-col lg:flex-row items-center relative z-5 md:mt-auto mb-[10px] md:mb-[90px] !pt-[40px] md:!pt-[80px] lg:!pt-[170px]">
+		<article class="firstclass-banner-content md:section-spacing container mx-auto w-full h-full flex flex-col lg:flex-row items-center relative z-5 md:mt-auto mb-[10px] md:mb-[90px] !pt-[40px] md:!pt-[80px] lg:!pt-[170px]">
 			<div class="w-full lg:w-7/12">
 				{% if fields.banner.title or fields.banner.description %}{% endif %}
 
@@ -141,92 +151,3 @@
 
 {% endif %}
 {# –––––––––––––––– BANNER VERSION 2 END –––––––––––––––– #}
-
-<section class="bg-custom firstmate-bg home v2 h-full w-full flex flex-col items-center lg:px-10 pb-[32px] md:pb-[70px]" {{ block.className }} {# Background settings#}>
-	<article class="md:section-spacing container mx-auto w-full h-full gap-[20px] flex flex-col lg:flex-row items-start justify-between relative z-5 md:mt-auto mb-[10px] md:mb-[90px] !pt-[40px] md:!pt-[80px] lg:!pt-[170px] ">
-		<div class="banner-content-block w-full lg:w-[585px] pt-[35px]">
-			{% if fields.banner.title or fields.banner.description %}{% endif %}
-
-			{# Main title #}
-			{% if fields.banner.title %}
-				<h1 class="leading-none text-center font-bold text-[32px] md:text-left md:text-[65px] text-[#333333]">
-					Service Area Page</h1>
-			{% endif %}
-
-			{# Subtitle #}
-			{% if fields.banner.sub_title %}
-				<p class="font-body text-[16px] mb-4 mt-4 text-[#4E4D4D] text-center lg:text-left">As an award winning moving company, we recognize that learning the art of residential and commercial moving, like any craft, takes professional training, attention to detail, and a passion for excellence</p>
-			{% endif %}
-			<div class="flex flex-col gap-[8px]">
-				<div class="service-mini-card flex items-center justify-between p-[24px] rounded-[10px] text-white transition-all duration-300 ease-out transform hover:-translate-y-1 hover:shadow-lg">
-					<p class="text-[22px] mb-0 font-bold text-white">
-						Residential Moving
-					</p>
-					<button class="flex items-center">
-						Learn More
-						<img decoding="async" src="wp-content/uploads/2026/03/arrow-icon.png" class="h-[24px] w-[24px] ml-[10px]">
-					</button>
-				</div>
-				<div class="service-mini-card flex items-center justify-between p-[24px] rounded-[10px] text-white transition-all duration-300 ease-out transform hover:-translate-y-1 hover:shadow-lg">
-					<p class="text-[22px] mb-0 font-bold text-white">
-						Commercial Moving
-					</p>
-					<button class="flex items-center">
-						Learn More
-						<img decoding="async" src="wp-content/uploads/2026/03/arrow-icon.png" class="h-[24px] w-[24px] ml-[10px]">
-					</button>
-				</div>
-				<div class="service-mini-card flex items-center justify-between p-[24px] rounded-[10px] text-white transition-all duration-300 ease-out transform hover:-translate-y-1 hover:shadow-lg">
-					<p class="text-[22px] mb-0 font-bold text-white">
-						Logistics
-					</p>
-					<button class="flex items-center">
-						Learn More
-						<img decoding="async" src="wp-content/uploads/2026/03/arrow-icon.png" class="h-[24px] w-[24px] ml-[10px]">
-					</button>
-				</div>
-			</div>
-
-			{# Button wrap #}
-
-		</div>
-		{% if fields.banner.embed_form %}
-			<div class="relative w-full placeholder lg:w-[435px]">
-				<div class="p-[24px] md:p-[35px] rounded-lg bg-[#B8CEDB] text-[#333333]">
-					<p class="font-header font-bold text-[30px] text-center mb-6">Get A Free Estimate</p>
-					<div class="custom-form">
-						{{fn('do_shortcode', '[brb_collection id=7854]')}}
-						<div class="">{{fn('do_shortcode', fields.banner.embed_form)}}</div>
-					</div>
-				</div>
-			</div>
-		{% endif %}
-	</article>
-</section>
-
-
-<section class="left section-spacing" style="background-image: url('/wp-content/uploads/2026/03/About-Us.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center">
-	<article class="container flex flex-row-reverse flex-wrap items-center justify-between mx-auto ">
-		<div class="w-full my-auto lg:w-[590px]">
-			<div class="mb-8 text-center content lg:text-left">
-				<h2 class="leading-[55px] text-[#333333] text-center uppercase md:text-left font-bold md:mb-[40px] text-[30px] md:text-[40px]">Heading Three</h2>
-				<p class="text-[#4E4D4D] leading-[28px] text-[16px] font-regular mb-[30px]">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-				</p>
-				<p class="text-[#4E4D4D] leading-[28px] text-[16px] font-regular mb-[30px]">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-				</p>
-				<p class="text-[#4E4D4D] leading-[28px] mb-[40px] text-[16px] font-regular">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-				<button class="hidden md:block">
-					<a href="{{ fields.button.url}}" class="mb-4 font-bold normal-case btn btn-primary">Get A Free Quote
-					</a>
-				</button>
-			</div>
-		</div>
-		<div class="w-full mt-8 lg:mt-0 lg:w-[490px]">
-			<figure>
-				<img class="w-full rounded-lg min-h-[710px] w-auto" src="/wp-content/uploads/2026/03/stockroom.jpg">
-			</figure>
-		</div>
-	</article>
-</section>
