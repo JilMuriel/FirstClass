@@ -15,11 +15,11 @@
 {% if fields.banner_version == 'ver1' %}
 	<section class="flex flex-col items-center w-full h-full mammothmoving-main-banner v1 lg:px-10" {{ block.className }} {# Background settings#} style="background-image:  linear-gradient(to right, rgba(10, 24, 51, 0.9), rgba(10, 24, 51, 0.4)), url('/wp-content/uploads/2025/11/Banner.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center">
 		<div class="overlay" style="background: linear-gradient(
-																					to left,
-																					rgba(237, 31, 36, 0.3) 0%,
-																					#ED1F24 61%,
-																					#ED1F24 100%
-																				);"></div>
+																																																																																							to left,
+																																																																																							rgba(237, 31, 36, 0.3) 0%,
+																																																																																							#ED1F24 61%,
+																																																																																							#ED1F24 100%
+																																																																																						);"></div>
 		<article class="mammothmoving-banner-content md:section-spacing container mx-auto w-full h-full flex flex-col lg:flex-row items-center relative z-5 md:mt-auto  !pt-[40px] !pb-[40px] md:!pt-[50px] md:!pb-[50px] lg:min-h-[450px]">
 			<div class="w-full lg:w-7/12">
 				{% if fields.banner.title or fields.banner.description %}{% endif %}
@@ -68,10 +68,11 @@
 {# –––––––––––––––– BANNER VERSION 1 END –––––––––––––––– #}
 
 {% if fields.banner_version == 'ver2' %}
-	<section class="mammothmoving-main-banner firstmate-bg home v2 h-full w-full flex flex-col items-center lg:px-10 pb-[32px] md:pb-[70px]" {{ block.className }} {# Background settings#} style="background-image: url('wp-content/uploads/2026/03/Banner.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center">
+	<section class="firstclass-main-banner firstmate-bg home v2 h-full w-full flex flex-col items-center lg:px-10 pb-[32px] md:pb-[70px]" {{ block.className }} {# Background settings#} style="background-image: url('wp-content/uploads/2026/03/Banner.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center">
 		<article class="mammothmoving-banner-content md:section-spacing container mx-auto w-full h-full flex flex-col lg:flex-row items-center relative z-5 md:mt-auto mb-[10px] md:mb-[90px] !pt-[40px] md:!pt-[80px] lg:!pt-[170px]">
 			<div class="w-full lg:w-7/12">
 				{% if fields.banner.title or fields.banner.description %}{% endif %}
+
 				{# Main title #}
 				{% if fields.banner.title %}
 					<h1 class="leading-none text-center font-bold text-[32px] md:text-left md:text-[65px] text-white">
@@ -98,8 +99,8 @@
 		</article>
 		<div class="gap-[24px] md:section-spacing container mx-auto w-full h-full flex flex-col lg:flex-row items-center relative z-5 md:mt-auto flex items-center">
 			<div class="service-card p-[24px] rounded-[10px] text-white
-										            transition-all duration-300 ease-out
-										            transform hover:-translate-y-1 hover:shadow-lg">
+																																																																																																																								            transition-all duration-300 ease-out
+																																																																																																																								            transform hover:-translate-y-1 hover:shadow-lg">
 
 				<p class="text-[22px] mb-[24px] font-bold text-white">
 					Residential Moving
@@ -116,8 +117,8 @@
 
 			</div>
 			<div class="service-card p-[24px] rounded-[10px] text-white
-										            transition-all duration-300 ease-out
-										            transform hover:-translate-y-1 hover:shadow-lg">
+																																																																																																																								            transition-all duration-300 ease-out
+																																																																																																																								            transform hover:-translate-y-1 hover:shadow-lg">
 				<p class="text-[22px] mb-[24px] font-bold text-white">
 					Residential Moving</p>
 				<p class="text-[16px] mb-[24px] font-normal text-white">Local Moving • Intrastate • International • Long Distance Movers</p>
@@ -125,8 +126,8 @@
 					<img src="wp-content/uploads/2026/03/arrow-icon.png" class="h-[24px] w-[24px] ml-[10px]"/></button>
 			</div>
 			<div class="service-card p-[24px] rounded-[10px] text-white
-										            transition-all duration-300 ease-out
-										            transform hover:-translate-y-1 hover:shadow-lg">
+																																																																																																																								            transition-all duration-300 ease-out
+																																																																																																																								            transform hover:-translate-y-1 hover:shadow-lg">
 				<p class="text-[22px] mb-[24px] font-bold text-white">
 					Residential Moving</p>
 				<p class="text-[16px] mb-[24px] font-normal text-white">Local Moving • Intrastate • International • Long Distance Movers</p>
@@ -137,5 +138,68 @@
 
 		</div>
 	</section>
+
 {% endif %}
 {# –––––––––––––––– BANNER VERSION 2 END –––––––––––––––– #}
+
+<section class="bg-custom firstmate-bg home v2 h-full w-full flex flex-col items-center lg:px-10 pb-[32px] md:pb-[70px]" {{ block.className }} {# Background settings#}>
+	<article class="md:section-spacing container mx-auto w-full h-full gap-[20px] flex flex-col lg:flex-row items-start justify-between relative z-5 md:mt-auto mb-[10px] md:mb-[90px] !pt-[40px] md:!pt-[80px] lg:!pt-[170px] ">
+		<div class="banner-content-block w-full lg:w-[585px] pt-[35px]">
+			{% if fields.banner.title or fields.banner.description %}{% endif %}
+
+			{# Main title #}
+			{% if fields.banner.title %}
+				<h1 class="leading-none text-center font-bold text-[32px] md:text-left md:text-[65px] text-[#333333]">
+					Service Area Page</h1>
+			{% endif %}
+
+			{# Subtitle #}
+			{% if fields.banner.sub_title %}
+				<p class="font-body text-[16px] mb-4 mt-4 text-[#4E4D4D] text-center lg:text-left">As an award winning moving company, we recognize that learning the art of residential and commercial moving, like any craft, takes professional training, attention to detail, and a passion for excellence</p>
+			{% endif %}
+			<div class="flex flex-col gap-[8px]">
+				<div class="service-mini-card flex items-center justify-between p-[24px] rounded-[10px] text-white transition-all duration-300 ease-out transform hover:-translate-y-1 hover:shadow-lg">
+					<p class="text-[22px] mb-0 font-bold text-white">
+						Residential Moving
+					</p>
+					<button class="flex items-center">
+						Learn More
+						<img decoding="async" src="wp-content/uploads/2026/03/arrow-icon.png" class="h-[24px] w-[24px] ml-[10px]">
+					</button>
+				</div>
+				<div class="service-mini-card flex items-center justify-between p-[24px] rounded-[10px] text-white transition-all duration-300 ease-out transform hover:-translate-y-1 hover:shadow-lg">
+					<p class="text-[22px] mb-0 font-bold text-white">
+						Commercial Moving
+					</p>
+					<button class="flex items-center">
+						Learn More
+						<img decoding="async" src="wp-content/uploads/2026/03/arrow-icon.png" class="h-[24px] w-[24px] ml-[10px]">
+					</button>
+				</div>
+				<div class="service-mini-card flex items-center justify-between p-[24px] rounded-[10px] text-white transition-all duration-300 ease-out transform hover:-translate-y-1 hover:shadow-lg">
+					<p class="text-[22px] mb-0 font-bold text-white">
+						Logistics
+					</p>
+					<button class="flex items-center">
+						Learn More
+						<img decoding="async" src="wp-content/uploads/2026/03/arrow-icon.png" class="h-[24px] w-[24px] ml-[10px]">
+					</button>
+				</div>
+			</div>
+
+			{# Button wrap #}
+
+		</div>
+		{% if fields.banner.embed_form %}
+			<div class="relative w-full placeholder lg:w-[435px]">
+				<div class="p-[24px] md:p-[35px] rounded-lg bg-[#B8CEDB] text-[#333333]">
+					<p class="font-header font-bold text-[30px] text-center mb-6">Get A Free Estimate</p>
+					<div class="custom-form">
+						{{fn('do_shortcode', '[brb_collection id=7854]')}}
+						<div class="">{{fn('do_shortcode', fields.banner.embed_form)}}</div>
+					</div>
+				</div>
+			</div>
+		{% endif %}
+	</article>
+</section>
