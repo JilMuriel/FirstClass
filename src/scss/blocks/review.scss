@@ -1,4 +1,4 @@
-.mammothmoving-review {
+.firstclass-review {
     .review-item {
         min-height: 250px;
         transition: all .3s;
@@ -66,10 +66,10 @@
     }
 }
 
-.mammothmoving-review_v3 {
+.firstclass-review_v3 {
 
-    .mammothmoving-review__wrap {
-        .mammothmoving-review__img {
+    .firstclass-review__wrap {
+        .firstclass-review__img {
             -webkit-filter: grayscale(1);
             filter: grayscale(1);
             -webkit-transition: all 350ms ease;
@@ -79,7 +79,7 @@
             transition: all 350ms ease;
         }
 
-        .mammothmoving-review__social {
+        .firstclass-review__social {
             visibility: hidden;
 
             a{
@@ -110,7 +110,7 @@
             }
         }
 
-        .mammothmoving-review__name {
+        .firstclass-review__name {
             position: relative;
 
             &::before {
@@ -136,12 +136,12 @@
 
         &:hover {
 
-            .mammothmoving-review__img {
+            .firstclass-review__img {
                 -webkit-filter: grayscale(0);
                 filter: grayscale(0);
             }
 
-            .mammothmoving-review__social {
+            .firstclass-review__social {
                 a {
                     position: relative;
                     visibility: visible;
@@ -161,7 +161,7 @@
                 }
             }
 
-            .mammothmoving-review__name {
+            .firstclass-review__name {
                 &::before {
                     width: 100%;
                 }
@@ -172,8 +172,8 @@
     }
 }
 
-.mammothmoving-review_v4, .mammothmoving-review_v5{
-    .mammothmoving-review__img {
+.firstclass-review_v4, .firstclass-review_v5{
+    .firstclass-review__img {
         transition: all .35s ease;
         &:hover {
             transform: scale(1.04);

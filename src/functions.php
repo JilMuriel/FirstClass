@@ -294,19 +294,19 @@ add_action( 'enqueue_block_assets', 'enqueuing_editor_styling' );
  * @param   bool   $is_preview True during AJAX preview.
  */
 // blocks render
-function mammothmoving_blocks( $categories, $post ) {
+function firstclass_blocks( $categories, $post ) {
 	return array_merge(
 		$categories,
 		array(
 			array(
-				'slug' => 'mammothmoving-blocks',
-				'title' => __( 'mammothmoving Blocks' ),
+				'slug' => 'firstclass-blocks',
+				'title' => __( 'firstclass Blocks' ),
 			),
 		)
 	);
 }
 
-add_filter( 'block_categories_all', 'mammothmoving_blocks', 10, 2);
+add_filter( 'block_categories_all', 'firstclass_blocks', 10, 2);
 function block_acf_init()
 {
     $blocks = require(__DIR__.'/blocks.php');

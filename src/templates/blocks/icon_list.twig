@@ -11,164 +11,56 @@
   SupportsMode: true
   SupportsMultiple: true
 #}
-{% if fields.icon_version == 'ver1' %}
-	<section class="mammothmoving-iconlist v1 section-spacing bg-white {{ block.className }}">
-		<div class="container px-4 mx-auto text-center">
 
-			<div class="flex flex-row justify-center">
-				<span class="mm-icon-red"></span>
+
+<section class="bg-[#D9EAF4] px-[20px] py-[60px] md:py-[90px] lg:py-[120px]">
+	<div class="container mx-auto text-center md:w-[796px] mb-[60px]">
+		<h2 class="leading-[55px] text-[#4E4D4D] font-bold uppercase md:mb-[30px] text-[30px] md:text-[40px]">Why Choose Us?</h2>
+		<p class="text-[#402e2e] text-[16px] font-regular">
+			We also offer exceptional commercial moving and bespoke services. Every move we handle includes meticulous packing.
+		</p>
+	</div>
+	<div class="container px-4 mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-[60px]">
+
+		<div class="text-center text-[#402e2e]">
+			<div class="mb-8 h-[80px] w-[80px] bg-white rounded-full flex items-center justify-center mx-auto">
+				<img src="/wp-content/uploads/2026/03/fi_4230731.png" class="h-[42px] w-auto"/>
 			</div>
-			{% if fields.title %}
-				<h2 class="font-tagline text-[32px] leading-[35px] lg:text-xl text-dark mb-4">{{fields.title}}</h2>
-			{% endif %}
-
-			{% if fields.upper_title %}
-				<p class="mt-4 mb-4 text-base font-semibold text-dark">
-					{{fields.upper_title}}
-				</p>
-			{% endif %}
-
-			{% if fields.description %}
-				<p class="text-base text-dark">
-					{{fields.description}}
-				</p>
-			{% endif %}
-
-			<div
-				class="grid items-center grid-cols-1 gap-12 mt-12 lg:grid-cols-3">
-
-				<!-- LEFT FEATURES -->
-				<div class="space-y-6">
-
-					{% if fields.list_left %}
-						{% for item in fields.list_left %}
-							<div class="flex flex-col items-center gap-4 p-6 fading-border-box ">
-								<div class="w-[80px] h-[80px] bg-primary rounded-md flex items-center justify-center" data-aos="fade-up" data-aos-offset="-250" data-aos-delay="{{loop.index}}50">
-									<img src="{{ item.icon.url }}" class="injectable fill-white">
-								</div>
-								<span class="text-lg font-tagline text-dark">{{ item.title }}</span>
-							</div>
-						{% endfor %}
-					{% endif %}
-
-				</div>
-
-				<!-- CENTER IMAGE -->
-				<div class="relative flex justify-center" data-aos="fade-up" data-aos-offset="-250" data-aos-delay="500">
-					<div class="absolute inset-0 flex items-center justify-center">
-						<div class="bg-gray-100 rounded-full w-72 h-72 lg:w-96 lg:h-96"></div>
-					</div>
-
-					<img src="{{fields.center_image.url}}" alt="Mammoth Moving Truck" class="relative z-10 max-w-xs lg:max-w-md"/>
-				</div>
-
-				<!-- RIGHT FEATURES -->
-				<div class="space-y-6">
-
-					{% if fields.list_right %}
-						{% for item in fields.list_right %}
-
-							<div class="flex flex-col items-center gap-4 p-6 fading-border-box-left">
-								<div class="w-[80px] h-[80px] bg-primary rounded-md flex items-center justify-center" data-aos="fade-up" data-aos-offset="-250" data-aos-delay="{{loop.index}}50">
-									<img src="{{ item.icon.url }}" class="injectable fill-white">
-								</div>
-								<span class="text-lg font-tagline text-dark">
-									{{ item.title }}
-								</span>
-							</div>
-
-						{% endfor %}
-					{% endif %}
-				</div>
-
-			</div>
-			{% if fields.button.url %}
-				<!-- CTA -->
-				<div class="mt-16">
-					<a href="{{ fields.button.url }}" target="{{ fields.button.target }}" class="btn btn-primary">
-						{{ fields.button.title }}
-					</a>
-				</div>
-			{% endif %}
-		</div>
-	</section>
-
-	<section class="mammothmoving-logos section-spacing  py-[20px] px-[50px] ">
-		<div class="swiper-container pt-[85px] w-[85vw] z-10 flex items-center mx-auto justify-between absolute left-1/2 -translate-x-1/2">
-			<div class="swiper-button-prev" tabindex="0" role="button" aria-label="Previous slide" aria-controls="swiper-wrapper-7402663ebba08d01"></div>
-			<div class="swiper-button-next" tabindex="0" role="button" aria-label="Next slide" aria-controls="swiper-wrapper-7402663ebba08d01"></div>
+			<p class="font-bold text-[22px] mb-6">Professional Movers</p>
+			<p class="leading-[28px] text-[16px]">Lorem ipsum dolor amet consectetur adipiscing elit sed do eiusmod tempor.</p>
 		</div>
 
-		<article class="container flex flex-wrap mx-auto text-center">
-			<h2 class="font-header text-[#333333] text-[22px]  mb-[40px]  font-bold mx-auto text-center">Trust Badges</h2>
-
-			<div class="mx-auto overflow-hidden logos swiper-initialized swiper-horizontal">
-
-				<div class="swiper-wrapper" id="swiper-wrapper-7402663ebba08d01" aria-live="off" style="transform: translate3d(-1465px, 0px, 0px); transition-duration: 0ms;">
-					<div class="flex flex-col items-center justify-center w-full px-4 mb-8 swiper-slide md:mb-4 lg:mb-0 swiper-slide-duplicate swiper-slide-duplicate-prev" style="width: 293px;" role="group" aria-label="1 / 4" data-swiper-slide-index="0">
-						<a href="https://www.facebook.com/MammothMoving/reviews" target="_blank">
-							<img decoding="async" class="w-full object-contain h-[68px] lg:w-[253px]" alt="" src="http://first-class.local/wp-content/uploads/2025/12/fb.svg">
-						</a>
-					</div>
-					<div class="flex flex-col items-center justify-center w-full px-4 mb-8 swiper-slide md:mb-4 lg:mb-0 swiper-slide-duplicate swiper-slide-duplicate-active" style="width: 293px;" role="group" aria-label="2 / 4" data-swiper-slide-index="1">
-						<a href="https://www.google.com/search?sca_esv=6c98331b2701dd74&amp;sxsrf=AE3TifM0prkS1uRFcXbpfj4C-SIGgwcYPA:1766198282585&amp;si=AMgyJEuzsz2NflaaWzrzdpjxXXRaJ2hfdMsbe_mSWso6src8s2HgOQur-At0M7J8yUKow7pwpps69oSNQENfjQqDbtGzA6n750NY9pURowswal7j7AY8aRwHZ8qEMueDSa-9dWXIuP4GddWltO1tzAfnN0qc7LND7g%3D%3D&amp;q=Mammoth+Moving+%26+Storage+Reviews&amp;sa=X&amp;ved=2ahUKEwia6_GpkcuRAxVJlK8BHXoFI30Q0bkNegQINRAE&amp;biw=1493&amp;bih=828&amp;dpr=2" target="_blank">
-							<img decoding="async" class="w-full object-contain h-[68px] lg:w-[253px]" alt="" src="http://first-class.local/wp-content/uploads/2025/12/google.svg">
-						</a>
-					</div>
-					<div class="flex flex-col items-center justify-center w-full px-4 mb-8 swiper-slide md:mb-4 lg:mb-0 swiper-slide-duplicate swiper-slide-duplicate-next" style="width: 293px;" role="group" aria-label="3 / 4" data-swiper-slide-index="2">
-						<a href="https://www.yelp.com/biz/mammoth-moving-and-storage-santa-barbara-3" target="_blank">
-							<img decoding="async" class="w-full object-contain h-[68px] lg:w-[253px]" alt="" src="http://first-class.local/wp-content/uploads/2025/12/yelp.svg">
-						</a>
-					</div>
-					<div class="flex flex-col items-center justify-center w-full px-4 mb-8 swiper-slide md:mb-4 lg:mb-0 swiper-slide-duplicate" style="width: 293px;" role="group" aria-label="4 / 4" data-swiper-slide-index="3">
-						<a href="https://www.bbb.org/us/ca/santa-barbara/profile/moving-companies/mammoth-moving-storage-inc-1236-9000035/more-info#bbb-rating" target="_blank">
-							<img decoding="async" class="w-full object-contain h-[68px] lg:w-[253px]" alt="" src="http://first-class.local/wp-content/uploads/2025/12/bbb.svg">
-						</a>
-					</div>
-					<div class="flex flex-col items-center justify-center w-full px-4 mb-8 swiper-slide md:mb-4 lg:mb-0 swiper-slide-prev" style="width: 293px;" role="group" aria-label="1 / 4" data-swiper-slide-index="0">
-						<a href="https://www.facebook.com/MammothMoving/reviews" target="_blank">
-							<img decoding="async" class="w-full object-contain h-[68px] lg:w-[253px]" alt="" src="http://first-class.local/wp-content/uploads/2025/12/fb.svg">
-						</a>
-					</div>
-					<div class="flex flex-col items-center justify-center w-full px-4 mb-8 swiper-slide md:mb-4 lg:mb-0 swiper-slide-active" style="width: 293px;" role="group" aria-label="2 / 4" data-swiper-slide-index="1">
-						<a href="https://www.google.com/search?sca_esv=6c98331b2701dd74&amp;sxsrf=AE3TifM0prkS1uRFcXbpfj4C-SIGgwcYPA:1766198282585&amp;si=AMgyJEuzsz2NflaaWzrzdpjxXXRaJ2hfdMsbe_mSWso6src8s2HgOQur-At0M7J8yUKow7pwpps69oSNQENfjQqDbtGzA6n750NY9pURowswal7j7AY8aRwHZ8qEMueDSa-9dWXIuP4GddWltO1tzAfnN0qc7LND7g%3D%3D&amp;q=Mammoth+Moving+%26+Storage+Reviews&amp;sa=X&amp;ved=2ahUKEwia6_GpkcuRAxVJlK8BHXoFI30Q0bkNegQINRAE&amp;biw=1493&amp;bih=828&amp;dpr=2" target="_blank">
-							<img decoding="async" class="w-full object-contain h-[68px] lg:w-[253px]" alt="" src="http://first-class.local/wp-content/uploads/2025/12/google.svg">
-						</a>
-					</div>
-					<div class="flex flex-col items-center justify-center w-full px-4 mb-8 swiper-slide md:mb-4 lg:mb-0 swiper-slide-next" style="width: 293px;" role="group" aria-label="3 / 4" data-swiper-slide-index="2">
-						<a href="https://www.yelp.com/biz/mammoth-moving-and-storage-santa-barbara-3" target="_blank">
-							<img decoding="async" class="w-full object-contain h-[68px] lg:w-[253px]" alt="" src="http://first-class.local/wp-content/uploads/2025/12/yelp.svg">
-						</a>
-					</div>
-					<div class="flex flex-col items-center justify-center w-full px-4 mb-8 swiper-slide md:mb-4 lg:mb-0" style="width: 293px;" role="group" aria-label="4 / 4" data-swiper-slide-index="3">
-						<a href="https://www.bbb.org/us/ca/santa-barbara/profile/moving-companies/mammoth-moving-storage-inc-1236-9000035/more-info#bbb-rating" target="_blank">
-							<img decoding="async" class="w-full object-contain h-[68px] lg:w-[253px]" alt="" src="http://first-class.local/wp-content/uploads/2025/12/bbb.svg">
-						</a>
-					</div>
-					<div class="flex flex-col items-center justify-center w-full px-4 mb-8 swiper-slide md:mb-4 lg:mb-0 swiper-slide-duplicate swiper-slide-duplicate-prev" style="width: 293px;" role="group" aria-label="1 / 4" data-swiper-slide-index="0">
-						<a href="https://www.facebook.com/MammothMoving/reviews" target="_blank">
-							<img decoding="async" class="w-full object-contain h-[68px] lg:w-[253px]" alt="" src="http://first-class.local/wp-content/uploads/2025/12/fb.svg">
-						</a>
-					</div>
-					<div class="flex flex-col items-center justify-center w-full px-4 mb-8 swiper-slide md:mb-4 lg:mb-0 swiper-slide-duplicate swiper-slide-duplicate-active" style="width: 293px;" role="group" aria-label="2 / 4" data-swiper-slide-index="1">
-						<a href="https://www.google.com/search?sca_esv=6c98331b2701dd74&amp;sxsrf=AE3TifM0prkS1uRFcXbpfj4C-SIGgwcYPA:1766198282585&amp;si=AMgyJEuzsz2NflaaWzrzdpjxXXRaJ2hfdMsbe_mSWso6src8s2HgOQur-At0M7J8yUKow7pwpps69oSNQENfjQqDbtGzA6n750NY9pURowswal7j7AY8aRwHZ8qEMueDSa-9dWXIuP4GddWltO1tzAfnN0qc7LND7g%3D%3D&amp;q=Mammoth+Moving+%26+Storage+Reviews&amp;sa=X&amp;ved=2ahUKEwia6_GpkcuRAxVJlK8BHXoFI30Q0bkNegQINRAE&amp;biw=1493&amp;bih=828&amp;dpr=2" target="_blank">
-							<img decoding="async" class="w-full object-contain h-[68px] lg:w-[253px]" alt="" src="http://first-class.local/wp-content/uploads/2025/12/google.svg">
-						</a>
-					</div>
-					<div class="flex flex-col items-center justify-center w-full px-4 mb-8 swiper-slide md:mb-4 lg:mb-0 swiper-slide-duplicate swiper-slide-duplicate-next" style="width: 293px;" role="group" aria-label="3 / 4" data-swiper-slide-index="2">
-						<a href="https://www.yelp.com/biz/mammoth-moving-and-storage-santa-barbara-3" target="_blank">
-							<img decoding="async" class="w-full object-contain h-[68px] lg:w-[253px]" alt="" src="http://first-class.local/wp-content/uploads/2025/12/yelp.svg">
-						</a>
-					</div>
-					<div class="flex flex-col items-center justify-center w-full px-4 mb-8 swiper-slide md:mb-4 lg:mb-0 swiper-slide-duplicate" style="width: 293px;" role="group" aria-label="4 / 4" data-swiper-slide-index="3">
-						<a href="https://www.bbb.org/us/ca/santa-barbara/profile/moving-companies/mammoth-moving-storage-inc-1236-9000035/more-info#bbb-rating" target="_blank">
-							<img decoding="async" class="w-full object-contain h-[68px] lg:w-[253px]" alt="" src="http://first-class.local/wp-content/uploads/2025/12/bbb.svg">
-						</a>
-					</div>
-				</div>
-				<span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+		<div class="text-center text-[#402e2e]">
+			<div class="mb-8 h-[80px] w-[80px] bg-white rounded-full flex items-center justify-center mx-auto">
+				<img src="/wp-content/uploads/2026/03/fi_13527930.png" class="h-[42px] w-auto"/>
 			</div>
-		</article>
-	</section>
+			<p class="font-bold text-[22px] mb-6">Fully Licensed Movers</p>
+			<p class="leading-[28px] text-[16px]">Lorem ipsum dolor amet consectetur adipiscing elit sed do eiusmod tempor.</p>
+		</div>
 
-{% endif %}
+		<div class="text-center text-[#402e2e]">
+			<div class="mb-8 h-[80px] w-[80px] bg-white rounded-full flex items-center justify-center mx-auto">
+				<img src="/wp-content/uploads/2026/03/fi_1365358.png" class="h-[42px] w-auto"/>
+			</div>
+			<p class="font-bold text-[22px] mb-6">A+ Rating BBB.</p>
+			<p class="leading-[28px] text-[16px]">Lorem ipsum dolor amet consectetur adipiscing elit sed do eiusmod tempor.</p>
+		</div>
+
+		<div class="text-center text-[#402e2e]">
+			<div class="mb-8 h-[80px] w-[80px] bg-white rounded-full flex items-center justify-center mx-auto">
+				<img src="/wp-content/uploads/2026/03/fi_3790110.png" class="h-[42px] w-auto"/>
+			</div>
+			<p class="font-bold text-[22px] mb-6">Fast quality moves!</p>
+			<p class="leading-[28px] text-[16px]">Lorem ipsum dolor amet consectetur adipiscing elit sed do eiusmod tempor.</p>
+		</div>
+
+	</div>
+
+	<button class="hidden mx-auto md:block">
+		<a href="{{ fields.button.url}}" class="mb-4 font-bold normal-case btn btn-primary">Get A Free Quote
+		</a>
+	</button>
+</section>
+
+
+</section>

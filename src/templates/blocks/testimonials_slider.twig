@@ -1,7 +1,7 @@
 {#
   Title: Testimonials Slider
   Description: Testimonials block
-  Category: mammothmoving-blocks
+  Category: firstclass-blocks
   Icon: list-view
   Keywords: testimonials
   Mode: edit
@@ -13,14 +13,9 @@
 #}
 
 {% if fields.review_version == 'ver1' %}
-<section class="mammothmoving-testimonials v1 bg-primary mb-16 lg:mb-24 {{ block.className }}">
+<section class="firstclass-testimonials v1 bg-primary mb-16 lg:mb-24 {{ block.className }}">
 	<div class="flex flex-col lg:flex-row">
-		<div class="w-full lg:w-5/12">
-			<figure class="w-full h-full" data-aos="fade-in" data-aos-offset="-250" data-aos-delay="500">
-				<img src="{{ fields.image.url }}" class="w-full h-full object-cover">
-			</figure>
-		</div>
-		<div class="w-full lg:w-7/12 pt-16 pb-32 md:px-24 flex flex-col justify-center items-center">
+		<div class="w-full pt-16 pb-32 md:px-24 flex flex-col justify-center items-center">
 			<div class="flex flex-row justify-center"><span class="mm-icon-wh"></span></div>
 			{% if fields.title %}
 			<h2 class="font-tagline text-[32px] leading-[32px] lg:text-xl text-center lg:max-w-xl text-white mb-8 capitalize">{{ fields.title}}</h2>
@@ -45,7 +40,7 @@
 </section>
 {% endif %}
 {% if fields.review_version == 'ver2' %}
-<section class="mammothmoving-testimonials v2 section-spacing  {{ block.className }}">
+<section class="firstclass-testimonials v2 section-spacing  {{ block.className }}">
 	{% if fields.reviews %}
 		{% for item in fields.reviews %}
 			<div class="w-full mx-auto z-10 py-16" style="background-color: {{ item.background_color }}" >

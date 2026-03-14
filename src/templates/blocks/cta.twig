@@ -1,7 +1,7 @@
 {#
   Title: CTA
   Description: Call To Action block
-  Category: mammothmoving-blocks
+  Category: firstclass-blocks
   Icon: table-row-before
   Keywords: offer
   Mode: edit
@@ -12,21 +12,42 @@
   SupportsMultiple: true
 #}
 
-<section class="mammothmoving-cta  section-spacing  {{ block.className }}">
-    <div
-		class="w-[95%] xl:w-[55%]  mx-auto flex flex-col items-center justify-center bg-primary/90 rounded-md p-6 xl:p-12">
-		<div class="flex flex-row justify-center"><span class="mm-icon-wh"></span></div>
-		{% if fields.cta_title %}
-		<h2 class="font-tagline  text-white text-[32px] leading-[35px] lg:text-xl  text-center">{{ fields.cta_title}}</h2>
-		{% endif %}
-    		{% if fields.description %}
-          <p class="text-white text-center mt-6">{{ fields.description}}</p>
-    		{% endif %}
-		{% for button in fields.cta_button %}
-		<a href="{{ button.btn_link.url}}" 
-			class="btn btn-ghost mt-8 !w-fit">
-			<span class=''>{{button.btn_link.title}}</span>
-		</a>
-		{% endfor %}
-	</div>
-</section>
+	<section class="bg-[#F8F8F8] px-[20px] py-[60px] md:py-[90px] lg:py-[120px] {{ block.className }}">
+		<div class="container mx-auto">
+
+			<div
+				class="relative">
+
+				<!-- Background Overlay -->
+				<div class="absolute inset-0 rounded-[8px] bg-center bg-no-repeat bg-cover" style="background-image: url('/wp-content/uploads/2026/03/Frame-52629.jpg');"></div>
+
+				<!-- Content -->
+				<div
+					class="relative z-10 flex items-center">
+
+					<!-- Text -->
+					<div class="max-w-[600px] text-white py-[70px] pl-[30px] md:pl-[60px] lg:pl-[80px]">
+
+						<h3 class="font-bold text-[16px] md:text-[18px] mb-[10px]">
+							Movers Committed To Quality
+						</h3>
+
+						<h2 class="uppercase font-bold leading-[1.2] text-[28px] md:text-[36px] lg:text-[40px] mb-[30px]">
+							You Get Where You Need To Go Without The Hassle.
+						</h2>
+
+						<a href="#" class="inline-block bg-[#F04A3C] text-white font-bold px-[22px] py-[12px] rounded-[4px] text-[14px] md:text-[16px]">
+							Get A Free Quote
+						</a>
+
+					</div>
+
+					<!-- Image -->
+					<div class="absolute bottom-0 right-0 hidden lg:block">
+						<img class="h-[532px]" src="/wp-content/uploads/2026/03/Rectangle-3471.png" alt="Mover">
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</section>

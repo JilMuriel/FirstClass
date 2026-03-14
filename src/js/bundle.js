@@ -194,11 +194,11 @@ AOS.init();
     // })
 
 
-    $('.mammothmoving-faq .openSlide').hide();
+    $('.firstclass-faq .openSlide').hide();
 
     $(document)
       .off('click.faq')
-      .on('click.faq', '.mammothmoving-faq .questions', function (e) {
+      .on('click.faq', '.firstclass-faq .questions', function (e) {
 
         e.preventDefault();
         e.stopImmediatePropagation();
