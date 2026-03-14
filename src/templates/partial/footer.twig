@@ -1,153 +1,127 @@
 {# --------- VERSION 1 ------------- #}
-<footer class="section-spacing pb-0 padding-top-none">
-	<section class="mammothmoving-footer  relative">
-		<div class="container mx-auto pt-12 flex flex-row  flex-wrap text-base text-sm">
+<footer class="pb-0 section-spacing padding-top-none" style="background-image: url('/wp-content/uploads/2026/03/Footer.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center">
+	<section class="relative firstclass-footer">
+		<div
+			class="container flex flex-row flex-wrap pt-[120px] mx-auto text-sm text-base">
 			{# ––––––––– FIRST COLUMN –––––––––––– #}
-			<article
-				class="w-full md:w-6/12 lg:w-3/12 flex flex-col md:text-left mb-8 md:pr-8 md:mb-8 lg:pr-8">
+			<article class="flex flex-col w-full mb-8 md:w-6/12 lg:w-3/12 md:text-left md:pr-8 md:mb-8 lg:pr-8">
 				{% if global.footer.about_us.footer_logo %}
 					<a href="{{ site.link }}">
-							<img src="{{ global.footer.about_us.footer_logo.url }}" class="big-logo mb-6"
-							title={{ global.footer.about_us.footer_logo.title }}
-							alt="{{ global.footer.about_us.footer_logo.title }}">
-						</a>
+						<img src="{{ global.footer.about_us.footer_logo.url }}" class="mb-6 big-logo" title={{ global.footer.about_us.footer_logo.title }} alt="{{ global.footer.about_us.footer_logo.title }}">
+					</a>
 				{% endif %}
-				{% if global.footer.about_us.title %}
-				<p class="footer-column-title uppercase font-semibold pb-4 mb-4">
-					{{global.footer.about_us.title}}
+				<p class="mb-4 text-[#333333] text-[16px]">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 				</p>
-				{% endif %}
-				{% if global.footer.about_us.description %}
-				{{global.footer.about_us.description}}
-				{% endif %}
-
+				<p class="font-bold text-[#333333] mb-[20px]">License Info:</p>
+				<div class="flex items-start gap-[20px]">
+					<span class="block text-[#4E4D4D]">MC# 381032</span>
+					<span class="block text-[#4E4D4D]">DOT# 2226241</span>
+				</div>
 			</article>
 
 
 			{# ––––––––– SECOND COLUMN –––––––––––– #}
-			<nav class="w-full md:w-6/12 lg:w-3/12 flex flex-col lg:text-left mb-8 md:mb-8 lg:pl-12"
-				aria-label="services-navigation">
-				<p class="footer-column-title  font-tagline  text-lg text-white pb-4 mb-4">
+			<nav class="flex flex-col w-full mb-8 md:w-6/12 lg:w-3/12 lg:text-left md:mb-8 lg:pl-12" aria-label="services-navigation">
+				<p class="mb-[32px] font-bold text-lg text-[#4E4D4D] footer-column-title font-tagline">
 					{{global.footer.services.title}}
 				</p>
 				<ul>
 					{% for links in global.footer.services.links %}
-					<li class="lg:mb-4">
-						<a href="{{links.link.url}}" class="hover:text-primary text-white text-base">- {{ links.link.title}}</a>
-					</li>
+						<li class="lg:mb-4">
+							<a href="{{links.link.url}}" class="text-base text-[#4E4D4D] hover:text-blue">-
+								{{ links.link.title}}</a>
+						</li>
 					{% endfor %}
 
 				</ul>
 			</nav>
 			{# ––––––––– THIRD COLUMN –––––––––––– #}
-			<nav class="w-full md:w-6/12 lg:w-3/12 flex flex-col lg:text-left mb-8 md:pr-8 md:mb-8  lg:pl-12"
-				aria-label="location-navigation">
-				<p class="footer-column-title  font-tagline  text-lg text-white pb-4 mb-4">
+			<nav class="flex flex-col w-full mb-8 md:w-6/12 lg:w-3/12 lg:text-left md:pr-8 md:mb-8 lg:pl-12" aria-label="location-navigation">
+				<p class="mb-[32px] font-bold text-lg text-[#4E4D4D] footer-column-title font-tagline">
 					{{global.footer.areas.title}}
 				</p>
 				<ul>
 					{% for links in global.footer.areas.links %}
-					<li class="lg:mb-4">
-						<a href="{{links.link.url}}" class="hover:text-primary text-white text-base">- {{ links.link.title}}</a>
-					</li>
+						<li class="lg:mb-4">
+							<a href="{{links.link.url}}" class="text-base text-[#4E4D4D] hover:text-blue">-
+								{{ links.link.title}}</a>
+						</li>
 					{% endfor %}
 
 				</ul>
 			</nav>
 
-				{# –––––––––  GET IN TOUCH –––––––––––– #}
-			<nav class="w-full md:w-6/12 lg:w-3/12 flex flex-col lg:pl-2 lg:text-left mb-8 md:mb-8"
-				aria-label="address-navigation">
-				<p class="footer-column-title  font-tagline  text-lg text-white pb-4 mb-4 ">
-					{{global.footer.contact_us.title}}
-				</p>
-				<ul class="flex flex-col">
+			{# –––––––––  GET IN TOUCH –––––––––––– #}
+			<nav class="flex flex-col w-full mb-8 md:w-6/12 lg:w-3/12 lg:pl-2 lg:text-left md:mb-8" aria-label="address-navigation">
+				<ul class="flex flex-col gap-[20px]">
 					{% if global.footer.contact_us.adress_block.adress %}
-					<li class="flex flex-row space-x-4 items-start border-b border-white pb-2 border-opacity-10">
-						<img src="{{global.footer.contact_us.adress_block.icon.url}}"
-							class="injectable w-[25px] h-[25px]"
-							title="{{ global.footer.contact_us.adress_block.icon.title }}"
-							alt="{{ global.footer.contact_us.adress_block.icon.alt }}">
-						<div class="text-base w-full address">
-							{{ global.footer.contact_us.adress_block.adress }}
-						</div>
-					</li>
+						<li class="text-[#4E4D4D]">
+							<p class="font-bold text-[16px] mb-0">Headquarters</p>
+							<div class="w-full text-base address">
+								{{ global.footer.contact_us.adress_block.adress }}
+							</div>
+						</li>
 					{% endif %}
 					{% if global.footer.contact_us.email_block.email.title %}
-					<li class="flex flex-row items-center  space-x-4 border-b border-white py-2 border-opacity-10" >
-						<img src="{{global.footer.contact_us.email_block.icon.url}}"
-							class="w-[20px] h-[20px] injectable"
-							title="{{ global.footer.contact_us.email_block.icon.title }}"
-							alt="{{ global.footer.contact_us.email_block.icon.alt }}">
-						<a href="{{ global.footer.contact_us.email_block.email.url }}"
-							class='m-0 hover:text-primary text-white text-base w-full'>{{ global.footer.contact_us.email_block.email.title }}</a>
-					</li>
+						<li class="text-[#4E4D4D]">
+							<p class="font-bold text-[16px] mb-0">Email</p>
+							<a href="{{ global.footer.contact_us.email_block.email.url }}" class='w-full m-0 text-base text-[#4E4D4D] hover:text-blue'>{{ global.footer.contact_us.email_block.email.title }}</a>
+						</li>
 					{% endif %}
 					{% if global.footer.contact_us.telephone_block.number.title %}
-					<li class="flex flex-row space-x-4 items-center py-2">
-						<img src="{{global.footer.contact_us.telephone_block.icon.url}}"
-							class="injectable w-[25px] h-[25px]"
-							title="{{ global.footer.contact_us.telephone_block.icon.title }}"
-							alt="{{ global.footer.contact_us.telephone_block.icon.alt }}">
-						<a href="{{ global.footer.contact_us.telephone_block.number.url }}"
-							class='m-0 hover:text-primary text-white text-base w-full' >{{ global.footer.contact_us.telephone_block.number.title }}</a>
+						<li class="text-[#4E4D4D]">
+							<p class="font-bold text-[16px] mb-0">Phone</p>
+							<a href="{{ global.footer.contact_us.telephone_block.number.url }}" class='w-full m-0 text-base text-[#4E4D4D] hover:text-blue'>{{ global.footer.contact_us.telephone_block.number.title }}</a>
+						</li>
+					{% endif %}
+					<li class="text-[#4E4D4D]">
+						<p class="font-bold text-[16px] mb-0">Opening Hours</p>
+						<span class="block text-[16px] mb-0">M-F: 8:00 am - 6:00 pm</span>
+						<span class="block text-[16px] mb-0">Sat: 8:00 am - 10:50 pm</span>
 					</li>
-					{% endif %}
-					{% if global.footer.contact_us.workin_hours.hours %}
-					{# <li class="flex flex-row mb-4 items-center">
-						<img src="{{global.footer.contact_us.workin_hours.icon.url}}"
-							class="w-5 h-5 mr-2"
-							title="{{ global.footer.contact_us.workin_hours.icon.title }}"
-							alt="{{ global.footer.contact_us.workin_hours.icon.alt }}">
-						<p class='m-0 text-white text-sm'>{{ global.footer.contact_us.workin_hours.hours }}</p>
-					</li> #}
-					{% endif %}
+					{# {% if global.footer.contact_us.workin_hours.hours %}
+																																									<li class="flex flex-row items-center mb-4">
+																																										<p class='m-0 text-sm text-[#4E4D4D]'>{{ global.footer.contact_us.workin_hours.hours }}</p>
+																																									</li>
+																																								{% endif %} #}
 				</ul>
 				{% if global.footer.about_us.social_icons %}
-				<p class="font-header text-md  text-white mt-4 mb-8">
-					Follow Us:
-				</p>
-				<div class="icons-wrap flex flex-col  md:justify-start">
-				<div class="flex flex-row">
-					{% for icons in global.footer.about_us.social_icons %}
-					<a href="{{ icons.link.url}}" class='footer-social-icons text-primary mr-4' target="{{icons.link.target}}">
-						<img class="object-contain fill-white" title="{{icons.icon.title}}"
-							alt="{{ icons.icon.alt }}" src="{{icons.icon.url}}" >
-					</a>
-					{% endfor %}
-				</div>
-				</div>
+					<p class="mt-[32px] mb-[16px] text-[#4E4D4D] font-bold text-md">
+						Follow Us:
+					</p>
+					<div class="flex flex-col icons-wrap md:justify-start">
+						<div class="flex flex-row">
+							{% for icons in global.footer.about_us.social_icons %}
+								<a href="{{ icons.link.url}}" class='mr-4 footer-social-icons text-primary' target="{{icons.link.target}}">
+									<img class="object-contain fill-white" title="{{icons.icon.title}}" alt="{{ icons.icon.alt }}" src="{{icons.icon.url}}">
+								</a>
+							{% endfor %}
+						</div>
+					</div>
 
 				{% endif %}
 			</nav>
-	
 
 
 		</div>
 		{# ––––––––– COPYRIGHT SECTION –––––––––––– #}
 	</section>
-	<section class='mammothmoving-footer-copyright  pb-4'>
-		<nav class="container mx-auto items-center lg:items-start flex flex-col md:flex-row flex-wrap space-y-1 border-t border-t-white border-opacity-10 lg:pt-4"
-			aria-label="legal-navigation">
-			<p class="mb-0 mt-4 lg:mt-0 mx-auto xl:ml-0 xl:mr-auto text-white text-sm text-center lg:text-left">Copyright &copy;
+	<section class='firstclass-footer-copyright'>
+		<nav class="container flex flex-col flex-wrap items-center mx-auto border-t border-[#CECECE] lg:items-start md:flex-row lg:py-4" aria-label="legal-navigation">
+			<p class="mx-auto mt-4 mb-0 text-sm text-center text-[#4E4D4D] lg:mt-0 xl:ml-0 xl:mr-auto lg:text-left">Copyright &copy;
 				{{"now"|date('Y')}}
 				{{ global.copyright }}</p>
-			<ul class='link lg:flex lg:flex-row space-x-4 lg:space-x-8 lg:ml-auto xl:mr-0 mx-auto mt-2 lg:mt-0 text-center '>
+			<ul class='mx-auto mt-2 space-x-4 text-center link lg:flex lg:flex-row lg:space-x-8 lg:ml-auto xl:mr-0 lg:mt-0 '>
 				{% for links in global.copyright_links %}
-				<li>
-					<a href="{{links.link.url}}" class="hover:text-primary text-white text-sm text-nowrap">{{ links.link.title }}
-					</a>
-				</li>
+					<li>
+						<a href="{{links.link.url}}" class="text-sm text-[#4E4D4D] hover:text-blue text-nowrap">{{ links.link.title }}
+						</a>
+					</li>
 				{% endfor %}
 			</ul>
 		</nav>
 	</section>
 
 </footer>
-
-<a href="https://fydv7t9k4m.wpdns.site/free-quote/" class="btn-fixed btn btn-gray text-center !w-fit mx-auto !lg:w-full lg:ml-0" target="">
-					<span>
-						Get A Free Quote
-					</span>
-				</a>
 {# --------- VERSION 1 END ------------- #}
