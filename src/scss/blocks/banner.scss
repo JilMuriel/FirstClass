@@ -1,4 +1,4 @@
-.mammothmoving-main-banner {
+.firstclass-main-banner {
 
     .overlay {
         position: absolute;
@@ -22,4 +22,47 @@
     background-size: cover;
     background-position: top center;
     background-repeat: no-repeat;
+}
+
+.service-mini-card {
+    background-image: url('/wp-content/uploads/2026/03/1.png');
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+}
+
+.bg-custom {
+    position: relative;
+    z-index: 1;
+    min-height: 490px;
+
+    .banner-content-block {
+        position: relative;
+
+        &::after {
+            content: "";
+            position: absolute;
+            width: 271px;
+            height: 253px;
+            background: url('/wp-content/uploads/2026/03/Vector-6.png');
+            bottom: -102px;
+            left: -121px;
+            z-index: -1;
+        }
+    }
+
+    .placeholder {
+        position: relative;
+
+        &::before {
+            content: "";
+            position: absolute;
+            background: url('/wp-content/uploads/2026/03/Vector-5.png');
+            width: 271px;
+            height: 253px;
+            top: -67px;
+            right: -136px;
+            z-index: -1;
+        }
+    }
 }
