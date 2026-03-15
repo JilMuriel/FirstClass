@@ -11,29 +11,26 @@
   SupportsMode: true
   SupportsMultiple: fields
 #}
-
+{% for box in fields.text_with_image %}
 <section class="left section-spacing" style="background-image: url('/wp-content/uploads/2026/03/About-Us.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center">
 	<article class="container flex flex-row-reverse flex-wrap items-center justify-between mx-auto ">
 		<div class="w-full my-auto lg:w-[590px]">
 			<div class="mb-8 text-center content lg:text-left">
-				<h2 class="leading-[55px] text-[#333333] text-center uppercase md:text-left font-bold md:mb-[40px] text-[30px] md:text-[40px]">Heading Three</h2>
-				<p class="text-[#4E4D4D] leading-[28px] text-[16px] font-regular mb-[30px]">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-				</p>
-				<p class="text-[#4E4D4D] leading-[28px] text-[16px] font-regular mb-[30px]">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-				</p>
-				<p class="text-[#4E4D4D] leading-[28px] mb-[40px] text-[16px] font-regular">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+				<h2 class="leading-[55px] text-[#333333] text-center uppercase md:text-left font-bold md:mb-[40px] text-[30px] md:text-[40px]">{{ box.title}}</h2>
+				<div class="text-[#4E4D4D] leading-[28px] text-[16px] font-regular mb-[30px]">
+					{{ box.content}}
+				</div>
 				<button class="hidden md:block">
-					<a href="{{ fields.button.url}}" class="mb-4 font-bold normal-case btn btn-primary">Get A Free Quote
+					<a href="{{ box.button.url}}" class="mb-4 font-bold normal-case btn btn-primary">{{ box.button.title}}
 					</a>
 				</button>
 			</div>
 		</div>
 		<div class="w-full mt-8 lg:mt-0 lg:w-[490px]">
 			<figure>
-				<img class="w-full rounded-lg min-h-[710px] w-auto" src="/wp-content/uploads/2026/03/stockroom.jpg">
+				<img class="w-full rounded-lg min-h-[710px] w-auto" src="{{ box.photo.url }}">
 			</figure>
 		</div>
 	</article>
 </section>
+   {% endfor %}
