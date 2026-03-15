@@ -42,12 +42,15 @@
         <div class="overflow-hidden swiper blog-swiper01">
 
           <div class="items-stretch swiper-wrapper">
-
-            {% for box in fields.boxes %}
-
+            {% for box in fields.box %}
             <article class="flex flex-col w-full px-0 text-left swiper-slide min-w-[280px]">
 
-              <div class="h-[200px] md:h-[240px] shadow-lg lg:h-[270px] mb-[30px] rounded-[8px] bg-[#5f5e5e]"></div>
+              {# <div class="h-[200px] md:h-[240px] shadow-lg lg:h-[270px] mb-[30px] rounded-[8px] bg-[#5f5e5e]">
+
+              </div> #}
+              <figure class="w-[460px] h-[270px] overflow-hidden rounded-[8px]">
+								<img src="{{ box.image.url }}" alt="" class="object-cover w-full h-auto">
+							</figure>
 
               <div class="flex flex-col flex-1 gap-[25px] text-center md:text-left">
 
