@@ -1,5 +1,5 @@
 {#
-  Title: Icon Box Grid
+  Title: Services Accordion
   Description: A grid section with icon boxes.
   Category: formatting
   Icon: grid-view
@@ -11,247 +11,63 @@
   SupportsMode: true
   SupportsMultiple: true
 #}
-
-
 <section class="bg-white px-[20px] py-[60px] md:py-[90px] lg:py-[120px]">
-	<div class="    container mx-auto text-center md:w-[796px] mb-[60px]">
-		<h2 class="leading-[55px] text-[#333333] font-bold uppercase md:mb-[30px] text-[30px] md:text-[40px]">Moving Company Services</h2>
+	<div class="container mx-auto text-center md:w-[796px] mb-[60px]">
+		<h2 class="leading-[55px] text-[#333333] font-bold uppercase md:mb-[30px] text-[30px] md:text-[40px]">{{ fields.title }}</h2>
 		<p class="text-[#402e2e] text-[16px] font-regular">
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex commodo consequat aute irure dolor in reprehenderit
+			{{ fields.upper_title }}
 		</p>
 	</div>
+   {% for box in fields.box %}
 	<div class="container mx-auto mb-[60px]">
 		<div class="mb-[48px] justify-self-center gap-[24px] mx-auto text-center flex items-center">
-			<img class="h-[46px] w-auto" src="/wp-content/uploads/2026/03/fi_10512580.png">
-			<span class="
-																																																																																																							accord-text text-[24px] md:text-[35px] font-bold ">Residential Moving</span>
+			<img class="h-[46px] w-auto" src="{{ box.icon.url }}">
+			<span class="accord-text text-[24px] md:text-[35px] font-bold ">{{ box.title }}</span>
 		</div>
-		<div class="flex flex-col items-start md:gap-[24px]">
-			<div class="row-1 flex flex-col md:flex-row gap-[10px]">
+		<div class="accordion-wrapper flex flex-col lg:flex-row gap-[20px]">
+			<div class="left flex flex-col gap-[10px] lg:w-1/2">
+			   {% for leftitems in box.left_list %}
 				<div class="accordion-item bg-[#F8F8F8] px-[24px] pt-[24px] rounded-[8px]">
 					<div class="flex items-center justify-between cursor-pointer accordion-header pb-[24px]">
 						<span class="text-[22px] font-bold accordion-title text-[#333333] group-[.active]:text-[#0068A7]">
-							Local Moving
+							{{ leftitems.title }}	
 						</span>
-
 						<span class="text-[35px] transition-transform accordion-icon text-[#333333]">
 							+
 						</span>
 					</div>
 					<div class="overflow-hidden transition-all duration-500 accordion-content max-h-0">
 						<p class="pb-[24px] leading-relaxed text-gray-500">
-							Consumers paying out of pocket or utilizing employee lump sum moving locally
+							{{ leftitems.content }}
 						</p>
 					</div>
 				</div>
+				{% endfor %}
+			</div>	
+			 <div class="right flex flex-col gap-[10px] lg:w-1/2">
+			 {% for rightitems in box.right_list %}
 				<div class="accordion-item bg-[#F8F8F8] px-[24px] pt-[24px] rounded-[8px]">
 					<div class="flex items-center justify-between cursor-pointer accordion-header pb-[24px]">
-						<span class="text-[22px] font-bold accordion-title ">
-							International
+						<span class="text-[22px] font-bold accordion-title text-[#333333] group-[.active]:text-[#0068A7]">
+							{{ rightitems.title }}	
 						</span>
-
-						<span class="text-[35px] transition-transform accordion-icon ">
+						<span class="text-[35px] transition-transform accordion-icon text-[#333333]">
 							+
 						</span>
 					</div>
 					<div class="overflow-hidden transition-all duration-500 accordion-content max-h-0">
 						<p class="pb-[24px] leading-relaxed text-gray-500">
-							Consumers paying out of pocket or utilizing employee lump sum moving locally
+							{{ rightitems.content }}
 						</p>
 					</div>
 				</div>
-			</div>
-			<div class="row-2 flex flex-col md:flex-row gap-[10px]">
-				<div class="accordion-item bg-[#F8F8F8] px-[24px] pt-[24px] rounded-[8px]">
-					<div class="flex items-center justify-between cursor-pointer accordion-header pb-[24px]">
-						<span class="text-[22px] font-bold accordion-title ">
-							Intrastate
-						</span>
-
-						<span class="text-[35px] transition-transform accordion-icon ">
-							+
-						</span>
-					</div>
-					<div class="overflow-hidden transition-all duration-500 accordion-content max-h-0">
-						<p class="pb-[24px] leading-relaxed text-gray-500">
-							Consumers paying out of pocket or utilizing employee lump sum moving locally
-						</p>
-					</div>
-				</div>
-				<div class="accordion-item bg-[#F8F8F8] px-[24px] pt-[24px] rounded-[8px]">
-					<div class="flex items-center justify-between cursor-pointer accordion-header pb-[24px]">
-						<span class="text-[22px] font-bold accordion-title ">
-							International
-						</span>
-
-						<span class="text-[35px] transition-transform accordion-icon ">
-							+
-						</span>
-					</div>
-					<div class="overflow-hidden transition-all duration-500 accordion-content max-h-0">
-						<p class="pb-[24px] leading-relaxed text-gray-500">
-							Consumers paying out of pocket or utilizing employee lump sum moving locally
-						</p>
-					</div>
-				</div>
-			</div>
+				{% endfor %}
+			</div>	
 		</div>
 	</div>
-
-	<div class="container mx-auto mb-[60px]">
-		<div class="mb-[48px] justify-self-center gap-[24px] mx-auto text-center flex items-center">
-			<img class="h-[42px] w-auto" src="/wp-content/uploads/2026/03/fi_888559.png">
-			<span class="text-[24px] md:text-[35px] font-bold">Commercial Moving</span>
-		</div>
-		<div class="flex flex-col items-start md:gap-[24px]">
-			<div class="row-1 flex flex-col md:flex-row gap-[10px]">
-				<div class="accordion-item bg-[#F8F8F8] px-[24px] pt-[24px] rounded-[8px]">
-					<div class="flex items-center justify-between cursor-pointer accordion-header pb-[24px]">
-						<span class="text-[22px] font-bold accordion-title ">
-							Local Moving
-						</span>
-
-						<span class="text-[35px] transition-transform accordion-icon text-[#333333]">
-							+
-						</span>
-					</div>
-					<div class="overflow-hidden transition-all duration-500 accordion-content max-h-0">
-						<p class="pb-[24px] leading-relaxed text-gray-500">
-							Consumers paying out of pocket or utilizing employee lump sum moving locally
-						</p>
-					</div>
-				</div>
-				<div class="accordion-item bg-[#F8F8F8] px-[24px] pt-[24px] rounded-[8px]">
-					<div class="flex items-center justify-between cursor-pointer accordion-header pb-[24px]">
-						<span class="text-[22px] font-bold accordion-title text-[#333333]">
-							International
-						</span>
-
-						<span class="text-[35px] transition-transform accordion-icon text-[#333333]">
-							+
-						</span>
-					</div>
-					<div class="overflow-hidden transition-all duration-500 accordion-content max-h-0">
-						<p class="pb-[24px] leading-relaxed text-gray-500">
-							Consumers paying out of pocket or utilizing employee lump sum moving locally
-						</p>
-					</div>
-				</div>
-			</div>
-			<div class="row-2 flex flex-col md:flex-row gap-[10px]">
-				<div class="accordion-item bg-[#F8F8F8] px-[24px] pt-[24px] rounded-[8px]">
-					<div class="flex items-center justify-between cursor-pointer accordion-header pb-[24px]">
-						<span class="text-[22px] font-bold accordion-title text-[#333333]">
-							Intrastate
-						</span>
-
-						<span class="text-[35px] transition-transform accordion-icon text-[#333333]">
-							+
-						</span>
-					</div>
-					<div class="overflow-hidden transition-all duration-500 accordion-content max-h-0">
-						<p class="pb-[24px] leading-relaxed text-gray-500">
-							Consumers paying out of pocket or utilizing employee lump sum moving locally
-						</p>
-					</div>
-				</div>
-				<div class="accordion-item bg-[#F8F8F8] px-[24px] pt-[24px] rounded-[8px]">
-					<div class="flex items-center justify-between cursor-pointer accordion-header pb-[24px]">
-						<span class="text-[22px] font-bold accordion-title text-[#333333]">
-							International
-						</span>
-
-						<span class="text-[35px] transition-transform accordion-icon text-[#333333]">
-							+
-						</span>
-					</div>
-					<div class="overflow-hidden transition-all duration-500 accordion-content max-h-0">
-						<p class="pb-[24px] leading-relaxed text-gray-500">
-							Consumers paying out of pocket or utilizing employee lump sum moving locally
-						</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="container mx-auto mb-[60px]">
-		<div class="mb-[48px] justify-self-center gap-[24px] mx-auto text-center flex items-center">
-			<img class="h-[46px] w-auto" src="/wp-content/uploads/2026/03/fi_16767873.png">
-			<span class="text-[24px] md:text-[35px] font-bold">Logistic Service</span>
-		</div>
-		<div class="flex flex-col items-start md:gap-[24px]">
-			<div class="row-1 flex flex-col md:flex-row gap-[10px]">
-				<div class="accordion-item bg-[#F8F8F8] px-[24px] pt-[24px] rounded-[8px]">
-					<div class="flex items-center justify-between cursor-pointer accordion-header pb-[24px]">
-						<span class="text-[22px] font-bold accordion-title text-[#333333]">
-							Local Moving
-						</span>
-
-						<span class="text-[35px] transition-transform accordion-icon text-[#333333]">
-							+
-						</span>
-					</div>
-					<div class="overflow-hidden transition-all duration-500 accordion-content max-h-0">
-						<p class="pb-[24px] leading-relaxed text-gray-500">
-							Consumers paying out of pocket or utilizing employee lump sum moving locally
-						</p>
-					</div>
-				</div>
-				<div class="accordion-item bg-[#F8F8F8] px-[24px] pt-[24px] rounded-[8px]">
-					<div class="flex items-center justify-between cursor-pointer accordion-header pb-[24px]">
-						<span class="text-[22px] font-bold accordion-title text-[#333333]">
-							International
-						</span>
-
-						<span class="text-[35px] transition-transform accordion-icon text-[#333333]">
-							+
-						</span>
-					</div>
-					<div class="overflow-hidden transition-all duration-500 accordion-content max-h-0">
-						<p class="pb-[24px] leading-relaxed text-gray-500">
-							Consumers paying out of pocket or utilizing employee lump sum moving locally
-						</p>
-					</div>
-				</div>
-			</div>
-			<div class="row-2 flex flex-col md:flex-row gap-[10px]">
-				<div class="accordion-item bg-[#F8F8F8] px-[24px] pt-[24px] rounded-[8px]">
-					<div class="flex items-center justify-between cursor-pointer accordion-header pb-[24px]">
-						<span class="text-[22px] font-bold accordion-title text-[#333333]">
-							Intrastate
-						</span>
-
-						<span class="text-[35px] transition-transform accordion-icon text-[#333333]">
-							+
-						</span>
-					</div>
-					<div class="overflow-hidden transition-all duration-500 accordion-content max-h-0">
-						<p class="pb-[24px] leading-relaxed text-gray-500">
-							Consumers paying out of pocket or utilizing employee lump sum moving locally
-						</p>
-					</div>
-				</div>
-				<div class="accordion-item bg-[#F8F8F8] px-[24px] pt-[24px] rounded-[8px]">
-					<div class="flex items-center justify-between cursor-pointer accordion-header pb-[24px]">
-						<span class="text-[22px] font-bold accordion-title text-[#333333]">
-							International
-						</span>
-
-						<span class="text-[35px] transition-transform accordion-icon text-[#333333]">
-							+
-						</span>
-					</div>
-					<div class="overflow-hidden transition-all duration-500 accordion-content max-h-0">
-						<p class="pb-[24px] leading-relaxed text-gray-500">
-							Consumers paying out of pocket or utilizing employee lump sum moving locally
-						</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+	{% endfor %}
 	<button class="hidden mx-auto md:block">
-		<a href="{{ fields.button.url}}" class="mb-4 font-bold normal-case btn btn-primary">Get A Free Quote
+		<a href="{{ fields.button_link.url}}" class="mb-4 font-bold normal-case btn btn-primary">{{ fields.button_link.title}}
 		</a>
 	</button>
 </section>

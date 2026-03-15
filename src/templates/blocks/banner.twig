@@ -78,7 +78,7 @@
 {# –––––––––––––––– BANNER VERSION 1 END –––––––––––––––– #}
 
 {% if fields.banner_version == 'ver2' %}
-	<section class="firstclass-main-banner firstmate-bg home v2 h-full w-full flex flex-col items-center lg:px-10 pb-[32px] md:pb-[70px]" {{ block.className }} {# Background settings#} style="background-image: url('wp-content/uploads/2026/03/Banner.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center">
+	<section class="firstclass-main-banner firstmate-bg home v2 h-full w-full flex flex-col items-center lg:px-10 pb-[32px] md:pb-[70px]" {{ block.className }} {# Background settings#} style="background-image: url('{{ fields.banner.background.url }}'); background-size: cover; background-repeat: no-repeat; background-position: center">
 		<article class="firstclass-banner-content md:section-spacing container mx-auto w-full h-full flex flex-col lg:flex-row items-center relative z-5 md:mt-auto mb-[10px] md:mb-[90px] !pt-[40px] md:!pt-[80px] lg:!pt-[170px]">
 			<div class="w-full lg:w-7/12">
 				{% if fields.banner.title or fields.banner.description %}{% endif %}
@@ -93,61 +93,33 @@
 				{% if fields.banner.sub_title %}
 					<p class="font-body text-[16px] mb-4 mt-4 text-white text-center lg:text-left">{{fields.banner.sub_title}}</p>
 				{% endif %}
-
-				{# Button wrap #}
-
 			</div>
 			{% if fields.banner.embed_form %}
 				<div class="relative w-full placeholder lg:w-5/12 lg:pl-12">
 					<div class="p-[24px] md:p-[35px] rounded-lg bg-[#D9EAF4D1]/70">
-						<p class="font-header font-bold text-[32px] text-center text-white mb-6">Get A Free Estimate</p>
+						<p class="font-header font-bold text-[32px] text-center text-dark mb-6">Get A Free Estimate</p>
 						{{fn('do_shortcode', '[brb_collection id=7854]')}}
 						<div class="">{{fn('do_shortcode', fields.banner.embed_form)}}</div>
 					</div>
 				</div>
 			{% endif %}
 		</article>
-		<div class="gap-[24px] md:section-spacing container mx-auto w-full h-full flex flex-col lg:flex-row items-center relative z-5 md:mt-auto flex items-center">
-			<div class="service-card p-[24px] rounded-[10px] text-white
-																																																																																																																																																																            transition-all duration-300 ease-out
-																																																																																																																																																																            transform hover:-translate-y-1 hover:shadow-lg">
-
-				<p class="text-[22px] mb-[24px] font-bold text-white">
-					Residential Moving
+		<div class="gap-[24px] md:section-spacing container mx-auto w-full h-full flex-col md:flex-row relative z-5 md:mt-auto flex items-center">
+		{% for services in fields.banner.services_box %}
+			<div class="w-full md:w-4/12 service-card p-[24px] rounded-[10px] text-white transition-all duration-300 ease-out transform hover:-translate-y-1 hover:shadow-lg">
+				<p class="text-[22px] mb-[24px] font-bold md:min-h-[50px] lg:min-h-0 text-white">
+					{{ services.title}}
 				</p>
-
-				<p class="text-[16px] mb-[24px] font-normal text-white">
-					Local Moving • Intrastate • International • Long Distance Movers
+				<p class="text-[16px] mb-[24px] md:min-h-[150px]  xl:min-h-[80px] font-normal text-white">
+					{{ services.description}}
 				</p>
-
-				<button class="flex items-center">
+				<a href="{{ services.link.url }}" target="{{ services.link.target }}" class="flex items-center">
 					Learn More
 					<img decoding="async" src="wp-content/uploads/2026/03/arrow-icon.png" class="h-[24px] w-[24px] ml-[10px]">
-				</button>
-
+				</a>
 			</div>
-			<div class="service-card p-[24px] rounded-[10px] text-white
-																																																																																																																																																																            transition-all duration-300 ease-out
-																																																																																																																																																																            transform hover:-translate-y-1 hover:shadow-lg">
-				<p class="text-[22px] mb-[24px] font-bold text-white">
-					Residential Moving</p>
-				<p class="text-[16px] mb-[24px] font-normal text-white">Local Moving • Intrastate • International • Long Distance Movers</p>
-				<button class="flex items-center">Learn More
-					<img src="wp-content/uploads/2026/03/arrow-icon.png" class="h-[24px] w-[24px] ml-[10px]"/></button>
-			</div>
-			<div class="service-card p-[24px] rounded-[10px] text-white
-																																																																																																																																																																            transition-all duration-300 ease-out
-																																																																																																																																																																            transform hover:-translate-y-1 hover:shadow-lg">
-				<p class="text-[22px] mb-[24px] font-bold text-white">
-					Residential Moving</p>
-				<p class="text-[16px] mb-[24px] font-normal text-white">Local Moving • Intrastate • International • Long Distance Movers</p>
-				<button class="flex items-center">Learn More
-					<img src="wp-content/uploads/2026/03/arrow-icon.png" class="h-[24px] w-[24px] ml-[10px]"/></button>
-			</div>
-
-
+		{% endfor %}	
 		</div>
 	</section>
-
 {% endif %}
 {# –––––––––––––––– BANNER VERSION 2 END –––––––––––––––– #}

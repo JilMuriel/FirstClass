@@ -23,25 +23,13 @@
 			<!-- End Navigation -->
 			<div class="hidden lg:block">
 				<div class="flex items-center gap-[20px]">
-					<button>
-						<a class="h-[50px] min-w-[187px] px-[24px] py-[22px] bg-red flex items-center text-white text-[16px] font-bold rounded-[4px]">
-							Get A Free Quote
+						<a href="{{ global.header.button1.url }}"  class="h-[50px] min-w-[187px] px-[24px] py-[22px] bg-red flex items-center text-white text-[16px] font-bold rounded-[4px]">
+							{{ global.header.button1.title }}
 						</a>
-					</button>
-					<button>
-						<a class="h-[50px] min-w-[187px] px-[24px] py-[22px] bg-blue text-white text-[16px] flex items-center gap-[10px] font-bold rounded-[4px]">
+						<a href="{{ global.header.button2.url }}"  class="h-[50px] min-w-[187px] px-[24px] py-[22px] bg-blue text-white text-[16px] flex items-center gap-[10px] font-bold rounded-[4px]">
 							<img src="/wp-content/uploads/2026/03/phone-icon.png" class="h-[18px] w-auto">
-							(228) 641-9900
+							{{ global.header.button2.title }}
 						</a>
-					</button>
-					{# {% if global.header.button1 %}
-																																									<button>
-																																										<a target="{{ global.header.button1.target }}" href="{{ global.header.button1.url }}" class="btn btn-gray lg:!text-[13px] xl:!text-base uppercase">
-																																											{{ global.header.button1.title }}
-																																										</a>
-																																									</button>
-																																								{% endif %} #}
-
 				</div>
 			</div>
 		</nav>

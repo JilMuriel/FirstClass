@@ -11,108 +11,105 @@
   SupportsMode: true
   SupportsMultiple: true
 #}
+
 <section class="bg-[#F8F8F8] flex items-start justify-center relative px-[20px] gap-[57px] pt-[60px] md:pt-[90px] lg:pt-[120px] {{ block.className }}">
-	<!-- Background Overlay -->
 
-	<div class="absolute flex items-end justify-center inset-0 bg-center bg-no-repeat bg-cover h-[470px]" style="background-image: url('/wp-content/uploads/2026/03/Frame-52629.jpg');">
-		<div class="relative top-[28px!important] z-20 hidden md:hidden lg:block">
-			<button class="swiper-button-prev-desktop w-[60px] h-[60px] bg-[#333] hover:bg-[#EE4035] rounded-full after:flex flex items-center justify-center">
-				<img src="/wp-content/uploads/2026/03/Vector-3.png" alt="">
-			</button>
-		</div>
+  <!-- Background Overlay -->
+  <div class="absolute flex items-end justify-center inset-0 bg-center bg-no-repeat bg-cover h-[470px]" style="background-image: url('/wp-content/uploads/2026/03/Frame-52629.jpg');">
 
-		<div class="w-full max-w-[1244px] block relative"></div>
-		<div class="relative top-[28px!important] z-20 hidden md:hidden lg:block">
-			<button class="swiper-button-next-desktop w-[60px] h-[60px] bg-[#333] hover:bg-[#EE4035] rounded-full after:flex flex items-center justify-center">
-				<img src="/wp-content/uploads/2026/03/Vector-4.png" alt="">
-			</button>
-		</div>
-	</div>
-	
-	{# <div class="swiper-button-prev self-center mt-[61px!important] w-[60px] h-[60px] bg-[#333] rounded-full after:hidden flex items-center justify-center">
-		<img src="/wp-content/uploads/2026/03/Vector-3.png" alt="">
-	</div> #}
+    <div class="relative top-[28px] z-20 hidden lg:block">
+      <button class="swiper-button-prev-desktop w-[60px] h-[60px] bg-[#333] hover:bg-[#EE4035] rounded-full flex items-center justify-center">
+        <img src="/wp-content/uploads/2026/03/Vector-3.png" alt="">
+      </button>
+    </div>
 
-	<div class="relative w-full max-w-[1130px] z-10 bg-white pt-[20px] lg:pt-[80px] rounded-[8px] rounded-[8px]">
-		<div class="topbar-logos px-0 lg:px-[50px] relative block">
-			<article class="container mx-auto text-center">
+    <div class="w-full max-w-[1244px] relative"></div>
 
-				<div class="overflow-hidden swiper blog-swiper01">
+    <div class="relative top-[28px] z-20 hidden lg:block">
+      <button class="swiper-button-next-desktop w-[60px] h-[60px] bg-[#333] hover:bg-[#EE4035] rounded-full flex items-center justify-center">
+        <img src="/wp-content/uploads/2026/03/Vector-4.png" alt="">
+      </button>
+    </div>
 
-					<div class="items-stretch swiper-wrapper">
+  </div>
 
-						<!-- Slide -->
-						<article class="flex flex-col w-full px-0 text-left swiper-slide min-w-[280px] ">
+  <div class="relative w-full max-w-[1130px] z-10 bg-white pt-[20px] lg:pt-[80px] rounded-[8px]">
 
-							<div class="h-[200px] md:h-[240px] shadow-lg lg:h-[270px] mb-[30px] rounded-[8px] bg-[#5f5e5e]"></div>
+    <div class="topbar-logos px-0 lg:px-[50px]">
 
-							<div class="flex flex-col flex-1 gap-[25px] text-center md:text-left lg:text-left ">
+      <article class="container mx-auto text-center">
 
-								<h3 class="text-[22px] font-bold leading-[24px]">
-									First Class Moving Referral Program
-								</h3>
+        <div class="overflow-hidden swiper blog-swiper01">
 
-								<p class="text-[16px] text-[#414141]">
-									Refer a friend or family member and get $50 for each qualified sale.
-								</p>
+          <div class="items-stretch swiper-wrapper">
 
-								<a class="font-bold text-blue">
-									Share
-								</a>
+            {% for box in fields.boxes %}
 
-								<a href="{{ link }}" class="mx-auto md:mx-0 lg:mx-0 w-[220px] bg-blue text-white text-[16px] font-bold text-center rounded-[5px] px-[24px] py-[18.5px]">
-									Refer Someone Today
-								</a>
+            <article class="flex flex-col w-full px-0 text-left swiper-slide min-w-[280px]">
 
-							</div>
+              <div class="h-[200px] md:h-[240px] shadow-lg lg:h-[270px] mb-[30px] rounded-[8px] bg-[#5f5e5e]"></div>
 
-						</article>
+              <div class="flex flex-col flex-1 gap-[25px] text-center md:text-left">
 
-						<!-- Slide -->
-						<article class="flex flex-col w-full px-0 text-left swiper-slide min-w-[280px]">
+                <div class="flex flex-col flex-1 gap-[10px]">
 
-							<div class="h-[200px] md:h-[240px] shadow-lg lg:h-[270px] mb-[30px] rounded-[8px] bg-[#5f5e5e]"></div>
+                  <h3 class="text-[22px] font-bold leading-[24px]">
+                    {{ box.title }}
+                  </h3>
 
-							<div class="flex flex-col flex-1 gap-[25px] text-center md:text-left lg:text-left">
+                  <div class="text-[16px] lg:min-h-[100px] text-[#414141]">
+                    {{ box.description }}
+                  </div>
 
-								<h3 class="text-[22px] font-bold leading-[24px]">
-									First Class Moving Referral Program
-								</h3>
+                  {% if box.share_link %}
+                  <a href="{{ box.share_link.url }}" class="font-bold text-blue">
+                    {{ box.share_link.title }}
+                  </a>
+                  {% endif %}
 
-								<p class="text-[16px] text-[#414141]">
-									Refer a friend or family member and get $50 for each qualified sale.
-								</p>
-								<a class="font-bold text-blue">
-									Share
-								</a>
+                  {% if box.link %}
+                  <a href="{{ box.link.url }}" class="mx-auto md:mx-0 w-[220px] bg-blue text-white text-[16px] font-bold text-center rounded-[5px] px-[24px] py-[18.5px]">
+                    {{ box.link.title }}
+                  </a>
+                  {% endif %}
 
-								<a href="{{ link }}" class="mx-auto md:mx-0 lg:mx-0 w-[220px] bg-blue text-white text-[16px] font-bold text-center rounded-[5px] px-[24px] py-[18.5px]">
-									Refer Someone Today
-								</a>
-							</div>
-						</article>
-					</div>
-				</div>
-			</article>
-		</div>
-		<div class="flex items-center justify-center gap-[30px] mt-[32px]">
-			<div class="relative top-[28px!important] z-20  md:block lg:hidden">
-				<button class="swiper-button-prev-mobile w-[60px] text-[#333333] hover:text-white h-[60px] hover:bg-[#EE4035] rounded-full after:hidden flex items-center justify-center transition-all">
-					<svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path d="M5.75008 11.5C5.75474 10.9958 5.95789 10.5137 6.3155 10.1583L10.4267 6.03747C10.6063 5.85898 10.8492 5.75879 11.1024 5.75879C11.3555 5.75879 11.5984 5.85898 11.778 6.03747C11.8678 6.12656 11.9391 6.23255 11.9878 6.34933C12.0364 6.46611 12.0615 6.59137 12.0615 6.71788C12.0615 6.84439 12.0364 6.96965 11.9878 7.08643C11.9391 7.20322 11.8678 7.30921 11.778 7.3983L8.62508 10.5416H18.2084C18.4626 10.5416 18.7063 10.6426 18.8861 10.8223C19.0658 11.002 19.1667 11.2458 19.1667 11.5C19.1667 11.7541 19.0658 11.9979 18.8861 12.1776C18.7063 12.3573 18.4626 12.4583 18.2084 12.4583H8.62508L11.778 15.6112C11.9585 15.7904 12.0603 16.0339 12.0612 16.2882C12.0621 16.5426 11.962 16.7868 11.7828 16.9673C11.6036 17.1477 11.3601 17.2496 11.1058 17.2505C10.8515 17.2514 10.6072 17.1512 10.4267 16.9721L6.3155 12.8512C5.95556 12.4934 5.75222 12.0075 5.75008 11.5Z" fill="currentColor"/>
-					</svg>
-				</button>
-			</div>
-			<div class="relative top-[28px!important] z-20 block md:block lg:hidden">
-				<button class="swiper-button-next-mobile w-[60px] h-[60px] text-[#333333] hover:text-white h-[60px] hover:bg-[#EE4035] rounded-full after:hidden flex items-center justify-center transition-all">
-					<svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-					<path d="M17.2499 11.5C17.2453 10.9958 17.0421 10.5137 16.6845 10.1583L12.5733 6.03747C12.3937 5.85898 12.1508 5.75879 11.8976 5.75879C11.6445 5.75879 11.4016 5.85898 11.222 6.03747C11.1322 6.12656 11.0609 6.23255 11.0122 6.34933C10.9636 6.46611 10.9385 6.59137 10.9385 6.71788C10.9385 6.84439 10.9636 6.96965 11.0122 7.08643C11.0609 7.20322 11.1322 7.30921 11.222 7.3983L14.3749 10.5416H4.79159C4.53742 10.5416 4.29366 10.6426 4.11394 10.8223C3.93422 11.002 3.83325 11.2458 3.83325 11.5C3.83325 11.7541 3.93422 11.9979 4.11394 12.1776C4.29366 12.3573 4.53742 12.4583 4.79159 12.4583H14.3749L11.222 15.6112C11.0415 15.7904 10.9397 16.0339 10.9388 16.2882C10.9379 16.5426 11.038 16.7868 11.2172 16.9673C11.3964 17.1477 11.6399 17.2496 11.8942 17.2505C12.1485 17.2514 12.3928 17.1512 12.5733 16.9721L16.6845 12.8512C17.0444 12.4934 17.2478 12.0075 17.2499 11.5Z" fill="currentColor"/>
-					</svg>
+                </div>
 
-				</button>
-			</div>
-		</div>
-	</div>
+              </div>
 
+            </article>
 
-</div></section>
+            {% endfor %}
+
+          </div>
+
+        </div>
+
+      </article>
+
+    </div>
+
+    <!-- Mobile Navigation -->
+    <div class="flex items-center justify-center gap-[30px] mt-[32px]">
+
+      <div class="relative top-[28px] z-20 lg:hidden">
+        <button class="swiper-button-prev-mobile w-[60px] h-[60px] text-[#333333] hover:text-white hover:bg-[#EE4035] rounded-full flex items-center justify-center transition-all">
+          <svg width="23" height="23" viewBox="0 0 23 23">
+            <path d="M5.75008 11.5..." fill="currentColor"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="relative top-[28px] z-20 lg:hidden">
+        <button class="swiper-button-next-mobile w-[60px] h-[60px] text-[#333333] hover:text-white hover:bg-[#EE4035] rounded-full flex items-center justify-center transition-all">
+          <svg width="23" height="23" viewBox="0 0 23 23">
+            <path d="M17.2499 11.5..." fill="currentColor"/>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
