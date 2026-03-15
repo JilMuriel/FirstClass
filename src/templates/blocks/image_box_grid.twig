@@ -11,44 +11,42 @@
   SupportsMode: true
   SupportsMultiple: true
 #}
-<section
-	class="bg-[#F8F8F8] relative px-[20px] pt-[60px] md:pt-[90px] lg:pt-[120px] {{ block.className }}">
+<section class="bg-[#F8F8F8] flex items-start justify-center relative px-[20px] gap-[57px] pt-[60px] md:pt-[90px] lg:pt-[120px] {{ block.className }}">
 	<!-- Background Overlay -->
-	<div class="absolute inset-0 bg-center bg-no-repeat bg-cover h-[470px]" style="background-image: url('/wp-content/uploads/2026/03/Frame-52629.jpg');"></div>
 
+	<div class="absolute flex items-end justify-center inset-0 bg-center bg-no-repeat bg-cover h-[470px]" style="background-image: url('/wp-content/uploads/2026/03/Frame-52629.jpg');">
+		<div class="relative top-[28px!important] z-20 md:block">
+			<button class="swiper-button-prev-desktop w-[60px] h-[60px] bg-[#333] hover:bg-[#EE4035] rounded-full after:flex flex items-center justify-center">
+				<img src="/wp-content/uploads/2026/03/Vector-3.png" alt="">
+			</button>
+		</div>
 
-	<div class="container relative z-10 mx-auto bg-white pt-[80px] rounded-[8px]">
-		<div
-			class="topbar-logos px-[50px] relative block">
+		<div class="w-full max-w-[1244px] block relative border"></div>
+		<div class="relative top-[28px!important] z-20 md:block">
+			<button class="swiper-button-next-desktop w-[60px] h-[60px] bg-[#333] hover:bg-[#EE4035] rounded-full after:flex flex items-center justify-center">
+				<img src="/wp-content/uploads/2026/03/Vector-4.png" alt="">
+			</button>
+		</div>
+	</div>
+	
+	{# <div class="swiper-button-prev self-center mt-[61px!important] w-[60px] h-[60px] bg-[#333] rounded-full after:hidden flex items-center justify-center">
+		<img src="/wp-content/uploads/2026/03/Vector-3.png" alt="">
+	</div> #}
 
-			<!-- Arrow container -->
-			<div
-				class="w-[80vw] mx-auto flex items-center justify-between absolute left-1/2 -translate-x-1/2 top-[50%] -translate-y-1/2 z-10 ">
-
-				<!-- Navigation -->
-				<div class="swiper-button-prev w-[60px] h-[60px] bg-[#333] rounded-full after:hidden flex items-center justify-center">
-					<img src="/wp-content/uploads/2026/03/Vector-3.png" alt="">
-				</div>
-
-				<div class="swiper-button-next w-[60px] h-[60px] bg-[#EE4035] rounded-full after:hidden flex items-center justify-center">
-					<img src="/wp-content/uploads/2026/03/Vector-4.png" alt="">
-				</div>
-
-			</div>
-
+	<div class="relative w-full max-w-[1130px] z-10 bg-white pt-[20px] lg:pt-[80px] rounded-[8px] rounded-[8px]">
+		<div class="topbar-logos px-0 lg:px-[50px] relative block">
 			<article class="container mx-auto text-center">
 
 				<div class="overflow-hidden swiper blog-swiper01">
 
-					<div
-						class="items-stretch swiper-wrapper">
+					<div class="items-stretch swiper-wrapper">
 
 						<!-- Slide -->
-						<article class="flex flex-col w-full px-[25px] text-left swiper-slide">
+						<article class="flex flex-col w-full px-0 text-left swiper-slide min-w-[280px] ">
 
 							<div class="h-[200px] md:h-[240px] shadow-lg lg:h-[270px] mb-[30px] rounded-[8px] bg-[#5f5e5e]"></div>
 
-							<div class="flex flex-col flex-1 gap-[25px]">
+							<div class="flex flex-col flex-1 gap-[25px] text-center md:text-left lg:text-left ">
 
 								<h3 class="text-[22px] font-bold leading-[24px]">
 									First Class Moving Referral Program
@@ -62,7 +60,7 @@
 									Share
 								</a>
 
-								<a href="{{ link }}" class="mt-auto w-full md:w-[220px] bg-blue text-white text-[16px] font-bold text-center rounded-[5px] px-[24px] py-[18.5px]">
+								<a href="{{ link }}" class="mx-auto md:mx-0 lg:mx-0 w-[220px] bg-blue text-white text-[16px] font-bold text-center rounded-[5px] px-[24px] py-[18.5px]">
 									Refer Someone Today
 								</a>
 
@@ -71,11 +69,11 @@
 						</article>
 
 						<!-- Slide -->
-						<article class="flex flex-col w-full px-[25px] text-left swiper-slide">
+						<article class="flex flex-col w-full px-0 text-left swiper-slide min-w-[280px]">
 
 							<div class="h-[200px] md:h-[240px] shadow-lg lg:h-[270px] mb-[30px] rounded-[8px] bg-[#5f5e5e]"></div>
 
-							<div class="flex flex-col flex-1 gap-[25px]">
+							<div class="flex flex-col flex-1 gap-[25px] text-center md:text-left lg:text-left">
 
 								<h3 class="text-[22px] font-bold leading-[24px]">
 									First Class Moving Referral Program
@@ -84,12 +82,11 @@
 								<p class="text-[16px] text-[#414141]">
 									Refer a friend or family member and get $50 for each qualified sale.
 								</p>
-
 								<a class="font-bold text-blue">
 									Share
 								</a>
 
-								<a href="{{ link }}" class="mt-auto w-full md:w-[220px] bg-blue text-white text-[16px] font-bold text-center rounded-[5px] px-[24px] py-[18.5px]">
+								<a href="{{ link }}" class="mx-auto md:mx-0 lg:mx-0 w-[220px] bg-blue text-white text-[16px] font-bold text-center rounded-[5px] px-[24px] py-[18.5px]">
 									Refer Someone Today
 								</a>
 							</div>
@@ -98,5 +95,19 @@
 				</div>
 			</article>
 		</div>
+		<div class="flex items-center justify-center gap-[30px] mt-[32px]">
+			<div class="relative top-[28px!important] z-20  md:block lg:hidden">
+				<button class="swiper-button-prev-mobile w-[60px] h-[60px] bg-[#333] hover:bg-[#EE4035] rounded-full after:hidden flex items-center justify-center">
+					<img src="/wp-content/uploads/2026/03/Vector-3.png" alt="">
+				</button>
+			</div>
+			<div class="relative top-[28px!important] z-20 block md:block lg:hidden">
+				<button class="swiper-button-next-mobile w-[60px] h-[60px] bg-[#333] hover:bg-[#EE4035] rounded-full after:hidden flex items-center justify-center">
+					<img src="/wp-content/uploads/2026/03/Vector-4.png" alt="">
+				</button>
+			</div>
+		</div>
 	</div>
+
+
 </div></section>
