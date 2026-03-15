@@ -15,56 +15,34 @@
 		<article class="container flex flex-col items-center justify-between mx-auto lg:flex-row gap-[40px]">
 			<div class="relative w-full mt-8 lg:mt-0 lg:w-5/12 image-wrap lg:order-2">
 				<figure>
-					<img class="w-full h-auto mb-[40px] lg:h-[694px] object-cover rounded-lg aos-init aos-animate" src="/wp-content/uploads/2026/03/grp.png">
+					<img class="w-full h-auto mb-[40px] lg:h-[694px] object-cover rounded-lg aos-init aos-animate" src="{{ fields.image.url }}">
 				</figure>
 			</div>
 			<div class="w-full my-auto lg:w-6/12 lg:order-1">
-				<h2 class="leading-[55px] text-[#333333] text-center md:text-left font-bold uppercase md:mb-[40px] text-[30px] md:text-[40px]">About First Class Moving Systems</h2>
-
-				<p class="text-[#402e2e] text-[16px] font-regular mb-[30px]">
-					At First Class Moving Systems, our name says it all. We treat our clients as we would want to be treated, which means that we always go the extra mile to deliver quality service at a fair, affordable price. As a full-service moving and storage company, we offer moving solutions that cover the full scope of relocation needs, along with benefits that include:
-				</p>
-
-				<p class="text-[#4E4D4D] text-[16px] font-regular mb-[30px]">
-					Whether you are moving across town, across the country, or even to another continent, you can count on our professional drivers, movers, and packers to take pride in their work. That’s the promise of First Class, and we are here as your partner in creating a stress-free relocation experience.
-				</p>
-
+				<h2 class="leading-[55px] text-[#333333] text-center md:text-left font-bold uppercase md:mb-[40px] text-[30px] md:text-[40px]">{{ fields.title }}</h2>
+				<div class="text-[#402e2e] text-[16px] font-regular mb-[30px]">
+					{{ fields.description }}
+				</div>
 				<!-- Features -->
-				<div class="flex gap-[32px] mt-4 mb-[40px]">
+				<div class="flex flex-col md:flex-row md:gap-[32px] mt-4 mb-[40px]">
 					<div>
-						<span class="flex items-center gap-2 font-bold">
-							<img src="/wp-content/uploads/2026/03/icon-check-red.png" alt="">
-							Highest-Quality Customer Service
-						</span>
-						<span class="flex items-center gap-2 font-bold">
-							<img src="/wp-content/uploads/2026/03/icon-check-red.png" alt="">
-							Comprehensive Packing Solutions
-						</span>
-						<span class="flex items-center gap-2 font-bold">
-							<img src="/wp-content/uploads/2026/03/icon-check-red.png" alt="">
-							Small Move Specialization
-						</span>
+						{% for list1 in fields.list_left %}
+							<span class="flex items-center gap-2 font-bold">
+								<img src="{{ list1.icon.url }}" alt="">
+								{{ list1.title }}
+							</span>
+						{% endfor %}
 					</div>
-
 					<div>
-						<span class="flex items-center gap-2 font-bold">
-							<img src="/wp-content/uploads/2026/03/icon-check-red.png" alt="">
-							Decades of Expertise
-						</span>
-						<span class="flex items-center gap-2 font-bold">
-							<img src="/wp-content/uploads/2026/03/icon-check-red.png" alt="">
-							Targeted Service
-						</span>
-						<span class="flex items-center gap-2 font-bold">
-							<img src="/wp-content/uploads/2026/03/icon-check-red.png" alt="">
-							Competitive Prices
-						</span>
+						{% for list2 in fields.list_right %}
+							<span class="flex items-center gap-2 font-bold">
+								<img src="{{ list2.icon.url }}" alt="">
+								{{ list2.title }}
+							</span>
+						{% endfor %}
 					</div>
 				</div>
-				<button class="hidden md:block">
-					<a href="{{ fields.button.url}}" class="mb-4 font-bold normal-case btn btn-primary">Get A Free Quote
-					</a>
-				</button>
+				<a href="{{ fields.button.url}}" class="mb-4 font-bold normal-case btn btn-primary">{{ fields.button.title }}</a>
 			</div>
 		</article>
 	</section>

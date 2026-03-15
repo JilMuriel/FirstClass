@@ -35,68 +35,38 @@
 				</div>
 
 			</div>
-
 			<article class="container mx-auto text-center">
-
 				<div class="overflow-hidden swiper blog-swiper01">
-
 					<div
 						class="items-stretch swiper-wrapper">
-
 						<!-- Slide -->
-						<article class="flex flex-col w-full px-[25px] text-left swiper-slide">
+						{% for box in fields.box %}
+						<article class="flex flex-col w-full px-[50px] swiper-slide text-left">
+							<figure class="w-[460px] h-[270px] overflow-hidden rounded-[8px]">
+								<img src="{{ box.image.url }}" alt="" class="w-full h-auto object-cover">
+							</figure>
 
-							<div class="h-[200px] md:h-[240px] shadow-lg lg:h-[270px] mb-[30px] rounded-[8px] bg-[#5f5e5e]"></div>
-
-							<div class="flex flex-col flex-1 gap-[25px]">
-
+							<div class="flex flex-col flex-1 gap-[10px]">
 								<h3 class="text-[22px] font-bold leading-[24px]">
-									First Class Moving Referral Program
+									{{ box.title }}
 								</h3>
-
-								<p class="text-[16px] text-[#414141]">
-									Refer a friend or family member and get $50 for each qualified sale.
-								</p>
-
-								<a class="font-bold text-blue">
-									Share
+								<div class="text-[16px] lg:min-h-[100px] text-[#414141]">
+									{{ box.description }}
+								</div>
+								<a  href="{{ box.share_link.url}}" class="font-bold text-blue">
+									{{ box.share_link.title}}
 								</a>
-
-								<a href="{{ link }}" class="mt-auto w-full md:w-[220px] bg-blue text-white text-[16px] font-bold text-center rounded-[5px] px-[24px] py-[18.5px]">
-									Refer Someone Today
+								<a href="{{ box.button.url}}" class="mt-auto w-full md:w-[220px] bg-blue text-white text-[16px] font-bold text-center rounded-[5px] px-[24px] py-[18.5px]">
+									{{ box.button.title }}
 								</a>
 
 							</div>
-
 						</article>
-
-						<!-- Slide -->
-						<article class="flex flex-col w-full px-[25px] text-left swiper-slide">
-
-							<div class="h-[200px] md:h-[240px] shadow-lg lg:h-[270px] mb-[30px] rounded-[8px] bg-[#5f5e5e]"></div>
-
-							<div class="flex flex-col flex-1 gap-[25px]">
-
-								<h3 class="text-[22px] font-bold leading-[24px]">
-									First Class Moving Referral Program
-								</h3>
-
-								<p class="text-[16px] text-[#414141]">
-									Refer a friend or family member and get $50 for each qualified sale.
-								</p>
-
-								<a class="font-bold text-blue">
-									Share
-								</a>
-
-								<a href="{{ link }}" class="mt-auto w-full md:w-[220px] bg-blue text-white text-[16px] font-bold text-center rounded-[5px] px-[24px] py-[18.5px]">
-									Refer Someone Today
-								</a>
-							</div>
-						</article>
+						{% endfor %}
 					</div>
 				</div>
 			</article>
 		</div>
 	</div>
-</div></section>
+</div>
+</section>
