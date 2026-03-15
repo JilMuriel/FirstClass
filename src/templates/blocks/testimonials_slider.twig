@@ -13,42 +13,42 @@
 #}
 
 {% if fields.review_version == 'ver1' %}
-<section class="firstclass-testimonials v1 bg-primary mb-16 lg:mb-24 {{ block.className }}">
-	<div class="flex flex-col lg:flex-row">
-		<div class="w-full pt-16 pb-32 md:px-24 flex flex-col justify-center items-center">
-			<div class="flex flex-row justify-center"><span class="mm-icon-wh"></span></div>
+<section class="px-[20px] py-[60px] md:py-[0px] lg:py-[0px] bg-[#F8F8F8] {{ block.className }}">
+	<div class="container px-4 mx-auto">
+		<div class="flex flex-col items-start justify-center w-full">
 			{% if fields.title %}
-			<h2 class="font-tagline text-[32px] leading-[32px] lg:text-xl text-center lg:max-w-xl text-white mb-8 capitalize">{{ fields.title}}</h2>
+			<h2 class="leading-[55px] text-dark font-bold uppercase md:mb-[30px] text-[30px] md:text-[40px]">{{ fields.title}}</h2>
 			{% endif %}
 			{% if fields.upper_title %}
-				<p class="mb-4 text-center w-full lg:w-7/12 mx-auto text-dark">{{ fields.upper_title }}</p>
+				<p class="w-full mx-auto mb-4 text-center text-[#333333]">{{ fields.upper_title }}</p>
 			{% endif %}		
 			<div class="testimonials w-[100%]">
 				{{fn('do_shortcode', fields.testimonials|striptags)}}
 			</div>
 		</div>
+		{% if fields.button_link %}
+		<div class="mt-32 text-center xl:mt-12">
+			<a href="{{ fields.button_link.url }}" class="btn btn-secondary">
+				<span>
+					{{ fields.button_link.title }}
+				</span>
+			</a>
+		</div>
+		{% endif %}
 	</div>
-	{% if fields.button_link %}
-	<div class="mt-32 xl:mt-12 text-center">
-		<a href="{{ fields.button_link.url }}" class="btn btn-secondary">
-			<span>
-				{{ fields.button_link.title }}
-			</span>
-		</a>
-	</div>
-	{% endif %}
+
 </section>
 {% endif %}
 {% if fields.review_version == 'ver2' %}
 <section class="firstclass-testimonials v2 section-spacing  {{ block.className }}">
 	{% if fields.reviews %}
 		{% for item in fields.reviews %}
-			<div class="w-full mx-auto z-10 py-16" style="background-color: {{ item.background_color }}" >
-				<div  class="container flex flex-col space-y-4 md:flex-row md:space-x-8 mx-auto items-start">
+			<div class="z-10 w-full py-16 mx-auto" style="background-color: {{ item.background_color }}" >
+				<div  class="container flex flex-col items-start mx-auto space-y-4 md:flex-row md:space-x-8">
 					<img src="{{ item.icon.url }}" class="image-responsive w-[125px] h-[125px]">
 					<div>
 						{% if item.title %}
-							<h3 class="font-header text-secondary text-2xl lg:text-5xl mb-4">{{ item.title }}</h3>
+							<h3 class="mb-4 text-2xl font-header text-secondary lg:text-5xl">{{ item.title }}</h3>
 						{% endif %}
 						
 						{% if item.description %}

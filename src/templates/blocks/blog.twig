@@ -143,13 +143,23 @@
   <!-- Navigation -->
   <div class="flex justify-center gap-[20px] mt-[40px]">
 
-    <div class="swiper-blog-prev w-[60px] h-[60px] bg-[#333] rounded-full flex items-center justify-center cursor-pointer text-white">
-      ◀
-    </div>
+		<div class="flex items-center justify-center gap-[30px]">
+			<div class="relative z-20 md:block lg:hidden">
+				<button class="swiper-blog-prev w-[60px] text-[#333333] hover:text-white h-[60px] hover:bg-[#EE4035] rounded-full after:hidden flex items-center justify-center transition-all">
+					<svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M5.75008 11.5C5.75474 10.9958 5.95789 10.5137 6.3155 10.1583L10.4267 6.03747C10.6063 5.85898 10.8492 5.75879 11.1024 5.75879C11.3555 5.75879 11.5984 5.85898 11.778 6.03747C11.8678 6.12656 11.9391 6.23255 11.9878 6.34933C12.0364 6.46611 12.0615 6.59137 12.0615 6.71788C12.0615 6.84439 12.0364 6.96965 11.9878 7.08643C11.9391 7.20322 11.8678 7.30921 11.778 7.3983L8.62508 10.5416H18.2084C18.4626 10.5416 18.7063 10.6426 18.8861 10.8223C19.0658 11.002 19.1667 11.2458 19.1667 11.5C19.1667 11.7541 19.0658 11.9979 18.8861 12.1776C18.7063 12.3573 18.4626 12.4583 18.2084 12.4583H8.62508L11.778 15.6112C11.9585 15.7904 12.0603 16.0339 12.0612 16.2882C12.0621 16.5426 11.962 16.7868 11.7828 16.9673C11.6036 17.1477 11.3601 17.2496 11.1058 17.2505C10.8515 17.2514 10.6072 17.1512 10.4267 16.9721L6.3155 12.8512C5.95556 12.4934 5.75222 12.0075 5.75008 11.5Z" fill="currentColor"/>
+					</svg>
+				</button>
+			</div>
+			<div class="relative z-20 block md:block lg:hidden">
+				<button class="swiper-blog-next w-[60px] h-[60px] text-[#333333] hover:text-white h-[60px] hover:bg-[#EE4035] rounded-full after:hidden flex items-center justify-center transition-all">
+					<svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M17.2499 11.5C17.2453 10.9958 17.0421 10.5137 16.6845 10.1583L12.5733 6.03747C12.3937 5.85898 12.1508 5.75879 11.8976 5.75879C11.6445 5.75879 11.4016 5.85898 11.222 6.03747C11.1322 6.12656 11.0609 6.23255 11.0122 6.34933C10.9636 6.46611 10.9385 6.59137 10.9385 6.71788C10.9385 6.84439 10.9636 6.96965 11.0122 7.08643C11.0609 7.20322 11.1322 7.30921 11.222 7.3983L14.3749 10.5416H4.79159C4.53742 10.5416 4.29366 10.6426 4.11394 10.8223C3.93422 11.002 3.83325 11.2458 3.83325 11.5C3.83325 11.7541 3.93422 11.9979 4.11394 12.1776C4.29366 12.3573 4.53742 12.4583 4.79159 12.4583H14.3749L11.222 15.6112C11.0415 15.7904 10.9397 16.0339 10.9388 16.2882C10.9379 16.5426 11.038 16.7868 11.2172 16.9673C11.3964 17.1477 11.6399 17.2496 11.8942 17.2505C12.1485 17.2514 12.3928 17.1512 12.5733 16.9721L16.6845 12.8512C17.0444 12.4934 17.2478 12.0075 17.2499 11.5Z" fill="currentColor"/>
+					</svg>
 
-    <div class="swiper-blog-next w-[60px] h-[60px] bg-[#EE4035] rounded-full flex items-center justify-center cursor-pointer text-white">
-      ▶
-    </div>
+				</button>
+			</div>
+		</div>
 
   </div>
 
