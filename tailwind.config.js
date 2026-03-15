@@ -44,8 +44,8 @@ module.exports = {
         '3xl': ['78px','80px'], 
       },
       colors: {
-        'primary': '#ED1F24', //red
-        'secondary': '#4E4D4D', //blue
+        'primary': '#EE4035', //red
+        'secondary': '#0068A7', //blue
         'yellow': '#FFEF0B',
         'blue': '#0068A7',
         'bluesecondary': '#0066A5',

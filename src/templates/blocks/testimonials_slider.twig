@@ -13,12 +13,11 @@
 #}
 
 {% if fields.review_version == 'ver1' %}
-<section class="firstclass-testimonials v1 bg-primary mb-16 lg:mb-24 {{ block.className }}">
+<section class="firstclass-testimonials v1 mb-16 lg:mb-24 {{ block.className }}">
 	<div class="flex flex-col lg:flex-row">
-		<div class="w-full pt-16 pb-32 md:px-24 flex flex-col justify-center items-center">
-			<div class="flex flex-row justify-center"><span class="mm-icon-wh"></span></div>
+		<div class="w-full pt-16 pb-32 md:px-24 flex flex-col">
 			{% if fields.title %}
-			<h2 class="font-tagline text-[32px] leading-[32px] lg:text-xl text-center lg:max-w-xl text-white mb-8 capitalize">{{ fields.title}}</h2>
+			<h2 class="font-tagline text-[32px] leading-[32px] lg:text-xl text-left  text-dark mb-8 capitalize">{{ fields.title}}</h2>
 			{% endif %}
 			{% if fields.upper_title %}
 				<p class="mb-4 text-center w-full lg:w-7/12 mx-auto text-dark">{{ fields.upper_title }}</p>
@@ -36,40 +35,6 @@
 			</span>
 		</a>
 	</div>
-	{% endif %}
-</section>
-{% endif %}
-{% if fields.review_version == 'ver2' %}
-<section class="firstclass-testimonials v2 section-spacing  {{ block.className }}">
-	{% if fields.reviews %}
-		{% for item in fields.reviews %}
-			<div class="w-full mx-auto z-10 py-16" style="background-color: {{ item.background_color }}" >
-				<div  class="container flex flex-col space-y-4 md:flex-row md:space-x-8 mx-auto items-start">
-					<img src="{{ item.icon.url }}" class="image-responsive w-[125px] h-[125px]">
-					<div>
-						{% if item.title %}
-							<h3 class="font-header text-secondary text-2xl lg:text-5xl mb-4">{{ item.title }}</h3>
-						{% endif %}
-						
-						{% if item.description %}
-						<div class="mb-4">{{ item.description }}</div>
-						{% endif %}
-						
-						{% if item.button_link.url %}
-						<a href="{{ item.button_link.url }}" target="{{ item.button_link.target}}"
-							class="btn btn-primary flex items-center !text-base lg:!px-16 uppercase">{{item.button_link.title}}
-						</a>
-						{% endif %}
-					</div>		
-				</div>
-				{% if item.form_code %}
-				<div  class="container py-8 lg:py-12 mt-8 mx-auto border-t-[#E9E9E9] border-t">	
-							{{fn('do_shortcode',item.form_code|striptags)}}
-				</div>
-				{% endif %}
-
-			</div>
-		{% endfor %}
 	{% endif %}
 </section>
 {% endif %}

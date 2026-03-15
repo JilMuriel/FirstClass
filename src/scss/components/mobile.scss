@@ -2,8 +2,8 @@
 @media screen and (max-width: 1250px) {
     .mobile-menu {
         .mobile-menu-wrap {
-            @apply bg-primary text-white;
-            top: 4.25rem;
+            @apply bg-secondary text-white;
+            top: 3.25rem;
             left: -20rem;
             width: 20rem;
             height: 30rem;
@@ -145,7 +145,7 @@
         &.v1 {
             .mobile-menu-wrap {
                 right: -22rem;
-                top: 5rem;
+                top: 4rem;
 
 
                 &.show {

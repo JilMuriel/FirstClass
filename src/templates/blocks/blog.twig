@@ -11,25 +11,7 @@
   SupportsMode: true
   SupportsMultiple: true
 #}
-
-<section class="bg-[#F8F8F8] px-[20px] py-[60px] md:py-[90px] lg:py-[120px] {{ block.className }}">
-{% for fpost in fposts %}
-	{{fpost.post_title}}<br>
-{% endfor %}
-<div class="container flex flex-col mx-auto text-center">
-	{% if fields.upper_title %}
-		<h2 class="leading-[55px] text-[#333] font-bold uppercase md:mb-[20px] text-[30px] md:text-[40px]">{{ fields.upper_title}}</h2>
-	{% endif %}
-	{% if fields.title %}
-		<h2 class="leading-[55px] text-[#4E4D4D] font-bold uppercase mb-[60px] text-[30px] md:text-[40px]">Moving Tips & Advice</h2>
-		{# <h2 class="font-header text-dark text-[35px] leading-[35px] lg:text-xl mb-8">{{ fields.title}}</h2> #}
-	{% endif %}
-	{% if fields.subtitle %}
-		<h4 class="mb-4 text-lg font-light">{{ fields.subtitle}}</h4>
-	{% endif %}
-</div>
-
-
+<section class="firstclass-blog section-spacing bg-white {{ block.className }}">
 <div class="container flex flex-row flex-wrap mx-auto">
 
 	<div class="w-full">
@@ -95,5 +77,6 @@
 
 			</div>
 		</div>
-	</section>
+	</div>	
+</section>
 
