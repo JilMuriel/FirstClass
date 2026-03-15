@@ -11,19 +11,29 @@
   SupportsMode: true
   SupportsMultiple: true
 #}
-<section class="px-[20px] py-[60px] md:py-[90px] lg:py-[120px] bg-[#F8F8F8] {{ block.className }}">
-	<div class="container px-4 mx-auto">
 
-		<div class="video-container rounded-[8px] mb-[60px] flex items-center justify-center w-full h-[230px] sm:h-[330px] md:h-[420px] lg:h-[560px] bg-gray overflow-hidden relative">
-
-			<div class="absolute playButton-wrapper">
-				<button class="text-white bg-red h-[60px] w-[60px] md:h-[80px] md:w-[80px] lg:h-[90px] lg:w-[90px] rounded-full flex items-center justify-center">
-					<img src="/wp-content/uploads/2026/03/Polygon-4.png"/>
-				</button>
+<section class="ellismovers-video section-spacing">
+	<article class="container flex flex-col items-center mx-auto text-center ">
+		{% if fields.description and fields.title %}
+			<div class="container flex flex-col pb-1 mx-auto mb-8 text-center">
+				<h2 class="mb-4 text-3xl text-white capitalize md:text-6xl font-tagline heading-g">{{ fields.title}}</h2>
+				<div class="text-lg text-white font-body">{{ fields.description }}</div>
 			</div>
-
-			<img src="/wp-content/uploads/2026/03/83073a2ba7f55deac9607d9bade19c4876d0c592.jpg" class="object-cover w-full h-full"/>
+		{% else %}
+			{% if fields.title %}
+				<h2 class="mb-8 text-4xl font-header">{{ fields.title}}</h2>
+			{% endif %}
+			{% if fields.description %}
+				<div class="text-lg text-white font-body">{{ fields.description }}</div>
+			{% endif %}
+		{% endif %}
+		<div class="w-full video-wrapper max-h-[658px] rounded-2xl" data-aos="fade-left" data-aos-offset="-250" data-aos-delay="250" data-aos-duration="550" data-aos-once="true">
+			<iframe width="100%" height="660" src="https://www.youtube.com/embed/{{fields.video_url}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 		</div>
-		{# SLIDER PLUGIN HERE  #}
-	</div>
-	</section>
+		<a href="{{fields.button.url}}" class="mx-auto mt-10 font-normal text-center btn btn-ghost">
+			<span class="flex flex-row items-center">
+				{{ fields.button.title }}
+			</span>
+		</a>
+	</article>
+</section>

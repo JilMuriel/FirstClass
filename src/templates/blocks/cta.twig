@@ -11,10 +11,8 @@
   SupportsMode: true
   SupportsMultiple: true
 #}
-
 	<section class="bg-[#F8F8F8] px-[20px] py-[60px] md:py-[90px] lg:py-[120px] {{ block.className }}">
 		<div class="container mx-auto">
-
 			<div
 				class="relative">
 
@@ -29,22 +27,22 @@
 					<div class="max-w-[600px] text-white py-[70px] pl-[30px] md:pl-[60px] lg:pl-[80px]">
 
 						<h3 class="font-bold text-[16px] md:text-[18px] mb-[10px]">
-							Movers Committed To Quality
+							{{  fields.cta_title }}
 						</h3>
 
 						<h2 class="uppercase font-bold leading-[1.2] text-[28px] md:text-[36px] lg:text-[40px] mb-[30px]">
-							You Get Where You Need To Go Without The Hassle.
+							{{  fields.description }}
 						</h2>
 
-						<a href="#" class="inline-block bg-[#F04A3C] text-white font-bold px-[22px] py-[12px] rounded-[4px] text-[14px] md:text-[16px]">
-							Get A Free Quote
+						<a href="{{ fields.cta__button.url }}" class="inline-block bg-[#F04A3C] text-white font-bold px-[22px] py-[12px] rounded-[4px] text-[14px] md:text-[16px]">
+							{{  fields.cta__button.title }}
 						</a>
 
 					</div>
 
 					<!-- Image -->
 					<div class="absolute bottom-0 right-0 hidden lg:block">
-						<img class="h-[532px]" src="/wp-content/uploads/2026/03/Rectangle-3471.png" alt="Mover">
+						<img class="h-[532px]" src="{{ fields.cta_image.url }}" alt="Mover">
 					</div>
 				</div>
 
