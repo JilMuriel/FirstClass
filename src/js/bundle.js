@@ -94,28 +94,33 @@ AOS.init();
     });
 
     const blogSwiper = new Swiper('.blog-swiper01', {
-      speed: 800,
+  speed: 800,
+  grabCursor: true,
+  loop: true,
+  watchOverflow: true,
+
+  autoplay: {
+    delay: 4000,
+    pauseOnMouseEnter: true,
+    disableOnInteraction: false
+  },
+
+  navigation: {
+    nextEl: '.swiper-button-next-desktop, .swiper-button-next-mobile',
+    prevEl: '.swiper-button-prev-desktop, .swiper-button-prev-mobile',
+  },
+
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
+      spaceBetween: 20
+    },
+    768: {
       slidesPerView: 2,
-      grabCursor: true,
-      loop: true,
-      watchOverflow: true,
-
-      autoplay: {
-        delay: 4000,
-        pauseOnMouseEnter: true,
-        disableOnInteraction: false
-      },
-
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-
-      breakpoints: {
-        320: { slidesPerView: 1 },
-        768: { slidesPerView: 2 }
-      }
-    });
+      spaceBetween: 30
+    }
+  }
+});
 
     const blogSwiper2 = new Swiper('.blog-swiper02', {
       speed: 800,

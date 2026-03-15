@@ -11,62 +11,105 @@
   SupportsMode: true
   SupportsMultiple: true
 #}
-<section
-	class="bg-[#F8F8F8] relative px-[20px] pt-[60px] md:pt-[90px] lg:pt-[120px] {{ block.className }}">
-	<!-- Background Overlay -->
-	<div class="absolute inset-0 bg-center bg-no-repeat bg-cover h-[470px]" style="background-image: url('/wp-content/uploads/2026/03/Frame-52629.jpg');"></div>
 
+<section class="bg-[#F8F8F8] flex items-start justify-center relative px-[20px] gap-[57px] pt-[60px] md:pt-[90px] lg:pt-[120px] {{ block.className }}">
 
-	<div class="container relative z-10 mx-auto bg-white pt-[80px] rounded-[8px]">
-		<div
-			class="topbar-logos px-[50px] relative block">
+  <!-- Background Overlay -->
+  <div class="absolute flex items-end justify-center inset-0 bg-center bg-no-repeat bg-cover h-[470px]" style="background-image: url('/wp-content/uploads/2026/03/Frame-52629.jpg');">
 
-			<!-- Arrow container -->
-			<div
-				class="w-[80vw] mx-auto flex items-center justify-between absolute left-1/2 -translate-x-1/2 top-[50%] -translate-y-1/2 z-10 ">
+    <div class="relative top-[28px] z-20 hidden lg:block">
+      <button class="swiper-button-prev-desktop w-[60px] h-[60px] bg-[#333] hover:bg-[#EE4035] rounded-full flex items-center justify-center">
+        <img src="/wp-content/uploads/2026/03/Vector-3.png" alt="">
+      </button>
+    </div>
 
-				<!-- Navigation -->
-				<div class="swiper-button-prev w-[60px] h-[60px] bg-[#333] rounded-full after:hidden flex items-center justify-center">
-					<img src="/wp-content/uploads/2026/03/Vector-3.png" alt="">
-				</div>
+    <div class="w-full max-w-[1244px] relative"></div>
 
-				<div class="swiper-button-next w-[60px] h-[60px] bg-[#EE4035] rounded-full after:hidden flex items-center justify-center">
-					<img src="/wp-content/uploads/2026/03/Vector-4.png" alt="">
-				</div>
+    <div class="relative top-[28px] z-20 hidden lg:block">
+      <button class="swiper-button-next-desktop w-[60px] h-[60px] bg-[#333] hover:bg-[#EE4035] rounded-full flex items-center justify-center">
+        <img src="/wp-content/uploads/2026/03/Vector-4.png" alt="">
+      </button>
+    </div>
 
-			</div>
-			<article class="container mx-auto text-center">
-				<div class="overflow-hidden swiper blog-swiper01">
-					<div
-						class="items-stretch swiper-wrapper">
-						<!-- Slide -->
-						{% for box in fields.box %}
-						<article class="flex flex-col w-full px-[50px] swiper-slide text-left">
-							<figure class="w-[460px] h-[270px] overflow-hidden rounded-[8px]">
-								<img src="{{ box.image.url }}" alt="" class="w-full h-auto object-cover">
-							</figure>
+  </div>
 
-							<div class="flex flex-col flex-1 gap-[10px]">
-								<h3 class="text-[22px] font-bold leading-[24px]">
-									{{ box.title }}
-								</h3>
-								<div class="text-[16px] lg:min-h-[100px] text-[#414141]">
-									{{ box.description }}
-								</div>
-								<a  href="{{ box.share_link.url}}" class="font-bold text-blue">
-									{{ box.share_link.title}}
-								</a>
-								<a href="{{ box.button.url}}" class="mt-auto w-full md:w-[220px] bg-blue text-white text-[16px] font-bold text-center rounded-[5px] px-[24px] py-[18.5px]">
-									{{ box.button.title }}
-								</a>
+  <div class="relative w-full max-w-[1130px] z-10 bg-white pt-[20px] lg:pt-[80px] rounded-[8px]">
 
-							</div>
-						</article>
-						{% endfor %}
-					</div>
-				</div>
-			</article>
-		</div>
-	</div>
-</div>
+    <div class="topbar-logos px-0 lg:px-[50px]">
+
+      <article class="container mx-auto text-center">
+
+        <div class="overflow-hidden swiper blog-swiper01">
+
+          <div class="items-stretch swiper-wrapper">
+
+            {% for box in fields.boxes %}
+
+            <article class="flex flex-col w-full px-0 text-left swiper-slide min-w-[280px]">
+
+              <div class="h-[200px] md:h-[240px] shadow-lg lg:h-[270px] mb-[30px] rounded-[8px] bg-[#5f5e5e]"></div>
+
+              <div class="flex flex-col flex-1 gap-[25px] text-center md:text-left">
+
+                <div class="flex flex-col flex-1 gap-[10px]">
+
+                  <h3 class="text-[22px] font-bold leading-[24px]">
+                    {{ box.title }}
+                  </h3>
+
+                  <div class="text-[16px] lg:min-h-[100px] text-[#414141]">
+                    {{ box.description }}
+                  </div>
+
+                  {% if box.share_link %}
+                  <a href="{{ box.share_link.url }}" class="font-bold text-blue">
+                    {{ box.share_link.title }}
+                  </a>
+                  {% endif %}
+
+                  {% if box.link %}
+                  <a href="{{ box.link.url }}" class="mx-auto md:mx-0 w-[220px] bg-blue text-white text-[16px] font-bold text-center rounded-[5px] px-[24px] py-[18.5px]">
+                    {{ box.link.title }}
+                  </a>
+                  {% endif %}
+
+                </div>
+
+              </div>
+
+            </article>
+
+            {% endfor %}
+
+          </div>
+
+        </div>
+
+      </article>
+
+    </div>
+
+    <!-- Mobile Navigation -->
+    <div class="flex items-center justify-center gap-[30px] mt-[32px]">
+
+      <div class="relative top-[28px] z-20 lg:hidden">
+        <button class="swiper-button-prev-mobile w-[60px] h-[60px] text-[#333333] hover:text-white hover:bg-[#EE4035] rounded-full flex items-center justify-center transition-all">
+          <svg width="23" height="23" viewBox="0 0 23 23">
+            <path d="M5.75008 11.5..." fill="currentColor"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="relative top-[28px] z-20 lg:hidden">
+        <button class="swiper-button-next-mobile w-[60px] h-[60px] text-[#333333] hover:text-white hover:bg-[#EE4035] rounded-full flex items-center justify-center transition-all">
+          <svg width="23" height="23" viewBox="0 0 23 23">
+            <path d="M17.2499 11.5..." fill="currentColor"/>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+
+  </div>
+
 </section>
