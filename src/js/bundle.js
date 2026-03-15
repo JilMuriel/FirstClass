@@ -117,6 +117,32 @@ AOS.init();
       }
     });
 
+    const blogSwiper2 = new Swiper('.blog-swiper02', {
+      speed: 800,
+      slidesPerView: 3,
+      spaceBetween: 36,
+      grabCursor: true,
+      loop: true,
+      watchOverflow: true,
+
+      // autoplay: {
+      //   delay: 4000,
+      //   pauseOnMouseEnter: true,
+      //   disableOnInteraction: false
+      // },
+
+      navigation: {
+        nextEl: '.swiper-blog-next',
+        prevEl: '.swiper-blog-prev',
+      },
+
+      breakpoints: {
+        320: { slidesPerView: 1 },
+        768: { slidesPerView: 2 },
+        1024: { slidesPerView: 3 }
+      }
+    });
+
     // Mobile menu enable
     // Multilevel menu functionality
     $('.mobile-icon-wrapper, .close-menu').click(function () {

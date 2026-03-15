@@ -29,74 +29,128 @@
 	{% endif %}
 </div>
 
+<section class="container mx-auto">
 
-<div class="container flex flex-row flex-wrap mx-auto">
+  <div class="px-[20px]">
 
-	<div class="w-full">
-		<div class="grid w-full grid-cols-1 gap-[36px] md:grid-cols-2 lg:grid-cols-3">
-			<article class="shadow border rounded-[8px] border-[#4E4D4D29] p-[16px] min-h-[535px]">
-				<div>
-					<img src="/wp-content/uploads/2026/03/house-building-1-5.png" class="h-[210px] rounded-[6px] mb-[30px]">
-					<div class="px-[20px] pt-0 pb-[20px]">
-						<div class="flex items-center uppercase gap-[8px] mb-[25px]">
-							<img src="{{ site.theme.link }}/images/icons/calendar.svg">
-							<span class="text-[12px]">01 November 2025</span>
-						</div>
-						<h3 class="text-[18px] font-bold leading-[24px] mb-[25px]">Lorem ipsum dolor sit amet sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h3>
-						<p class="mb-[30px]">Lorem ipsum dolor sit amet adipiscing elit sed doe eiusmod tempor.</p>
-						<a href="{{ link }}" class="bg-blue block w-[131px] text-white font-bold text-[16px] normal-case rounded-[5px] px-[24px] py-[18.5px]">Read More</a>
-					</div>
-				</div>
-			</article>
-			<article class="shadow border rounded-[8px] border-[#4E4D4D29] p-[16px] min-h-[535px]">
-				<div>
-					<img src="/wp-content/uploads/2026/03/house-building-1-5.png" class="h-[210px] rounded-[6px] mb-[30px]">
-					<div class="px-[20px] pt-0 pb-[20px]">
-						<div class="flex items-center uppercase gap-[8px] mb-[25px]">
-							<img src="{{ site.theme.link }}/images/icons/calendar.svg">
-							<span class="text-[12px]">01 November 2025</span>
-						</div>
-						<h3 class="text-[18px] font-bold leading-[24px] mb-[25px]">Lorem ipsum dolor sit amet sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h3>
-						<p class="mb-[30px]">Lorem ipsum dolor sit amet adipiscing elit sed doe eiusmod tempor.</p>
-						<a href="{{ link }}" class="bg-blue block w-[131px] text-white font-bold text-[16px] normal-case rounded-[5px] px-[24px] py-[18.5px]">Read More</a>
-					</div>
-				</div>
-			</article>
-			<article class="shadow border rounded-[8px] border-[#4E4D4D29] p-[16px] min-h-[535px]">
-				<div>
-					<img src="/wp-content/uploads/2026/03/house-building-1-5.png" class="h-[210px] rounded-[6px] mb-[30px]">
-					<div class="px-[20px] pt-0 pb-[20px]">
-						<div class="flex items-center uppercase gap-[8px] mb-[25px]">
-							<img src="{{ site.theme.link }}/images/icons/calendar.svg">
-							<span class="text-[12px]">01 November 2025</span>
-						</div>
-						<h3 class="text-[18px] font-bold leading-[24px] mb-[25px]">Lorem ipsum dolor sit amet sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h3>
-						<p class="mb-[30px]">Lorem ipsum dolor sit amet adipiscing elit sed doe eiusmod tempor.</p>
-						<a href="{{ link }}" class="bg-blue block w-[131px] text-white font-bold text-[16px] normal-case rounded-[5px] px-[24px] py-[18.5px]">Read More</a>
-					</div>
-				</div>
-			</article>
+    <!-- Swiper -->
+    <div class="overflow-hidden blog-swiper02 swiper">
 
-		</div>
-		<div
-			class="px-[50px] relative block">
+      <div class="swiper-wrapper">
 
-			<!-- Arrow container -->
-			<div
-				class="w-[80vw] mx-auto flex items-center">
+        <!-- Article -->
+        <article class="swiper-slide border border-[#4E4D4D29] rounded-[8px] p-[16px] h-full">
+          
+          <div class="flex flex-col h-full">
 
-				<!-- Navigation -->
-				<div class="swiper-button-prev w-[60px] h-[60px] bg-[#333] rounded-full flex items-center justify-center">
-					<img src="/wp-content/uploads/2026/03/Vector-3.png" alt="">
-				</div>
+            <img src="/wp-content/uploads/2026/03/house-building-1-5.png"
+                 class="h-[210px] w-full object-cover rounded-[6px] mb-[30px]">
 
-				<div class="swiper-button-next w-[60px] h-[60px] bg-[#EE4035] rounded-full flex items-center justify-center">
-					<img src="/wp-content/uploads/2026/03/Vector-4.png" alt="">
-				</div>
+            <div class="flex flex-col flex-grow px-[20px] pb-[20px]">
 
-			</div>
-		</div>
+              <div class="flex items-center uppercase gap-[8px] mb-[25px]">
+                <img src="{{ site.theme.link }}/images/icons/calendar.svg">
+                <span class="text-[12px]">01 November 2025</span>
+              </div>
 
+              <h3 class="text-[18px] font-bold leading-[24px] mb-[25px]">
+                Lorem ipsum dolor sit amet sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </h3>
 
-	</section>
+              <p class="mb-[30px] flex-grow">
+                Lorem ipsum dolor sit amet adipiscing elit sed doe eiusmod tempor.
+              </p>
 
+              <a href="{{ link }}"
+                 class="flex items-center justify-center w-[131px] h-[48px] rounded-[5px] bg-blue text-white text-[16px] font-bold text-center">
+                Read More
+              </a>
+
+            </div>
+
+          </div>
+
+        </article>
+
+        <!-- Duplicate slides -->
+        <article class="swiper-slide border border-[#4E4D4D29] rounded-[8px] p-[16px] h-full">
+          <div class="flex flex-col h-full">
+
+            <img src="/wp-content/uploads/2026/03/house-building-1-5.png"
+                 class="h-[210px] w-full object-cover rounded-[6px] mb-[30px]">
+
+            <div class="flex flex-col flex-grow px-[20px] pb-[20px]">
+
+              <div class="flex items-center uppercase gap-[8px] mb-[25px]">
+                <img src="{{ site.theme.link }}/images/icons/calendar.svg">
+                <span class="text-[12px]">01 November 2025</span>
+              </div>
+
+              <h3 class="text-[18px] font-bold leading-[24px] mb-[25px]">
+                Lorem ipsum dolor sit amet sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </h3>
+
+              <p class="mb-[30px] flex-grow">
+                Lorem ipsum dolor sit amet adipiscing elit sed doe eiusmod tempor.
+              </p>
+
+              <a href="{{ link }}"
+                 class="flex items-center justify-center w-[131px] h-[48px] rounded-[5px] bg-blue text-white text-[16px] font-bold text-center">
+                Read More
+              </a>
+
+            </div>
+
+          </div>
+        </article>
+
+        <article class="swiper-slide border border-[#4E4D4D29] rounded-[8px] p-[16px] h-full">
+          <div class="flex flex-col h-full">
+
+            <img src="/wp-content/uploads/2026/03/house-building-1-5.png"
+                 class="h-[210px] w-full object-cover rounded-[6px] mb-[30px]">
+
+            <div class="flex flex-col flex-grow px-[20px] pb-[20px]">
+
+              <div class="flex items-center uppercase gap-[8px] mb-[25px]">
+                <img src="{{ site.theme.link }}/images/icons/calendar.svg">
+                <span class="text-[12px]">01 November 2025</span>
+              </div>
+
+              <h3 class="text-[18px] font-bold leading-[24px] mb-[25px]">
+                Lorem ipsum dolor sit amet sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </h3>
+
+              <p class="mb-[30px] flex-grow">
+                Lorem ipsum dolor sit amet adipiscing elit sed doe eiusmod tempor.
+              </p>
+
+              <a href="{{ link }}"
+                 class="flex items-center justify-center w-[131px] h-[48px] rounded-[5px] bg-blue text-white text-[16px] font-bold text-center">
+                Read More
+              </a>
+
+            </div>
+
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <div class="flex justify-center gap-[20px] mt-[40px]">
+
+    <div class="swiper-blog-prev w-[60px] h-[60px] bg-[#333] rounded-full flex items-center justify-center cursor-pointer text-white">
+      ◀
+    </div>
+
+    <div class="swiper-blog-next w-[60px] h-[60px] bg-[#EE4035] rounded-full flex items-center justify-center cursor-pointer text-white">
+      ▶
+    </div>
+
+  </div>
+
+</section>
