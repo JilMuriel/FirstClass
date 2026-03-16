@@ -1,0 +1,13 @@
+.parralax-bg {
+    background-image: url('../images/uploads/how-it-works.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Apply parallax only on desktop */
+@media (min-width: 1024px) {
+    .parralax-bg {
+        background-attachment: fixed;
+    }
+}

@@ -12,7 +12,7 @@
   SupportsMultiple: true
 #}
 
-<section class="px-[20px] py-[60px] md:py-[90px] lg:py-[120px] bg-[#F8F8F8] {{ block.className }}">
+<section class="parralax-bg px-[20px] py-[60px] md:py-[90px] lg:py-[120px] {{ block.className }}">
 	<div class="container px-4 mx-auto text-center">
 		<div class="container mx-auto text-center md:w-[796px] mb-[60px]">
 			<h2 class="font-header leading-[55px] text-[#333] font-bold uppercase md:mb-[30px] text-[30px] md:text-[40px]">{{ fields.title }}</h2>
@@ -34,20 +34,20 @@
 								0{{loop.index}}
 							</span>
 						</div>
-						<h3 class="font-header font-bold text-[22px] mb-[24px] text-[#000]">{{item.title}}</h3>
+						<h3 class="font-header leading-normal font-bold text-[22px] mb-[24px] text-[#333]">{{item.title}}</h3>
 						<p class="leading-[28px] text-[16px] font-regular text-[#4E4D4D]">{{item.description}}</p>
 					</div>
 					<!-- Arrow -->
 
 					{% if loop.index == 1 %}
 						<div>
-							<img src="/wp-content/uploads/2026/03/Arrow.png" class="rotate-90 w-[50px] lg:w-auto lg:rotate-0 f-arrow">
+							<img src="/wp-content/uploads/2026/03/Arrow.png" class="rotate-90 w-[50px] pb-0 lg:pb-[200px] lg:w-auto lg:rotate-0 f-arrow">
 						</div>
 					{% endif %}
 
 					{% if loop.index == 2 %}
 						<div>
-							<img src="/wp-content/uploads/2026/03/Arrow.png" class="rotate-90 w-[50px] lg:w-auto lg:rotate-0">
+							<img src="/wp-content/uploads/2026/03/Arrow.png" class="rotate-90 w-[50px] pb-0 lg:pb-[200px] lg:w-auto lg:rotate-0">
 						</div>
 					{% endif %}
 

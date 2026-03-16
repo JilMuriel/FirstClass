@@ -1,8 +1,8 @@
 <div
-	class="menu-wrap w-auto mr-auto relative">
+	class="relative w-auto mr-auto menu-wrap">
 	{# menu container #}
 	{% if menu %}
-		<nav class="nav mx-auto p-0" aria-label="main-navigation">
+		<nav class="p-0 mx-auto nav" aria-label="main-navigation">
 			<ul class="flex flex-row flex-wrap lg:items-start lg:space-x-4 xl:space-x-5 ">
 				{% for item in menu.items %}
 
@@ -16,7 +16,7 @@
 									<li class="dropdown-link top-menu-link2">
 										{% if child.children %}
 											{# menu with subcategory Level 2 #}
-											<a class="nav-link  letter-spacing-1 text-white  lg:text-base font-menu" href="{{ child.link }}" target="{{ child.target }}">
+											<a class="text-white nav-link letter-spacing-1 lg:text-base font-menu" href="{{ child.link }}" target="{{ child.target }}">
 												<span>{{ child.title }}</span><img src="{{ site.theme.link }}/images/icons/angle-down-gray.svg" class="injectable w-[9px] h-[5px] fill-white ml-2 inline-block"></a>
 											<ul class='drop-menu2'>
 												{% for child2 in child.children %}

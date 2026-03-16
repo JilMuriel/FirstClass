@@ -3,14 +3,14 @@
 <body class="{{body_class}} w-full">
     <!-- skip to content link for accessibility -->
     <a class="sr-only" href="/#main">skip to content link</a>
-    <header>
+    <header class="fixed top-0 left-0 z-50 w-full bg-white">
     {% block header %}
     {% include 'partial/topbar.twig' %}
     {% include 'partial/header.twig' %}
     {% endblock %}
     </header>
     {# HERE ENDS HEADER #}
-    <main id="main" class="body-wrapper fade-out">
+    <main id="main" class="body-wrapper fade-out pt-[120px]">
         {# HERE GOES THE MAIN CONTENT #}
         {% block content %}
         {% endblock %}
