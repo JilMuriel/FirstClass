@@ -4,7 +4,7 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      header: ['DMSans Bold', 'sans-serif'],
+      header: ['Inter Bold', 'sans-serif'],
       tagline: ['DMSans SemiBold', 'sans-serif'],
       subtitle: ['DMSans Regular', 'sans-serif'],
       menu: ['DMSans Bold', 'sans-serif'],

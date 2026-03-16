@@ -18,14 +18,14 @@
 
 .service-card {
     position: relative;
-    background-image: url('/wp-content/uploads/2026/03/card-bg-1.png');
+    background-image: url('../images/uploads/service-card-bg.png');
     background-size: cover;
     background-position: top center;
     background-repeat: no-repeat;
 }
 
 .service-mini-card {
-    background-image: url('/wp-content/uploads/2026/03/hero-services-bg.png');
+    background-image: url("../images/uploads/service-card-mini-bg.png");
     background-size: cover;
     background-position: top center;
     background-repeat: no-repeat;
@@ -44,7 +44,7 @@
             position: absolute;
             width: 271px;
             height: 253px;
-            background: url('/wp-content/uploads/2026/03/Vector-6.png');
+            background: url('../images/uploads/vector6.png');
             bottom: -102px;
             left: -121px;
             z-index: -1;
@@ -57,7 +57,7 @@
         &::before {
             content: "";
             position: absolute;
-            background: url('/wp-content/uploads/2026/03/Vector-5.png');
+            background: url('../images/uploads/vector5.png');
             width: 271px;
             height: 253px;
             top: -67px;

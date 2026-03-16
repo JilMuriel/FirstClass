@@ -1,9 +1,12 @@
 .topbar {
-    background-image: url('/wp-content/uploads/2026/03/TopBarBg.jpg');
+    background-image: url('../images/uploads/topbar-lg-bg.jpg');
     background-color: rgba(0, 104, 167, 0.02);
     background-size: cover;
     background-position: top center;
     background-repeat: no-repeat;
+    @media (max-width: 768px) {
+        background-image: url('../images/uploads/topbar-bg.jpg');
+    }
 }
 
 .menu-wrap {

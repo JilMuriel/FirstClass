@@ -11,8 +11,12 @@ p {
     }
 }
 
+h1, h2, h3 {
+    @apply text-xl font-header
+}
 
 .wrap-html-sitemap {
+
     h2.sp-cpt-name {
         @apply text-xl font-header text-left mb-4 mt-4;
     }
