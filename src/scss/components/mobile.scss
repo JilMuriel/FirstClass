@@ -2,7 +2,7 @@
 @media screen and (max-width: 1250px) {
     .mobile-menu {
         .mobile-menu-wrap {
-            @apply bg-primary text-white;
+            @apply bg-secondary text-white;
             top: 4.25rem;
             left: -20rem;
             width: 20rem;
@@ -26,7 +26,7 @@
             }
 
             .drop-menu {
-                @apply bg-primary;
+                @apply bg-secondary;
                 height: 100%;
                 min-height: 370px;
                 width: 100%;
@@ -51,7 +51,7 @@
                 }
             }
             .drop-menu2 {
-                @apply bg-primary;
+                @apply bg-secondary;
                 height: 100%;
                 width: 100%;
                 left: 100%;
@@ -145,7 +145,7 @@
         &.v1 {
             .mobile-menu-wrap {
                 right: -22rem;
-                top: 5rem;
+                top: 4rem;
 
 
                 &.show {
