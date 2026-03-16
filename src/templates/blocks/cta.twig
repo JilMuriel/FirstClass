@@ -11,49 +11,58 @@
   SupportsMode: true
   SupportsMultiple: true
 #}
-	<section class="bg-[#F8F8F8] px-[20px] py-[60px] md:py-[90px] lg:py-[120px] mt-[60px] {{ block.className }}">
-		<div class="container mx-auto max-h-none lg:max-h-[532px]">
-			<div
-				class="relative">
+<section class="bg-[#F8F8F8] px-[20px] py-[60px] md:py-[90px] lg:py-[120px] mt-[60px] {{ block.className }}">
+  <div class="container mx-auto">
 
-				<!-- Background Overlay -->
-				<div class="absolute inset-0 rounded-[8px] bg-center bg-no-repeat bg-cover" style="background-image: url('/wp-content/uploads/2026/03/Frame-52629.jpg');"></div>
+    <div class="relative">
 
-				<!-- Content -->
-			<div class="relative z-10 flex flex-col items-center lg:items-start">
+      <!-- Background Overlay -->
+      <div class="absolute inset-0 rounded-[8px] bg-center bg-no-repeat bg-cover pointer-events-none"
+           style="background-image: url('/wp-content/uploads/2026/03/Frame-52629.jpg');">
+      </div>
 
-					<!-- Text -->
-				<div class="max-w-[600px] text-white text-center lg:text-left pt-[60px] px-[20px] lg:p-[70px]">
-					<h3 class="font-bold text-[16px] md:text-[18px] mb-[10px]">
-						{{  fields.cta_title }} 
-					</h3>
-						<h2 class="uppercase font-bold leading-[1.2] text-[28px] md:text-[36px] lg:text-[40px] mb-[30px]">
-							{{  fields.description }}
-						</h2>
-						<button class="hidden md:block">
-							<a href="{{ fields.cta__button.url }}" class="font-bold normal-case btn btn-primary">
-							{{  fields.cta__button.title }}
-							</a>
-						</button>
-					</div>
+      <!-- Content -->
+      <div class="relative flex flex-col items-center lg:items-start">
 
-					<!-- Image -->
-					<div class="bottom-0 right-0 block w-full overflow-hidden md:ml-auto sm:m-0 lg:absolute md:overflow-visible rounded-br-[8px]">
-						<img 
-						class="hidden ml-auto sm:block h-[302px] w-auto md:h-[402px] lg:h-[532px]" 
-						src="{{  fields.cta_image.url }}" 
-						alt="Mover"
-						/>
+        <!-- Text -->
+        <div class="max-w-[600px] z-30 text-white text-center lg:text-left pt-[60px] px-[20px] lg:p-[70px]">
 
-						<!-- Mobile Image -->
-						<img 
-						src="{{  fields.cta_image.url }}" 
-						class="block w-full sm:hidden" 
-						alt="Mover"
-						/>
-					</div>
-				</div>
+          <h3 class="font-bold text-[16px] md:text-[18px] mb-[10px]">
+            {{ fields.cta_title }}
+          </h3>
 
-			</div>
-		</div>
-	</section>
+          <h2 class="uppercase font-bold leading-[1.2] text-[28px] md:text-[36px] lg:text-[40px] mb-[30px]">
+            {{ fields.description }}
+          </h2>
+
+          <a href="{{ fields.cta__button.url }}"
+             class="hidden font-bold normal-case md:inline-block btn btn-primary">
+            {{ fields.cta__button.title }}
+          </a>
+
+        </div>
+
+        <!-- Image -->
+        <div class="bottom-0 right-0 block w-full overflow-hidden md:ml-auto lg:absolute md:overflow-visible rounded-br-[8px]">
+
+          <img
+            class="hidden ml-auto sm:block h-[302px] w-auto md:h-[402px] lg:h-[532px]"
+            src="{{ fields.cta_image.url }}"
+            alt="Mover"
+          />
+
+          <!-- Mobile Image -->
+          <img
+            src="{{ fields.cta_image.url }}"
+            class="block w-full sm:hidden"
+            alt="Mover"
+          />
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>

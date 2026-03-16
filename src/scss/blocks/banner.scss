@@ -66,3 +66,30 @@
         }
     }
 }
+
+
+.content-bg-custom {
+    position: relative;
+    z-index: 1;
+        &::before {
+            content: "";
+            position: absolute;
+            background: url('../images/uploads/blue-bg-dot.png');
+            width: 152px;
+            height: 142px;
+            top: -50px;
+            right: -54px;
+            z-index: -1;
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            width: 152px;
+            height: 142px;
+            background: url('../images/uploads/red-bg-dot.png');
+            bottom: -69px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: -1;
+        }
+}
