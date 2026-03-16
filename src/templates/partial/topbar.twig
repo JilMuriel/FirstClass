@@ -88,6 +88,7 @@
 			<article class="container mx-auto text-center ">
 				<div class="overflow-hidden top-bar swiper">
 					<div class="swiper-wrapper">
+					
 					{% for address in global.address %}
 						<div class="flex items-center justify-center px-4 swiper-slide">
 							<div class="flex items-start">
@@ -104,5 +105,11 @@
 			</article>
 		</div>
 	</div>
-
+	<div class="flex items-center justify-center mt-[12px] md:mt-0 gap-[10px]">
+		{% for social in global.social %}
+			<a href="{{ social.link.url }}" target="{{ social.link.target }}" class="h-[37px] w-[37px] rounded-full border border-lighblue p-[12px] bg-bluesecondary">
+				<img class="h-[13px] w-auto" src='{{ social.icon.url }}'/>
+			</a>
+		{% endfor %}	
+	</div>
 </section>

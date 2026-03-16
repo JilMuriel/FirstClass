@@ -42,7 +42,45 @@ AOS.init();
 
       },
     });
+    const badges = new Swiper('.badges', {
+      speed: 800,
+      duration: 2000,
+      centeredSlides: false,
+      centerInsufficientSlides: true,
+      slidesPerView: 5,
+      mode: 'horizontal',
+      grabCursor: true,
+      loop: true,
+      autoplay: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      // Navigation arrows
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      breakpoints: {
+        // when window width is >= 320px
+        320: {
+          slidesPerView: 2,
+        },
+        // // when window width is >= 480px
+        720: {
+          slidesPerView: 5,
+        },
+        // // when window width is >= 640px
+        // 1024: {
+        //   slidesPerView: 4,
+        // },
 
+        // 1280: {
+        //   slidesPerView: 4,
+        // },
+
+      },
+    });
     const slider = new Swiper('.slider', {
       speed: 800,
       duration: 2000,
@@ -106,8 +144,8 @@ AOS.init();
   },
 
   navigation: {
-    nextEl: '.swiper-button-next-desktop, .swiper-button-next-mobile',
-    prevEl: '.swiper-button-prev-desktop, .swiper-button-prev-mobile',
+    nextEl: '.swiper-button-next-mobile',
+    prevEl: '.swiper-button-prev-mobile',
   },
 
   breakpoints: {

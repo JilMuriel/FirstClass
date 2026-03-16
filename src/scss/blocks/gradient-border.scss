@@ -1,0 +1,21 @@
+.custom-gradient {
+  position: relative;
+  border-radius: 5px;
+  background: white;
+}
+
+.custom-gradient::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 5px;
+  padding: 1px;
+  background: linear-gradient(90deg, #E92F33, #185389, #EDEDED) ;
+
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}

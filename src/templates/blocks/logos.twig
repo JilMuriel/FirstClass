@@ -13,7 +13,8 @@
 #}
 
 <section class="firstclass-logos section-spacing {{ block.className }} py-[20px] px-[50px] ">
-	<div class="swiper-container pt-[139px] w-[85vw] z-10 flex items-center mx-auto justify-between absolute left-1/2 -translate-x-1/2">
+
+	<div class="swiper-container pt-[89px] w-[90vw] md:w-[95] z-10 flex items-center mx-auto justify-between absolute left-1/2 -translate-x-1/2">
 		<div class="swiper-button-prev"></div>
 		<div class="swiper-button-next"></div>
 	</div>
@@ -29,12 +30,12 @@
 				<h3 class="mb-2 text-base tracking-wider uppercase font-header">{{ fields.upper_title }}</h3>
 			{% endif %}
 			{% if fields.title %}
-				<h2 class="font-header text-dark text-[22px]  mb-[40px]  font-bold mx-auto text-center">{{ fields.title}}</h2>
+				<h2 class="font-header leading-none text-[#333] text-[22px]  mb-[40px]  font-bold mx-auto text-center">{{ fields.title}}</h2>
 			{% endif %}
 		{% endif %}
 
 		{% if fields.slider_layout %}
-			<div class="mx-auto overflow-hidden logos">
+			<div class="mx-auto overflow-hidden badges">
 
 				<div class="swiper-wrapper">
 					{% for logos in fields.logos %}

@@ -13,11 +13,11 @@
 #}
 
 {% if fields.review_version == 'ver1' %}
-<section class="px-[20px] py-[60px] md:py-[0px] lg:py-[0px] bg-[#F8F8F8] {{ block.className }}">
+<section class="px-[20px] py-0 bg-[#F8F8F8] {{ block.className }}">
 	<div class="container px-4 mx-auto">
 		<div class="flex flex-col items-start justify-center w-full">
 			{% if fields.title %}
-			<h2 class="font-header leading-[55px] text-dark font-bold uppercase md:mb-[60px] text-[30px] md:text-[40px]">{{ fields.title}}</h2>
+			<h2 class="font-header text-center md:text-left leading-[35px] md:leading-[55px] text-[#333] font-bold uppercase md:mb-[60px] text-[30px] md:text-[40px]">{{ fields.title}}</h2>
 			{% endif %}
 			{% if fields.upper_title %}
 				<p class="w-full mx-auto mb-4 text-center text-[#333333]">{{ fields.upper_title }}</p>
