@@ -27,7 +27,7 @@
         <!-- Text -->
         <div class="max-w-[600px] z-30 text-white text-center lg:text-left pt-[60px] px-[20px] lg:p-[70px]">
 
-          <h3 class="font-bold text-[16px] md:text-[18px] mb-[10px]">
+          <h3 class="font-bold text-[16px] md:text-[18px] mb-[10px] !leading-none">
             {{ fields.cta_title }}
           </h3>
 
@@ -36,7 +36,7 @@
           </h2>
 
           <a href="{{ fields.cta__button.url }}"
-             class="hidden font-bold normal-case md:inline-block btn btn-primary">
+             class="hidden font-bold normal-case md:inline-block btn btn-primary border-2 hover:!bg-transparent hover:!border-white">
             {{ fields.cta__button.title }}
           </a>
 
