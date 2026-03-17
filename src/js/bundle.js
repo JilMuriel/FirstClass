@@ -137,12 +137,6 @@ AOS.init();
   loop: true,
   watchOverflow: true,
 
-  autoplay: {
-    delay: 4000,
-    pauseOnMouseEnter: true,
-    disableOnInteraction: false
-  },
-
   navigation: {
     nextEl: '.swiper-button-next-mobile',
     prevEl: '.swiper-button-prev-mobile',

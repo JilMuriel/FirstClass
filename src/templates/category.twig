@@ -15,24 +15,37 @@ just a small part. See `search.twig` for an example of another approach #}
 					{% set category_id = fields.blog.term_id %}
 					{% set link = fn('get_permalink', post.ID) %}
 					{% set thumbnail_url = fn('get_the_post_thumbnail_url', post.ID ) %}
-						<article class="rounded-xl full flex flex-col text-center lg:text-left  bg-[#F3F9FF]">
-	
-						
-						<div class="p-6">
-							<img src="{{ thumbnail_url }}" class="w-full h-[250px] rounded-xl object-cover">
-							<div class="flex flex-row space-x-2 justify-center lg:justify-start items-center mt-4 mb-4">
-								<img src="{{ site.theme.link }}/images/icons/calendar.svg">
-								<span class="text-[12px] text-dark">{{ post.published_at|date("j F Y") }}</span>
-							</div>
-							<h3 class='font-tagline text-md lg:text-lg mb-4 mt-4 text-dark'>{{ post.post_title }}</h3>
-							{% if post.post_excerpt %}	
-							<p class="font-body text-base">{{ post.post_excerpt }}</p>
-							{% endif %}
-							<div class="flex justify-center lg:justify-start">
-								<a class='btn btn-primary font-tagline  !w-fit ' href="{{ link }}">READ MORE</a>
-							</div>		
-						</div>	
-					</article>
+			
+        <article class="h-full pr-[1px]">
+
+          <div class="border border-[#4E4D4D29] rounded-[8px] p-[16px] pb-0"> 
+          
+            <img src="{{ thumbnail_url }}"
+                 class="h-[210px] w-full object-cover rounded-[6px] mb-[30px]">
+            <div class="flex flex-col flex-grow pb-[24px] md:px-[36px] md:pb-[36px]">
+
+              <div class="flex items-center uppercase gap-[8px] mb-[25px]">
+                <img src="{{ site.theme.link }}/images/icons/calendar.svg">
+                <span class="text-[12px]">{{ post.published_at|date("j F Y") }}</span>
+              </div>
+
+              <h3 class="text-[18px] font-bold leading-[24px] mb-[25px]">
+                {{ post.post_title }}
+              </h3>
+
+              <p class="mb-[30px] flex-grow">
+               {{ post.post_excerpt|split(' ')|slice(0, 20)|join(' ') ~ '...' }}
+              </p>
+
+              <a href="{{ link }}"
+                 class="flex items-center justify-center w-[131px] h-[48px] rounded-[5px] bg-blue text-white text-[16px] font-bold text-center">
+                Read More
+              </a>
+
+            </div>
+          
+          </div>
+        </article>
 					{% endfor %}
 				</div>
 			</section>
