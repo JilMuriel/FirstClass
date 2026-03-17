@@ -119,9 +119,9 @@ class StarterSite extends Timber\Site {
 		);
 		$fposts = array(
 			'post_type' => 'post',
-			'posts_per_page' => 2,
-			'post__in' => array(4555,1168),
-			'paged' => $paged
+			'posts_per_page' => 3,
+  			'orderby' => 'date',
+  			'order' => 'DESC'
 		);
 		$context['blogposts'] = new Timber\PostQuery($bargs);
 		$context['fposts'] = new Timber\PostQuery($fposts);

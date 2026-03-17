@@ -19,7 +19,7 @@
 									<img src="/wp-content/uploads/2025/03/mobile-menu-angle-left.svg" class="injectable w-4 h-4 menuback fill-white mr-2 inline-block"><span class="text-white font-body font-medium text-lg">{{ item.title }}</span>
 								</div>
 								{% for child in item.children %}
-									<li class="flex flex-row items-center nav-item whitespace-no-wrap text-xl md:text-lg mb-4">
+									<li class="flex flex-row items-center nav-item whitespace-no-wrap text-xl md:text-lg  !leading-[15px]">
 										{% if child.children %}
                                         	{# Menu with subcategories Level 2 #}
                                             
@@ -34,7 +34,7 @@
 								    </div>
 												{% for child2 in child.children %}
 													<li class="dropdown-link pb-1">
-														<a class="nav-link letter-spacing-1 text-white font-medium text-lg" href="{{ child2.link }}">{{ child2.title }}</a>
+														<a class="nav-link letter-spacing-1 text-white font-medium text-lg !leading-[15px]" href="{{ child2.link }}">{{ child2.title }}</a>
 													</li>
 												{% endfor %}
 											</ul>

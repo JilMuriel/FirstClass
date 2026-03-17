@@ -86,6 +86,11 @@
                 @apply text-dark underline underline-offset-4;
             }
         }
+    img{
+        float: right;
+        padding: 0px 20px;
+        @apply w-full lg:w-[50%];
+    }    
  }
 }
 

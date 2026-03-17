@@ -24,7 +24,7 @@
 			{% endif %}
 			{# Subtitle #}
 			{% if fields.banner.sub_title %}
-				<p class="font-body text-[16px] mb-[32px] text-[#4E4D4D] text-center lg:text-left">As an award winning moving company, we recognize that {{fields.banner.sub_title}}</p>
+				<p class="font-body text-[16px] mb-[32px] text-[#4E4D4D] text-center lg:text-left">{{fields.banner.sub_title}}</p>
 			{% endif %}
 			<div class="flex flex-col gap-[8px]">
 				{% for box in fields.banner.services_box_inner %}
@@ -32,8 +32,8 @@
 					<p class="text-[22px] mb-0 font-bold text-white">
 						{{ box.title }}
 					</p>
-					<button class="flex items-center">
-						{{ box.link.title }}
+					<button class="flex items-center space-x-2">
+						<span>{{ box.link.title }}</span>
 						<svg width="24" height="24" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<path fill-rule="evenodd" clip-rule="evenodd" d="M18.4506 9.37805C16.0529 9.37805 13.8676 7.19372 13.8676 4.79501V3.81152H11.9006V4.79501C11.9006 6.5397 12.6658 8.17622 13.8666 9.37805H1.73145V11.345H13.8666C12.6658 12.5468 11.9006 14.1833 11.9006 15.928V16.9115H13.8676V15.928C13.8676 13.5293 16.0529 11.345 18.4506 11.345H19.4341V9.37805H18.4506Z" fill="white"/>
 						</svg>
@@ -87,8 +87,7 @@
 			{% if fields.banner.embed_form %}
 				<div class="relative w-full placeholder lg:w-5/12 lg:pl-12">
 					<div class="p-[24px] md:p-[35px] rounded-lg bg-[#D9EAF4D1]/70">
-						<p class="font-header font-bold text-[32px] text-center text-white mb-6">Get A Free Estimate</p>
-						{{fn('do_shortcode', '[brb_collection id=7854]')}}
+						<p class="font-header font-bold text-[32px] text-center text-dark mb-6">Get A Free Estimate</p>
 						<div class="">{{fn('do_shortcode', fields.banner.embed_form)}}</div>
 					</div>
 				</div>
