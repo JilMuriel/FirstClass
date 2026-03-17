@@ -2,34 +2,31 @@ AOS.init();
 (function ($) {
   $(document).ready(function () {
 
+    document.querySelectorAll('.topbar-slider').forEach((section) => {
+      const swiperEl = section.querySelector('.topbar-logos');
+      const nextBtn = section.querySelector('.nav-swiper-button-next');
+      const prevBtn = section.querySelector('.nav-swiper-button-prev');
 
-    const logos = new Swiper('.topbar-logos', {
-      speed: 800,
-      duration: 2000,
-      centeredSlides: false,
-      centerInsufficientSlides: true,
-      slidesPerView: 5,
-      mode: 'horizontal',
-      grabCursor: true,
-      loop: true,
-      autoplay: true,
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-      // Navigation arrows
-      navigation: {
-        nextEl: '.nav-swiper-button-next',
-        prevEl: '.nav-swiper-button-prev',
-      },
-      breakpoints: {
-        // when window width is >= 320px
-        320: {
-          slidesPerView: 1,
+      if (!swiperEl) return;
+
+      new Swiper(swiperEl, {
+        speed: 800,
+        slidesPerView: 1,
+        grabCursor: true,
+        loop: true,
+
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
         },
 
-      },
+        navigation: {
+          nextEl: nextBtn,
+          prevEl: prevBtn,
+        },
+      });
     });
+
     const badges = new Swiper('.badges', {
       speed: 800,
       duration: 2000,
@@ -120,27 +117,27 @@ AOS.init();
     });
 
     const blogSwiper = new Swiper('.blog-swiper01', {
-  speed: 800,
-  grabCursor: true,
-  loop: true,
-  watchOverflow: true,
+      speed: 800,
+      grabCursor: true,
+      loop: true,
+      watchOverflow: true,
 
-  navigation: {
-    nextEl: '.swiper-button-next-mobile',
-    prevEl: '.swiper-button-prev-mobile',
-  },
+      navigation: {
+        nextEl: '.swiper-button-next-mobile',
+        prevEl: '.swiper-button-prev-mobile',
+      },
 
-  breakpoints: {
-    0: {
-      slidesPerView: 1,
-      spaceBetween: 20
-    },
-    768: {
-      slidesPerView: 2,
-      spaceBetween: 30
-    }
-  }
-});
+      breakpoints: {
+        0: {
+          slidesPerView: 1,
+          spaceBetween: 20
+        },
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 30
+        }
+      }
+    });
 
     const blogSwiper2 = new Swiper('.blog-swiper02', {
       speed: 800,
