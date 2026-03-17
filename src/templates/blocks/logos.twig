@@ -14,56 +14,64 @@
 
 <section class="firstclass-logos section-spacing {{ block.className }} py-[20px] px-[50px] ">
 
-	<div class="swiper-container pt-[89px] w-[90vw] md:w-[95] z-10 flex items-center mx-auto justify-between absolute left-1/2 -translate-x-1/2">
-		<div class="swiper-button-prev"></div>
-		<div class="swiper-button-next"></div>
-	</div>
+  <!-- ✅ FIX APPLIED HERE -->
+  <div class="swiper-container pointer-events-none pt-[89px] w-[90vw] md:w-[95] z-10 flex items-center mx-auto justify-between absolute left-1/2 -translate-x-1/2">
+    
+    <button class="z-20 bg-white pointer-events-auto swiper-button-prev"></button>
+    
+    <button class="z-20 bg-white pointer-events-auto swiper-button-next"></button>
 
-	<article class="container flex flex-wrap mx-auto text-center">
-		{% if fields.upper_title and fields.title %}
-			<div class="flex flex-col w-full pb-1 mb-4 text-center lg:mb-12">
-				<h3 class="mb-4 text-base tracking-wider uppercase font-header">{{ fields.upper_title }}</h3>
-				<h2 class="text-4xl font-header lg:text-5xl">{{ fields.title}}</h2>
-			</div>
-		{% else %}
-			{% if fields.upper_title %}
-				<h3 class="mb-2 text-base tracking-wider uppercase font-header">{{ fields.upper_title }}</h3>
-			{% endif %}
-			{% if fields.title %}
-				<h2 class="font-header leading-none text-[#333] text-[22px]  mb-[40px]  font-bold mx-auto text-center">{{ fields.title}}</h2>
-			{% endif %}
-		{% endif %}
+  </div>
 
-		{% if fields.slider_layout %}
-			<div class="mx-auto overflow-hidden badges">
+  <article class="container flex flex-wrap mx-auto text-center">
+    
+    {% if fields.upper_title and fields.title %}
+      <div class="flex flex-col w-full pb-1 mb-4 text-center lg:mb-12">
+        <h3 class="mb-4 text-base tracking-wider uppercase font-header">{{ fields.upper_title }}</h3>
+        <h2 class="text-4xl font-header lg:text-5xl">{{ fields.title}}</h2>
+      </div>
+    {% else %}
+      {% if fields.upper_title %}
+        <h3 class="mb-2 text-base tracking-wider uppercase font-header">{{ fields.upper_title }}</h3>
+      {% endif %}
+      {% if fields.title %}
+        <h2 class="font-header leading-none text-[#333] text-[22px]  mb-[40px]  font-bold mx-auto text-center">{{ fields.title}}</h2>
+      {% endif %}
+    {% endif %}
 
-				<div class="swiper-wrapper">
-					{% for logos in fields.logos %}
-						<div class="flex flex-col items-center justify-center w-full px-4 mb-8 swiper-slide md:mb-4 lg:mb-0">
-							{% if logos.link %}
-								<a href="{{ logos.link.url }}" target="_blank">
-									<img class="w-full object-contain h-[68px] lg:w-[253px]" alt="{{ logos.image.alt }}" src="{{ logos.image.url}}">
-								</a>
-							{% else %}
-								<img class="w-full object-contain h-[68px] lg:w-[253px]" alt="{{ logos.image.alt }}" src="{{ logos.image.url}}">
-							{% endif %}
-						</div>
-					{% endfor %}
-				</div>
-			</div>
-		{% else %}
-			<div class="flex flex-row flex-wrap justify-around w-full mt-4" data-aos="fade-up" data-aos-offset="150" data-aos-delay="250" data-aos-duration="450" data-aos-once="true">
-				{% for logos in fields.logos %}
-					{% if logos.link %}
-						<a href="{{ logos.link.url }}" target="_blank">
-							<img class="flex w-auto p-2" title="{{ logos.image.title }}" alt="{{ logos.image.alt }}" src="{{ logos.image.url}}">
-						</a>
-					{% else %}
-						<img class="flex w-auto p-2" title="{{ logos.image.title }}" alt="{{ logos.image.alt }}" src="{{ logos.image.url}}">
-					{% endif %}
-				{% endfor %}
-			</div>
-		{% endif %}
+    {% if fields.slider_layout %}
+      <div class="mx-auto overflow-hidden badges">
 
-	</article>
+        <div class="swiper-wrapper">
+          {% for logos in fields.logos %}
+            <div class="flex flex-col items-center justify-center w-full px-4 mb-8 border cursor-pointer cursor swiper-slide md:mb-4 lg:mb-0">
+              
+              {% if logos.link %}
+                <a href="{{ logos.link.url }}" target="_blank">
+                  <img class="w-full object-contain h-[68px] lg:w-[253px]" alt="{{ logos.image.alt }}" src="{{ logos.image.url}}">
+                </a>
+              {% else %}
+                <img class="w-full object-contain h-[68px] lg:w-[253px]" alt="{{ logos.image.alt }}" src="{{ logos.image.url}}">
+              {% endif %}
+
+            </div>
+          {% endfor %}
+        </div>
+
+      </div>
+    {% else %}
+      <div class="flex flex-row flex-wrap justify-around w-full mt-4" data-aos="fade-up" data-aos-offset="150" data-aos-delay="250" data-aos-duration="450" data-aos-once="true">
+        {% for logos in fields.logos %}
+          {% if logos.link %}
+            <a href="{{ logos.link.url }}" target="_blank">
+              <img class="flex w-auto p-2" title="{{ logos.image.title }}" alt="{{ logos.image.alt }}" src="{{ logos.image.url}}">
+            </a>
+          {% else %}
+            <img class="flex w-auto p-2" title="{{ logos.image.title }}" alt="{{ logos.image.alt }}" src="{{ logos.image.url}}">
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% endif %}
+
+  </article>
 </section>
