@@ -1,8 +1,10 @@
 <section class="bg-[#fff] flex items-start justify-center relative px-[20px] gap-[57px] pt-[60px] md:pt-[190px] lg:pt-[112px] {{ block.className }}">
+{% set box_count = fields.box|length %} 
 
   <!-- Background Overlay -->
   <div class="absolute flex items-end justify-center inset-0 bg-center bg-no-repeat bg-cover h-[370px] md:h-[470px] lg:h-[470px]" style="background-image: url('/wp-content/uploads/2026/03/Frame-52629.jpg');">
 
+   {% if box_count > 2 %}
     <div class="relative top-[28px] z-20 hidden lg:block">
       <button class="swiper-button-prev-mobile w-[60px] h-[60px] bg-[#333] hover:bg-[#EE4035] rounded-full flex items-center justify-center">
         <img src="/wp-content/uploads/2026/03/Vector-3.png" alt="">
@@ -16,106 +18,62 @@
         <img src="/wp-content/uploads/2026/03/Vector-4.png" alt="">
       </button>
     </div>
+    {% endif %}
 
   </div>
 
   <div class="relative w-full max-w-[1130px] z-10 bg-white pt-[20px] px-[20px] lg:pt-[80px] lg:px-[80px] rounded-[8px]">
 
+
     <article class="text-center">
-      <div class="overflow-hidden bg-white swiper blog-swiper01">
+      <div class="overflow-hidden bg-white  swiper  blog-swiper01 ">
 
         <div class="items-stretch swiper-wrapper">
+		    	{% for box in fields.box %}
 
           <!-- Slide -->
           <article class="flex flex-col w-[460px] px-0 text-left swiper-slide bg-white">
 
             <figure class="overflow-hidden rounded-[8px] bg-gray slide-img-shadow mb-[30px]">
-              <img src="{{ site.theme.link }}/images/uploads/card-img.jpg" alt="" class="object-cover w-full h-auto">
+              <img src="{{  box.image.url }}" alt="" class="object-cover w-full h-auto">
             </figure>
 
-            <div class="flex flex-col flex-1 gap-[25px] text-center md:text-left">
+              <div class="flex flex-col flex-1">
 
-              <div class="flex flex-col flex-1 gap-[25px]">
-
-                <h3 class="font-header text-[22px] font-bold leading-[24px] text-[#1A1A1A]">
-                  {{ box.title }} Get Up To $50 Off Your Move! 123
+                <h3 class="font-header text-[22px] font-bold leading-[24px] text-[#1A1A1A] text-center lg:text-left">
+                  {{ box.title }}
                 </h3>
 
-                <p class="text-[16px] mb-0 text-[#414141] ">
-                  {{ box.description }} As a token of our gratitude for those who have served or are currently serving in the US Military, we are offering a special discount!
-                </p>
-                <a href="{{ box.share_link.url }}" class="font-bold text-blue">
-                  {{ box.share_link.title }} Share
+                <div class="text-[16px] mb-0 text-[#414141] lg:min-h-[95px] mt-4 text-center lg:text-left">
+                  {{ box.description }}
+                </div>
+                
+                <a href="{{ box.share_link.url }}" class="font-bold text-blue mt-4 text-center lg:text-left">
+                  {{ box.share_link.title }} 
                 </a>
-                <a href="{{ box.button.url }}" class="mx-auto md:mx-0 w-[220px] bg-blue text-white text-[16px] font-bold text-center rounded-[5px] px-[24px] py-[18.5px]">
-                  {{ box.button.title }} Claim Now!
-                </a>
-                {% if box.share_link %}
-                <a href="{{ box.share_link.url }}" class="font-bold text-blue">
-                  {{ box.share_link.title }} Share
-                </a>
-                {% endif %}
 
                 {% if box.button %}
-                <a href="{{ box.button.url }}" class="mx-auto md:mx-0 w-[220px] bg-blue text-white text-[16px] font-bold text-center rounded-[5px] px-[24px] py-[18.5px]">
-                  {{ box.button.title }} Claim Now!
+                <a href="{{ box.button.url }}" class="mt-4 mx-auto md:mx-0 w-[220px] bg-blue hover:bg-primary text-white text-[16px] font-bold text-center rounded-[5px] px-[24px] py-[18.5px]">
+                  {{ box.button.title }} 
                 </a>
                 {% endif %}
 
               </div>
 
-            </div>
+
 
           </article>
           <!-- End Slide -->
-          <article class="flex flex-col w-[460px] px-0 text-left swiper-slide bg-white">
+          {% endfor %}
 
-            <figure class="overflow-hidden rounded-[8px] bg-gray slide-img-shadow mb-[30px]">
-              <img src="{{ site.theme.link }}/images/uploads/card-img.jpg" alt="" class="object-cover w-full h-auto">
-            </figure>
-
-            <div class="flex flex-col flex-1 gap-[25px] text-center md:text-left">
-
-              <div class="flex flex-col flex-1 gap-[25px]">
-
-                <h3 class="font-header text-[22px] font-bold leading-[24px] text-[#1A1A1A]">
-                  {{ box.title }} Get Up To $50 Off Your Move! 123
-                </h3>
-
-                <p class="text-[16px] mb-0 text-[#414141] ">
-                  {{ box.description }} As a token of our gratitude for those who have served or are currently serving in the US Military, we are offering a special discount!
-                </p>
-                <a href="{{ box.share_link.url }}" class="font-bold text-blue">
-                  {{ box.share_link.title }} Share
-                </a>
-                <a href="{{ box.button.url }}" class="mx-auto md:mx-0 w-[220px] bg-blue text-white text-[16px] font-bold text-center rounded-[5px] px-[24px] py-[18.5px]">
-                  {{ box.button.title }} Claim Now!
-                </a>
-                {% if box.share_link %}
-                <a href="{{ box.share_link.url }}" class="font-bold text-blue">
-                  {{ box.share_link.title }} Share
-                </a>
-                {% endif %}
-
-                {% if box.button %}
-                <a href="{{ box.button.url }}" class="mx-auto md:mx-0 w-[220px] bg-blue text-white text-[16px] font-bold text-center rounded-[5px] px-[24px] py-[18.5px]">
-                  {{ box.button.title }} Claim Now!
-                </a>
-                {% endif %}
-
-              </div>
-
-            </div>
-
-          </article>
         </div>
 
       </div>
 
     </article>
-
+{% if box_count > 2 %}
     <!-- Mobile Navigation -->
-    <div class="flex items-center justify-center gap-[30px] mt-[32px] lg:hidden">
+    <div class="flex items-center justify-center gap-[30px] mt-[20px] lg:hidden">
         <button class="relative top-[28px] z-20 swiper-button-prev-mobile w-[60px] h-[60px] text-[#333333] bg-[#F8F8F8] hover:text-white hover:bg-[#EE4035] active:bg-[#EE4035] rounded-full flex items-center justify-center transition-all">
           <svg class="m-auto transition-colors duration-300 fill-current" width="23" height="23" viewBox="0 0 23 23">
 <path d="M5.74984 11.5C5.7545 10.9958 5.95764 10.5137 6.31525 10.1583L10.4265 6.03747C10.6061 5.85898 10.8489 5.75879 11.1021 5.75879C11.3553 5.75879 11.5982 5.85898 11.7778 6.03747C11.8676 6.12656 11.9389 6.23255 11.9875 6.34933C12.0362 6.46611 12.0612 6.59137 12.0612 6.71788C12.0612 6.84439 12.0362 6.96965 11.9875 7.08643C11.9389 7.20322 11.8676 7.30921 11.7778 7.3983L8.62484 10.5416H18.2082C18.4623 10.5416 18.7061 10.6426 18.8858 10.8223C19.0655 11.002 19.1665 11.2458 19.1665 11.5C19.1665 11.7541 19.0655 11.9979 18.8858 12.1776C18.7061 12.3573 18.4623 12.4583 18.2082 12.4583H8.62484L11.7778 15.6112C11.9582 15.7904 12.0601 16.0339 12.061 16.2882C12.0619 16.5426 11.9617 16.7868 11.7825 16.9673C11.6034 17.1477 11.3598 17.2496 11.1055 17.2505C10.8512 17.2514 10.607 17.1512 10.4265 16.9721L6.31525 12.8512C5.95531 12.4934 5.75198 12.0075 5.74984 11.5Z" />
@@ -127,6 +85,7 @@
           </svg>
         </button>
     </div>
+    {% endif %}
 
   </div>
 

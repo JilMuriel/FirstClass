@@ -11,7 +11,7 @@
 					</a>
 				{% endif %}
 				<p class="mb-4 text-[#333333] text-[16px]">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+					{{ global.footer.about_us.description }}
 				</p>
 				<p class="font-bold text-[#333333] mb-[20px]">License Info:</p>
 				<div class="flex items-start gap-[20px]">
@@ -80,11 +80,7 @@
 						<span class="block text-[16px] mb-0">M-F: 8:00 am - 6:00 pm</span>
 						<span class="block text-[16px] mb-0">Sat: 8:00 am - 10:50 pm</span>
 					</li>
-					{# {% if global.footer.contact_us.workin_hours.hours %}
-																																									<li class="flex flex-row items-center mb-4">
-																																										<p class='m-0 text-sm text-[#4E4D4D]'>{{ global.footer.contact_us.workin_hours.hours }}</p>
-																																									</li>
-																																								{% endif %} #}
+
 				</ul>
 				{% if global.footer.about_us.social_icons %}
 					<p class="mt-[32px] mb-[16px] text-[#4E4D4D] font-bold text-md">
@@ -94,7 +90,7 @@
 						<div class="flex flex-row">
 							{% for icons in global.footer.about_us.social_icons %}
 								<a href="{{ icons.link.url}}" class='mr-4 footer-social-icons text-primary' target="{{icons.link.target}}">
-									<img class="object-contain fill-white" title="{{icons.icon.title}}" alt="{{ icons.icon.alt }}" src="{{icons.icon.url}}">
+									<img class="object-contain  injectable" title="{{icons.icon.title}}" alt="{{ icons.icon.alt }}" src="{{icons.icon.url}}">
 								</a>
 							{% endfor %}
 						</div>
@@ -102,8 +98,6 @@
 
 				{% endif %}
 			</nav>
-
-
 		</div>
 		{# ––––––––– COPYRIGHT SECTION –––––––––––– #}
 	</section>

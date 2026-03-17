@@ -13,9 +13,7 @@
 #}
 {% if fields.blog_version == 'ver1' %}
 <section class="firstclass-blog section-spacing bg-white {{ block.className }}">
-	{% for fpost in fposts %}
-		{{fpost.post_title}}<br>
-	{% endfor %}
+
 	<div class="container mx-auto flex flex-col text-center mb-6">
 		{% if fields.upper_title %}
 			<h3 class="font-header tracking-wider text-base uppercase mb-2">{{ fields.upper_title}}</h3>
@@ -138,7 +136,7 @@
                 <span class="text-[12px]">{{ post.published_at|date("j F Y") }}</span>
               </div>
 
-              <h3 class="text-[18px] font-bold leading-[24px] mb-[25px]">
+              <h3 class="text-[18px] font-bold leading-[24px] mb-[25px] lg:min-h-[75px]">
                 {{ post.post_title}}
               </h3>
 
@@ -147,7 +145,7 @@
               </p>
 
               <a href="{{ link }}"
-                 class="flex items-center justify-center w-[131px] h-[48px] rounded-[5px] bg-blue text-white text-[16px] font-bold text-center">
+                 class="flex items-center justify-center w-[131px] h-[48px] rounded-[5px] bg-blue hover:bg-primary text-white text-[16px] font-bold text-center">
                 Read More
               </a>
 
