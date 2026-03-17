@@ -154,7 +154,11 @@ h1, h2, h3 {
 
 .firstclass-privacy-policy, .firstclass-terms, .firstclass-accessibility{
     h2{
-       @apply font-header text-lg lg:text-xl mb-8 text-dark;
+       @apply font-header text-lg  mb-8 text-dark;
+    }
+
+    h3{
+       @apply text-[22px] text-dark;
     }
 
     ul {

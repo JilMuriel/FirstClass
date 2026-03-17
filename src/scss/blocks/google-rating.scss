@@ -81,6 +81,14 @@
         position: relative;
     }
 
+    .rpi .rpi-name{
+          @apply  text-dark;
+    }
+
+    .rpi .rpi-url{
+         @apply  !text-primary;
+    }
+
 }
 
 

@@ -13,7 +13,7 @@
 #}
 
 {% if fields.banner_version == 'ver1' %}
-<section class="bg-custom firstmate-bg  home v2 h-full w-full flex flex-col items-center lg:px-10 pb-[32px] md:pb-[70px]" {{ block.className }} {# Background settings#}>
+<section class="bg-custom firstmate-bg firstclass-main-banner home v2 h-full w-full flex flex-col items-center lg:px-10 pb-[32px] md:pb-[70px]" {{ block.className }} {# Background settings#}>
 	<article class="md:section-spacing container mx-auto w-full h-full gap-[20px] flex flex-col lg:flex-row items-start justify-between relative z-5 md:mt-auto mb-[10px] md:mb-[90px] !pt-[40px] md:!pt-[80px] lg:!pt-[170px] ">
 		<div class="banner-content-block w-full lg:w-[585px] pt-[35px]">
 			{% if fields.banner.title or fields.banner.description %}{% endif %}
@@ -48,7 +48,7 @@
 				<div class="p-[24px] md:p-[35px] rounded-lg bg-[#B8CEDB] text-[#333333]">
 					<p class="font-header font-bold text-[30px] text-center mb-6">Get A Free Estimate</p>
 					<div class="custom-form">
-						{{fn('do_shortcode', '[brb_collection id=7854]')}}
+						{{fn('do_shortcode', '[brb_collection id=9261]')}}
 						<div class="">{{fn('do_shortcode', fields.banner.embed_form)}}</div>
 					</div>
 				</div>
@@ -88,6 +88,7 @@
 				<div class="relative w-full placeholder lg:w-5/12 lg:pl-12">
 					<div class="p-[24px] md:p-[35px] rounded-lg bg-[#D9EAF4D1]/70">
 						<p class="font-header font-bold text-[32px] text-center text-dark mb-6">Get A Free Estimate</p>
+						{{fn('do_shortcode', '[brb_collection id=9261]')}}
 						<div class="">{{fn('do_shortcode', fields.banner.embed_form)}}</div>
 					</div>
 				</div>

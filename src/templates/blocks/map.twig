@@ -30,7 +30,9 @@
 
 			</div>
 		</div>
-		<a href="{{ fields.button.url}}" class="hidden mb-4 font-bold normal-case btn btn-primary md:block">{{ fields.button.title}}
+		{% if fields.button.url %}
+		<a href="{{ fields.button.url }}" class="hidden mb-4 font-bold normal-case btn btn-primary md:block">{{ fields.button.title}}
 				</a>
+		{% endif %}			
 	</article>
 </section>
