@@ -3,7 +3,7 @@ AOS.init();
   $(document).ready(function () {
 
 
-    const logos = new Swiper('.logos', {
+    const logos = new Swiper('.topbar-logos', {
       speed: 800,
       duration: 2000,
       centeredSlides: false,
@@ -19,26 +19,14 @@ AOS.init();
       },
       // Navigation arrows
       navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+        nextEl: '.nav-swiper-button-next',
+        prevEl: '.nav-swiper-button-prev',
       },
       breakpoints: {
         // when window width is >= 320px
         320: {
-          slidesPerView: 2,
+          slidesPerView: 1,
         },
-        // // when window width is >= 480px
-        720: {
-          slidesPerView: 5,
-        },
-        // // when window width is >= 640px
-        // 1024: {
-        //   slidesPerView: 4,
-        // },
-
-        // 1280: {
-        //   slidesPerView: 4,
-        // },
 
       },
     });
