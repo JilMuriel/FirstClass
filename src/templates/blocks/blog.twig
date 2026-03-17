@@ -11,18 +11,101 @@
   SupportsMode: true
   SupportsMultiple: true
 #}
+{% if fields.blog_version == 'ver1' %}
+<section class="firstclass-blog section-spacing bg-white {{ block.className }}">
+	{% for fpost in fposts %}
+		{{fpost.post_title}}<br>
+	{% endfor %}
+	<div class="container mx-auto flex flex-col text-center mb-6">
+		{% if fields.upper_title %}
+			<h3 class="font-header tracking-wider text-base uppercase mb-2">{{ fields.upper_title}}</h3>
+		{% endif %}
+		{% if fields.title %}
+			<h2 class="font-header text-dark text-[35px] leading-[35px] lg:text-xl mb-8">{{ fields.title}}</h2>
+		{% endif %}
+		{% if fields.subtitle %}
+			<h4 class="text-lg font-light mb-4">{{ fields.subtitle}}</h4>
+		{% endif %}
+	</div>
+	<div class="container mx-auto flex flex-row flex-wrap">
+		<div class="w-full">
+			<div class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+				{# posts #}
 
-<section class="bg-[#fff] px-[20px] py-[60px] md:py-[90px] lg:py-[120px] {{ block.className }}">
-{% for fpost in fposts %}
-	{{fpost.post_title}}<br>
-{% endfor %}
+				{# {% set posts = {'category':category_id, 'numberposts':'-1', 'posts_per_page': '6'} %} #}
+					{% for post in blogposts %}
+
+					{% set category_id = fields.blog.term_id %}
+					{% set link = fn('get_permalink', post.ID) %}
+					{% set thumbnail_url = fn('get_the_post_thumbnail_url', post.ID ) %}
+
+        <article class="h-full pr-[1px]">
+
+          <div class="border border-[#4E4D4D29] rounded-[8px] p-[16px] pb-0"> 
+          
+            <img src="{{ thumbnail_url }}"
+                 class="h-[210px] w-full object-cover rounded-[6px] mb-[30px]">
+            <div class="flex flex-col flex-grow pb-[24px] md:px-[36px] md:pb-[36px]">
+
+              <div class="flex items-center uppercase gap-[8px] mb-[25px]">
+                <img src="{{ site.theme.link }}/images/icons/calendar.svg">
+                <span class="text-[12px]">{{ post.published_at|date("j F Y") }}</span>
+              </div>
+
+              <h3 class="text-[18px] font-bold leading-[24px] mb-[25px]">
+                {{ post.post_title }}
+              </h3>
+
+              <p class="mb-[30px] flex-grow">
+               {{ post.post_excerpt|split(' ')|slice(0, 20)|join(' ') ~ '...' }}
+              </p>
+
+              <a href="{{ link }}"
+                 class="flex items-center justify-center w-[131px] h-[48px] rounded-[5px] bg-blue text-white text-[16px] font-bold text-center">
+                Read More
+              </a>
+
+            </div>
+          
+          </div>
+        </article>
+				{% endfor %}
+
+			</div>
+			<div class="tool-pagination mt-8">
+
+				<div class="pages flex gap-4 font-button items-center">
+					{% if blogposts.pagination.prev %}
+						<a href="{{blogposts.pagination.prev.link}}" class="prev {{blogposts.pagination.prev.link|length ? '' : 'invisible'}}">Prev</a>
+					{% endif %}
+					{% for page in blogposts.pagination.pages %}
+						{% if page.link %}
+							<a href="{{page.link}}" class="{{page.class}} text-dark text-lg w-10 h-10 flex items-center justify-center border-4 border-secondary hover:text-white hover:bg-primary hover:border-primary">{{page.title}}</a>
+						{% else %}
+							<span class="{{page.class}} text-white bg-primary text-lg w-10 h-10 flex items-center justify-center border-4 border-primary">{{page.title}}</span>
+						{% endif %}
+					</li>
+				{% endfor %}
+				{% if blogposts.pagination.next %}
+					<a href="{{blogposts.pagination.next.link}}" class="next {{blogposts.pagination.next.link|length ? '' : 'invisible'}}">Next</a>
+				{% endif %}
+			</div>
+
+		</div>
+	</div>
+</div></section>
+
+
+{% else %}
+
+<section class="bg-[#fff] px-[20px] py-[60px] md:py-[90px] {{ block.className }}">
+
 <div class="container flex flex-col mx-auto text-center">
 	{% if fields.upper_title %}
 		<h2 class="font-header leading-[55px] text-[#333] font-bold uppercase md:mb-[20px] text-[30px] md:text-[40px] border">{{ fields.upper_title}}</h2>
 	{% endif %}
 	{% if fields.title %}
 		<h2 class="text-[#000000] leading-none font-bold uppercase mb-[40px] text-[30px] md:text-[40px]">Moving Tips & Advice</h2>
-		{# <h2 class="font-header text-dark text-[35px] leading-[35px] lg:text-xl mb-8">{{ fields.title}}</h2> #}
 	{% endif %}
 	{% if fields.subtitle %}
 		<h4 class="mb-4 text-lg font-light">{{ fields.subtitle}}</h4>
@@ -36,25 +119,31 @@
       <div class="swiper-wrapper">
 
         <!-- Article -->
+       			{% for post in fposts %}
+
+					{% set category_id = fields.blog.term_id %}
+					{% set link = fn('get_permalink', post.ID) %}
+					{% set thumbnail_url = fn('get_the_post_thumbnail_url', post.ID ) %}
+
         <article class="swiper-slide h-full pr-[1px]">
 
           <div class="border border-[#4E4D4D29] rounded-[8px] p-[16px] pb-0"> 
           
-            <img src="/wp-content/uploads/2026/03/house-building-1-5.png"
+            <img src="{{ thumbnail_url }}"
                  class="h-[210px] w-full object-cover rounded-[6px] mb-[30px]">
-            <div class="flex flex-col flex-grow px-[24px] pb-[24px] md:px-[36px] md:pb-[36px]">
+            <div class="flex flex-col flex-grow pb-[24px] md:px-[36px] md:pb-[36px]">
 
               <div class="flex items-center uppercase gap-[8px] mb-[25px]">
                 <img src="{{ site.theme.link }}/images/icons/calendar.svg">
-                <span class="text-[12px]">01 November 2025</span>
+                <span class="text-[12px]">{{ post.published_at|date("j F Y") }}</span>
               </div>
 
               <h3 class="text-[18px] font-bold leading-[24px] mb-[25px]">
-                Lorem ipsum dolor sit amet sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                {{ post.post_title}}
               </h3>
 
               <p class="mb-[30px] flex-grow">
-                Lorem ipsum dolor sit amet adipiscing elit sed doe eiusmod tempor.
+               {{ post.post_excerpt|split(' ')|slice(0, 10)|join(' ') ~ '...' }}
               </p>
 
               <a href="{{ link }}"
@@ -65,42 +154,8 @@
             </div>
           
           </div>
-
-
         </article>
-
-        <article class="swiper-slide h-full pr-[1px]">
-
-          <div class="border border-[#4E4D4D29] rounded-[8px] p-[16px] pb-0"> 
-          
-            <img src="/wp-content/uploads/2026/03/house-building-1-5.png"
-                 class="h-[210px] w-full object-cover rounded-[6px] mb-[30px]">
-            <div class="flex flex-col flex-grow px-[24px] pb-[24px] md:px-[36px] md:pb-[36px]">
-
-              <div class="flex items-center uppercase gap-[8px] mb-[25px]">
-                <img src="{{ site.theme.link }}/images/icons/calendar.svg">
-                <span class="text-[12px]">01 November 2025</span>
-              </div>
-
-              <h3 class="text-[18px] font-bold leading-[24px] mb-[25px]">
-                Lorem ipsum dolor sit amet sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </h3>
-
-              <p class="mb-[30px] flex-grow">
-                Lorem ipsum dolor sit amet adipiscing elit sed doe eiusmod tempor.
-              </p>
-
-              <a href="{{ link }}"
-                 class="flex items-center justify-center w-[131px] h-[48px] rounded-[5px] bg-blue text-white text-[16px] font-bold text-center">
-                Read More
-              </a>
-
-            </div>
-          
-          </div>
-
-
-        </article>
+				{% endfor %}
       </div>
 
     </div>
@@ -125,8 +180,7 @@
 				</button>
 			</div>
 		</div>
-
   </div>
-
 </section>
-</section>
+</section> 
+{% endif %}
