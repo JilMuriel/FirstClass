@@ -53,6 +53,10 @@
             bottom: -102px;
             left: -121px;
             z-index: -1;
+
+            /* Parallax */
+            transform: translateY(var(--parallaxY1, 0px));
+            will-change: transform;
         }
     }
 
@@ -68,6 +72,10 @@
             top: -67px;
             right: -136px;
             z-index: -1;
+
+            /* Parallax */
+            transform: translateY(var(--parallaxY2, 0px));
+            will-change: transform;
         }
     }
 }
