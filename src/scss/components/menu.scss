@@ -7,6 +7,7 @@
     @media (max-width: 768px) {
         background-image: url('../images/uploads/topbar-bg.jpg');
     }
+    transition: all 0.3s ease;
 }
 
 .menu-wrap {
@@ -146,4 +147,11 @@
 
     }
 
+}
+
+.topbar-logos {
+    .swiper-wrapper {
+        border: 1px solid black!important;
+        background: white!important;
+    }
 }

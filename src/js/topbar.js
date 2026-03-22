@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-  const topbar = document.querySelector(".topbar");
+  const topbar = document.querySelector("header");
 
   window.addEventListener("scroll", function () {
     if (window.scrollY > 50) {
