@@ -51,14 +51,18 @@ AOS.init();
         320: {
           slidesPerView: 2,
         },
+                // when window width is >= 320px
+        450: {
+          slidesPerView: 3,
+        },
         // // when window width is >= 480px
         720: {
-          slidesPerView: 5,
+          slidesPerView: 4,
         },
         // // when window width is >= 640px
-        // 1024: {
-        //   slidesPerView: 4,
-        // },
+        1024: {
+          slidesPerView: 5,
+        },
 
         // 1280: {
         //   slidesPerView: 4,

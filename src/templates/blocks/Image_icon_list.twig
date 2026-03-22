@@ -11,38 +11,41 @@
   SupportsMode: true
   SupportsMultiple: true
 #}
-	<section class="firstclass-imagetext right section-spacing  bg-[#F8F8F8] ">
-		<article class="container flex flex-col items-center justify-between mx-auto lg:flex-row gap-[40px]">
-			<div class="relative w-full mt-8 lg:mt-0 lg:w-5/12 image-wrap lg:order-2">
-				<figure class="content-bg-custom mb-[40px]">
-					<img class="w-full h-auto lg:h-[694px] object-cover rounded-lg aos-init aos-animate" src="{{ fields.image.url }}">
-				</figure>
-			</div>
-			<div class="w-full my-auto lg:w-6/12 lg:order-1">
-				<h2 class="font-header leading-[30px] lg:leading-[55px] text-[#333333] text-center md:text-left font-bold uppercase mb-4 md:mb-[40px] text-[30px] md:text-[40px]">{{ fields.title }} </h2>
-				<div class="text-[#4E4D4D] text-[16px] font-regular mb-[30px]">
-					{{ fields.description }}
-				</div>
-				<!-- Features -->
-				<div class="flex flex-col md:flex-row md:gap-[32px] mt-4 mb-[40px]">
-					<div>
-						{% for list1 in fields.list_left %}
-							<span class="flex items-center gap-2 font-bold">
-								<img src="{{ list1.icon.url }}" alt="">
-								{{ list1.title }}
-							</span>
-						{% endfor %}
-					</div>
-					<div>
-						{% for list2 in fields.list_right %}
-							<span class="flex items-center gap-2 font-bold">
-								<img src="{{ list2.icon.url }}" alt="">
-								{{ list2.title }}
-							</span>
-						{% endfor %}
-					</div>
-				</div>
-				<a href="{{ fields.button.url}}" class="mb-4 font-bold normal-case btn btn-primary">{{ fields.button.title }}</a>
-			</div>
-		</article>
-	</section>
+<section class="firstclass-imagetext right section-spacing bg-[#F8F8F8]">
+  <article class="container flex flex-col items-center justify-between mx-auto lg:flex-row gap-[40px]">
+    <div class="relative w-full mt-8 lg:mt-0 lg:w-5/12 image-wrap lg:order-2">
+      <figure class="content-bg-custom mb-[40px]">
+        <img class="w-full h-auto lg:h-[694px] object-cover rounded-lg aos-init aos-animate" src="{{ fields.image.url }}" />
+      </figure>
+    </div>
+    <div class="w-full my-auto border lg:w-6/12 lg:order-1 mt-[40px] lg:mt-0 md:bg-pink">
+      <h2 class="font-header leading-[35px] lg:leading-[55px] text-[#333333] text-center md:text-left font-bold uppercase mb-4 md:mb-[40px] text-[30px] md:text-[40px]">{{ fields.title }}</h2>
+      <div class="text-[#4E4D4D] text-[16px] font-regular mb-[30px]">{{ fields.description }}</div>
+      <!-- Features -->
+      <div class="flex flex-col md:flex-row md:gap-[32px] mt-4 mb-[40px]">
+        <div>
+          {% for list1 in fields.list_left %}
+            <span class="flex items-center gap-2 font-bold">
+              <img src="{{ list1.icon.url }}" alt="" />
+              {{ list1.title }}
+            </span>
+          {% endfor %}
+        </div>
+        <div>
+          {% for list2 in fields.list_right %}
+            <span class="flex items-center gap-2 font-bold">
+              <img src="{{ list2.icon.url }}" alt="" />
+              {{ list2.title }}
+            </span>
+          {% endfor %}
+        </div>
+      </div>
+		<a 
+		href="{{ fields.button.url }}" 
+		class="max-w-[190px] block mx-auto lg:mx-0 lg:mr-auto font-bold normal-case btn btn-primary text-center items-center"
+		>
+		{{ fields.button.title }}
+		</a>
+    </div>
+  </article>
+</section>

@@ -20,17 +20,17 @@
 	</div>
    {% for box in fields.box %}
 	<div class="container mx-auto mb-[60px]">
-		<div class="mb-[48px] justify-self-center gap-[24px] mx-auto text-center flex items-center">
+		<div class="mb-[48px] justify-self-center gap-[24px] mx-auto text-left flex items-start">
 			<img class="h-[46px] w-auto" src="{{ box.icon.url }}">
-			<span class="accord-text text-[24px] md:text-[35px] font-bold ">{{ box.title }}</span>
+			<span class="font-header accord-text text-[24px] md:text-[35px] font-bold ">{{ box.title }}</span>
 		</div>
 		<div class="accordion-wrapper flex flex-col lg:flex-row gap-[20px]">
 			<div class="left flex flex-col gap-[10px] lg:w-1/2">
 			   {% for leftitems in box.left_list %}
 				<div class="accordion-item bg-[#F8F8F8] px-[24px] pt-[24px] rounded-[8px]">
 					<div class="flex items-center justify-between cursor-pointer accordion-header pb-[24px]">
-						<span class="text-[18px] lg:text-[22px] font-bold accordion-title text-[#333333] group-[.active]:text-[#0068A7]">
-							{{ leftitems.title }}	
+						<span class="font-headertext-[18px] lg:text-[22px] font-bold accordion-title text-[#333333] group-[.active]:text-[#0068A7]">
+							{{ leftitems.title }}
 						</span>
 						<span class="text-[35px] transition-transform accordion-icon text-[#333333]">
 							+

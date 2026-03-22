@@ -1,13 +1,21 @@
 document.addEventListener("DOMContentLoaded", function () {
+  const header = document.querySelector("header");
+  const main = document.querySelector("main");
 
-  const topbar = document.querySelector("header");
+  let headerHeight = header.offsetHeight;
 
   window.addEventListener("scroll", function () {
-    if (window.scrollY > 50) {
-      topbar.classList.add("topbar-fixed");
+    if (window.scrollY > 0) {
+      header.classList.add("topbar-fixed");
+      main.style.paddingTop = headerHeight + "px";
     } else {
-      topbar.classList.remove("topbar-fixed");
+      header.classList.remove("topbar-fixed");
+      main.style.paddingTop = "0px";
     }
   });
 
+  // Recalculate on resize (important for responsive)
+  window.addEventListener("resize", function () {
+    headerHeight = header.offsetHeight;
+  });
 });

@@ -94,6 +94,9 @@
 
             .drop-menu2 {
                 width: max-content;
+                height: 200px;
+                overflow: hidden;
+                overflow-y: scroll;
                 display: none;
                 border: 1px solid #0068A7;
                 border-radius: 4px;
