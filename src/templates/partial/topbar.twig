@@ -1,4 +1,4 @@
-<section class="topbar topbar-slider py-[14px] md:py-[14px] w-full">
+<section class="topbar topbar-slider pt-[12px] pb-[12px] pb-[12px] md:pt-[14px] md:pb-[12px] md:pb-[12px] w-full">
   <div class="px-[50px] relative block md:hidden lg:hidden xl:hidden mb-[12px] md:mb-0">
     <!-- Arrow container -->
     <div class="w-[98vw] mt-0 px-[40px] mx-auto flex items-center justify-between absolute left-1/2 -translate-x-1/2 top-[50%] -translate-y-1/2 z-10">
@@ -15,10 +15,10 @@
         <div class="flex items-start swiper-wrapper">
           {% for address in global.address %}
             <div class="flex items-start swiper-slide">
-              <img src="{{ address.icon.url }}" class="w-[24px] h-auto mr-[12px]" />
+              <img src="{{ address.icon.url }}" class="w-[24px] h-auto mr-[12px] pt-[5px]" />
               <div class="text-left">
-                <p class="font-header text-white font-bold text-[16px] leading-none mb-[12px]">{{ address.title }}</p>
-                <p class="text-white mb-0 text-[14px] leading-none font-normal pr-[10px]">{{ address.address }}</p>
+                <p class="font-header text-white font-bold text-[16px] leading-[28px] mb-0">{{ address.title }}</p>
+                <p class="text-white mb-0 text-[14px] leading-[20px] font-normal pr-[10px]">{{ address.address }}</p>
               </div>
             </div>
           {% endfor %}
@@ -33,7 +33,7 @@
         <div class="flex items-start">
           <img src="{{ address.icon.url }}" class="w-[24px] h-auto mr-[12px]" />
           <div>
-            <p class="text-white font-bold mb-0 text-[16px] leading-none mb-[14px]">{{ address.title }}</p>
+            <p class="font-header text-white font-bold text-[16px] leading-none mb-[8px]">{{ address.title }}</p>
             <p class="text-white mb-0 text-[14px] leading-relaxed font-normal">{{ address.address }}</p>
           </div>
         </div>

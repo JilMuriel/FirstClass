@@ -5,3 +5,17 @@
     background-size: cover;
 
 }
+
+.cta-bg {
+  background: url('../images/uploads/CTA.jpg') no-repeat bottom center;
+  background-size: cover;
+    border-radius: 8px;
+    height: 577px;
+    width: auto;
+  // Remove background for desktop and larger screens
+  @media (min-width: 768px) {
+    background: none;
+    height: auto;
+    width: auto;
+  }
+}

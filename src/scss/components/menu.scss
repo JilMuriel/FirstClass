@@ -10,6 +10,17 @@
     transition: all 0.3s ease;
 }
 
+.topbar {
+    background-image: url('../images/uploads/topbar-lg-bg.jpg');
+    background-color: rgba(0, 104, 167, 0.02);
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+    @media (max-width: 768px) {
+        background-image: url('../images/uploads/topbar-bg.jpg');
+    }
+}
+
 .menu-wrap {
     @apply font-menu;
     position: relative;
@@ -94,9 +105,6 @@
 
             .drop-menu2 {
                 width: max-content;
-                height: 200px;
-                overflow: hidden;
-                overflow-y: scroll;
                 display: none;
                 border: 1px solid #0068A7;
                 border-radius: 4px;
@@ -121,6 +129,8 @@
                 .drop-menu2 {
                     @apply bg-blue;
                     position: absolute;
+                    height: calc(100vh - 200px);
+                    overflow-x: scroll;
                     top: 1.2rem;
                     left: 4rem;
                     opacity: 1;
@@ -150,11 +160,4 @@
 
     }
 
-}
-
-.topbar-logos {
-    .swiper-wrapper {
-        border: 1px solid black!important;
-        background: white!important;
-    }
 }

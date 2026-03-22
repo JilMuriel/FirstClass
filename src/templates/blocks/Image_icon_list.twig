@@ -18,7 +18,7 @@
         <img class="w-full h-auto lg:h-[694px] object-cover rounded-lg aos-init aos-animate" src="{{ fields.image.url }}" />
       </figure>
     </div>
-    <div class="w-full my-auto border lg:w-6/12 lg:order-1 mt-[40px] lg:mt-0 md:bg-pink">
+    <div class="w-full my-auto lg:w-6/12 lg:order-1 mt-[40px] lg:mt-0">
       <h2 class="font-header leading-[35px] lg:leading-[55px] text-[#333333] text-center md:text-left font-bold uppercase mb-4 md:mb-[40px] text-[30px] md:text-[40px]">{{ fields.title }}</h2>
       <div class="text-[#4E4D4D] text-[16px] font-regular mb-[30px]">{{ fields.description }}</div>
       <!-- Features -->
@@ -40,12 +40,7 @@
           {% endfor %}
         </div>
       </div>
-		<a 
-		href="{{ fields.button.url }}" 
-		class="max-w-[190px] block mx-auto lg:mx-0 lg:mr-auto font-bold normal-case btn btn-primary text-center items-center"
-		>
-		{{ fields.button.title }}
-		</a>
+      <a href="{{ fields.button.url }}" class="max-w-[190px] mx-auto lg:mx-0 h-[50px] flex lg:mr-auto font-bold normal-case btn btn-primary text-center items-center">{{ fields.button.title }}</a>
     </div>
   </article>
 </section>
