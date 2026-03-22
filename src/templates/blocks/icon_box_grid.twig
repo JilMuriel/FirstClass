@@ -13,7 +13,7 @@
 #}
 <section class="bg-white px-[20px] py-[60px] md:py-[90px] lg:py-[120px]">
 	<div class="container mx-auto text-center md:w-[796px] mb-[60px]">
-		<h2 class="leading-[55px] text-[#333333] font-bold uppercase md:mb-[30px] text-[30px] md:text-[40px]">{{ fields.title }}</h2>
+		<h2 class="font-header leading-[55px] text-[#333333] font-bold uppercase md:mb-[30px] text-[30px] md:text-[40px]">{{ fields.title }}</h2>
 		<p class="text-[#402e2e] text-[16px] font-regular">
 			{{ fields.upper_title }}
 		</p>
@@ -27,7 +27,7 @@
 		<div class="accordion-wrapper flex flex-col lg:flex-row gap-[20px]">
 			<div class="left flex flex-col gap-[10px] lg:w-1/2">
 			   {% for leftitems in box.left_list %}
-				<div class="accordion-item bg-[#F8F8F8] px-[24px] pt-[24px] rounded-[8px]">
+				<div class="accordion-item bg-[#F8F8F8] px-0 md:px-[24px] lg:pt-[24px] rounded-[8px]">
 					<div class="flex items-center justify-between cursor-pointer accordion-header pb-[24px]">
 						<span class="font-headertext-[18px] lg:text-[22px] font-bold accordion-title text-[#333333] group-[.active]:text-[#0068A7]">
 							{{ leftitems.title }}
@@ -46,7 +46,7 @@
 			</div>	
 			 <div class="right flex flex-col gap-[10px] lg:w-1/2">
 			 {% for rightitems in box.right_list %}
-				<div class="accordion-item bg-[#F8F8F8] px-[24px] pt-[24px] rounded-[8px]">
+				<div class="accordion-item bg-[#F8F8F8] px-0 md:px-[24px] lg:pt-[24px] rounded-[8px]">
 					<div class="flex items-center justify-between cursor-pointer accordion-header pb-[24px]">
 						<span class="text-[18px] lg:text-[22px] font-bold accordion-title text-[#333333] group-[.active]:text-[#0068A7]">
 							{{ rightitems.title }}	

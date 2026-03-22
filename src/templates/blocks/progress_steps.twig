@@ -13,55 +13,47 @@
 #}
 
 <section class="parralax-bg px-[20px] py-[60px] md:py-[90px] lg:py-[120px] {{ block.className }}">
-	<div class="container px-4 mx-auto text-center">
-		<div class="container mx-auto text-center md:w-[796px] mb-[40px] lg:mb-[60px]">
-			<h2 class="font-header leading-[35px] lg:leading-[55px] text-[#333] font-bold uppercase mb-[30px] lg:mb-[40px] text-[30px] md:text-[40px]">{{ fields.title }}</h2>
-			<p class="text-[#4E4D4D] text-[16px] font-regular">
-				{{ fields.upper_title }}
-			</p>
-		</div>
-		<div class="relative flex flex-col items-center justify-center gap-12 lg:flex-row lg:gap-0">
-			{% if fields.box %}
-				{% for item in fields.box %}
-					<div class="flex flex-col items-center max-w-xs text-center">
-						<div class="relative mb-[40px] h-[130px] w-[130px] bg-white shadow-[0_8px_30px_rgba(2,46,74,0.2)] rounded-full flex items-center text-center mx-auto">
-							<div
-								class="w-[130px] h-[130px] rounded-full bg-[#F4F4F4] flex items-center justify-center">
-								<!-- icon -->
-								<img src="{{item.icon.url}}" class="w-[40px] h-[48px]">
-							</div>
-							<span class="pt-[5px] w-[35px] h-[35px] absolute -bottom-2 left-1/2 -translate-x-1/2 bg-blue text-white text-base font-tagline rounded-full">
-								0{{loop.index}}
-							</span>
-						</div>
-						<h3 class="font-header leading-[32px] font-bold text-[22px] mb-[24px] text-[#333]">{{item.title}}</h3>
-						<p class="leading-[28px] text-[16px] font-regular text-[#4E4D4D] mb-0">{{item.description}}</p>
-					</div>
-					<!-- Arrow -->
+  <div class="container px-4 mx-auto text-center">
+    <div class="container mx-auto text-center md:w-[796px] mb-[40px] lg:mb-[60px]">
+      <h2 class="font-header leading-[35px] lg:leading-[55px] text-[#333] font-bold uppercase mb-[30px] lg:mb-[40px] text-[30px] md:text-[40px]">{{ fields.title }}</h2>
+      <p class="text-[#4E4D4D] text-[16px] font-regular">{{ fields.upper_title }}</p>
+    </div>
+    <div class="relative flex flex-col items-center justify-center gap-12 lg:flex-row lg:gap-0">
+      {% if fields.box %}
+        {% for item in fields.box %}
+          <div class="flex flex-col items-center max-w-xs text-center">
+            <div class="relative mb-[40px] h-[130px] w-[130px] bg-white shadow-[0_8px_30px_rgba(2,46,74,0.2)] rounded-full flex items-center text-center mx-auto">
+              <div class="w-[130px] h-[130px] rounded-full bg-[#F4F4F4] flex items-center justify-center">
+                <!-- icon -->
+                <img src="{{ item.icon.url }}" class="w-[40px] h-[48px]" />
+              </div>
+              <span class="pt-[5px] w-[35px] h-[35px] absolute -bottom-2 left-1/2 -translate-x-1/2 bg-blue text-white text-base font-tagline rounded-full">0{{ loop.index }}</span>
+            </div>
+            <h3 class="font-header leading-[32px] font-bold text-[22px] mb-[24px] text-[#333]">{{ item.title }}</h3>
+            <p class="leading-[28px] text-[16px] font-regular text-[#4E4D4D] mb-0">{{ item.description }}</p>
+          </div>
+          <!-- Arrow -->
 
-					{% if loop.index == 1 %}
-						<div>
-							<img src="/wp-content/uploads/2026/03/Arrow.png" class="rotate-90 w-[50px] mb-[10px] lg:mb-0 pb-0 lg:pb-[200px] lg:w-auto lg:rotate-0 f-arrow">
-						</div>
-					{% endif %}
+          {% if loop.index == 1 %}
+            <div>
+              <img src="/wp-content/uploads/2026/03/Arrow.png" class="rotate-90 w-[50px] mb-[10px] lg:mb-0 pb-0 lg:pb-[200px] lg:w-auto lg:rotate-0 f-arrow" />
+            </div>
+          {% endif %}
 
-					{% if loop.index == 2 %}
-						<div>
-							<img src="/wp-content/uploads/2026/03/Arrow.png" class="rotate-90 w-[50px] pb-0 lg:pb-[200px] lg:w-auto lg:rotate-0">
-						</div>
-					{% endif %}
+          {% if loop.index == 2 %}
+            <div>
+              <img src="/wp-content/uploads/2026/03/Arrow.png" class="rotate-90 w-[50px] pb-0 lg:pb-[200px] lg:w-auto lg:rotate-0" />
+            </div>
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+    </div>
 
-				{% endfor %}
-			{% endif %}
-		</div>
-
-		<!-- CTA -->
-		{% if fields.button_link.url %}
-			<div class="mt-16">
-				<a href="{{ fields.button_link.url }}" target="{{ fields.button_link.target }}" class="btn btn-primary">
-					{{ fields.button_link.title }}
-				</a>
-			</div>
-		{% endif %}
-	</div>
+    <!-- CTA -->
+    {% if fields.button_link.url %}
+      <div class="mt-16">
+        <a href="{{ fields.button_link.url }}" target="{{ fields.button_link.target }}" class="max-w-[190px] mx-auto h-[50px] flex font-bold normal-case btn btn-primary text-center items-center">{{ fields.button_link.title }}</a>
+      </div>
+    {% endif %}
+  </div>
 </section>

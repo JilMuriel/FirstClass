@@ -22,8 +22,8 @@
 						</p>
 					{% endif %}
 					{% if fields.button %}
-						<button class="hidden md:block">
-							<a href="{{ fields.button.url}}" class="mb-4 font-bold normal-case btn btn-primary">{{fields.button.title}}
+						<button class="hidden md:block mt-[60px]">
+							<a href="{{ fields.button.url}}" class="block mb-4 font-bold normal-case btn btn-primary">{{fields.button.title}}
 							</a>
 						</button>
 					{% endif %}
@@ -48,7 +48,7 @@
 					</div>
 					{% endfor %}
 					{% if fields.button %}
-						<button class="block md:hidden mt-[40px]">
+						<button class="block md:hidden">
 							<a href="{{ fields.button.url}}" class="mb-4 font-bold normal-case btn btn-primary">{{fields.button.title}}
 							</a>
 						</button>
