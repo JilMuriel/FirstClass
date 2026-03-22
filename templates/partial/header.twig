@@ -1,0 +1,37 @@
+<div class="py-0 mx-auto 2xl:px-0 bg-white lg:py-6">
+	<div class="container relative mx-auto">
+		<nav
+			class="flex flex-wrap items-center justify-between lg:flex-nowrap">
+			<!-- Logo -->
+			<div class="flex items-center w-full py-2 mx-auto overflow-hidden lg:w-auto justify-evenly lg:mx-0 lg:block lg:py-0 md:gap-x-10 lg:gap-x-0 lg:overflow-visible">
+				<div class="flex items-center justify-between mr-auto logo-wrapper sm:ml-0 sm:mb-0 lg:gap-x-0">
+					<a href="{{ site.link }}" >
+						{% include 'partial/logo.twig' %}
+					</a>
+				</div>
+
+				<div class="mobile-menu v1 inline-block lg:hidden z-[100]">
+					{% include 'partial/mobile-menu.twig'%}
+				</div>
+
+			</div>
+			<!-- End Logo -->
+			<!-- Navigation -->
+			<div class="hidden desktop-menu v1 text-secondary lg:inline-block">
+				{% include 'partial/menu.twig'%}
+			</div>
+			<!-- End Navigation -->
+			<div class="hidden lg:block">
+				<div class="flex items-center gap-[20px]">
+						<a href="{{ global.header.button1.url }}"  class="h-[50px] min-w-[187px] px-[24px] py-[22px] bg-red hover:bg-secondary flex items-center text-white text-[16px] font-bold rounded-[4px]">
+							{{ global.header.button1.title }}
+						</a>
+						<a href="{{ global.header.button2.url }}"  class="h-[50px] min-w-[187px] px-[24px] py-[22px] bg-blue hover:bg-primary text-white text-[16px] flex items-center gap-[10px] font-bold rounded-[4px]">
+							<img src="/wp-content/uploads/2026/03/phone-icon.png" class="h-[18px] w-auto">
+							{{ global.header.button2.title }}
+						</a>
+				</div>
+			</div>
+		</nav>
+	</div>
+</div>

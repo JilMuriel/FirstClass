@@ -1,0 +1,52 @@
+{#
+  Title: Counter
+  Description: Basic Counter Section.
+  Category: formatting
+  Icon: backup
+  Keywords: about
+  Mode: edit
+  Align: left
+  PostTypes: page post
+  SupportsAlign: left right
+  SupportsMode: true
+  SupportsMultiple: true
+#}
+<section class="firstclass-counter section-spacing bg-white {{ block.className }}">
+	{% if fields.upper_title and fields.title %}
+	<div class="container mx-auto flex flex-col text-center pb-1 mb-8">
+		<h3 class="font-header tracking-wider text-base uppercase mb-2">{{ fields.upper_title }}</h3>
+		<h2 class="font-header text-4xl lg:text-5xl mb-8">{{ fields.title}}</h2>
+	</div>
+	{% else %}
+	{% if fields.upper_title %}
+	<h3 class="font-header tracking-wider text-base uppercase mb-2">{{ fields.upper_title }}</h3>
+	{% endif %}
+	{% if fields.title %}
+	<h2 class="font-header text-4xl mb-8">{{ fields.title}}</h2>
+	{% endif %}
+	{% endif %}
+	{% if fields.box %}
+	<div class="container mx-auto">
+		<div class="w-full flex flex-col md:flex-row  items-center justify-around">
+			{% for item in fields.box %}
+			<div class="w-full flex flex-row items-center">
+				<div class="w-1/3">
+					<img src="{{ item.icon.url }}" class="w-[69px] lg:w-[123px] mx-auto">
+				</div>
+				<article class="mx-8 bg-white  flex flex-col lg:items-center w-full" data-aos="fade-up" data-aos-offset="150"
+					data-aos-delay="{{loop.index}}50" data-aos-duration="2*{{loop.index}}50" data-aos-once="true">
+		
+						{% if item.number %}
+						<h3 class="text-5xl lg:text-6xl  font-button text-secondary lg:mb-4"
+						data-count='{{ item.number }}'>{{ item.number }}</h3>
+						{% endif %}
+						{% if item.title %}
+						<h4 class="text-xl g:text-4xl text-secondary  pb-2 mb-2 lg:mt-2 uppercase">{{item.title}}</h4>
+						{% endif %}			
+				</article>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+	{% endif %}
+</section>

@@ -1,0 +1,82 @@
+{#
+  Title: Map Aside
+  Description: Map with Content block
+  Category: formatting
+  Icon: location-alt
+  Keywords: map
+  Mode: edit
+  Align: left
+  PostTypes: page post
+  SupportsAlign: left right
+  SupportsMode: true
+  SupportsMultiple: true
+#}
+
+<section class="firstclass-mapaside section-spacing flex flex-row {{ block.className }}">
+	<div class="container mx-auto w-full flex flex-wrap relative items-center">
+		<article class="w-full lg:w-6/12 text-center lg:text-left p-8 ">
+			{% if fields.title %}
+			<h2 class="text-[#333333] font-tagline  md:text-left font-bold md:mb-[40px] text-[30px] md:text-[40px]">
+				{{fields.title}}</h2>
+			{% endif %}
+			<div
+				class="content-wrap text-md mb-8 {% if fields.two_columns_layout %}w-full md:grid md:grid-cols-2 gap-6 text-center md:text-left{% else %}flex flex-col mx-auto w-full{% endif %}">
+			<ul class="flex flex-col">
+					{% if fields.address.title %}
+					<li class="flex flex-row space-x-4 items-start border-b border-white  border-opacity-10">
+						<img src="/wp-content/uploads/2025/06/map.svg"
+							class="injectable w-[20px] h-[20px]">
+						<a href="{{ fields.address.url }}" class='m-0 hover:text-primary text-base w-full text-left' >
+							{{ fields.address.title }}
+						</a>
+					</li>
+					{% endif %}
+					{% if fields.email.title %}
+					<li class="flex flex-row items-center  space-x-4 border-b border-white border-opacity-10" >
+						<img src="/wp-content/uploads/2025/06/mail.svg"
+							class="w-[20px] h-[20px] injectable">
+						<a href="{{ fields.email.url }}"
+							class='m-0 hover:text-primary  text-base w-full text-left'>	{{ fields.email.title }}</a>
+					</li>
+					{% endif %}
+					{% if fields.phone %}
+					<li class="flex flex-row space-x-4 items-center ">
+						<img src="/wp-content/uploads/2025/06/phone.svg"
+							class="injectable w-[20px] h-[20px]">
+						<a href="{{ fields.phone.url }}"
+							class='m-0 hover:text-primary text-base w-full text-left' >{{ fields.phone.title }}</a>
+					</li>
+					{% endif %}
+					{% if fields.phone_2 %}
+					<li class="flex flex-row space-x-4 items-center">
+						<img src="/wp-content/uploads/2025/06/phone.svg"
+							class="injectable w-[20px] h-[20px]">
+						<a href="{{ fields.phone_2.url }}"
+							class='m-0 hover:text-primary text-base w-full text-left' >{{ fields.phone_2.title }}</a>
+					</li>
+					{% endif %}
+					{% if fields.hours %}
+					<li class="flex flex-row space-x-4 items-center">
+						<img src="/wp-content/uploads/2025/06/clock-r.svg"
+							class="w-[20px] h-[20px]">
+						<p class='m-0 text-white text-left'>{{ fields.hours }}</p>
+					</li>
+				{% endif %}
+				</ul>
+				
+				</div>
+			{% if fields.button %}
+			<a href="{{fields.button.url}}" class="btn relative inline-block btn-primary" data-aos="fade-in"
+				data-aos-offset="-550" data-aos-delay="250" data-aos-duration="550"
+				data-aos-once="true">{{fields.button.title}}</a>
+			{% endif %}
+		</article>
+		{% if fields.map_embed %}
+		<div class="w-full lg:w-6/12 lg:h-[525px] mx-auto shadow-2xl rounded-2xl bg-white p-10" data-aos="fade-left" data-aos-offset="-250"
+			data-aos-delay="250" data-aos-duration="450" data-aos-once="true">
+			{{ fields.map_embed }}
+		</div>
+		{% endif %}
+
+	</div>
+</section>
