@@ -11,13 +11,15 @@
 							{# menu with subcategory Level 1  #}
 							<a class="nav-link letter-spacing-1 text-dark hover:text-blue lg:text-[18px] font-semibold font-menu" target="{{ item.target }}" href="{{ item.link }}">
 								<span>{{ item.title }}</span><img src="{{ site.theme.link }}/images/icons/angle-down-gray.svg" class="injectable w-[9px] h-[5px] fill-primary ml-2 inline-block"></a>
-							<ul class='drop-menu '>
+							<ul class="drop-menu">
 								{% for child in item.children %}
 									<li class="dropdown-link top-menu-link2">
 										{% if child.children %}
 											{# menu with subcategory Level 2 #}
-											<a class="text-white nav-link letter-spacing-1 lg:text-base font-menu" href="{{ child.link }}" target="{{ child.target }}">
-												<span>{{ child.title }}</span><img src="{{ site.theme.link }}/images/icons/angle-down-wh.svg" class="injectable w-[9px] h-[5px] fill-white ml-2 inline-block"></a>
+											<a class="w-full text-white nav-link letter-spacing-1 lg:text-base font-menu" href="{{ child.link }}" target="{{ child.target }}">
+												<span>{{ child.title }}</span>
+												<img src="{{ site.theme.link }}/images/icons/angle-down-wh.svg" class="injectable w-[9px] h-[5px] fill-white ml-2 inline-block">
+											</a>
 											<ul class='drop-menu2'>
 												{% for child2 in child.children %}
 													<li class="dropdown-link">

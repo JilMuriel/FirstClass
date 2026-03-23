@@ -112,7 +112,8 @@
 
                 .dropdown-link {
                     @apply text-white;
-
+                    display: flex;
+                    align-items: center;
                     span:hover,
                     a:hover {
                         @apply text-dark;
@@ -129,8 +130,9 @@
                 .drop-menu2 {
                     @apply bg-blue;
                     position: absolute;
-                    height: calc(100vh - 200px);
-                    overflow-x: scroll;
+                    max-height: calc(100vh - 200px); // limit instead of force
+                    overflow-y: auto; // scroll only when needed
+                    overflow-x: auto; // avoid horizontal scroll
                     top: 1.2rem;
                     left: 4rem;
                     opacity: 1;
@@ -140,7 +142,7 @@
                     border-radius: 2px;
                     box-shadow: -1px 11px 18px -2px rgba(0, 0, 0, 0.75);
                     z-index: 2;
-
+column-fill: auto;
                     >nav-link {
                         @apply text-dark;
                     }
@@ -160,4 +162,10 @@
 
     }
 
+}
+
+.top-menu-link2 > a {
+    display: flex;
+    align-items: center;
+    width: 100%;
 }
