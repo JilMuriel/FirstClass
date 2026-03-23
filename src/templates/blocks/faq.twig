@@ -40,7 +40,7 @@
 								<img class="m-auto" src="/wp-content/uploads/2026/03/arrow-down.png"/>
 							</button>
 						</div>
-						<div class="overflow-hidden transition-all duration-500 accordion-content max-h-0">
+						<div class="overflow-hidden transition-all duration-500 accordion-content max-h-0 mt-4">
 							<div class="leading-relaxed text-gray-500">
 								{{ box.content }}
 							</div>
@@ -48,7 +48,7 @@
 					</div>
 					{% endfor %}
 					{% if fields.button %}
-						<button class="block md:hidden">
+						<button class="block md:hidden mt-6 lg:mt-0">
 							<a href="{{ fields.button.url}}" class="mb-4 font-bold normal-case btn btn-primary">{{fields.button.title}}
 							</a>
 						</button>
