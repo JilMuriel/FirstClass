@@ -13,8 +13,8 @@
 #}
 
 {% if fields.banner_version == 'ver1' %}
-<section class="bg-custom firstmate-bg firstclass-main-banner home v2 h-full w-full flex flex-col items-center lg:px-10 pb-[32px] md:pb-[70px]" {{ block.className }} {# Background settings#}>
-	<article class="md:section-spacing container mx-auto w-full h-full gap-[20px] flex flex-col lg:flex-row items-start justify-between relative z-5 md:mt-auto mb-[10px] md:mb-[90px] !pt-[40px] md:!pt-[80px] lg:!pt-[170px] ">
+<section class="bg-custom firstmate-bg firstclass-main-banner home v2 h-full w-full flex flex-col items-center section-spacing !pb-0" {{ block.className }} {# Background settings#}>
+	<article class="md:section-spacing container mx-auto w-full h-full gap-[20px] flex flex-col lg:flex-row items-start justify-between relative z-5 md:!mb-[70px]  ">
 		<div class="banner-content-block w-full lg:w-[585px] pt-[35px]">
 			{% if fields.banner.title or fields.banner.description %}{% endif %}
 			{# Main title #}
@@ -67,7 +67,7 @@
 
 {% if fields.banner_version == 'ver2' %}
 	<section class="firstclass-main-banner firstmate-bg home v2 h-full w-full flex flex-col items-center lg:px-10 pb-[32px] md:pb-[70px]" {{ block.className }} {# Background settings#} style="background-image: url('wp-content/uploads/2026/03/Banner.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center">
-		<article class="firstclass-banner-content md:section-spacing container mx-auto w-full h-full flex flex-col lg:flex-row items-center relative z-5 md:mt-auto mb-[10px] md:mb-[90px] !pt-[40px] md:!pt-[80px] lg:!pt-[170px]">
+		<article class="firstclass-banner-content section-spacing container mx-auto w-full h-full flex flex-col lg:flex-row items-center relative z-5">
 			<div class="w-full lg:w-7/12">
 				{% if fields.banner.title or fields.banner.description %}{% endif %}
 				{# Main title #}

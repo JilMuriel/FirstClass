@@ -11,25 +11,25 @@
   SupportsMode: true
   SupportsMultiple: true
 #}
-<section class="bg-white px-[20px] py-[60px] md:py-[90px] lg:py-[120px]">
-	<div class="container mx-auto text-center md:w-[796px] mb-[60px]">
-		<h2 class="font-header leading-[55px] text-[#333333] font-bold uppercase md:mb-[30px] text-[30px] md:text-[40px]">{{ fields.title }}</h2>
+<section class="bg-white section-spacing !pb-0 md:!pb-[60px]">
+	<div class="container mx-auto text-center md:w-[796px] mb-[20px] md:mb-[60px]">
+		<h2 class="font-header md:leading-[40px] leading-[30px] text-[#333333] font-bold uppercase mb-6 md:mb-[30px] text-[30px] md:text-[40px]">{{ fields.title }}</h2>
 		<p class="text-[#402e2e] text-[16px] font-regular">
 			{{ fields.upper_title }}
 		</p>
 	</div>
    {% for box in fields.box %}
 	<div class="container mx-auto mb-[60px]">
-		<div class="mb-[48px] justify-self-center gap-[24px] mx-auto text-left flex items-start">
+		<div class="mb-[48px] justify-center md:gap-[24px] flex items-center w-[80%] text-center mx-auto lg:w-full">
 			<img class="h-[46px] w-auto" src="{{ box.icon.url }}">
 			<span class="font-header pt-[10px] accord-text text-[24px] md:text-[35px] font-bold ">{{ box.title }}</span>
 		</div>
 		<div class="accordion-wrapper flex flex-col lg:flex-row gap-[20px]">
 			<div class="left flex flex-col gap-[10px] lg:w-1/2">
 			   {% for leftitems in box.left_list %}
-				<div class="accordion-item bg-[#F8F8F8] px-0 md:px-[24px] lg:pt-[24px] rounded-[8px]">
-					<div class="flex items-center justify-between cursor-pointer accordion-header pb-[24px]">
-						<span class="font-headertext-[18px] lg:text-[22px] font-bold accordion-title text-[#333333] group-[.active]:text-[#0068A7]">
+				<div class="accordion-item bg-[rgb(248,248,248)] px-[16px] md:px-[24px] p-[16px] lg:p-[24px] rounded-[8px]">
+					<div class="flex items-center justify-between cursor-pointer accordion-header">
+						<span class="font-header text-[18px] lg:text-[22px] font-bold accordion-title text-[#333333] group-[.active]:text-[#0068A7]">
 							{{ leftitems.title }}
 						</span>
 						<span class="text-[35px] transition-transform accordion-icon text-[#333333]">
@@ -37,7 +37,7 @@
 						</span>
 					</div>
 					<div class="overflow-hidden transition-all duration-500 accordion-content max-h-0">
-						<p class="pb-[24px] leading-relaxed text-gray-500">
+						<p class="leading-relaxed text-gray-500 mt-4">
 							{{ leftitems.content }}
 						</p>
 					</div>
@@ -46,9 +46,9 @@
 			</div>	
 			 <div class="right flex flex-col gap-[10px] lg:w-1/2">
 			 {% for rightitems in box.right_list %}
-				<div class="accordion-item bg-[#F8F8F8] px-0 md:px-[24px] lg:pt-[24px] rounded-[8px]">
-					<div class="flex items-center justify-between cursor-pointer accordion-header pb-[24px]">
-						<span class="text-[18px] lg:text-[22px] font-bold accordion-title text-[#333333] group-[.active]:text-[#0068A7]">
+				<div class="accordion-item bg-[#F8F8F8] px-[16px] md:px-[24px] p-[16px] lg:p-[24px] rounded-[8px]">
+					<div class="flex items-center justify-between cursor-pointer accordion-header">
+						<span class="font-header text-[18px] lg:text-[22px] font-bold accordion-title text-[#333333] group-[.active]:text-[#0068A7]">
 							{{ rightitems.title }}	
 						</span>
 						<span class="text-[35px] transition-transform accordion-icon text-[#333333]">
@@ -56,7 +56,7 @@
 						</span>
 					</div>
 					<div class="overflow-hidden transition-all duration-500 accordion-content max-h-0">
-						<p class="pb-[24px] leading-relaxed text-gray-500">
+						<p class="leading-relaxed text-gray-500 mt-4">
 							{{ rightitems.content }}
 						</p>
 					</div>
